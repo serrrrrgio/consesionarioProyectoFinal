@@ -19,8 +19,6 @@ public class Concesionario {
     private LinkedList<Vehiculo> vehiculos;
     private Administrador administrador;
 
-
-
     /**
      * Constructor
      */
@@ -92,35 +90,32 @@ public class Concesionario {
     public void setAdministrador(Administrador administrador) {
         this.administrador = administrador;
     }
-    
-
-    
 
     /**
      * Método para agregar transacción
      */
-    public void agregarTransaccion(Transaccion transaccion){
+    public void agregarTransaccion(Transaccion transaccion) {
         transacciones.add(transaccion);
     }
 
     /**
      * Método para agregar empleado
      */
-    public void agregarEmpleado(Empleado transaccion){
+    public void agregarEmpleado(Empleado transaccion) {
         empleados.add(transaccion);
     }
 
     /**
      * Método para agregar cliente
      */
-    public void agregarCliente(Cliente cliente){
+    public void agregarCliente(Cliente cliente) {
         clientes.add(cliente);
     }
 
     /**
      * Método para agregar vehículo
      */
-    public void agregarVehiculo(Vehiculo vechiculo){
+    public void agregarVehiculo(Vehiculo vechiculo) {
         vehiculos.add(vechiculo);
     }
 
@@ -128,8 +123,9 @@ public class Concesionario {
      * Método para registrar una compra de vehículo
      */
     public void comprarVehiculo(Empleado empleado, Cliente cliente, Vehiculo vehiculo, double precio) {
-        Transaccion transaccion = new Transaccion(LocalDate.now(), precio, TipoTransaccion.COMPRA, empleado, cliente, vehiculo, null);
-        
+        Transaccion transaccion = new Transaccion(LocalDate.now(), precio, TipoTransaccion.COMPRA, empleado, cliente,
+                vehiculo, null);
+
         // Agregar transacción de forma independiente al concesionario y al cliente
         agregarTransaccion(transaccion);
         cliente.agregarTransaccion(transaccion);
@@ -144,8 +140,9 @@ public class Concesionario {
      * Método para registrar una venta de vehículo
      */
     public void venderVehiculo(Empleado empleado, Cliente cliente, Vehiculo vehiculo, double precio) {
-        Transaccion transaccion = new Transaccion(LocalDate.now(), precio, TipoTransaccion.VENTA, empleado, cliente, vehiculo, null);
-        
+        Transaccion transaccion = new Transaccion(LocalDate.now(), precio, TipoTransaccion.VENTA, empleado, cliente,
+                vehiculo, null);
+
         // Agregar transacción de forma independiente al concesionario y al cliente
         agregarTransaccion(transaccion);
         cliente.agregarTransaccion(transaccion);
@@ -159,9 +156,11 @@ public class Concesionario {
     /**
      * Método para registrar un alquiler de vehículo
      */
-    public void alquilarVehiculo(Empleado empleado, Cliente cliente, Vehiculo vehiculo, double precio, LocalDate fechaDevolucion) {
-        Transaccion transaccion = new Transaccion(LocalDate.now(), precio, TipoTransaccion.ALQUILER, empleado, cliente, vehiculo, fechaDevolucion);
-        
+    public void alquilarVehiculo(Empleado empleado, Cliente cliente, Vehiculo vehiculo, double precio,
+            LocalDate fechaDevolucion) {
+        Transaccion transaccion = new Transaccion(LocalDate.now(), precio, TipoTransaccion.ALQUILER, empleado, cliente,
+                vehiculo, fechaDevolucion);
+
         // Agregar transacción de forma independiente al concesionario y al cliente
         agregarTransaccion(transaccion);
         cliente.agregarTransaccion(transaccion);
@@ -174,33 +173,33 @@ public class Concesionario {
     /**
      * Método para mostrar mensaje
      */
-    public static void mostrarMensaje(String mensaje){
+    public static void mostrarMensaje(String mensaje) {
         System.out.println();
     }
 
     /**
      * Método para mostrar mensaje
      */
-    public static void mostrarMensajeSeguido(String mensaje){
+    public static void mostrarMensajeSeguido(String mensaje) {
         System.out.print(mensaje);
     }
 
     /**
      * Método para ingresar ingresar entero
-    */
-    public static int ingresarEntero(String solicitud){
+     */
+    public static int ingresarEntero(String solicitud) {
         Scanner scanner = new Scanner(System.in);
         int numero = 0;
 
         boolean repetir = true;
-        while (repetir){
-            mostrarMensajeSeguido(solicitud); 
-            try{
+        while (repetir) {
+            mostrarMensajeSeguido(solicitud);
+            try {
                 numero = scanner.nextInt();
                 repetir = false;
             }
 
-            catch (InputMismatchException e){
+            catch (InputMismatchException e) {
                 mostrarMensaje("Error: No ingresaste un número.");
                 scanner.next();
             }
@@ -210,20 +209,20 @@ public class Concesionario {
 
     /**
      * Método para ingresar ingresar un real
-    */
-    public static double ingresarReal(String solicitud){
+     */
+    public static double ingresarReal(String solicitud) {
         Scanner scanner = new Scanner(System.in);
         double numero = 0;
 
         boolean repetir = true;
-        while (repetir){
-            mostrarMensajeSeguido(solicitud); 
-            try{
+        while (repetir) {
+            mostrarMensajeSeguido(solicitud);
+            try {
                 numero = scanner.nextDouble();
                 repetir = false;
             }
 
-            catch (InputMismatchException e){
+            catch (InputMismatchException e) {
                 mostrarMensaje("Error: No ingresaste un real.");
                 scanner.next();
             }
@@ -233,56 +232,54 @@ public class Concesionario {
 
     /**
      * Método para ingresar ingresar texto
-    */
-    public static String ingresarTexto(String solicitud){
+     */
+    public static String ingresarTexto(String solicitud) {
         Scanner scanner = new Scanner(System.in);
         mostrarMensajeSeguido(solicitud);
         String texto = scanner.nextLine();
         return texto;
     }
 
-        /**
+    /**
      * Método para ingresar una fecha
-    */
-    public static LocalDate ingresarFecha(String solicitud){
-        LocalDate fecha = null; 
+     */
+    public static LocalDate ingresarFecha(String solicitud) {
+        LocalDate fecha = null;
         int ano = 0;
         int mes = 0;
         int dia = 0;
 
         boolean repetir = true;
-        while (repetir){
-            mostrarMensaje(solicitud); 
-            try{
+        while (repetir) {
+            mostrarMensaje(solicitud);
+            try {
                 ano = ingresarEntero("Año: ");
                 mes = ingresarEntero("Mes: ");
                 dia = ingresarEntero("Día: ");
-                
+
                 fecha = LocalDate.of(ano, mes, dia);
                 repetir = false;
             }
 
-            catch (DateTimeException e){
+            catch (DateTimeException e) {
                 mostrarMensaje("Error: No ingresaste una fecha válida.");
             }
         }
         return fecha;
     }
 
-
     /**
      * Método para ingresar una fecha posterior a otra
-    */
-    public static LocalDate ingresarFechaPosterior(String solicitud, LocalDate fecha){
+     */
+    public static LocalDate ingresarFechaPosterior(String solicitud, LocalDate fecha) {
         LocalDate fechaPosterior = null;
         boolean repetir = true;
 
-        while(repetir){
+        while (repetir) {
             fechaPosterior = ingresarFecha(solicitud);
-            if (fechaPosterior.isAfter(fecha)){
+            if (fechaPosterior.isAfter(fecha)) {
                 repetir = false;
-            }
-            else{
+            } else {
                 mostrarMensaje("Error: La nueva fecha no es posterior a la anterior, por favor ingresela nuevamente");
             }
         }

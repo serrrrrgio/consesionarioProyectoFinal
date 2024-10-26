@@ -15,12 +15,13 @@ public class Persona {
      * Constructor
      */
 
-    public Persona(String nombre, String apellido, String correo, String cedula, String telefono, String usuario, String contraseña,
+    public Persona(String nombre, String apellido, String correo, String cedula, String telefono, String usuario,
+            String contraseña,
             String preguntaSeguridad, String respuesta) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
-        this.cedula = cedula; 
+        this.cedula = cedula;
         this.telefono = telefono;
         this.usuario = usuario;
         this.contraseña = contraseña;
@@ -114,7 +115,7 @@ public class Persona {
      * Método para cambiar la contraseña
      */
     public boolean cambiarContrasena(String respuestaUsuario, String nuevaContrasena) {
-        if (verificarRespuestaSeguridad(respuestaUsuario)) { 
+        if (verificarRespuestaSeguridad(respuestaUsuario)) {
             this.contraseña = nuevaContrasena;
             return true;
         }
