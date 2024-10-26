@@ -3,7 +3,7 @@ package co.edu.uniquindio.poo.model;
 public class Sedan extends Carro {
     private double capacidadMaletero;
     private boolean cmaraReversa;
-    private double velocidadCrucero;
+    private boolean velocidadCrucero;
     private int numeroBolsasAire;
     private boolean sensoresColision;
     private boolean sensorTraficoCruzado;
@@ -16,7 +16,7 @@ public class Sedan extends Carro {
     public Sedan(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
             int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado,
-            double capacidadMaletero, boolean cmaraReversa, double velocidadCrucero, int numeroBolsasAire,
+            double capacidadMaletero, boolean cmaraReversa, boolean velocidadCrucero, int numeroBolsasAire,
             boolean sensoresColision, boolean sensorTraficoCruzado, boolean asistentePermanenciaCarril) {
         super(marca, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
                 capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado);
@@ -36,7 +36,7 @@ public class Sedan extends Carro {
     public Sedan(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
             double autonomia, double tiempoCarga, int capacidadPasajeros, int cantidadPuertas, boolean abs,
-            boolean aireAcondicionado, double capacidadMaletero, boolean cmaraReversa, double velocidadCrucero,
+            boolean aireAcondicionado, double capacidadMaletero, boolean cmaraReversa, boolean velocidadCrucero,
             int numeroBolsasAire, boolean sensoresColision, boolean sensorTraficoCruzado,
             boolean asistentePermanenciaCarril) {
         super(marca, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
@@ -57,7 +57,7 @@ public class Sedan extends Carro {
     public Sedan(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
             boolean enchufable, boolean hibridoLigero, int capacidadPasajeros, int cantidadPuertas, boolean abs,
-            boolean aireAcondicionado, double capacidadMaletero, boolean cmaraReversa, double velocidadCrucero,
+            boolean aireAcondicionado, double capacidadMaletero, boolean cmaraReversa, boolean velocidadCrucero,
             int numeroBolsasAire, boolean sensoresColision, boolean sensorTraficoCruzado,
             boolean asistentePermanenciaCarril) {
         super(marca, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
@@ -91,11 +91,11 @@ public class Sedan extends Carro {
         this.cmaraReversa = cmaraReversa;
     }
 
-    public double getVelocidadCrucero() {
+    public boolean getVelocidadCrucero() {
         return velocidadCrucero;
     }
 
-    public void setVelocidadCrucero(double velocidadCrucero) {
+    public void setVelocidadCrucero(boolean velocidadCrucero) {
         this.velocidadCrucero = velocidadCrucero;
     }
 

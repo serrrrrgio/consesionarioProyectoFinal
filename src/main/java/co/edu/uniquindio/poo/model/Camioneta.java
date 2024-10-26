@@ -6,7 +6,7 @@ public class Camioneta extends Carro {
     */
     private double capacidadMaletero;
     private boolean camaraReversa;
-    private double velocidadCrucero;
+    private boolean velocidadCrucero;
     private int numeroBolsasAire;
     private boolean sensoresColision;
     private boolean sensorTraficoCruzado;
@@ -19,7 +19,7 @@ public class Camioneta extends Carro {
     public Camioneta(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
         TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
         int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado,
-        double capacidadMaletero, boolean camaraReversa, double velocidadCrucero, int numeroBolsasAire,
+        double capacidadMaletero, boolean camaraReversa, boolean velocidadCrucero, int numeroBolsasAire,
         boolean sensoresColision, boolean sensorTraficoCruzado, boolean asistentePermanenteCarril,
         boolean cuatroPorCuatro) {
         super(marca, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
@@ -40,7 +40,7 @@ public class Camioneta extends Carro {
 public Camioneta(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
         TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible, double autonomia,
         double tiempoCarga, int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado,
-        double capacidadMaletero, boolean camaraReversa, double velocidadCrucero, int numeroBolsasAire,
+        double capacidadMaletero, boolean camaraReversa, boolean velocidadCrucero, int numeroBolsasAire,
         boolean sensoresColision, boolean sensorTraficoCruzado, boolean asistentePermanenteCarril,
         boolean cuatroPorCuatro) {
     super(marca, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
@@ -62,7 +62,7 @@ public Camioneta(String marca, int modelo, int cambios, double velocidadMaxima, 
 public Camioneta(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
         TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible, boolean enchufable,
         boolean hibridoLigero, int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado,
-        double capacidadMaletero, boolean camaraReversa, double velocidadCrucero, int numeroBolsasAire,
+        double capacidadMaletero, boolean camaraReversa, boolean velocidadCrucero, int numeroBolsasAire,
         boolean sensoresColision, boolean sensorTraficoCruzado, boolean asistentePermanenteCarril,
         boolean cuatroPorCuatro) {
     super(marca, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
@@ -96,11 +96,11 @@ public void setCamaraReversa(boolean camaraReversa) {
     this.camaraReversa = camaraReversa;
 }
 
-public double getVelocidadCrucero() {
+public boolean getVelocidadCrucero() {
     return velocidadCrucero;
 }
 
-public void setVelocidadCrucero(double velocidadCrucero) {
+public void setVelocidadCrucero(boolean velocidadCrucero) {
     this.velocidadCrucero = velocidadCrucero;
 }
 

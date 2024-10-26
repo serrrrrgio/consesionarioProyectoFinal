@@ -11,18 +11,6 @@ public class Bus extends Carro {
     private int numeroSalidasEmergencia;
 
     /**
-     * Variables extras del bus eléctrico
-    */
-    public double autonomia;
-    public double tiempoCarga;
-
-    /**
-     * Variables extras del bus híbrido
-    */
-    public boolean enchufable;
-    public boolean hibridoLigero;
-
-    /**
     * Constructor para un bus a diesel o gasolina
     */
     public Bus(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
