@@ -299,11 +299,11 @@ public class Concesionario {
     /**
      * Método para eliminar un cliente.
      */
-    public void eliminarCliente(String usuario) {
+    public void eliminarCliente(String cedula) {
         Cliente clienteAEliminar = null;
 
         for (Cliente cliente : clientes) {
-            if (cliente.getUsuario().equals(usuario)) {
+            if (cliente.getUsuario().equals(cedula)) {
                 clienteAEliminar = cliente;
                 break;
             }
