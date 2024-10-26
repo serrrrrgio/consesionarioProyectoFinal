@@ -12,12 +12,12 @@ public class Sedan extends Carro {
      * Constructor Combustible o Diesel
      */
 
-    public Sedan(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
+    public Sedan(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
             int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado, boolean camaraReversa,
             double capacidadMaletero, boolean velocidadCrucero, int numeroBolsasAire,
             boolean sensoresColision, boolean sensorTraficoCruzado, boolean asistentePermanenciaCarril) {
-        super(marca, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
+        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
                 capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa);
         this.capacidadMaletero = capacidadMaletero;
         this.velocidadCrucero = velocidadCrucero;
@@ -31,13 +31,13 @@ public class Sedan extends Carro {
      * Constructor Electrico
      */
 
-    public Sedan(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
+    public Sedan(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
             double autonomia, double tiempoCarga, int capacidadPasajeros, int cantidadPuertas, boolean abs,
             boolean aireAcondicionado, boolean camaraReversa, double capacidadMaletero, boolean velocidadCrucero,
             int numeroBolsasAire, boolean sensoresColision, boolean sensorTraficoCruzado,
             boolean asistentePermanenciaCarril) {
-        super(marca, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
+        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
                 autonomia, tiempoCarga, capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa);
         this.capacidadMaletero = capacidadMaletero;
         this.velocidadCrucero = velocidadCrucero;
@@ -51,13 +51,13 @@ public class Sedan extends Carro {
      * Constructor Hibrido
      */
 
-    public Sedan(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
+    public Sedan(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
             boolean enchufable, boolean hibridoLigero, int capacidadPasajeros, int cantidadPuertas, boolean abs,
             boolean aireAcondicionado, boolean camaraReversa, double capacidadMaletero, boolean velocidadCrucero,
             int numeroBolsasAire, boolean sensoresColision, boolean sensorTraficoCruzado,
             boolean asistentePermanenciaCarril) {
-        super(marca, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
+        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
                 enchufable, hibridoLigero, capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa);
         this.capacidadMaletero = capacidadMaletero;
         this.velocidadCrucero = velocidadCrucero;

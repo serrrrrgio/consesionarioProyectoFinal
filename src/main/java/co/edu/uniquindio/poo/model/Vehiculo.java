@@ -6,6 +6,7 @@ public class Vehiculo {
      * Se declaran las variables
      */
     public String marca;
+    public String placa;
     public int modelo;
     public int cambios;
     public double velocidadMaxima;
@@ -30,7 +31,7 @@ public class Vehiculo {
     /**
      * Constructor para un vehículo a diesel o gasolina
      */
-    public Vehiculo(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
+    public Vehiculo(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible) {
         this.marca = marca;
         this.modelo = modelo;
@@ -41,12 +42,13 @@ public class Vehiculo {
         this.transmision = transmision;
         this.estado = estado;
         this.combustible = combustible;
+        this.placa = placa;
     }
 
     /**
      * Constructor para un vehículo eléctrico
      */
-    public Vehiculo(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
+        public Vehiculo(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
             double autonomia, double tiempoCarga) {
         this.marca = marca;
@@ -60,12 +62,13 @@ public class Vehiculo {
         this.combustible = combustible;
         this.autonomia = autonomia;
         this.tiempoCarga = tiempoCarga;
+        this.placa = placa;
     }
 
     /**
      * Constructor para un vehículo híbrido
      */
-    public Vehiculo(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
+    public Vehiculo(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
             boolean enchufable, boolean hibridoLigero) {
         this.marca = marca;
@@ -79,6 +82,7 @@ public class Vehiculo {
         this.combustible = combustible;
         this.enchufable = enchufable;
         this.hibridoLigero = hibridoLigero;
+        this.placa = placa;
     }
 
     /**
@@ -187,4 +191,13 @@ public class Vehiculo {
     public void setHibridoLigero(boolean hibridoLigero) {
         this.hibridoLigero = hibridoLigero;
     }
+
+    public String getPlaca() {
+        return placa;
+    }
+
+    public void setPlaca(String placa) {
+        this.placa = placa;
+    }
+    
 }

@@ -8,11 +8,11 @@ public class Van extends Carro {
      * Constructor Combustible o Diesel
      */
 
-    public Van(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
+    public Van(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
             int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado, boolean camaraReversa,
             double capacidadMaletero, int bolsasAire) {
-        super(marca, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
+        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
                 capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa);
         this.capacidadMaletero = capacidadMaletero;
         this.bolsasAire = bolsasAire;
@@ -22,11 +22,11 @@ public class Van extends Carro {
      * Constructor Electrico
      */
 
-    public Van(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
+    public Van(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
             double autonomia, double tiempoCarga, int capacidadPasajeros, int cantidadPuertas, boolean abs,
             boolean aireAcondicionado, boolean camaraReversa, double capacidadMaletero, int bolsasAire) {
-        super(marca, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
+        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
                 autonomia, tiempoCarga, capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa);
         this.capacidadMaletero = capacidadMaletero;
         this.bolsasAire = bolsasAire;
@@ -36,11 +36,11 @@ public class Van extends Carro {
      * Constructor Hibrido
      */
 
-    public Van(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
+    public Van(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
             boolean enchufable, boolean hibridoLigero, int capacidadPasajeros, int cantidadPuertas, boolean abs,
             boolean aireAcondicionado, boolean camaraReversa, double capacidadMaletero, int bolsasAire) {
-        super(marca, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
+        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
                 enchufable, hibridoLigero, capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa);
         this.capacidadMaletero = capacidadMaletero;
         this.bolsasAire = bolsasAire;

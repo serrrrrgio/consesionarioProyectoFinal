@@ -14,11 +14,11 @@ public class Camion extends Carro{
      * Constructor para Camion a gasolina o diesel
      */
 
-    public Camion(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
+    public Camion(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
             int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado,
             double capacidadCarga, boolean frenosAire, int numeroEjes, TipoCamion tipoCamion) {
-        super(marca, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
+        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
                 capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, false);
         this.capacidadCarga = capacidadCarga;
         this.frenosAire = frenosAire;
@@ -30,12 +30,12 @@ public class Camion extends Carro{
      * Constructor para Camion Electrico
      */
 
-    public Camion(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
+    public Camion(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
             double autonomia, double tiempoCarga, int capacidadPasajeros, int cantidadPuertas, boolean abs,
             boolean aireAcondicionado, double capacidadCarga, boolean frenosAire, int numeroEjes,
             TipoCamion tipoCamion) {
-        super(marca, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
+        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
                 autonomia, tiempoCarga, capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, false);
         this.capacidadCarga = capacidadCarga;
         this.frenosAire = frenosAire;
@@ -47,12 +47,12 @@ public class Camion extends Carro{
      * Constructor para Camion Hibrido
      */
 
-    public Camion(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
+    public Camion(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
             boolean enchufable, boolean hibridoLigero, int capacidadPasajeros, int cantidadPuertas, boolean abs,
             boolean aireAcondicionado, double capacidadCarga, boolean frenosAire, int numeroEjes,
             TipoCamion tipoCamion) {
-        super(marca, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
+        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
                 enchufable, hibridoLigero, capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, false);
         this.capacidadCarga = capacidadCarga;
         this.frenosAire = frenosAire;
