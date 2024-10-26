@@ -27,26 +27,10 @@ public class Cliente extends Persona {
     }
 
     /**
-     * Metodo para comprar vehiculos
+     * Método para agregar una transacción al cliente
      */
-
-    public void comprarVehiculo() {
-
-    }
-
-    /**
-     * Metodo para alquilar vehiculo
-     */
-
-    public void alquilarVehiculo() {
-
-    }
-
-    /**
-     * Metodo para vender vehiculo
-     */
-
-    public void venderVehiculo() {
-
+    public void agregarTransaccion(Transaccion transaccion) {
+        transacciones.add(transaccion);
+        System.out.println("Transacción agregada al cliente " + nombre + " " + apellido);
     }
 }

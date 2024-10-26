@@ -1,5 +1,6 @@
 package co.edu.uniquindio.poo.model;
 
+import java.time.LocalDate;
 import java.util.LinkedList;
 
 public class Concesionario {
@@ -12,7 +13,7 @@ public class Concesionario {
     private LinkedList<Transaccion> transacciones;
     private LinkedList<Empleado> empleados;
     private LinkedList<Cliente> clientes;
-    private LinkedList<Vehiculo> vechiculos;
+    private LinkedList<Vehiculo> vehiculos;
     private Administrador administrador;
 
 
@@ -27,7 +28,7 @@ public class Concesionario {
         this.transacciones = new LinkedList<>();
         this.empleados = new LinkedList<>();
         this.clientes = new LinkedList<>();
-        this.vechiculos = new LinkedList<>();
+        this.vehiculos = new LinkedList<>();
     }
 
     /**
@@ -73,12 +74,12 @@ public class Concesionario {
         this.clientes = clientes;
     }
 
-    public LinkedList<Vehiculo> getVechiculos() {
-        return vechiculos;
+    public LinkedList<Vehiculo> getVehiculos() {
+        return vehiculos;
     }
 
-    public void setVechiculos(LinkedList<Vehiculo> vechiculos) {
-        this.vechiculos = vechiculos;
+    public void setVehiculos(LinkedList<Vehiculo> vehiculos) {
+        this.vehiculos = vehiculos;
     }
 
     public Administrador getAdministrador() {
@@ -122,6 +123,53 @@ public class Concesionario {
      * Método para agregar vehículo
      */
     public void agregarVehiculo(Vehiculo vechiculo){
-        vechiculos.add(vechiculo);
+        vehiculos.add(vechiculo);
+    }
+
+    /**
+     * Método para registrar una compra de vehículo
+     */
+    public void comprarVehiculo(Empleado empleado, Cliente cliente, Vehiculo vehiculo, double precio) {
+        Transaccion transaccion = new Transaccion(LocalDate.now(), precio, TipoTransaccion.COMPRA, empleado, cliente, vehiculo, null);
+        
+        // Agregar transacción de forma independiente al concesionario y al cliente
+        this.agregarTransaccion(transaccion);
+        cliente.agregarTransaccion(transaccion);
+
+        // Actualizar lista de vehículos y fondos
+        vehiculos.remove(vehiculo);
+        fondos -= precio;
+        System.out.println("Compra de vehículo registrada.");
+    }
+
+    /**
+     * Método para registrar una venta de vehículo
+     */
+    public void venderVehiculo(Empleado empleado, Cliente cliente, Vehiculo vehiculo, double precio) {
+        Transaccion transaccion = new Transaccion(LocalDate.now(), precio, TipoTransaccion.VENTA, empleado, cliente, vehiculo, null);
+        
+        // Agregar transacción de forma independiente al concesionario y al cliente
+        this.agregarTransaccion(transaccion);
+        cliente.agregarTransaccion(transaccion);
+
+        // Actualizar lista de vehículos y fondos
+        vehiculos.remove(vehiculo);
+        fondos += precio;
+        System.out.println("Venta de vehículo registrada.");
+    }
+
+    /**
+     * Método para registrar un alquiler de vehículo
+     */
+    public void alquilarVehiculo(Empleado empleado, Cliente cliente, Vehiculo vehiculo, double precio, LocalDate fechaDevolucion) {
+        Transaccion transaccion = new Transaccion(LocalDate.now(), precio, TipoTransaccion.ALQUILER, empleado, cliente, vehiculo, fechaDevolucion);
+        
+        // Agregar transacción de forma independiente al concesionario y al cliente
+        this.agregarTransaccion(transaccion);
+        cliente.agregarTransaccion(transaccion);
+
+        // Actualizar los fondos en caso de alquiler
+        fondos += precio;
+        System.out.println("Alquiler de vehículo registrado.");
     }
 }

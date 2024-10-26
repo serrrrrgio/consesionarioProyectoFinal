@@ -94,10 +94,23 @@ public class Persona {
     }
 
     /**
-     * Metodo para recuperar contraseña
+     * Método para verificar la respuesta de seguridad
      */
-    public void reestablecerContrasena() {
-
+    public boolean verificarRespuestaSeguridad(String respuestaUsuario) {
+        return this.respuesta.equalsIgnoreCase(respuestaUsuario);
     }
+
+    /**
+     * Método para cambiar la contraseña
+     */
+    public boolean cambiarContrasena(String respuestaUsuario, String nuevaContrasena) {
+        if (verificarRespuestaSeguridad(respuestaUsuario)) { 
+            this.contraseña = nuevaContrasena;
+            return true;
+        }
+        return false;
+    }
+
+
 
 }
