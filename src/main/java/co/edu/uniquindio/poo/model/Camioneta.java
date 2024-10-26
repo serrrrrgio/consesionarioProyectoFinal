@@ -2,10 +2,10 @@ package co.edu.uniquindio.poo.model;
 
 public class Camioneta extends Carro {
     /**
-    * Se declaran las variables
-    */
+     * Se declaran las variables
+     */
     private double capacidadMaletero;
-    private boolean camaraReversa;
+
     private boolean velocidadCrucero;
     private int numeroBolsasAire;
     private boolean sensoresColision;
@@ -13,19 +13,18 @@ public class Camioneta extends Carro {
     private boolean asistentePermanenteCarril;
     private boolean cuatroPorCuatro;
 
-/**
- * Constructor para una camioneta a diesel o gasolina
-*/
+    /**
+     * Constructor para una camioneta a diesel o gasolina
+     */
     public Camioneta(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
-        TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
-        int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado,
-        double capacidadMaletero, boolean camaraReversa, boolean velocidadCrucero, int numeroBolsasAire,
-        boolean sensoresColision, boolean sensorTraficoCruzado, boolean asistentePermanenteCarril,
-        boolean cuatroPorCuatro) {
+            TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
+            int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado, boolean camaraReversa,
+            double capacidadMaletero, boolean velocidadCrucero, int numeroBolsasAire,
+            boolean sensoresColision, boolean sensorTraficoCruzado, boolean asistentePermanenteCarril,
+            boolean cuatroPorCuatro) {
         super(marca, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
-                capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado);
+                capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa);
         this.capacidadMaletero = capacidadMaletero;
-        this.camaraReversa = camaraReversa;
         this.velocidadCrucero = velocidadCrucero;
         this.numeroBolsasAire = numeroBolsasAire;
         this.sensoresColision = sensoresColision;
@@ -34,127 +33,120 @@ public class Camioneta extends Carro {
         this.cuatroPorCuatro = cuatroPorCuatro;
     }
 
-/**
- * Constructor para una camioneta eléctrica
- */
-public Camioneta(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
-        TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible, double autonomia,
-        double tiempoCarga, int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado,
-        double capacidadMaletero, boolean camaraReversa, boolean velocidadCrucero, int numeroBolsasAire,
-        boolean sensoresColision, boolean sensorTraficoCruzado, boolean asistentePermanenteCarril,
-        boolean cuatroPorCuatro) {
-    super(marca, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
-            autonomia, tiempoCarga, capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado);
-    this.capacidadMaletero = capacidadMaletero;
-    this.camaraReversa = camaraReversa;
-    this.velocidadCrucero = velocidadCrucero;
-    this.numeroBolsasAire = numeroBolsasAire;
-    this.sensoresColision = sensoresColision;
-    this.sensorTraficoCruzado = sensorTraficoCruzado;
-    this.asistentePermanenteCarril = asistentePermanenteCarril;
-    this.cuatroPorCuatro = cuatroPorCuatro;
-}
+    /**
+     * Constructor para una camioneta eléctrica
+     */
+    public Camioneta(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
+            TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
+            double autonomia,
+            double tiempoCarga, int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado,
+            boolean camaraReversa,
+            double capacidadMaletero, boolean velocidadCrucero, int numeroBolsasAire,
+            boolean sensoresColision, boolean sensorTraficoCruzado, boolean asistentePermanenteCarril,
+            boolean cuatroPorCuatro) {
+        super(marca, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
+                autonomia, tiempoCarga, capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa);
+        this.capacidadMaletero = capacidadMaletero;
+        this.velocidadCrucero = velocidadCrucero;
+        this.numeroBolsasAire = numeroBolsasAire;
+        this.sensoresColision = sensoresColision;
+        this.sensorTraficoCruzado = sensorTraficoCruzado;
+        this.asistentePermanenteCarril = asistentePermanenteCarril;
+        this.cuatroPorCuatro = cuatroPorCuatro;
+    }
 
+    /**
+     * Constructor para una camioneta híbrida
+     */
+    public Camioneta(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
+            TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
+            boolean enchufable,
+            boolean hibridoLigero, int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado,
+            boolean camaraReversa,
+            double capacidadMaletero, boolean velocidadCrucero, int numeroBolsasAire,
+            boolean sensoresColision, boolean sensorTraficoCruzado, boolean asistentePermanenteCarril,
+            boolean cuatroPorCuatro) {
+        super(marca, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
+                enchufable, hibridoLigero, capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa);
+        this.capacidadMaletero = capacidadMaletero;
+        this.velocidadCrucero = velocidadCrucero;
+        this.numeroBolsasAire = numeroBolsasAire;
+        this.sensoresColision = sensoresColision;
+        this.sensorTraficoCruzado = sensorTraficoCruzado;
+        this.asistentePermanenteCarril = asistentePermanenteCarril;
+        this.cuatroPorCuatro = cuatroPorCuatro;
+    }
 
-/**
- * Constructor para una camioneta híbrida
- */
-public Camioneta(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
-        TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible, boolean enchufable,
-        boolean hibridoLigero, int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado,
-        double capacidadMaletero, boolean camaraReversa, boolean velocidadCrucero, int numeroBolsasAire,
-        boolean sensoresColision, boolean sensorTraficoCruzado, boolean asistentePermanenteCarril,
-        boolean cuatroPorCuatro) {
-    super(marca, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
-            enchufable, hibridoLigero, capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado);
-    this.capacidadMaletero = capacidadMaletero;
-    this.camaraReversa = camaraReversa;
-    this.velocidadCrucero = velocidadCrucero;
-    this.numeroBolsasAire = numeroBolsasAire;
-    this.sensoresColision = sensoresColision;
-    this.sensorTraficoCruzado = sensorTraficoCruzado;
-    this.asistentePermanenteCarril = asistentePermanenteCarril;
-    this.cuatroPorCuatro = cuatroPorCuatro;
-}
+    /**
+     * Getters y setters
+     */
+    public double getCapacidadMaletero() {
+        return capacidadMaletero;
+    }
 
-/**
- * Getters y setters
-*/
-public double getCapacidadMaletero() {
-    return capacidadMaletero;
-}
+    public void setCapacidadMaletero(double capacidadMaletero) {
+        this.capacidadMaletero = capacidadMaletero;
+    }
 
-public void setCapacidadMaletero(double capacidadMaletero) {
-    this.capacidadMaletero = capacidadMaletero;
-}
+    public boolean getVelocidadCrucero() {
+        return velocidadCrucero;
+    }
 
-public boolean isCamaraReversa() {
-    return camaraReversa;
-}
+    public void setVelocidadCrucero(boolean velocidadCrucero) {
+        this.velocidadCrucero = velocidadCrucero;
+    }
 
-public void setCamaraReversa(boolean camaraReversa) {
-    this.camaraReversa = camaraReversa;
-}
+    public int getNumeroBolsasAire() {
+        return numeroBolsasAire;
+    }
 
-public boolean getVelocidadCrucero() {
-    return velocidadCrucero;
-}
+    public void setNumeroBolsasAire(int numeroBolsasAire) {
+        this.numeroBolsasAire = numeroBolsasAire;
+    }
 
-public void setVelocidadCrucero(boolean velocidadCrucero) {
-    this.velocidadCrucero = velocidadCrucero;
-}
+    public boolean isSensoresColision() {
+        return sensoresColision;
+    }
 
-public int getNumeroBolsasAire() {
-    return numeroBolsasAire;
-}
+    public void setSensoresColision(boolean sensoresColision) {
+        this.sensoresColision = sensoresColision;
+    }
 
-public void setNumeroBolsasAire(int numeroBolsasAire) {
-    this.numeroBolsasAire = numeroBolsasAire;
-}
+    public boolean isSensorTraficoCruzado() {
+        return sensorTraficoCruzado;
+    }
 
-public boolean isSensoresColision() {
-    return sensoresColision;
-}
+    public void setSensorTraficoCruzado(boolean sensorTraficoCruzado) {
+        this.sensorTraficoCruzado = sensorTraficoCruzado;
+    }
 
-public void setSensoresColision(boolean sensoresColision) {
-    this.sensoresColision = sensoresColision;
-}
+    public boolean isAsistentePermanenteCarril() {
+        return asistentePermanenteCarril;
+    }
 
-public boolean isSensorTraficoCruzado() {
-    return sensorTraficoCruzado;
-}
+    public void setAsistentePermanenteCarril(boolean asistentePermanenteCarril) {
+        this.asistentePermanenteCarril = asistentePermanenteCarril;
+    }
 
-public void setSensorTraficoCruzado(boolean sensorTraficoCruzado) {
-    this.sensorTraficoCruzado = sensorTraficoCruzado;
-}
+    public boolean isCuatroPorCuatro() {
+        return cuatroPorCuatro;
+    }
 
-public boolean isAsistentePermanenteCarril() {
-    return asistentePermanenteCarril;
-}
+    public void setCuatroPorCuatro(boolean cuatroPorCuatro) {
+        this.cuatroPorCuatro = cuatroPorCuatro;
+    }
 
-public void setAsistentePermanenteCarril(boolean asistentePermanenteCarril) {
-    this.asistentePermanenteCarril = asistentePermanenteCarril;
-}
+    /**
+     * toString de Camioneta
+     */
 
-public boolean isCuatroPorCuatro() {
-    return cuatroPorCuatro;
-}
-
-public void setCuatroPorCuatro(boolean cuatroPorCuatro) {
-    this.cuatroPorCuatro = cuatroPorCuatro;
-}
-
-/**
- * toString de Camioneta
-*/
-
-@Override
-public String toString() {
-    return "Camioneta" + super.toString() + "[capacidadMaletero=" + capacidadMaletero + ", camaraReversa=" + camaraReversa
-            + ", velocidadCrucero=" + velocidadCrucero + ", numeroBolsasAire=" + numeroBolsasAire
-            + ", sensoresColision=" + sensoresColision + ", sensorTraficoCruzado=" + sensorTraficoCruzado
-            + ", asistentePermanenteCarril=" + asistentePermanenteCarril + ", cuatroPorCuatro=" + cuatroPorCuatro + "]";
-}
-
+    @Override
+    public String toString() {
+        return "Camioneta" + super.toString() + "[capacidadMaletero=" + capacidadMaletero + ", velocidadCrucero="
+                + velocidadCrucero + ", numeroBolsasAire=" + numeroBolsasAire
+                + ", sensoresColision=" + sensoresColision + ", sensorTraficoCruzado=" + sensorTraficoCruzado
+                + ", asistentePermanenteCarril=" + asistentePermanenteCarril + ", cuatroPorCuatro=" + cuatroPorCuatro
+                + "]";
+    }
 
 }

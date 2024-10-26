@@ -2,7 +2,6 @@ package co.edu.uniquindio.poo.model;
 
 public class Sedan extends Carro {
     private double capacidadMaletero;
-    private boolean cmaraReversa;
     private boolean velocidadCrucero;
     private int numeroBolsasAire;
     private boolean sensoresColision;
@@ -15,13 +14,12 @@ public class Sedan extends Carro {
 
     public Sedan(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
-            int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado,
-            double capacidadMaletero, boolean cmaraReversa, boolean velocidadCrucero, int numeroBolsasAire,
+            int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado, boolean camaraReversa,
+            double capacidadMaletero, boolean velocidadCrucero, int numeroBolsasAire,
             boolean sensoresColision, boolean sensorTraficoCruzado, boolean asistentePermanenciaCarril) {
         super(marca, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
-                capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado);
+                capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa);
         this.capacidadMaletero = capacidadMaletero;
-        this.cmaraReversa = cmaraReversa;
         this.velocidadCrucero = velocidadCrucero;
         this.numeroBolsasAire = numeroBolsasAire;
         this.sensoresColision = sensoresColision;
@@ -36,13 +34,12 @@ public class Sedan extends Carro {
     public Sedan(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
             double autonomia, double tiempoCarga, int capacidadPasajeros, int cantidadPuertas, boolean abs,
-            boolean aireAcondicionado, double capacidadMaletero, boolean cmaraReversa, boolean velocidadCrucero,
+            boolean aireAcondicionado, boolean camaraReversa, double capacidadMaletero, boolean velocidadCrucero,
             int numeroBolsasAire, boolean sensoresColision, boolean sensorTraficoCruzado,
             boolean asistentePermanenciaCarril) {
         super(marca, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
-                autonomia, tiempoCarga, capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado);
+                autonomia, tiempoCarga, capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa);
         this.capacidadMaletero = capacidadMaletero;
-        this.cmaraReversa = cmaraReversa;
         this.velocidadCrucero = velocidadCrucero;
         this.numeroBolsasAire = numeroBolsasAire;
         this.sensoresColision = sensoresColision;
@@ -57,13 +54,12 @@ public class Sedan extends Carro {
     public Sedan(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
             boolean enchufable, boolean hibridoLigero, int capacidadPasajeros, int cantidadPuertas, boolean abs,
-            boolean aireAcondicionado, double capacidadMaletero, boolean cmaraReversa, boolean velocidadCrucero,
+            boolean aireAcondicionado, boolean camaraReversa, double capacidadMaletero, boolean velocidadCrucero,
             int numeroBolsasAire, boolean sensoresColision, boolean sensorTraficoCruzado,
             boolean asistentePermanenciaCarril) {
         super(marca, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
-                enchufable, hibridoLigero, capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado);
+                enchufable, hibridoLigero, capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa);
         this.capacidadMaletero = capacidadMaletero;
-        this.cmaraReversa = cmaraReversa;
         this.velocidadCrucero = velocidadCrucero;
         this.numeroBolsasAire = numeroBolsasAire;
         this.sensoresColision = sensoresColision;
@@ -81,14 +77,6 @@ public class Sedan extends Carro {
 
     public void setCapacidadMaletero(double capacidadMaletero) {
         this.capacidadMaletero = capacidadMaletero;
-    }
-
-    public boolean isCmaraReversa() {
-        return cmaraReversa;
-    }
-
-    public void setCmaraReversa(boolean cmaraReversa) {
-        this.cmaraReversa = cmaraReversa;
     }
 
     public boolean getVelocidadCrucero() {
@@ -137,8 +125,7 @@ public class Sedan extends Carro {
 
     @Override
     public String toString() {
-        return "Sedan: " + super.toString() + "Capacidad Maletero: " + capacidadMaletero + ", cmaraReversa="
-                + cmaraReversa
+        return "Sedan: " + super.toString() + "Capacidad Maletero: " + capacidadMaletero
                 + ", velocidadCrucero=" + velocidadCrucero + ", numeroBolsasAire=" + numeroBolsasAire
                 + ", sensoresColision=" + sensoresColision + ", sensorTraficoCruzado=" + sensorTraficoCruzado
                 + ", asistentePermanenciaCarril=" + asistentePermanenciaCarril + "]";

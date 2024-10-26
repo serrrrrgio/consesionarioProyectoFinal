@@ -5,39 +5,44 @@ public class Carro extends Vehiculo {
     public int cantidadPuertas;
     public boolean abs;
     public boolean aireAcondicionado;
+    private boolean camaraReversa;
 
     public Carro(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
-            int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado) {
+            int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado,
+            boolean camaraReversa) {
         super(marca, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible);
         this.capacidadPasajeros = capacidadPasajeros;
         this.cantidadPuertas = cantidadPuertas;
         this.abs = abs;
         this.aireAcondicionado = aireAcondicionado;
+        this.camaraReversa = camaraReversa;
     }
 
     public Carro(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
             double autonomia, double tiempoCarga, int capacidadPasajeros, int cantidadPuertas, boolean abs,
-            boolean aireAcondicionado) {
+            boolean aireAcondicionado, boolean camaraReversa) {
         super(marca, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
                 autonomia, tiempoCarga);
         this.capacidadPasajeros = capacidadPasajeros;
         this.cantidadPuertas = cantidadPuertas;
         this.abs = abs;
         this.aireAcondicionado = aireAcondicionado;
+        this.camaraReversa = camaraReversa;
     }
 
     public Carro(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
             boolean enchufable, boolean hibridoLigero, int capacidadPasajeros, int cantidadPuertas, boolean abs,
-            boolean aireAcondicionado) {
+            boolean aireAcondicionado, boolean camaraReversa) {
         super(marca, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
                 enchufable, hibridoLigero);
         this.capacidadPasajeros = capacidadPasajeros;
         this.cantidadPuertas = cantidadPuertas;
         this.abs = abs;
         this.aireAcondicionado = aireAcondicionado;
+        this.camaraReversa = camaraReversa;
     }
 
     public int getCapacidadPasajeros() {
@@ -72,13 +77,19 @@ public class Carro extends Vehiculo {
         this.aireAcondicionado = aireAcondicionado;
     }
 
+    public boolean isCamaraReversa() {
+        return camaraReversa;
+    }
+
+    public void setCamaraReversa(boolean camaraReversa) {
+        this.camaraReversa = camaraReversa;
+    }
+
     @Override
     public String toString() {
-        return "Carro" + super.toString()+ "[capacidadPasajeros=" + capacidadPasajeros + ", cantidadPuertas=" + cantidadPuertas + ", abs="
+        return "Carro" + super.toString() + "[capacidadPasajeros=" + capacidadPasajeros + ", cantidadPuertas="
+                + cantidadPuertas + ", abs="
                 + abs + ", aireAcondicionado=" + aireAcondicionado + "]";
     }
 
-    
-
-    
 }
