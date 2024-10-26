@@ -285,4 +285,66 @@ public class Concesionario {
         }
         return fechaPosterior;
     }
+
+    /**
+     * Método para crear un nuevo cliente.
+     */
+    public void crearCliente(String nombre, String apellido, String correo, String cedula, String telefono, String usuario, String contraseña,
+                             String preguntaSeguridad, String respuesta) {
+        Cliente nuevoCliente = new Cliente(nombre, apellido, correo, cedula, telefono, usuario, contraseña, preguntaSeguridad, respuesta);
+        clientes.add(nuevoCliente);
+        System.out.println("Cliente creado: " + nombre + " " + apellido);
+    }
+
+    /**
+     * Método para eliminar un cliente.
+     */
+    public void eliminarCliente(String usuario) {
+        Cliente clienteAEliminar = null;
+
+        for (Cliente cliente : clientes) {
+            if (cliente.getUsuario().equals(usuario)) {
+                clienteAEliminar = cliente;
+                break;
+            }
+        }
+
+        if (clienteAEliminar != null) {
+            clientes.remove(clienteAEliminar);
+            System.out.println("Cliente eliminado: " + clienteAEliminar.getNombre() + " " + clienteAEliminar.getApellido());
+        } else {
+            System.out.println("Cliente no encontrado.");
+        }
+    }
+
+    /**
+     * Método para actualizar un cliente.
+     */
+    public void actualizarCliente(String usuario, String nuevoNombre, String nuevoApellido, String nuevoCorreo, String nuevoTelefono) {
+        for (Cliente cliente : clientes) {
+            if (cliente.getUsuario().equals(usuario)) {
+                cliente.setNombre(nuevoNombre);
+                cliente.setApellido(nuevoApellido);
+                cliente.setCorreo(nuevoCorreo);
+                cliente.setTelefono(nuevoTelefono);
+                System.out.println("Cliente actualizado: " + nuevoNombre + " " + nuevoApellido);
+                return;
+            }
+        }
+        System.out.println("Cliente no encontrado.");
+    }
+
+    /**
+     * Método para verificar la existencia de un cliente.
+     */
+    public boolean verificarCliente(String usuario) {
+        for (Cliente cliente : clientes) {
+            if (cliente.getUsuario().equals(usuario)) {
+                System.out.println("Cliente verificado: " + cliente.getNombre() + " " + cliente.getApellido());
+                return true;
+            }
+        }
+        System.out.println("Cliente no encontrado.");
+        return false;
+    }
 }
