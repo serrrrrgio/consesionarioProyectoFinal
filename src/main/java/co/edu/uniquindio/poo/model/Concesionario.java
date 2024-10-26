@@ -1,7 +1,10 @@
 package co.edu.uniquindio.poo.model;
 
+import java.time.DateTimeException;
 import java.time.LocalDate;
+import java.util.InputMismatchException;
 import java.util.LinkedList;
+import java.util.Scanner;
 
 public class Concesionario {
 
@@ -91,12 +94,7 @@ public class Concesionario {
     }
     
 
-    /**
-     * Método para mostrar mensaje
-     */
-    public static void mostrarMensaje(String mensaje){
-        System.out.println();
-    }
+    
 
     /**
      * Método para agregar transacción
@@ -139,7 +137,7 @@ public class Concesionario {
         // Actualizar lista de vehículos y fondos
         vehiculos.remove(vehiculo);
         fondos -= precio;
-        System.out.println("Compra de vehículo registrada.");
+        mostrarMensaje("Compra de vehículo registrada.");
     }
 
     /**
@@ -155,7 +153,7 @@ public class Concesionario {
         // Actualizar lista de vehículos y fondos
         vehiculos.remove(vehiculo);
         fondos += precio;
-        System.out.println("Venta de vehículo registrada.");
+        mostrarMensaje("Venta de vehículo registrada.");
     }
 
     /**
@@ -170,6 +168,125 @@ public class Concesionario {
 
         // Actualizar los fondos en caso de alquiler
         fondos += precio;
-        System.out.println("Alquiler de vehículo registrado.");
+        mostrarMensaje("Alquiler de vehículo registrado.");
+    }
+
+    
+    /**
+     * Método para mostrar mensaje
+     */
+    public static void mostrarMensaje(String mensaje){
+        System.out.println();
+    }
+
+    /**
+     * Método para mostrar mensaje
+     */
+    public static void mostrarMensajeSeguido(String mensaje){
+        System.out.print(mensaje);
+    }
+
+    /**
+     * Método para ingresar ingresar entero
+    */
+    public static int ingresarEntero(String solicitud){
+        Scanner scanner = new Scanner(System.in);
+        int numero = 0;
+
+        boolean repetir = true;
+        while (repetir){
+            mostrarMensajeSeguido(solicitud); 
+            try{
+                numero = scanner.nextInt();
+                repetir = false;
+            }
+
+            catch (InputMismatchException e){
+                mostrarMensaje("Error: No ingresaste un número.");
+                scanner.next();
+            }
+        }
+        return numero;
+    }
+
+    /**
+     * Método para ingresar ingresar un real
+    */
+    public static double ingresarReal(String solicitud){
+        Scanner scanner = new Scanner(System.in);
+        double numero = 0;
+
+        boolean repetir = true;
+        while (repetir){
+            mostrarMensajeSeguido(solicitud); 
+            try{
+                numero = scanner.nextDouble();
+                repetir = false;
+            }
+
+            catch (InputMismatchException e){
+                mostrarMensaje("Error: No ingresaste un real.");
+                scanner.next();
+            }
+        }
+        return numero;
+    }
+
+    /**
+     * Método para ingresar ingresar texto
+    */
+    public static String ingresarTexto(String solicitud){
+        Scanner scanner = new Scanner(System.in);
+        mostrarMensajeSeguido(solicitud);
+        String texto = scanner.nextLine();
+        return texto;
+    }
+
+        /**
+     * Método para ingresar una fecha
+    */
+    public static LocalDate ingresarFecha(String solicitud){
+        LocalDate fecha = null; 
+        int ano = 0;
+        int mes = 0;
+        int dia = 0;
+
+        boolean repetir = true;
+        while (repetir){
+            mostrarMensaje(solicitud); 
+            try{
+                ano = ingresarEntero("Año: ");
+                mes = ingresarEntero("Mes: ");
+                dia = ingresarEntero("Día: ");
+                
+                fecha = LocalDate.of(ano, mes, dia);
+                repetir = false;
+            }
+
+            catch (DateTimeException e){
+                mostrarMensaje("Error: No ingresaste una fecha válida.");
+            }
+        }
+        return fecha;
+    }
+
+
+    /**
+     * Método para ingresar una fecha posterior a otra
+    */
+    public static LocalDate ingresarFechaPosterior(String solicitud, LocalDate fecha){
+        LocalDate fechaPosterior = null;
+        boolean repetir = true;
+
+        while(repetir){
+            fechaPosterior = ingresarFecha(solicitud);
+            if (fechaPosterior.isAfter(fecha)){
+                repetir = false;
+            }
+            else{
+                mostrarMensaje("Error: La nueva fecha no es posterior a la anterior, por favor ingresela nuevamente");
+            }
+        }
+        return fechaPosterior;
     }
 }
