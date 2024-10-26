@@ -41,7 +41,8 @@ public class Empleado extends Persona {
     /**
      * Metodo para agregar Transacciones
      */
-    public void agregarTransaccion() {
-
+    public void agregarTransaccion(Transaccion transaccion) {
+        transacciones.add(transaccion);
+        System.out.println("Transacción agregada al empleado: " + nombre + " " + apellido);
     }
 }
