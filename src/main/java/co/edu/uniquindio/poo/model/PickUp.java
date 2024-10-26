@@ -13,11 +13,11 @@ public class PickUp extends Carro{
      * Constructor para PickUp a gasolina o diesel
      */
 
-    public PickUp(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
+    public PickUp(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
             int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado, boolean camaraReversa,
             int numeroBolsasAire, boolean cuatroPorCuatro, double capacidadCajaCarga) {
-        super(marca, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
+        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
                 capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa);
         this.numeroBolsasAire = numeroBolsasAire;
         this.cuatroPorCuatro = cuatroPorCuatro;
@@ -28,12 +28,12 @@ public class PickUp extends Carro{
      * Constructor para PickUp Electrico
      */
 
-    public PickUp(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
+    public PickUp(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
             double autonomia, double tiempoCarga, int capacidadPasajeros, int cantidadPuertas, boolean abs,
             boolean aireAcondicionado, boolean camaraReversa, int numeroBolsasAire, boolean cuatroPorCuatro,
             double capacidadCajaCarga) {
-        super(marca, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
+        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
                 autonomia, tiempoCarga, capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa);
         this.numeroBolsasAire = numeroBolsasAire;
         this.cuatroPorCuatro = cuatroPorCuatro;
@@ -44,12 +44,12 @@ public class PickUp extends Carro{
      * Constructor para PickUP Hibrido
      */
 
-    public PickUp(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
+    public PickUp(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
             boolean enchufable, boolean hibridoLigero, int capacidadPasajeros, int cantidadPuertas, boolean abs,
             boolean aireAcondicionado, boolean camaraReversa, int numeroBolsasAire, boolean cuatroPorCuatro,
             double capacidadCajaCarga) {
-        super(marca, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
+        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
                 enchufable, hibridoLigero, capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa);
         this.numeroBolsasAire = numeroBolsasAire;
         this.cuatroPorCuatro = cuatroPorCuatro;

@@ -12,13 +12,13 @@ public class Bus extends Carro {
     /**
      * Constructor para un bus a diesel o gasolina
      */
-    public Bus(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
+    public Bus(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
             int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado, boolean camaraReversa,
             double capacidadMaletero, int numeroBolsasAire, int numeroEjes,
             int numeroSalidasEmergencia, double autonomia, double tiempoCarga, boolean enchufable,
             boolean hibridoLigero) {
-        super(marca, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
+        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
                 capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa);
         this.capacidadMaletero = capacidadMaletero;
         this.numeroBolsasAire = numeroBolsasAire;
@@ -33,13 +33,13 @@ public class Bus extends Carro {
     /**
      * Constructor para un bus eléctrico
      */
-    public Bus(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
+    public Bus(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
             double autonomia, double tiempoCarga, int capacidadPasajeros, int cantidadPuertas, boolean abs,
             boolean aireAcondicionado, boolean camaraReversa, double capacidadMaletero, int numeroBolsasAire,
             int numeroEjes, int numeroSalidasEmergencia, double autonomia2, double tiempoCarga2, boolean enchufable,
             boolean hibridoLigero) {
-        super(marca, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
+        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
                 autonomia, tiempoCarga, capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa);
         this.capacidadMaletero = capacidadMaletero;
         this.numeroBolsasAire = numeroBolsasAire;
@@ -54,13 +54,13 @@ public class Bus extends Carro {
     /**
      * Constructor para un bus híbrido
      */
-    public Bus(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
+    public Bus(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
             boolean enchufable, boolean hibridoLigero, int capacidadPasajeros, int cantidadPuertas, boolean abs,
             boolean aireAcondicionado, boolean camaraReversa, double capacidadMaletero, int numeroBolsasAire,
             int numeroEjes, int numeroSalidasEmergencia, double autonomia, double tiempoCarga, boolean enchufable2,
             boolean hibridoLigero2) {
-        super(marca, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
+        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
                 enchufable, hibridoLigero, capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa);
         this.capacidadMaletero = capacidadMaletero;
         this.numeroBolsasAire = numeroBolsasAire;

@@ -14,11 +14,11 @@ public class Deportivo extends Carro {
      * Constructor Combustible o Diesel
      */
 
-    public Deportivo(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
+    public Deportivo(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
             int capacidadPasajeros, int cantidadPuertas, boolean abs, int numeroCaballosFuerza, int numeroBolsasAire,
             double tiempoAlcanzar100kmh) {
-        super(marca, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
+        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
                 capacidadPasajeros, cantidadPuertas, abs, false, false);
         this.numeroCaballosFuerza = numeroCaballosFuerza;
         this.numeroBolsasAire = numeroBolsasAire;
@@ -29,12 +29,12 @@ public class Deportivo extends Carro {
      * Constructor Electrico
      */
 
-    public Deportivo(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
+    public Deportivo(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
             double autonomia, double tiempoCarga, int capacidadPasajeros, int cantidadPuertas, boolean abs,
             int numeroCaballosFuerza, int numeroBolsasAire,
             double tiempoAlcanzar100kmh) {
-        super(marca, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
+        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
                 autonomia, tiempoCarga, capacidadPasajeros, cantidadPuertas, abs, false, false);
         this.numeroCaballosFuerza = numeroCaballosFuerza;
         this.numeroBolsasAire = numeroBolsasAire;
@@ -45,12 +45,12 @@ public class Deportivo extends Carro {
      * Constructor Hibrido
      */
 
-    public Deportivo(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
+    public Deportivo(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
             boolean enchufable, boolean hibridoLigero, int capacidadPasajeros, int cantidadPuertas, boolean abs,
             int numeroCaballosFuerza, int numeroBolsasAire,
             double tiempoAlcanzar100kmh) {
-        super(marca, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
+        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
                 enchufable, hibridoLigero, capacidadPasajeros, cantidadPuertas, abs, false, false);
         this.numeroCaballosFuerza = numeroCaballosFuerza;
         this.numeroBolsasAire = numeroBolsasAire;
