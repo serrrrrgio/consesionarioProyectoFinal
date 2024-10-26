@@ -87,5 +87,41 @@ public class Concesionario {
 
     public void setAdministrador(Administrador administrador) {
         this.administrador = administrador;
-    }   
+    }
+    
+
+    /**
+     * Método para mostrar mensaje
+     */
+    public static void mostrarMensaje(String mensaje){
+        System.out.println();
+    }
+
+    /**
+     * Método para agregar transacción
+     */
+    public void agregarTransaccion(Transaccion transaccion){
+        transacciones.add(transaccion);
+    }
+
+    /**
+     * Método para agregar empleado
+     */
+    public void agregarEmpleado(Empleado transaccion){
+        empleados.add(transaccion);
+    }
+
+    /**
+     * Método para agregar cliente
+     */
+    public void agregarCliente(Cliente cliente){
+        clientes.add(cliente);
+    }
+
+    /**
+     * Método para agregar vehículo
+     */
+    public void agregarVehiculo(Vehiculo vechiculo){
+        vechiculos.add(vechiculo);
+    }
 }
