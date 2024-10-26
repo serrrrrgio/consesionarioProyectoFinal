@@ -139,17 +139,4 @@ public class Bus extends Carro {
     public void setHibridoLigero(boolean hibridoLigero) {
         this.hibridoLigero = hibridoLigero;
     }
-
-    /**
-     * toString de Bus
-     */
-    @Override
-    public String toString() {
-        return "Bus" + super.toString() + "[capacidadMaletero=" + capacidadMaletero + ", numeroBolsasAire="
-                + numeroBolsasAire + ", numeroEjes=" + numeroEjes + ", numeroSalidasEmergencia="
-                + numeroSalidasEmergencia
-                + ", autonomia=" + autonomia + ", tiempoCarga=" + tiempoCarga + ", enchufable=" + enchufable
-                + ", hibridoLigero=" + hibridoLigero + "]";
-    }
-
 }

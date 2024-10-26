@@ -135,18 +135,4 @@ public class Camioneta extends Carro {
     public void setCuatroPorCuatro(boolean cuatroPorCuatro) {
         this.cuatroPorCuatro = cuatroPorCuatro;
     }
-
-    /**
-     * toString de Camioneta
-     */
-
-    @Override
-    public String toString() {
-        return "Camioneta" + super.toString() + "[capacidadMaletero=" + capacidadMaletero + ", velocidadCrucero="
-                + velocidadCrucero + ", numeroBolsasAire=" + numeroBolsasAire
-                + ", sensoresColision=" + sensoresColision + ", sensorTraficoCruzado=" + sensorTraficoCruzado
-                + ", asistentePermanenteCarril=" + asistentePermanenteCarril + ", cuatroPorCuatro=" + cuatroPorCuatro
-                + "]";
-    }
-
 }

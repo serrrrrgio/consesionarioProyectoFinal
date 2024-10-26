@@ -94,16 +94,6 @@ public class Persona {
     }
 
     /**
-     * toString
-     */
-    @Override
-    public String toString() {
-        return "Persona [nombre=" + nombre + ", apellido=" + apellido + ", correo=" + correo + ", telefono=" + telefono
-                + ", usuario=" + usuario + ", contraseña=" + contraseña + ", preguntaSeguridad=" + preguntaSeguridad
-                + ", respuesta=" + respuesta + "]";
-    }
-
-    /**
      * Metodo para recuperar contraseña
      */
     public void reestablecerContrasena() {

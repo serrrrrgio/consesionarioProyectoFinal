@@ -84,12 +84,4 @@ public class Carro extends Vehiculo {
     public void setCamaraReversa(boolean camaraReversa) {
         this.camaraReversa = camaraReversa;
     }
-
-    @Override
-    public String toString() {
-        return "Carro" + super.toString() + "[capacidadPasajeros=" + capacidadPasajeros + ", cantidadPuertas="
-                + cantidadPuertas + ", abs="
-                + abs + ", aireAcondicionado=" + aireAcondicionado + "]";
-    }
-
 }

@@ -44,12 +44,4 @@ public class Empleado extends Persona {
     public void agregarTransaccion() {
 
     }
-
-    /**
-     * ToString
-     */
-    @Override
-    public String toString() {
-        return "Empleado: " + super.toString() + "Salario: " + salario;
-    }
 }

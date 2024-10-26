@@ -49,14 +49,4 @@ public class Cliente extends Persona {
     public void venderVehiculo() {
 
     }
-
-    /**
-     * toString
-     */
-
-    @Override
-    public String toString() {
-        return "Cliente: " + super.toString();
-    }
-
 }

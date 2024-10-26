@@ -29,9 +29,4 @@ public class Moto extends Vehiculo {
         super(marca, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
                 enchufable, hibridoLigero);
     }
-
-    @Override
-    public String toString() {
-        return "Moto: " + super.toString();
-    }
 }

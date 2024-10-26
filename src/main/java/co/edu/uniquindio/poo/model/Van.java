@@ -65,15 +65,4 @@ public class Van extends Carro {
     public void setBolsasAire(int bolsasAire) {
         this.bolsasAire = bolsasAire;
     }
-
-    /**
-     * toString
-     */
-
-    @Override
-    public String toString() {
-        return "Van: " + super.toString() + "capacidad Maletero: " + capacidadMaletero + ", bolsasAire="
-                + bolsasAire + "]";
-    }
-
 }

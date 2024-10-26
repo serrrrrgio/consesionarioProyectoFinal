@@ -10,14 +10,4 @@ public class Administrador extends Persona{
     String preguntaSeguridad, String respuesta){
         super(nombre, apellido, correo, telefono, usuario, contraseña, preguntaSeguridad, respuesta);
     }
-
-    /**
-    * toString
-    */
-
-    @Override
-    public String toString() {
-        return "Administrador: " + super.toString();
-    }
-    
 }

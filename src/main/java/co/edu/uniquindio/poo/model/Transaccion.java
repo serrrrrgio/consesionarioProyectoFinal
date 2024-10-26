@@ -68,14 +68,4 @@ public class Transaccion {
     public void setVechiulo(Vehiculo vechiulo) {
         this.vechiulo = vechiulo;
     }
-
-    /**
-     * ToString
-     */
-    @Override
-    public String toString() {
-        return "Transaccion [fecha=" + fecha + ", precio=" + precio + ", tipoTransaccion=" + tipoTransaccion
-                + ", empleado=" + empleado + ", cliente=" + cliente + ", vechiulo=" + vechiulo + "]";
-    }
-
 }

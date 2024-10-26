@@ -1,6 +1,11 @@
 package co.edu.uniquindio.poo.model;
 
 public class Deportivo extends Carro {
+
+    /**
+     * Se declaran las variables
+     */
+
     private int numeroCaballosFuerza;
     private int numeroBolsasAire;
     private double tiempoAlcanzar100kmh;
@@ -11,7 +16,8 @@ public class Deportivo extends Carro {
 
     public Deportivo(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
-            int capacidadPasajeros, int cantidadPuertas, boolean abs, int numeroCaballosFuerza, int numeroBolsasAire, double tiempoAlcanzar100kmh) {
+            int capacidadPasajeros, int cantidadPuertas, boolean abs, int numeroCaballosFuerza, int numeroBolsasAire,
+            double tiempoAlcanzar100kmh) {
         super(marca, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
                 capacidadPasajeros, cantidadPuertas, abs, false, false);
         this.numeroCaballosFuerza = numeroCaballosFuerza;
@@ -25,7 +31,8 @@ public class Deportivo extends Carro {
 
     public Deportivo(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
-            double autonomia, double tiempoCarga, int capacidadPasajeros, int cantidadPuertas, boolean abs, int numeroCaballosFuerza, int numeroBolsasAire,
+            double autonomia, double tiempoCarga, int capacidadPasajeros, int cantidadPuertas, boolean abs,
+            int numeroCaballosFuerza, int numeroBolsasAire,
             double tiempoAlcanzar100kmh) {
         super(marca, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
                 autonomia, tiempoCarga, capacidadPasajeros, cantidadPuertas, abs, false, false);
@@ -40,7 +47,8 @@ public class Deportivo extends Carro {
 
     public Deportivo(String marca, int modelo, int cambios, double velocidadMaxima, double cilindraje,
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
-            boolean enchufable, boolean hibridoLigero, int capacidadPasajeros, int cantidadPuertas, boolean abs, int numeroCaballosFuerza, int numeroBolsasAire,
+            boolean enchufable, boolean hibridoLigero, int capacidadPasajeros, int cantidadPuertas, boolean abs,
+            int numeroCaballosFuerza, int numeroBolsasAire,
             double tiempoAlcanzar100kmh) {
         super(marca, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
                 enchufable, hibridoLigero, capacidadPasajeros, cantidadPuertas, abs, false, false);
@@ -76,15 +84,4 @@ public class Deportivo extends Carro {
     public void setTiempoAlcanzar100kmh(double tiempoAlcanzar100kmh) {
         this.tiempoAlcanzar100kmh = tiempoAlcanzar100kmh;
     }
-
-    /**
-     * toString
-     */
-
-    @Override
-    public String toString() {
-        return "Deportivo: " + super.toString() + " Numero caballos Fuerza: " + numeroCaballosFuerza
-                + ", numeroBolsasAire=" + numeroBolsasAire + ", tiempoAlcanzar100kmh=" + tiempoAlcanzar100kmh + "]";
-    }
-
 }

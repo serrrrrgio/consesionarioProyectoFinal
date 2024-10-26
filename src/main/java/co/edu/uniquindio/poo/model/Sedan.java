@@ -118,17 +118,4 @@ public class Sedan extends Carro {
     public void setAsistentePermanenciaCarril(boolean asistentePermanenciaCarril) {
         this.asistentePermanenciaCarril = asistentePermanenciaCarril;
     }
-
-    /**
-     * toString
-     */
-
-    @Override
-    public String toString() {
-        return "Sedan: " + super.toString() + "Capacidad Maletero: " + capacidadMaletero
-                + ", velocidadCrucero=" + velocidadCrucero + ", numeroBolsasAire=" + numeroBolsasAire
-                + ", sensoresColision=" + sensoresColision + ", sensorTraficoCruzado=" + sensorTraficoCruzado
-                + ", asistentePermanenciaCarril=" + asistentePermanenciaCarril + "]";
-    }
-
 }

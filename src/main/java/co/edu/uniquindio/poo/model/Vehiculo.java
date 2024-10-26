@@ -187,16 +187,4 @@ public class Vehiculo {
     public void setHibridoLigero(boolean hibridoLigero) {
         this.hibridoLigero = hibridoLigero;
     }
-
-    /**
-     * toString de vehículo
-     */
-    @Override
-    public String toString() {
-        return "Vehiculo [marca=" + marca + ", modelo=" + modelo + ", cambios=" + cambios + ", velocidadMaxima="
-                + velocidadMaxima + ", cilindraje=" + cilindraje + ", tipoRegistro=" + tipoRegistro + ", transmision="
-                + transmision + ", estado=" + estado + ", combustible=" + combustible + ", autonomia=" + autonomia
-                + ", tiempoCarga=" + tiempoCarga + ", enchufable=" + enchufable + ", hibridoLigero=" + hibridoLigero
-                + "]";
-    }
 }
