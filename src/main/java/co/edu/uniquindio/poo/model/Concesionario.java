@@ -131,7 +131,7 @@ public class Concesionario {
         Transaccion transaccion = new Transaccion(LocalDate.now(), precio, TipoTransaccion.COMPRA, empleado, cliente, vehiculo, null);
         
         // Agregar transacción de forma independiente al concesionario y al cliente
-        this.agregarTransaccion(transaccion);
+        agregarTransaccion(transaccion);
         cliente.agregarTransaccion(transaccion);
 
         // Actualizar lista de vehículos y fondos
@@ -147,7 +147,7 @@ public class Concesionario {
         Transaccion transaccion = new Transaccion(LocalDate.now(), precio, TipoTransaccion.VENTA, empleado, cliente, vehiculo, null);
         
         // Agregar transacción de forma independiente al concesionario y al cliente
-        this.agregarTransaccion(transaccion);
+        agregarTransaccion(transaccion);
         cliente.agregarTransaccion(transaccion);
 
         // Actualizar lista de vehículos y fondos
@@ -163,7 +163,7 @@ public class Concesionario {
         Transaccion transaccion = new Transaccion(LocalDate.now(), precio, TipoTransaccion.ALQUILER, empleado, cliente, vehiculo, fechaDevolucion);
         
         // Agregar transacción de forma independiente al concesionario y al cliente
-        this.agregarTransaccion(transaccion);
+        agregarTransaccion(transaccion);
         cliente.agregarTransaccion(transaccion);
 
         // Actualizar los fondos en caso de alquiler
@@ -171,7 +171,6 @@ public class Concesionario {
         mostrarMensaje("Alquiler de vehículo registrado.");
     }
 
-    
     /**
      * Método para mostrar mensaje
      */

@@ -4,6 +4,7 @@ public class Persona {
     public String nombre;
     public String apellido;
     public String correo;
+    public String cedula;
     public String telefono;
     public String usuario;
     public String contraseña;
@@ -14,11 +15,12 @@ public class Persona {
      * Constructor
      */
 
-    public Persona(String nombre, String apellido, String correo, String telefono, String usuario, String contraseña,
+    public Persona(String nombre, String apellido, String correo, String cedula, String telefono, String usuario, String contraseña,
             String preguntaSeguridad, String respuesta) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
+        this.cedula = cedula; 
         this.telefono = telefono;
         this.usuario = usuario;
         this.contraseña = contraseña;
@@ -51,6 +53,14 @@ public class Persona {
 
     public void setCorreo(String correo) {
         this.correo = correo;
+    }
+
+    public String getCedula() {
+        return cedula;
+    }
+
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
     }
 
     public String getTelefono() {
@@ -97,7 +107,7 @@ public class Persona {
      * Método para verificar la respuesta de seguridad
      */
     public boolean verificarRespuestaSeguridad(String respuestaUsuario) {
-        return this.respuesta.equalsIgnoreCase(respuestaUsuario);
+        return respuesta.equalsIgnoreCase(respuestaUsuario);
     }
 
     /**
@@ -110,7 +120,4 @@ public class Persona {
         }
         return false;
     }
-
-
-
 }
