@@ -104,21 +104,4 @@ public class Persona {
         this.respuesta = respuesta;
     }
 
-    /**
-     * Método para verificar la respuesta de seguridad
-     */
-    public boolean verificarRespuestaSeguridad(String respuestaUsuario) {
-        return respuesta.equalsIgnoreCase(respuestaUsuario);
-    }
-
-    /**
-     * Método para cambiar la contraseña
-     */
-    public boolean cambiarContrasena(String respuestaUsuario, String nuevaContrasena) {
-        if (verificarRespuestaSeguridad(respuestaUsuario)) {
-            this.contraseña = nuevaContrasena;
-            return true;
-        }
-        return false;
-    }
 }

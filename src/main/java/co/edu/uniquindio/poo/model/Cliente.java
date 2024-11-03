@@ -25,12 +25,3 @@ public class Cliente extends Persona {
     public void setTransacciones(LinkedList<Transaccion> transacciones) {
         this.transacciones = transacciones;
     }
-
-    /**
-     * Método para agregar una transacción al cliente
-     */
-    public void agregarTransaccion(Transaccion transaccion) {
-        transacciones.add(transaccion);
-        System.out.println("Transacción agregada al cliente " + nombre + " " + apellido);
-    }
-}

@@ -31,18 +31,4 @@ public class Empleado extends Persona {
         return transacciones;
     }
 
-    /**
-     * toString
-     */
-    public void setTransacciones(LinkedList<Transaccion> transacciones) {
-        this.transacciones = transacciones;
-    }
-
-    /**
-     * Metodo para agregar Transacciones
-     */
-    public void agregarTransaccion(Transaccion transaccion) {
-        transacciones.add(transaccion);
-        System.out.println("Transacción agregada al empleado: " + nombre + " " + apellido);
-    }
 }
