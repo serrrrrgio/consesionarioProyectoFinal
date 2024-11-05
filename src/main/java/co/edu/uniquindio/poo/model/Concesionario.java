@@ -197,6 +197,17 @@ public class Concesionario {
     }
 
     /**
+     * Método para crear un nuevo cliente.
+     */
+    public Empleado crearEmpleado(String nombre, String apellido, String correo, String cedula, String telefono,
+            String usuario,
+            String contraseña,
+            String preguntaSeguridad, String respuesta, double salario) {
+        return new Empleado(nombre, apellido, correo, cedula, telefono, usuario, contraseña, preguntaSeguridad,
+                respuesta, salario);
+    }
+
+    /**
      * Método para verificar la existencia de un empleado con su usuario.
      */
     public boolean empleadoExistente(String usuario) {
@@ -298,6 +309,346 @@ public class Concesionario {
             vans.remove((Van) vehiculo);
         }
         vehiculos.remove(vehiculo);
+    }
+
+    // Método para actualizar un bus verificando que no exista uno con la
+    // misma placa
+    public boolean actualizarBus(Bus seleccionada, String marca, String placa, int modelo, int cambios,
+            double velocidadMaxima, double cilindraje,
+            TipoRegistro tipoRegistro, Transmision transmision, Estado estado,
+            int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado, boolean camaraReversa,
+            double capacidadMaletero, int numeroBolsasAire, int numeroEjes,
+            int numeroSalidasEmergencia, Combustible combustible, double autonomia, double tiempoCarga,
+            boolean enchufable,
+            boolean hibridoLigero) {
+        boolean actualizado = true;
+        for (Bus bus : buses) {
+            if (bus != seleccionada && bus.getPlaca().equals(placa)) {
+                actualizado = false;
+                return actualizado;
+            }
+        }
+        seleccionada.setMarca(marca);
+        seleccionada.setPlaca(placa);
+        seleccionada.setModelo(modelo);
+        seleccionada.setCambios(cambios);
+        seleccionada.setVelocidadMaxima(velocidadMaxima);
+        seleccionada.setCilindraje(cilindraje);
+        seleccionada.setTipoRegistro(tipoRegistro);
+        seleccionada.setTransmision(transmision);
+        seleccionada.setEstado(estado);
+        seleccionada.setCapacidadPasajeros(capacidadPasajeros);
+        seleccionada.setCantidadPuertas(cantidadPuertas);
+        seleccionada.setAbs(abs);
+        seleccionada.setAireAcondicionado(aireAcondicionado);
+        seleccionada.setCamaraReversa(camaraReversa);
+        seleccionada.setCapacidadMaletero(capacidadMaletero);
+        seleccionada.setNumeroBolsasAire(numeroBolsasAire);
+        seleccionada.setNumeroEjes(numeroEjes);
+        seleccionada.setNumeroSalidasEmergencia(numeroSalidasEmergencia);
+        seleccionada.setCombustible(combustible);
+        seleccionada.setAutonomia(autonomia);
+        seleccionada.setTiempoCarga(tiempoCarga);
+        seleccionada.setEnchufable(enchufable);
+        seleccionada.setHibridoLigero(hibridoLigero);
+        return actualizado;
+    }
+
+    // Método para actualizar un camión verificando que no exista uno con la misma
+    // placa
+    public boolean actualizarCamion(Camion seleccionada, String marca, String placa, int modelo, int cambios,
+            double velocidadMaxima, double cilindraje,
+            TipoRegistro tipoRegistro, Transmision transmision, Estado estado,
+            int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado,
+            double capacidadCarga, boolean frenosAire, int numeroEjes, TipoCamion tipoCamion, Combustible combustible,
+            double autonomia, double tiempoCarga, boolean enchufable, boolean hibridoLigero) {
+
+        boolean actualizado = true;
+        for (Camion camion : camiones) {
+            if (camion != seleccionada && camion.getPlaca().equals(placa)) {
+                actualizado = false;
+                return actualizado;
+            }
+        }
+
+        seleccionada.setMarca(marca);
+        seleccionada.setPlaca(placa);
+        seleccionada.setModelo(modelo);
+        seleccionada.setCambios(cambios);
+        seleccionada.setVelocidadMaxima(velocidadMaxima);
+        seleccionada.setCilindraje(cilindraje);
+        seleccionada.setTipoRegistro(tipoRegistro);
+        seleccionada.setTransmision(transmision);
+        seleccionada.setEstado(estado);
+        seleccionada.setCapacidadPasajeros(capacidadPasajeros);
+        seleccionada.setCantidadPuertas(cantidadPuertas);
+        seleccionada.setAbs(abs);
+        seleccionada.setAireAcondicionado(aireAcondicionado);
+        seleccionada.setCapacidadCarga(capacidadCarga);
+        seleccionada.setFrenosAire(frenosAire);
+        seleccionada.setNumeroEjes(numeroEjes);
+        seleccionada.setTipoCamion(tipoCamion);
+        seleccionada.setCombustible(combustible);
+        seleccionada.setAutonomia(autonomia);
+        seleccionada.setTiempoCarga(tiempoCarga);
+        seleccionada.setEnchufable(enchufable);
+        seleccionada.setHibridoLigero(hibridoLigero);
+
+        return actualizado;
+    }
+
+    // Método para actualizar una camioneta verificando que no exista una con la
+    // misma placa
+    public boolean actualizarCamioneta(Camioneta seleccionada, String marca, String placa, int modelo, int cambios,
+            double velocidadMaxima, double cilindraje, TipoRegistro tipoRegistro, Transmision transmision,
+            Estado estado,
+            int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado, boolean camaraReversa,
+            double capacidadMaletero, boolean velocidadCrucero, int numeroBolsasAire, boolean sensoresColision,
+            boolean sensorTraficoCruzado, boolean asistentePermanenteCarril, boolean cuatroPorCuatro,
+            Combustible combustible, double autonomia, double tiempoCarga, boolean enchufable, boolean hibridoLigero) {
+
+        boolean actualizado = true;
+        for (Camioneta camioneta : camionetas) {
+            if (camioneta != seleccionada && camioneta.getPlaca().equals(placa)) {
+                actualizado = false;
+                return actualizado;
+            }
+        }
+
+        seleccionada.setMarca(marca);
+        seleccionada.setPlaca(placa);
+        seleccionada.setModelo(modelo);
+        seleccionada.setCambios(cambios);
+        seleccionada.setVelocidadMaxima(velocidadMaxima);
+        seleccionada.setCilindraje(cilindraje);
+        seleccionada.setTipoRegistro(tipoRegistro);
+        seleccionada.setTransmision(transmision);
+        seleccionada.setEstado(estado);
+        seleccionada.setCapacidadPasajeros(capacidadPasajeros);
+        seleccionada.setCantidadPuertas(cantidadPuertas);
+        seleccionada.setAbs(abs);
+        seleccionada.setAireAcondicionado(aireAcondicionado);
+        seleccionada.setCamaraReversa(camaraReversa);
+        seleccionada.setCapacidadMaletero(capacidadMaletero);
+        seleccionada.setVelocidadCrucero(velocidadCrucero);
+        seleccionada.setNumeroBolsasAire(numeroBolsasAire);
+        seleccionada.setSensoresColision(sensoresColision);
+        seleccionada.setSensorTraficoCruzado(sensorTraficoCruzado);
+        seleccionada.setAsistentePermanenteCarril(asistentePermanenteCarril);
+        seleccionada.setCuatroPorCuatro(cuatroPorCuatro);
+        seleccionada.setCombustible(combustible);
+        seleccionada.setAutonomia(autonomia);
+        seleccionada.setTiempoCarga(tiempoCarga);
+        seleccionada.setEnchufable(enchufable);
+        seleccionada.setHibridoLigero(hibridoLigero);
+
+        return actualizado;
+    }
+
+    // Método para actualizar un deportivo verificando que no exista uno con la
+    // misma placa
+    public boolean actualizarDeportivo(Deportivo seleccionada, String marca, String placa, int modelo, int cambios,
+            double velocidadMaxima, double cilindraje, TipoRegistro tipoRegistro, Transmision transmision,
+            Estado estado,
+            int capacidadPasajeros, int cantidadPuertas, boolean abs, int numeroCaballosFuerza, int numeroBolsasAire,
+            double tiempoAlcanzar100kmh, Combustible combustible, double autonomia, double tiempoCarga,
+            boolean enchufable, boolean hibridoLigero) {
+
+        boolean actualizado = true;
+        for (Deportivo deportivo : deportivos) {
+            if (deportivo != seleccionada && deportivo.getPlaca().equals(placa)) {
+                actualizado = false;
+                return actualizado;
+            }
+        }
+
+        seleccionada.setMarca(marca);
+        seleccionada.setPlaca(placa);
+        seleccionada.setModelo(modelo);
+        seleccionada.setCambios(cambios);
+        seleccionada.setVelocidadMaxima(velocidadMaxima);
+        seleccionada.setCilindraje(cilindraje);
+        seleccionada.setTipoRegistro(tipoRegistro);
+        seleccionada.setTransmision(transmision);
+        seleccionada.setEstado(estado);
+        seleccionada.setCapacidadPasajeros(capacidadPasajeros);
+        seleccionada.setCantidadPuertas(cantidadPuertas);
+        seleccionada.setAbs(abs);
+        seleccionada.setNumeroCaballosFuerza(numeroCaballosFuerza);
+        seleccionada.setNumeroBolsasAire(numeroBolsasAire);
+        seleccionada.setTiempoAlcanzar100kmh(tiempoAlcanzar100kmh);
+        seleccionada.setCombustible(combustible);
+        seleccionada.setAutonomia(autonomia);
+        seleccionada.setTiempoCarga(tiempoCarga);
+        seleccionada.setEnchufable(enchufable);
+        seleccionada.setHibridoLigero(hibridoLigero);
+
+        return actualizado;
+    }
+
+    // Método para actualizar una moto verificando que no exista una con la misma
+    // placa
+    public boolean actualizarMoto(Moto seleccionada, String marca, String placa, int modelo, int cambios,
+            double velocidadMaxima, double cilindraje, TipoRegistro tipoRegistro, Transmision transmision,
+            Estado estado,
+            Combustible combustible, double autonomia, double tiempoCarga, boolean enchufable, boolean hibridoLigero) {
+
+        boolean actualizado = true;
+        for (Moto moto : motos) {
+            if (moto != seleccionada && moto.getPlaca().equals(placa)) {
+                actualizado = false;
+                return actualizado;
+            }
+        }
+
+        seleccionada.setMarca(marca);
+        seleccionada.setPlaca(placa);
+        seleccionada.setModelo(modelo);
+        seleccionada.setCambios(cambios);
+        seleccionada.setVelocidadMaxima(velocidadMaxima);
+        seleccionada.setCilindraje(cilindraje);
+        seleccionada.setTipoRegistro(tipoRegistro);
+        seleccionada.setTransmision(transmision);
+        seleccionada.setEstado(estado);
+        seleccionada.setCombustible(combustible);
+        seleccionada.setAutonomia(autonomia);
+        seleccionada.setTiempoCarga(tiempoCarga);
+        seleccionada.setEnchufable(enchufable);
+        seleccionada.setHibridoLigero(hibridoLigero);
+
+        return actualizado;
+    }
+
+    // Método para actualizar una pickup verificando que no exista una con la misma
+    // placa
+    public boolean actualizarPickUp(PickUp seleccionada, String marca, String placa, int modelo, int cambios,
+            double velocidadMaxima, double cilindraje, TipoRegistro tipoRegistro, Transmision transmision,
+            Estado estado,
+            int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado, boolean camaraReversa,
+            int numeroBolsasAire, boolean cuatroPorCuatro, double capacidadCajaCarga, Combustible combustible,
+            double autonomia, double tiempoCarga, boolean enchufable, boolean hibridoLigero) {
+
+        boolean actualizado = true;
+        for (PickUp pickUp : pickUps) {
+            if (pickUp != seleccionada && pickUp.getPlaca().equals(placa)) {
+                actualizado = false;
+                return actualizado;
+            }
+        }
+
+        seleccionada.setMarca(marca);
+        seleccionada.setPlaca(placa);
+        seleccionada.setModelo(modelo);
+        seleccionada.setCambios(cambios);
+        seleccionada.setVelocidadMaxima(velocidadMaxima);
+        seleccionada.setCilindraje(cilindraje);
+        seleccionada.setTipoRegistro(tipoRegistro);
+        seleccionada.setTransmision(transmision);
+        seleccionada.setEstado(estado);
+        seleccionada.setCapacidadPasajeros(capacidadPasajeros);
+        seleccionada.setCantidadPuertas(cantidadPuertas);
+        seleccionada.setAbs(abs);
+        seleccionada.setAireAcondicionado(aireAcondicionado);
+        seleccionada.setCamaraReversa(camaraReversa);
+        seleccionada.setNumeroBolsasAire(numeroBolsasAire);
+        seleccionada.setCuatroPorCuatro(cuatroPorCuatro);
+        seleccionada.setCapacidadCajaCarga(capacidadCajaCarga);
+        seleccionada.setCombustible(combustible);
+        seleccionada.setAutonomia(autonomia);
+        seleccionada.setTiempoCarga(tiempoCarga);
+        seleccionada.setEnchufable(enchufable);
+        seleccionada.setHibridoLigero(hibridoLigero);
+
+        return actualizado;
+    }
+
+    // Método para actualizar un sedan verificando que no exista uno con la misma
+    // placa
+    public boolean actualizarSedan(Sedan seleccionada, String marca, String placa, int modelo, int cambios,
+            double velocidadMaxima, double cilindraje, TipoRegistro tipoRegistro, Transmision transmision,
+            Estado estado,
+            int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado, boolean camaraReversa,
+            double capacidadMaletero, boolean velocidadCrucero, int numeroBolsasAire,
+            boolean sensoresColision, boolean sensorTraficoCruzado, boolean asistentePermanenciaCarril,
+            Combustible combustible, double autonomia, double tiempoCarga, boolean enchufable, boolean hibridoLigero) {
+
+        boolean actualizado = true;
+        for (Sedan sedan : sedanes) {
+            if (sedan != seleccionada && sedan.getPlaca().equals(placa)) {
+                actualizado = false;
+                return actualizado;
+            }
+        }
+
+        seleccionada.setMarca(marca);
+        seleccionada.setPlaca(placa);
+        seleccionada.setModelo(modelo);
+        seleccionada.setCambios(cambios);
+        seleccionada.setVelocidadMaxima(velocidadMaxima);
+        seleccionada.setCilindraje(cilindraje);
+        seleccionada.setTipoRegistro(tipoRegistro);
+        seleccionada.setTransmision(transmision);
+        seleccionada.setEstado(estado);
+        seleccionada.setCapacidadPasajeros(capacidadPasajeros);
+        seleccionada.setCantidadPuertas(cantidadPuertas);
+        seleccionada.setAbs(abs);
+        seleccionada.setAireAcondicionado(aireAcondicionado);
+        seleccionada.setCamaraReversa(camaraReversa);
+        seleccionada.setCapacidadMaletero(capacidadMaletero);
+        seleccionada.setVelocidadCrucero(velocidadCrucero);
+        seleccionada.setNumeroBolsasAire(numeroBolsasAire);
+        seleccionada.setSensoresColision(sensoresColision);
+        seleccionada.setSensorTraficoCruzado(sensorTraficoCruzado);
+        seleccionada.setAsistentePermanenciaCarril(asistentePermanenciaCarril);
+        seleccionada.setCombustible(combustible);
+        seleccionada.setAutonomia(autonomia);
+        seleccionada.setTiempoCarga(tiempoCarga);
+        seleccionada.setEnchufable(enchufable);
+        seleccionada.setHibridoLigero(hibridoLigero);
+
+        return actualizado;
+    }
+
+    // Método para actualizar una van verificando que no exista una con la misma
+    // placa
+    public boolean actualizarVan(Van seleccionada, String marca, String placa, int modelo, int cambios,
+            double velocidadMaxima, double cilindraje, TipoRegistro tipoRegistro, Transmision transmision,
+            Estado estado,
+            int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado, boolean camaraReversa,
+            double capacidadMaletero, int bolsasAire, Combustible combustible, double autonomia, double tiempoCarga,
+            boolean enchufable, boolean hibridoLigero) {
+
+        boolean actualizado = true;
+        for (Van van : vans) {
+            if (van != seleccionada && van.getPlaca().equals(placa)) {
+                actualizado = false;
+                return actualizado;
+            }
+        }
+
+        seleccionada.setMarca(marca);
+        seleccionada.setPlaca(placa);
+        seleccionada.setModelo(modelo);
+        seleccionada.setCambios(cambios);
+        seleccionada.setVelocidadMaxima(velocidadMaxima);
+        seleccionada.setCilindraje(cilindraje);
+        seleccionada.setTipoRegistro(tipoRegistro);
+        seleccionada.setTransmision(transmision);
+        seleccionada.setEstado(estado);
+        seleccionada.setCapacidadPasajeros(capacidadPasajeros);
+        seleccionada.setCantidadPuertas(cantidadPuertas);
+        seleccionada.setAbs(abs);
+        seleccionada.setAireAcondicionado(aireAcondicionado);
+        seleccionada.setCamaraReversa(camaraReversa);
+        seleccionada.setCapacidadMaletero(capacidadMaletero);
+        seleccionada.setBolsasAire(bolsasAire);
+        seleccionada.setCombustible(combustible);
+        seleccionada.setAutonomia(autonomia);
+        seleccionada.setTiempoCarga(tiempoCarga);
+        seleccionada.setEnchufable(enchufable);
+        seleccionada.setHibridoLigero(hibridoLigero);
+
+        return actualizado;
     }
 
     /**
