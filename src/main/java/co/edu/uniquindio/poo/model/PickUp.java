@@ -54,4 +54,14 @@ public class PickUp extends Carro {
         this.capacidadCajaCarga = capacidadCajaCarga;
     }
 
+    public String obtenerCuatroPorCuatroCadena() {
+        String cadena;
+        if (cuatroPorCuatro) {
+            cadena = "Sí";
+        } else {
+            cadena = "No";
+        }
+        return cadena;
+    }
+
 }

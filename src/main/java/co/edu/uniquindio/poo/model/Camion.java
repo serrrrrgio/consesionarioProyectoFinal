@@ -64,4 +64,14 @@ public class Camion extends Carro {
         this.tipoCamion = tipoCamion;
     }
 
+    public String obtenerFrenosAireCadena() {
+        String cadena;
+        if (frenosAire) {
+            cadena = "Sí";
+        } else {
+            cadena = "No";
+        }
+        return cadena;
+    }
+
 }

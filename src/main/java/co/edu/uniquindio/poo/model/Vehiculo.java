@@ -29,9 +29,9 @@ public class Vehiculo {
     public boolean hibridoLigero;
 
     /**
-     * Constructor 
+     * Constructor
      */
-        public Vehiculo(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
+    public Vehiculo(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
             double autonomia, double tiempoCarga, boolean enchufable, boolean hibridoLigero) {
         this.marca = marca;
@@ -164,5 +164,57 @@ public class Vehiculo {
     public void setPlaca(String placa) {
         this.placa = placa;
     }
-    
+
+    public boolean esElectrico() {
+        return combustible.equals(Combustible.ELECTRICO);
+    }
+
+    public boolean esHibrido() {
+        return combustible.equals(Combustible.HIBRIDO);
+    }
+
+    public String obtenerAutonomiaCadena() {
+        String cadena;
+        if (!esElectrico()) {
+            cadena = "No aplica";
+        } else {
+            cadena = String.valueOf(autonomia);
+        }
+        return cadena;
+    }
+
+    public String obtenerTiempoCarga() {
+        String cadena;
+        if (!esElectrico()) {
+            cadena = "No aplica";
+        } else {
+            cadena = String.valueOf(tiempoCarga);
+        }
+        return cadena;
+    }
+
+    public String obtenerEnchufableCadena() {
+        String cadena;
+        if (!esHibrido()) {
+            cadena = "No aplica";
+        } else if (enchufable) {
+            cadena = "Sí";
+        } else {
+            cadena = "No";
+        }
+        return cadena;
+    }
+
+    public String obtenerHibridoLigeroCadena() {
+        String cadena;
+        if (!esHibrido() || enchufable) {
+            cadena = "No aplica";
+        } else if (hibridoLigero) {
+            cadena = "Sí";
+        } else {
+            cadena = "No";
+        }
+        return cadena;
+    }
+
 }

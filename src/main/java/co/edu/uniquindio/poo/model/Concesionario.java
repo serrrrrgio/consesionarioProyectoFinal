@@ -404,7 +404,7 @@ public class Concesionario {
             Estado estado,
             int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado, boolean camaraReversa,
             double capacidadMaletero, boolean velocidadCrucero, int numeroBolsasAire, boolean sensoresColision,
-            boolean sensorTraficoCruzado, boolean asistentePermanenteCarril, boolean cuatroPorCuatro,
+            boolean sensorTraficoCruzado, boolean asistentepermanenciaCarril, boolean cuatroPorCuatro,
             Combustible combustible, double autonomia, double tiempoCarga, boolean enchufable, boolean hibridoLigero) {
 
         boolean actualizado = true;
@@ -434,7 +434,7 @@ public class Concesionario {
         seleccionada.setNumeroBolsasAire(numeroBolsasAire);
         seleccionada.setSensoresColision(sensoresColision);
         seleccionada.setSensorTraficoCruzado(sensorTraficoCruzado);
-        seleccionada.setAsistentePermanenteCarril(asistentePermanenteCarril);
+        seleccionada.setAsistentepermanenciaCarril(asistentepermanenciaCarril);
         seleccionada.setCuatroPorCuatro(cuatroPorCuatro);
         seleccionada.setCombustible(combustible);
         seleccionada.setAutonomia(autonomia);

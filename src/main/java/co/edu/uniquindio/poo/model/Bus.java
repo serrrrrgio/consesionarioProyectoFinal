@@ -26,10 +26,6 @@ public class Bus extends Carro {
         this.numeroBolsasAire = numeroBolsasAire;
         this.numeroEjes = numeroEjes;
         this.numeroSalidasEmergencia = numeroSalidasEmergencia;
-        this.autonomia = autonomia;
-        this.tiempoCarga = tiempoCarga;
-        this.enchufable = enchufable;
-        this.hibridoLigero = hibridoLigero;
     }
 
     /**

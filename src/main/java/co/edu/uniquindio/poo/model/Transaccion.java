@@ -79,4 +79,8 @@ public class Transaccion {
         this.fechaEntregaDevolucion = fechaEntregaDevolucion;
     }
 
+    public String obtenerPrecioCadena(){
+        return String.valueOf(precio);
+    }
+
 }

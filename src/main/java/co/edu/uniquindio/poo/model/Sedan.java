@@ -80,4 +80,45 @@ public class Sedan extends Carro {
     public void setAsistentePermanenciaCarril(boolean asistentePermanenciaCarril) {
         this.asistentePermanenciaCarril = asistentePermanenciaCarril;
     }
+
+    public String obtenerVelocidadCruceroCadena() {
+        String cadena;
+        if (velocidadCrucero) {
+            cadena = "Sí";
+        } else {
+            cadena = "No";
+        }
+        return cadena;
+    }
+
+    public String obtenerSensoresColisionCadena() {
+        String cadena;
+        if (sensoresColision) {
+            cadena = "Sí";
+        } else {
+            cadena = "No";
+        }
+        return cadena;
+    }
+
+    public String obtenerSensorTraficoCruzadoCadena() {
+        String cadena;
+        if (sensorTraficoCruzado) {
+            cadena = "Sí";
+        } else {
+            cadena = "No";
+        }
+        return cadena;
+    }
+
+    public String obtenerAsistentepermanenciaCarril() {
+        String cadena;
+        if (asistentePermanenciaCarril) {
+            cadena = "Sí";
+        } else {
+            cadena = "No";
+        }
+        return cadena;
+    }
+
 }

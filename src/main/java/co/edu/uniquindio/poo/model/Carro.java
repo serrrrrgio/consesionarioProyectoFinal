@@ -63,4 +63,34 @@ public class Carro extends Vehiculo {
     public void setCamaraReversa(boolean camaraReversa) {
         this.camaraReversa = camaraReversa;
     }
+
+    public String obtenerAbsCadena() {
+        String cadena;
+       if (abs) {
+            cadena = "Sí";
+        } else {
+            cadena = "No";
+        }
+        return cadena;
+    }
+
+    public String obtenerAireAcondicionadoCadena() {
+        String cadena;
+       if (aireAcondicionado) {
+            cadena = "Sí";
+        } else {
+            cadena = "No";
+        }
+        return cadena;
+    }
+
+    public String obtenerCamaraReversaCadena() {
+        String cadena;
+       if (camaraReversa) {
+            cadena = "Sí";
+        } else {
+            cadena = "No";
+        }
+        return cadena;
+    }
 }

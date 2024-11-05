@@ -10,7 +10,7 @@ public class Camioneta extends Carro {
     private int numeroBolsasAire;
     private boolean sensoresColision;
     private boolean sensorTraficoCruzado;
-    private boolean asistentePermanenteCarril;
+    private boolean asistentepermanenciaCarril;
     private boolean cuatroPorCuatro;
 
     /**
@@ -20,7 +20,7 @@ public class Camioneta extends Carro {
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado,
             int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado, boolean camaraReversa,
             double capacidadMaletero, boolean velocidadCrucero, int numeroBolsasAire,
-            boolean sensoresColision, boolean sensorTraficoCruzado, boolean asistentePermanenteCarril,
+            boolean sensoresColision, boolean sensorTraficoCruzado, boolean asistentepermanenciaCarril,
             boolean cuatroPorCuatro, Combustible combustible, double autonomia,
             double tiempoCarga, boolean enchufable,
             boolean hibridoLigero) {
@@ -32,7 +32,7 @@ public class Camioneta extends Carro {
         this.numeroBolsasAire = numeroBolsasAire;
         this.sensoresColision = sensoresColision;
         this.sensorTraficoCruzado = sensorTraficoCruzado;
-        this.asistentePermanenteCarril = asistentePermanenteCarril;
+        this.asistentepermanenciaCarril = asistentepermanenciaCarril;
         this.cuatroPorCuatro = cuatroPorCuatro;
     }
 
@@ -79,12 +79,12 @@ public class Camioneta extends Carro {
         this.sensorTraficoCruzado = sensorTraficoCruzado;
     }
 
-    public boolean isAsistentePermanenteCarril() {
-        return asistentePermanenteCarril;
+    public boolean isAsistentepermanenciaCarril() {
+        return asistentepermanenciaCarril;
     }
 
-    public void setAsistentePermanenteCarril(boolean asistentePermanenteCarril) {
-        this.asistentePermanenteCarril = asistentePermanenteCarril;
+    public void setAsistentepermanenciaCarril(boolean asistentepermanenciaCarril) {
+        this.asistentepermanenciaCarril = asistentepermanenciaCarril;
     }
 
     public boolean isCuatroPorCuatro() {
@@ -93,5 +93,55 @@ public class Camioneta extends Carro {
 
     public void setCuatroPorCuatro(boolean cuatroPorCuatro) {
         this.cuatroPorCuatro = cuatroPorCuatro;
+    }
+
+    public String obtenerVelocidadCruceroCadena() {
+        String cadena;
+        if (velocidadCrucero) {
+            cadena = "Sí";
+        } else {
+            cadena = "No";
+        }
+        return cadena;
+    }
+
+    public String obtenerSensoresColisionCadena() {
+        String cadena;
+        if (sensoresColision) {
+            cadena = "Sí";
+        } else {
+            cadena = "No";
+        }
+        return cadena;
+    }
+
+    public String obtenerSensorTraficoCruzadoCadena() {
+        String cadena;
+        if (sensorTraficoCruzado) {
+            cadena = "Sí";
+        } else {
+            cadena = "No";
+        }
+        return cadena;
+    }
+
+    public String obtenerAsistentepermanenciaCarril() {
+        String cadena;
+        if (asistentepermanenciaCarril) {
+            cadena = "Sí";
+        } else {
+            cadena = "No";
+        }
+        return cadena;
+    }
+
+    public String obtenerCuatroPorCuatroCadena() {
+        String cadena;
+        if (cuatroPorCuatro) {
+            cadena = "Sí";
+        } else {
+            cadena = "No";
+        }
+        return cadena;
     }
 }
