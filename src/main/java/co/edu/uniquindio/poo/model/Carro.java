@@ -7,37 +7,16 @@ public class Carro extends Vehiculo {
     public boolean aireAcondicionado;
     private boolean camaraReversa;
 
+    /**
+     * Constructor
+     */
     public Carro(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
-            TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
+            TipoRegistro tipoRegistro, Transmision transmision, Estado estado,
             int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado,
-            boolean camaraReversa) {
-        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible);
-        this.capacidadPasajeros = capacidadPasajeros;
-        this.cantidadPuertas = cantidadPuertas;
-        this.abs = abs;
-        this.aireAcondicionado = aireAcondicionado;
-        this.camaraReversa = camaraReversa;
-    }
-
-    public Carro(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
-            TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
-            double autonomia, double tiempoCarga, int capacidadPasajeros, int cantidadPuertas, boolean abs,
-            boolean aireAcondicionado, boolean camaraReversa) {
-        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
-                autonomia, tiempoCarga);
-        this.capacidadPasajeros = capacidadPasajeros;
-        this.cantidadPuertas = cantidadPuertas;
-        this.abs = abs;
-        this.aireAcondicionado = aireAcondicionado;
-        this.camaraReversa = camaraReversa;
-    }
-
-    public Carro(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
-            TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
-            boolean enchufable, boolean hibridoLigero, int capacidadPasajeros, int cantidadPuertas, boolean abs,
-            boolean aireAcondicionado, boolean camaraReversa) {
-        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
-                enchufable, hibridoLigero);
+            boolean camaraReversa, Combustible combustible, double autonomia, double tiempoCarga, boolean enchufable,
+            boolean hibridoLigero) {
+        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado,
+                combustible, autonomia, tiempoCarga, enchufable, hibridoLigero);
         this.capacidadPasajeros = capacidadPasajeros;
         this.cantidadPuertas = cantidadPuertas;
         this.abs = abs;

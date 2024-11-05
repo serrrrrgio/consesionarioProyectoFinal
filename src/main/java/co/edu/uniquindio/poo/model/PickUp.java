@@ -1,6 +1,6 @@
 package co.edu.uniquindio.poo.model;
 
-public class PickUp extends Carro{
+public class PickUp extends Carro {
 
     /**
      * Se declaran las variables
@@ -10,47 +10,17 @@ public class PickUp extends Carro{
     private double capacidadCajaCarga;
 
     /**
-     * Constructor para PickUp a gasolina o diesel
+     * Constructor
      */
 
     public PickUp(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
-            TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
+            TipoRegistro tipoRegistro, Transmision transmision, Estado estado,
             int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado, boolean camaraReversa,
-            int numeroBolsasAire, boolean cuatroPorCuatro, double capacidadCajaCarga) {
-        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
-                capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa);
-        this.numeroBolsasAire = numeroBolsasAire;
-        this.cuatroPorCuatro = cuatroPorCuatro;
-        this.capacidadCajaCarga = capacidadCajaCarga;
-    }
-
-    /**
-     * Constructor para PickUp Electrico
-     */
-
-    public PickUp(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
-            TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
-            double autonomia, double tiempoCarga, int capacidadPasajeros, int cantidadPuertas, boolean abs,
-            boolean aireAcondicionado, boolean camaraReversa, int numeroBolsasAire, boolean cuatroPorCuatro,
-            double capacidadCajaCarga) {
-        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
-                autonomia, tiempoCarga, capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa);
-        this.numeroBolsasAire = numeroBolsasAire;
-        this.cuatroPorCuatro = cuatroPorCuatro;
-        this.capacidadCajaCarga = capacidadCajaCarga;
-    }
-
-    /**
-     * Constructor para PickUP Hibrido
-     */
-
-    public PickUp(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
-            TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
-            boolean enchufable, boolean hibridoLigero, int capacidadPasajeros, int cantidadPuertas, boolean abs,
-            boolean aireAcondicionado, boolean camaraReversa, int numeroBolsasAire, boolean cuatroPorCuatro,
-            double capacidadCajaCarga) {
-        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
-                enchufable, hibridoLigero, capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa);
+            int numeroBolsasAire, boolean cuatroPorCuatro, double capacidadCajaCarga, Combustible combustible,
+            double autonomia, double tiempoCarga, boolean enchufable, boolean hibridoLigero) {
+        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado,
+                capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa, combustible, autonomia,
+                tiempoCarga, enchufable, hibridoLigero);
         this.numeroBolsasAire = numeroBolsasAire;
         this.cuatroPorCuatro = cuatroPorCuatro;
         this.capacidadCajaCarga = capacidadCajaCarga;
@@ -63,26 +33,25 @@ public class PickUp extends Carro{
     public int getNumeroBolsasAire() {
         return numeroBolsasAire;
     }
+
     public void setNumeroBolsasAire(int numeroBolsasAire) {
         this.numeroBolsasAire = numeroBolsasAire;
     }
+
     public boolean isCuatroPorCuatro() {
         return cuatroPorCuatro;
     }
+
     public void setCuatroPorCuatro(boolean cuatroPorCuatro) {
         this.cuatroPorCuatro = cuatroPorCuatro;
     }
+
     public double getCapacidadCajaCarga() {
         return capacidadCajaCarga;
     }
+
     public void setCapacidadCajaCarga(double capacidadCajaCarga) {
         this.capacidadCajaCarga = capacidadCajaCarga;
     }
 
-
-    
-
-
-
-    
 }

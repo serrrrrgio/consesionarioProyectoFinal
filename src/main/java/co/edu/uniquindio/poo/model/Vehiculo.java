@@ -29,28 +29,11 @@ public class Vehiculo {
     public boolean hibridoLigero;
 
     /**
-     * Constructor para un vehículo a diesel o gasolina
-     */
-    public Vehiculo(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
-            TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible) {
-        this.marca = marca;
-        this.modelo = modelo;
-        this.cambios = cambios;
-        this.velocidadMaxima = velocidadMaxima;
-        this.cilindraje = cilindraje;
-        this.tipoRegistro = tipoRegistro;
-        this.transmision = transmision;
-        this.estado = estado;
-        this.combustible = combustible;
-        this.placa = placa;
-    }
-
-    /**
-     * Constructor para un vehículo eléctrico
+     * Constructor 
      */
         public Vehiculo(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
-            double autonomia, double tiempoCarga) {
+            double autonomia, double tiempoCarga, boolean enchufable, boolean hibridoLigero) {
         this.marca = marca;
         this.modelo = modelo;
         this.cambios = cambios;
@@ -62,24 +45,6 @@ public class Vehiculo {
         this.combustible = combustible;
         this.autonomia = autonomia;
         this.tiempoCarga = tiempoCarga;
-        this.placa = placa;
-    }
-
-    /**
-     * Constructor para un vehículo híbrido
-     */
-    public Vehiculo(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
-            TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
-            boolean enchufable, boolean hibridoLigero) {
-        this.marca = marca;
-        this.modelo = modelo;
-        this.cambios = cambios;
-        this.velocidadMaxima = velocidadMaxima;
-        this.cilindraje = cilindraje;
-        this.tipoRegistro = tipoRegistro;
-        this.transmision = transmision;
-        this.estado = estado;
-        this.combustible = combustible;
         this.enchufable = enchufable;
         this.hibridoLigero = hibridoLigero;
         this.placa = placa;

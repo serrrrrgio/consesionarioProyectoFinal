@@ -5,43 +5,17 @@ public class Van extends Carro {
     private int bolsasAire;
 
     /**
-     * Constructor Combustible o Diesel
+     * Constructor
      */
 
     public Van(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
-            TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
+            TipoRegistro tipoRegistro, Transmision transmision, Estado estado,
             int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado, boolean camaraReversa,
-            double capacidadMaletero, int bolsasAire) {
-        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
-                capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa);
-        this.capacidadMaletero = capacidadMaletero;
-        this.bolsasAire = bolsasAire;
-    }
-
-    /**
-     * Constructor Electrico
-     */
-
-    public Van(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
-            TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
-            double autonomia, double tiempoCarga, int capacidadPasajeros, int cantidadPuertas, boolean abs,
-            boolean aireAcondicionado, boolean camaraReversa, double capacidadMaletero, int bolsasAire) {
-        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
-                autonomia, tiempoCarga, capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa);
-        this.capacidadMaletero = capacidadMaletero;
-        this.bolsasAire = bolsasAire;
-    }
-
-    /**
-     * Constructor Hibrido
-     */
-
-    public Van(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
-            TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
-            boolean enchufable, boolean hibridoLigero, int capacidadPasajeros, int cantidadPuertas, boolean abs,
-            boolean aireAcondicionado, boolean camaraReversa, double capacidadMaletero, int bolsasAire) {
-        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
-                enchufable, hibridoLigero, capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa);
+            double capacidadMaletero, int bolsasAire, Combustible combustible, double autonomia, double tiempoCarga,
+            boolean enchufable, boolean hibridoLigero) {
+        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado,
+                capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa, combustible, autonomia,
+                tiempoCarga, enchufable, hibridoLigero);
         this.capacidadMaletero = capacidadMaletero;
         this.bolsasAire = bolsasAire;
     }

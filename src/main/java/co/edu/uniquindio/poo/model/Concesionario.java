@@ -1,10 +1,7 @@
 package co.edu.uniquindio.poo.model;
 
-import java.time.DateTimeException;
 import java.time.LocalDate;
-import java.util.InputMismatchException;
 import java.util.LinkedList;
-import java.util.Scanner;
 
 public class Concesionario {
 
@@ -17,6 +14,15 @@ public class Concesionario {
     private LinkedList<Empleado> empleados;
     private LinkedList<Cliente> clientes;
     private LinkedList<Vehiculo> vehiculos;
+    private LinkedList<Bus> buses;
+    private LinkedList<Camion> camiones;
+    private LinkedList<Camioneta> camionetas;
+    private LinkedList<Carro> carros;
+    private LinkedList<Deportivo> deportivos;
+    private LinkedList<Moto> motos;
+    private LinkedList<PickUp> pickUps;
+    private LinkedList<Sedan> sedanes;
+    private LinkedList<Van> vans;
     private Administrador administrador;
 
     /**
@@ -30,6 +36,14 @@ public class Concesionario {
         this.empleados = new LinkedList<>();
         this.clientes = new LinkedList<>();
         this.vehiculos = new LinkedList<>();
+        this.buses = new LinkedList<>();
+        this.camiones = new LinkedList<>();
+        this.carros = new LinkedList<>();
+        this.deportivos = new LinkedList<>();
+        this.motos = new LinkedList<>();
+        this.pickUps = new LinkedList<>();
+        this.sedanes = new LinkedList<>();
+        this.vans = new LinkedList<>();
     }
 
     /**
@@ -83,6 +97,78 @@ public class Concesionario {
         this.vehiculos = vehiculos;
     }
 
+    public LinkedList<Bus> getBuses() {
+        return buses;
+    }
+
+    public void setBuses(LinkedList<Bus> buses) {
+        this.buses = buses;
+    }
+
+    public LinkedList<Camion> getCamiones() {
+        return camiones;
+    }
+
+    public void setCamiones(LinkedList<Camion> camiones) {
+        this.camiones = camiones;
+    }
+
+    public LinkedList<Camioneta> getCamionetas() {
+        return camionetas;
+    }
+
+    public void setCamionetas(LinkedList<Camioneta> camionetas) {
+        this.camionetas = camionetas;
+    }
+
+    public LinkedList<Carro> getCarros() {
+        return carros;
+    }
+
+    public void setCarros(LinkedList<Carro> carros) {
+        this.carros = carros;
+    }
+
+    public LinkedList<Deportivo> getDeportivos() {
+        return deportivos;
+    }
+
+    public void setDeportivos(LinkedList<Deportivo> deportivos) {
+        this.deportivos = deportivos;
+    }
+
+    public LinkedList<Moto> getMotos() {
+        return motos;
+    }
+
+    public void setMotos(LinkedList<Moto> motos) {
+        this.motos = motos;
+    }
+
+    public LinkedList<PickUp> getPickUps() {
+        return pickUps;
+    }
+
+    public void setPickUps(LinkedList<PickUp> pickUps) {
+        this.pickUps = pickUps;
+    }
+
+    public LinkedList<Sedan> getSedanes() {
+        return sedanes;
+    }
+
+    public void setSedanes(LinkedList<Sedan> sedanes) {
+        this.sedanes = sedanes;
+    }
+
+    public LinkedList<Van> getVans() {
+        return vans;
+    }
+
+    public void setVans(LinkedList<Van> vans) {
+        this.vans = vans;
+    }
+
     public Administrador getAdministrador() {
         return administrador;
     }
@@ -101,30 +187,140 @@ public class Concesionario {
     /**
      * Método para agregar empleado
      */
-    public void agregarEmpleado(Empleado transaccion) {
-        empleados.add(transaccion);
+    public boolean agregarEmpleado(Empleado empleado) {
+        boolean agregado = false;
+        if (!empleadoExistente(empleado.getUsuario())) {
+            empleados.add(empleado);
+            agregado = true;
+        }
+        return agregado;
     }
 
     /**
-     * Método para agregar cliente
+     * Método para verificar la existencia de un empleado con su usuario.
      */
-    public void agregarCliente(Cliente cliente) {
-        clientes.add(cliente);
+    public boolean empleadoExistente(String usuario) {
+        boolean existente = false;
+        for (Empleado empleado : empleados) {
+            if (empleado.getUsuario().equals(usuario)) {
+                existente = true;
+                break;
+            }
+        }
+        return existente;
+    }
+
+    /**
+     * Método para eliminar un empleado.
+     */
+    public void eliminarEmpleado(Empleado empleado) {
+        empleados.remove(empleado);
+    }
+
+    /**
+     * Método para actualizar un empleado. Duda de si al actualizarlo también se le
+     * pueda actualizar el usuario y contraseña(El que lo acualiza es el
+     * administrador)
+     */
+    public boolean actualizarEmpleado(Empleado seleccionado, String nombre, String apellido, String correo,
+            String cedula, String telefono, String usuario, String contraseña,
+            String preguntaSeguridad, String respuesta, double salario) {
+        boolean actualizado = true;
+        for (Empleado empleado : empleados) {
+            if (empleado != seleccionado && empleado.getUsuario().equals(usuario)) {
+                actualizado = false;
+                return actualizado;
+            }
+        }
+        seleccionado.setUsuario(usuario);
+        seleccionado.setNombre(nombre);
+        seleccionado.setApellido(apellido);
+        seleccionado.setCorreo(correo);
+        seleccionado.setCedula(cedula);
+        seleccionado.setTelefono(telefono);
+        seleccionado.setUsuario(usuario);
+        seleccionado.setContraseña(contraseña);
+        return actualizado;
     }
 
     /**
      * Método para agregar vehículo
      */
-    public void agregarVehiculo(Vehiculo vechiculo) {
-        vehiculos.add(vechiculo);
+    public boolean agregarVehiculo(Vehiculo vehiculo) {
+        boolean agregado = false;
+        if (!vehiculoExistente(vehiculo.getPlaca())) {
+            if (vehiculo instanceof Bus) {
+                buses.add((Bus) vehiculo);
+            } else if (vehiculo instanceof Camion) {
+                camiones.add((Camion) vehiculo);
+            } else if (vehiculo instanceof Camioneta) {
+                camionetas.add((Camioneta) vehiculo);
+            } else if (vehiculo instanceof Carro) {
+                carros.add((Carro) vehiculo);
+            } else if (vehiculo instanceof Deportivo) {
+                deportivos.add((Deportivo) vehiculo);
+            } else if (vehiculo instanceof Moto) {
+                motos.add((Moto) vehiculo);
+            } else if (vehiculo instanceof PickUp) {
+                pickUps.add((PickUp) vehiculo);
+            } else if (vehiculo instanceof Sedan) {
+                sedanes.add((Sedan) vehiculo);
+            } else if (vehiculo instanceof Van) {
+                vans.add((Van) vehiculo);
+            }
+            vehiculos.add(vehiculo);
+            agregado = true;
+        }
+        return agregado;
+    }
+
+    /**
+     * Método para eliminar un vehículo
+     */
+    public void eliminarVehiculo(Vehiculo vehiculo) {
+        if (vehiculo instanceof Bus) {
+            buses.remove((Bus) vehiculo);
+        } else if (vehiculo instanceof Camion) {
+            camiones.remove((Camion) vehiculo);
+        } else if (vehiculo instanceof Camioneta) {
+            camionetas.remove((Camioneta) vehiculo);
+        } else if (vehiculo instanceof Carro) {
+            carros.remove((Carro) vehiculo);
+        } else if (vehiculo instanceof Deportivo) {
+            deportivos.remove((Deportivo) vehiculo);
+        } else if (vehiculo instanceof Moto) {
+            motos.remove((Moto) vehiculo);
+        } else if (vehiculo instanceof PickUp) {
+            pickUps.remove((PickUp) vehiculo);
+        } else if (vehiculo instanceof Sedan) {
+            sedanes.remove((Sedan) vehiculo);
+        } else if (vehiculo instanceof Van) {
+            vans.remove((Van) vehiculo);
+        }
+        vehiculos.remove(vehiculo);
+    }
+
+    /**
+     * Método verificar si un vehículo ya existe por su placa
+     */
+    public boolean vehiculoExistente(String placa) {
+        boolean existente = false;
+        for (Vehiculo vehiculo : vehiculos) {
+            if (vehiculo.getPlaca().equals(placa)) {
+                existente = true;
+            }
+        }
+        return existente;
     }
 
     /**
      * Método para registrar una compra de vehículo
      */
-    public void comprarVehiculo(Empleado empleado, Cliente cliente, Vehiculo vehiculo, double precio) {
-        Transaccion transaccion = new Transaccion(LocalDate.now(), precio, TipoTransaccion.COMPRA, empleado, cliente,
-                vehiculo, null);
+    public void comprarVehiculo(LocalDate fechaEntrega, LocalDate fechaDevolucion, Empleado empleado, Cliente cliente,
+            Vehiculo vehiculo, double precio) {
+        Transaccion transaccion = new Transaccion(fechaEntrega, fechaDevolucion, precio, TipoTransaccion.COMPRA,
+                empleado, cliente,
+                vehiculo);
 
         // Agregar transacción de forma independiente al concesionario y al cliente
         agregarTransaccion(transaccion);
@@ -139,9 +335,11 @@ public class Concesionario {
     /**
      * Método para registrar una venta de vehículo
      */
-    public void venderVehiculo(Empleado empleado, Cliente cliente, Vehiculo vehiculo, double precio) {
-        Transaccion transaccion = new Transaccion(LocalDate.now(), precio, TipoTransaccion.VENTA, empleado, cliente,
-                vehiculo, null);
+    public void venderVehiculo(Empleado empleado, Cliente cliente, Vehiculo vehiculo, double precio,
+            LocalDate fechaEntrega, LocalDate fechaDevolucion) {
+        Transaccion transaccion = new Transaccion(fechaEntrega, fechaDevolucion, precio, TipoTransaccion.VENTA,
+                empleado, cliente,
+                vehiculo);
 
         // Agregar transacción de forma independiente al concesionario y al cliente
         agregarTransaccion(transaccion);
@@ -157,9 +355,11 @@ public class Concesionario {
      * Método para registrar un alquiler de vehículo
      */
     public void alquilarVehiculo(Empleado empleado, Cliente cliente, Vehiculo vehiculo, double precio,
-            LocalDate fechaDevolucion) {
-        Transaccion transaccion = new Transaccion(LocalDate.now(), precio, TipoTransaccion.ALQUILER, empleado, cliente,
-                vehiculo, fechaDevolucion);
+            LocalDate fechaEntrega,
+            LocalDate fechaEntregaDevolucion) {
+        Transaccion transaccion = new Transaccion(fechaEntrega, fechaEntregaDevolucion, precio,
+                TipoTransaccion.ALQUILER, empleado, cliente,
+                vehiculo);
 
         // Agregar transacción de forma independiente al concesionario y al cliente
         agregarTransaccion(transaccion);
@@ -178,173 +378,71 @@ public class Concesionario {
     }
 
     /**
-     * Método para mostrar mensaje
-     */
-    public static void mostrarMensajeSeguido(String mensaje) {
-        System.out.print(mensaje);
-    }
-
-    /**
-     * Método para ingresar ingresar entero
-     */
-    public static int ingresarEntero(String solicitud) {
-        Scanner scanner = new Scanner(System.in);
-        int numero = 0;
-
-        boolean repetir = true;
-        while (repetir) {
-            mostrarMensajeSeguido(solicitud);
-            try {
-                numero = scanner.nextInt();
-                repetir = false;
-            }
-
-            catch (InputMismatchException e) {
-                mostrarMensaje("Error: No ingresaste un número.");
-                scanner.next();
-            }
-        }
-        return numero;
-    }
-
-    /**
-     * Método para ingresar ingresar un real
-     */
-    public static double ingresarReal(String solicitud) {
-        Scanner scanner = new Scanner(System.in);
-        double numero = 0;
-
-        boolean repetir = true;
-        while (repetir) {
-            mostrarMensajeSeguido(solicitud);
-            try {
-                numero = scanner.nextDouble();
-                repetir = false;
-            }
-
-            catch (InputMismatchException e) {
-                mostrarMensaje("Error: No ingresaste un real.");
-                scanner.next();
-            }
-        }
-        return numero;
-    }
-
-    /**
-     * Método para ingresar ingresar texto
-     */
-    public static String ingresarTexto(String solicitud) {
-        Scanner scanner = new Scanner(System.in);
-        mostrarMensajeSeguido(solicitud);
-        String texto = scanner.nextLine();
-        return texto;
-    }
-
-    /**
-     * Método para ingresar una fecha
-     */
-    public static LocalDate ingresarFecha(String solicitud) {
-        LocalDate fecha = null;
-        int ano = 0;
-        int mes = 0;
-        int dia = 0;
-
-        boolean repetir = true;
-        while (repetir) {
-            mostrarMensaje(solicitud);
-            try {
-                ano = ingresarEntero("Año: ");
-                mes = ingresarEntero("Mes: ");
-                dia = ingresarEntero("Día: ");
-
-                fecha = LocalDate.of(ano, mes, dia);
-                repetir = false;
-            }
-
-            catch (DateTimeException e) {
-                mostrarMensaje("Error: No ingresaste una fecha válida.");
-            }
-        }
-        return fecha;
-    }
-
-    /**
-     * Método para ingresar una fecha posterior a otra
-     */
-    public static LocalDate ingresarFechaPosterior(String solicitud, LocalDate fecha) {
-        LocalDate fechaPosterior = null;
-        boolean repetir = true;
-
-        while (repetir) {
-            fechaPosterior = ingresarFecha(solicitud);
-            if (fechaPosterior.isAfter(fecha)) {
-                repetir = false;
-            } else {
-                mostrarMensaje("Error: La nueva fecha no es posterior a la anterior, por favor ingresela nuevamente");
-            }
-        }
-        return fechaPosterior;
-    }
-
-    /**
      * Método para crear un nuevo cliente.
      */
-    public void crearCliente(String nombre, String apellido, String correo, String cedula, String telefono, String usuario, String contraseña,
-                             String preguntaSeguridad, String respuesta) {
-        Cliente nuevoCliente = new Cliente(nombre, apellido, correo, cedula, telefono, usuario, contraseña, preguntaSeguridad, respuesta);
-        clientes.add(nuevoCliente);
-        System.out.println("Cliente creado: " + nombre + " " + apellido);
+    public Cliente crearCliente(String nombre, String apellido, String correo, String cedula, String telefono,
+            String usuario, String contraseña,
+            String preguntaSeguridad, String respuesta) {
+        return new Cliente(nombre, apellido, correo, cedula, telefono, usuario, contraseña, preguntaSeguridad,
+                respuesta);
+    }
+
+    /**
+     * Método para agregar cliente
+     */
+    public boolean agregarCliente(Cliente cliente) {
+        boolean agregado = false;
+        if (!clienteExistente(cliente.getUsuario())) {
+            clientes.add(cliente);
+            agregado = true;
+        }
+        return agregado;
     }
 
     /**
      * Método para eliminar un cliente.
      */
-    public void eliminarCliente(String cedula) {
-        Cliente clienteAEliminar = null;
+    public void eliminarCliente(Cliente cliente) {
+        clientes.remove(cliente);
+    }
 
+    /**
+     * Método para actualizar un cliente. Duda de si al actualizarlo también se le
+     * pueda actualizar el usuario y contraseña(El que lo acualiza es el
+     * administrador)
+     */
+    public boolean actualizarCliente(Cliente seleccionado, String nombre, String apellido, String correo, String cedula,
+            String telefono, String usuario, String contraseña,
+            String preguntaSeguridad, String respuesta) {
+        boolean actualizado = true;
         for (Cliente cliente : clientes) {
-            if (cliente.getUsuario().equals(cedula)) {
-                clienteAEliminar = cliente;
+            if (cliente != seleccionado && cliente.getUsuario().equals(usuario)) {
+                actualizado = false;
+                return actualizado;
+            }
+        }
+        seleccionado.setUsuario(usuario);
+        seleccionado.setNombre(nombre);
+        seleccionado.setApellido(apellido);
+        seleccionado.setCorreo(correo);
+        seleccionado.setCedula(cedula);
+        seleccionado.setTelefono(telefono);
+        seleccionado.setUsuario(usuario);
+        seleccionado.setContraseña(contraseña);
+        return actualizado;
+    }
+
+    /**
+     * Método para verificar la existencia de un cliente con su usuario.
+     */
+    public boolean clienteExistente(String usuario) {
+        boolean existente = false;
+        for (Cliente cliente : clientes) {
+            if (cliente.getUsuario().equals(usuario)) {
+                existente = true;
                 break;
             }
         }
-
-        if (clienteAEliminar != null) {
-            clientes.remove(clienteAEliminar);
-            System.out.println("Cliente eliminado: " + clienteAEliminar.getNombre() + " " + clienteAEliminar.getApellido());
-        } else {
-            System.out.println("Cliente no encontrado.");
-        }
-    }
-
-    /**
-     * Método para actualizar un cliente.
-     */
-    public void actualizarCliente(String usuario, String nuevoNombre, String nuevoApellido, String nuevoCorreo, String nuevoTelefono) {
-        for (Cliente cliente : clientes) {
-            if (cliente.getUsuario().equals(usuario)) {
-                cliente.setNombre(nuevoNombre);
-                cliente.setApellido(nuevoApellido);
-                cliente.setCorreo(nuevoCorreo);
-                cliente.setTelefono(nuevoTelefono);
-                System.out.println("Cliente actualizado: " + nuevoNombre + " " + nuevoApellido);
-                return;
-            }
-        }
-        System.out.println("Cliente no encontrado.");
-    }
-
-    /**
-     * Método para verificar la existencia de un cliente.
-     */
-    public boolean verificarCliente(String usuario) {
-        for (Cliente cliente : clientes) {
-            if (cliente.getUsuario().equals(usuario)) {
-                System.out.println("Cliente verificado: " + cliente.getNombre() + " " + cliente.getApellido());
-                return true;
-            }
-        }
-        System.out.println("Cliente no encontrado.");
-        return false;
+        return existente;
     }
 }

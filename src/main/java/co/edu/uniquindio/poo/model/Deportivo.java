@@ -11,48 +11,17 @@ public class Deportivo extends Carro {
     private double tiempoAlcanzar100kmh;
 
     /**
-     * Constructor Combustible o Diesel
+     * Constructor
      */
 
     public Deportivo(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
-            TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
+            TipoRegistro tipoRegistro, Transmision transmision, Estado estado,
             int capacidadPasajeros, int cantidadPuertas, boolean abs, int numeroCaballosFuerza, int numeroBolsasAire,
-            double tiempoAlcanzar100kmh) {
-        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
-                capacidadPasajeros, cantidadPuertas, abs, false, false);
-        this.numeroCaballosFuerza = numeroCaballosFuerza;
-        this.numeroBolsasAire = numeroBolsasAire;
-        this.tiempoAlcanzar100kmh = tiempoAlcanzar100kmh;
-    }
-
-    /**
-     * Constructor Electrico
-     */
-
-    public Deportivo(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
-            TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
-            double autonomia, double tiempoCarga, int capacidadPasajeros, int cantidadPuertas, boolean abs,
-            int numeroCaballosFuerza, int numeroBolsasAire,
-            double tiempoAlcanzar100kmh) {
-        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
-                autonomia, tiempoCarga, capacidadPasajeros, cantidadPuertas, abs, false, false);
-        this.numeroCaballosFuerza = numeroCaballosFuerza;
-        this.numeroBolsasAire = numeroBolsasAire;
-        this.tiempoAlcanzar100kmh = tiempoAlcanzar100kmh;
-    }
-
-    /**
-     * Constructor Hibrido
-     */
-
-    public Deportivo(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
-            TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
-            boolean enchufable, boolean hibridoLigero, int capacidadPasajeros, int cantidadPuertas, boolean abs,
-            int numeroCaballosFuerza, int numeroBolsasAire,
-            double tiempoAlcanzar100kmh) {
-        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
-                enchufable, hibridoLigero, capacidadPasajeros, cantidadPuertas, abs, false, false);
-        this.numeroCaballosFuerza = numeroCaballosFuerza;
+            double tiempoAlcanzar100kmh, Combustible combustible, double autonomia, double tiempoCarga,
+            boolean enchufable, boolean hibridoLigero) {
+        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado,
+                capacidadPasajeros, cantidadPuertas, abs, false, false, combustible, autonomia, tiempoCarga, enchufable,
+                hibridoLigero);
         this.numeroBolsasAire = numeroBolsasAire;
         this.tiempoAlcanzar100kmh = tiempoAlcanzar100kmh;
     }

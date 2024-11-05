@@ -1,6 +1,7 @@
 package co.edu.uniquindio.poo.controller;
 
 import co.edu.uniquindio.poo.model.Concesionario;
+import co.edu.uniquindio.poo.model.Cliente;
 
 public class ClienteController {
     
@@ -21,21 +22,22 @@ public class ClienteController {
     /**
      * Método para eliminar un cliente.
      */
-    public void eliminarCliente(String usuario) {
-        concesionario.eliminarCliente(usuario);
+    public void eliminarCliente(Cliente cliente) {
+        concesionario.eliminarCliente(cliente);
     }
 
     /**
      * Método para actualizar un cliente.
      */
-    public void actualizarCliente(String usuario, String nuevoNombre, String nuevoApellido, String nuevoCorreo, String nuevoTelefono) {
-        concesionario.actualizarCliente(usuario, nuevoNombre, nuevoApellido, nuevoCorreo, nuevoTelefono);
+    public boolean actualizarCliente(Cliente seleccionado, String nombre, String apellido, String correo, String cedula, String telefono, String usuario, String contraseña,
+    String preguntaSeguridad, String respuesta) {
+        return concesionario.actualizarCliente(seleccionado, nombre, apellido, correo, cedula, telefono, usuario, contraseña, preguntaSeguridad, respuesta);
     }
-
+    
     /**
-     * Método para verificar la existencia de un cliente.
+     * Método para agregar un cliente.
      */
-    public boolean verificarCliente(String usuario) {
-        return concesionario.verificarCliente(usuario);
-    }
+     public boolean agragarCliente(Cliente cliente){
+        return concesionario.agregarCliente(cliente);
+     }
 }

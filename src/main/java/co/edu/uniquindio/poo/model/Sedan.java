@@ -9,56 +9,18 @@ public class Sedan extends Carro {
     private boolean asistentePermanenciaCarril;
 
     /**
-     * Constructor Combustible o Diesel
+     * Constructor
      */
 
     public Sedan(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
-            TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
+            TipoRegistro tipoRegistro, Transmision transmision, Estado estado,
             int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado, boolean camaraReversa,
             double capacidadMaletero, boolean velocidadCrucero, int numeroBolsasAire,
-            boolean sensoresColision, boolean sensorTraficoCruzado, boolean asistentePermanenciaCarril) {
-        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
-                capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa);
-        this.capacidadMaletero = capacidadMaletero;
-        this.velocidadCrucero = velocidadCrucero;
-        this.numeroBolsasAire = numeroBolsasAire;
-        this.sensoresColision = sensoresColision;
-        this.sensorTraficoCruzado = sensorTraficoCruzado;
-        this.asistentePermanenciaCarril = asistentePermanenciaCarril;
-    }
-
-    /**
-     * Constructor Electrico
-     */
-
-    public Sedan(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
-            TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
-            double autonomia, double tiempoCarga, int capacidadPasajeros, int cantidadPuertas, boolean abs,
-            boolean aireAcondicionado, boolean camaraReversa, double capacidadMaletero, boolean velocidadCrucero,
-            int numeroBolsasAire, boolean sensoresColision, boolean sensorTraficoCruzado,
-            boolean asistentePermanenciaCarril) {
-        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
-                autonomia, tiempoCarga, capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa);
-        this.capacidadMaletero = capacidadMaletero;
-        this.velocidadCrucero = velocidadCrucero;
-        this.numeroBolsasAire = numeroBolsasAire;
-        this.sensoresColision = sensoresColision;
-        this.sensorTraficoCruzado = sensorTraficoCruzado;
-        this.asistentePermanenciaCarril = asistentePermanenciaCarril;
-    }
-
-    /**
-     * Constructor Hibrido
-     */
-
-    public Sedan(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
-            TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
-            boolean enchufable, boolean hibridoLigero, int capacidadPasajeros, int cantidadPuertas, boolean abs,
-            boolean aireAcondicionado, boolean camaraReversa, double capacidadMaletero, boolean velocidadCrucero,
-            int numeroBolsasAire, boolean sensoresColision, boolean sensorTraficoCruzado,
-            boolean asistentePermanenciaCarril) {
-        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
-                enchufable, hibridoLigero, capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa);
+            boolean sensoresColision, boolean sensorTraficoCruzado, boolean asistentePermanenciaCarril,
+            Combustible combustible, double autonomia, double tiempoCarga, boolean enchufable, boolean hibridoLigero) {
+        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado,
+                capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa, combustible, autonomia,
+                tiempoCarga, enchufable, hibridoLigero);
         this.capacidadMaletero = capacidadMaletero;
         this.velocidadCrucero = velocidadCrucero;
         this.numeroBolsasAire = numeroBolsasAire;

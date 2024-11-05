@@ -14,60 +14,19 @@ public class Camioneta extends Carro {
     private boolean cuatroPorCuatro;
 
     /**
-     * Constructor para una camioneta a diesel o gasolina
+     * Constructor
      */
     public Camioneta(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
-            TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
+            TipoRegistro tipoRegistro, Transmision transmision, Estado estado,
             int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado, boolean camaraReversa,
             double capacidadMaletero, boolean velocidadCrucero, int numeroBolsasAire,
             boolean sensoresColision, boolean sensorTraficoCruzado, boolean asistentePermanenteCarril,
-            boolean cuatroPorCuatro) {
-        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
-                capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa);
-        this.capacidadMaletero = capacidadMaletero;
-        this.velocidadCrucero = velocidadCrucero;
-        this.numeroBolsasAire = numeroBolsasAire;
-        this.sensoresColision = sensoresColision;
-        this.sensorTraficoCruzado = sensorTraficoCruzado;
-        this.asistentePermanenteCarril = asistentePermanenteCarril;
-        this.cuatroPorCuatro = cuatroPorCuatro;
-    }
-
-    /**
-     * Constructor para una camioneta eléctrica
-     */
-    public Camioneta(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
-            TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
-            double autonomia,
-            double tiempoCarga, int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado,
-            boolean camaraReversa,
-            double capacidadMaletero, boolean velocidadCrucero, int numeroBolsasAire,
-            boolean sensoresColision, boolean sensorTraficoCruzado, boolean asistentePermanenteCarril,
-            boolean cuatroPorCuatro) {
-        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
-                autonomia, tiempoCarga, capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa);
-        this.capacidadMaletero = capacidadMaletero;
-        this.velocidadCrucero = velocidadCrucero;
-        this.numeroBolsasAire = numeroBolsasAire;
-        this.sensoresColision = sensoresColision;
-        this.sensorTraficoCruzado = sensorTraficoCruzado;
-        this.asistentePermanenteCarril = asistentePermanenteCarril;
-        this.cuatroPorCuatro = cuatroPorCuatro;
-    }
-
-    /**
-     * Constructor para una camioneta híbrida
-     */
-    public Camioneta(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
-            TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
-            boolean enchufable,
-            boolean hibridoLigero, int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado,
-            boolean camaraReversa,
-            double capacidadMaletero, boolean velocidadCrucero, int numeroBolsasAire,
-            boolean sensoresColision, boolean sensorTraficoCruzado, boolean asistentePermanenteCarril,
-            boolean cuatroPorCuatro) {
-        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, combustible,
-                enchufable, hibridoLigero, capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa);
+            boolean cuatroPorCuatro, Combustible combustible, double autonomia,
+            double tiempoCarga, boolean enchufable,
+            boolean hibridoLigero) {
+        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado,
+                capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa, combustible, autonomia,
+                tiempoCarga, enchufable, hibridoLigero);
         this.capacidadMaletero = capacidadMaletero;
         this.velocidadCrucero = velocidadCrucero;
         this.numeroBolsasAire = numeroBolsasAire;
