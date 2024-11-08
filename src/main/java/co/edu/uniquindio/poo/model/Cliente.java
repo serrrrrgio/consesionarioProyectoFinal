@@ -25,3 +25,4 @@ public class Cliente extends Persona {
     public void setTransacciones(LinkedList<Transaccion> transacciones) {
         this.transacciones = transacciones;
     }
+}
