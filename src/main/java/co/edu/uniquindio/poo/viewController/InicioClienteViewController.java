@@ -1,5 +1,5 @@
 package co.edu.uniquindio.poo.viewController;
 
-public class ClienteViewController {
+public class InicioClienteViewController {
     
 }

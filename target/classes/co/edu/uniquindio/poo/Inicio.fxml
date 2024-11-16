@@ -8,21 +8,16 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="1183.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.InicioViewController">
     <children>
-        <ImageView fx:id="backgroundImage" fitHeight="950.0" fitWidth="1188.0" opacity="0.7" preserveRatio="true" smooth="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="0.0">
+        <ImageView fx:id="backgroundImage" fitHeight="950.0" fitWidth="1188.0" opacity="0.56" preserveRatio="true" smooth="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="0.0">
             <image>
                 <Image url="@imagenes/Imagen%20de%20WhatsApp%202024-11-03%20a%20las%2018.36.38_39cf80d9.jpg" />
             </image>
         </ImageView>
-        <AnchorPane layoutX="208.0" layoutY="173.0" opacity="0.8" prefHeight="656.0" prefWidth="821.0" style="-fx-background-color: #747474;" AnchorPane.bottomAnchor="121.0" AnchorPane.leftAnchor="208.0" AnchorPane.rightAnchor="199.0" AnchorPane.topAnchor="173.0">
+        <AnchorPane layoutX="208.0" layoutY="173.0" opacity="0.8" prefHeight="655.0" prefWidth="776.0" style="-fx-background-color: #747474;" AnchorPane.bottomAnchor="122.0" AnchorPane.leftAnchor="208.0" AnchorPane.rightAnchor="199.0" AnchorPane.topAnchor="173.0">
             <children>
-                <ScrollPane prefHeight="656.0" prefWidth="821.0">
-                    <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
-                    </content>
-                </ScrollPane>
-                <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="5.0" layoutX="292.0" layoutY="30.0" prefHeight="55.0" prefWidth="237.0" style="-fx-font-family: 'SansSerif'; -fx-font-weight: bold; -fx-font-size: 46;" text="HOME" textAlignment="CENTER" textOverrun="CLIP" AnchorPane.bottomAnchor="571.0" AnchorPane.leftAnchor="292.0" AnchorPane.rightAnchor="292.0" AnchorPane.topAnchor="30.0">
+                <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="5.0" layoutX="292.0" layoutY="30.0" prefHeight="55.0" prefWidth="237.0" style="-fx-font-family: 'SansSerif'; -fx-font-weight: bold; -fx-font-size: 46;" text="HOME" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" AnchorPane.bottomAnchor="571.0" AnchorPane.leftAnchor="292.0" AnchorPane.rightAnchor="292.0" AnchorPane.topAnchor="30.0">
                 </Label>
-                <ToolBar layoutY="102.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="45.0" prefWidth="821.0" style="-fx-background-color: #fafafa;" AnchorPane.bottomAnchor="509.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="102.0">
+                <ToolBar layoutX="-1.0" layoutY="101.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="45.0" prefWidth="821.0" style="-fx-background-color: #fafafa;" AnchorPane.bottomAnchor="510.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="101.0">
                     <items>
                         <Button fx:id="btnSalir" mnemonicParsing="false" onAction="#handleBtnSalir" prefHeight="31.0" prefWidth="64.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Salir">
                         </Button>
@@ -34,8 +29,11 @@
                         </Button>
                     </items>
                 </ToolBar>
-                <AnchorPane layoutX="328.0" layoutY="79.0" prefHeight="2.0" prefWidth="166.0" style="-fx-background-color: #202020;" AnchorPane.bottomAnchor="575.0" AnchorPane.leftAnchor="328.0" AnchorPane.rightAnchor="327.0" AnchorPane.topAnchor="79.0" />
-                <AnchorPane layoutX="-1.0" layoutY="146.0" prefHeight="2.0" prefWidth="821.0" style="-fx-background-color: #202020;" />
+                <AnchorPane layoutX="328.0" layoutY="79.0" prefHeight="2.0" prefWidth="166.0" style="-fx-background-color: #fafafa;" AnchorPane.bottomAnchor="575.0" AnchorPane.leftAnchor="328.0" AnchorPane.rightAnchor="327.0" AnchorPane.topAnchor="79.0" />
+                <AnchorPane layoutX="-1.0" layoutY="146.0" prefHeight="459.0" prefWidth="776.0" style="-fx-background-color: #202020;">
+               <children>
+                      <ScrollPane prefHeight="509.0" prefWidth="776.0" />
+               </children></AnchorPane>
             </children>
         </AnchorPane>
     </children>
