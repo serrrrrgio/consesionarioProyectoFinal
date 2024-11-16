@@ -3,22 +3,19 @@ package co.edu.uniquindio.poo.viewController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.event.ActionEvent;
+import javafx.scene.input.MouseEvent;
 
-public class InicioViewController {
+public class RegistrarseViewController {
 
     @FXML
     private Button btnIniciarSesion;
 
     @FXML
-    private Button btnSalir;
+    private Button btnRegresar;
 
     @FXML
     private ImageView backgroundImage;
-
-    @FXML
-    private Button btnRegistrarse;
 
     @FXML
     void handleBtnSalir(ActionEvent event) {
@@ -31,18 +28,12 @@ public class InicioViewController {
     }
 
     @FXML
-    void handleBtnRegistrarse(ActionEvent event) {
-
-    }
-
-    @FXML
     public void initialize() {
 
 
         // Establecer efectos de hover para los botones
-        setButtonHoverEffect(btnSalir);
+        setButtonHoverEffect(btnRegresar);
         setButtonHoverEffect(btnIniciarSesion);
-        setButtonHoverEffect(btnRegistrarse);
     }
 
     private void setButtonHoverEffect(Button button) {
