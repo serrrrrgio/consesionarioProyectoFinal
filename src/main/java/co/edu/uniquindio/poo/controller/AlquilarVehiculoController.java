@@ -33,5 +33,9 @@ public class AlquilarVehiculoController {
     public int calcularDias(LocalDate fecha1, LocalDate fecha2){
         return concesionario.calcularDias(fecha1, fecha2);
     }
+
+    public ObservableList<Vehiculo> obtenerInterseccion(ObservableList<Vehiculo> lista1, ObservableList<Vehiculo> lista2){
+        return concesionario.obtenerInterseccion(lista1, lista2);
+    }
     
 }

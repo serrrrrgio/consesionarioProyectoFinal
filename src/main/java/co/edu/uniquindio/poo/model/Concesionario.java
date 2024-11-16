@@ -923,4 +923,19 @@ public class Concesionario {
     public int calcularDias(LocalDate fecha1, LocalDate fecha2) {
         return (int) ChronoUnit.DAYS.between(fecha1, fecha2);
     }
+
+
+    /**
+     * Método para cobtener la intersección entre 2 listas
+     */
+    public ObservableList<Vehiculo> obtenerInterseccion(ObservableList<Vehiculo> lista1, ObservableList<Vehiculo> lista2) {
+        ObservableList<Vehiculo> interseccion = FXCollections.observableArrayList();
+        
+        for (Vehiculo vehiculo : lista1) {
+            if (lista2.contains(vehiculo)) {
+                interseccion.add(vehiculo);
+            }
+        }
+        return interseccion;
+    }
 }

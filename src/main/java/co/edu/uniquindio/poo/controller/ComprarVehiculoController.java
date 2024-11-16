@@ -23,4 +23,8 @@ public class ComprarVehiculoController {
     public void eliminarVehiculo(Vehiculo vehiculo){
         concesionario.eliminarVehiculo(vehiculo);
     }
+
+    public ObservableList<Vehiculo> obtenerInterseccion(ObservableList<Vehiculo> lista1, ObservableList<Vehiculo> lista2){
+        return concesionario.obtenerInterseccion(lista1, lista2);
+    }
 }
