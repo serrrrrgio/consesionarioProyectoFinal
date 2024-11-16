@@ -187,7 +187,6 @@ public class Concesionario {
         transacciones.add(transaccion);
     }
 
-
     /**
      * Método para eliminar transacción
      */
@@ -264,7 +263,7 @@ public class Concesionario {
         seleccionado.setContraseña(contraseña);
         seleccionado.setPreguntaSeguridad(preguntaSeguridad);
         seleccionado.setRespuesta(respuesta);
-        
+
         return actualizado;
     }
 
@@ -450,6 +449,45 @@ public class Concesionario {
         seleccionada.setSensorTraficoCruzado(sensorTraficoCruzado);
         seleccionada.setAsistentepermanenciaCarril(asistentepermanenciaCarril);
         seleccionada.setCuatroPorCuatro(cuatroPorCuatro);
+        seleccionada.setCombustible(combustible);
+        seleccionada.setAutonomia(autonomia);
+        seleccionada.setTiempoCarga(tiempoCarga);
+        seleccionada.setEnchufable(enchufable);
+        seleccionada.setHibridoLigero(hibridoLigero);
+
+        return actualizado;
+    }
+
+    // Método para actualizar un carro verificando que no exista uno con la misma
+    // placa
+    public boolean actualizarCarro(Carro seleccionada, String marca, String placa, int modelo, int cambios,
+            double velocidadMaxima, double cilindraje, TipoRegistro tipoRegistro, Transmision transmision,
+            Estado estado, int capacidadPasajeros, int cantidadPuertas, boolean abs,
+            boolean aireAcondicionado, boolean camaraReversa, Combustible combustible,
+            double autonomia, double tiempoCarga, boolean enchufable, boolean hibridoLigero) {
+
+        boolean actualizado = true;
+        for (Carro carro : carros) {
+            if (carro != seleccionada && carro.getPlaca().equals(placa)) {
+                actualizado = false;
+                return actualizado;
+            }
+        }
+
+        seleccionada.setMarca(marca);
+        seleccionada.setPlaca(placa);
+        seleccionada.setModelo(modelo);
+        seleccionada.setCambios(cambios);
+        seleccionada.setVelocidadMaxima(velocidadMaxima);
+        seleccionada.setCilindraje(cilindraje);
+        seleccionada.setTipoRegistro(tipoRegistro);
+        seleccionada.setTransmision(transmision);
+        seleccionada.setEstado(estado);
+        seleccionada.setCapacidadPasajeros(capacidadPasajeros);
+        seleccionada.setCantidadPuertas(cantidadPuertas);
+        seleccionada.setAbs(abs);
+        seleccionada.setAireAcondicionado(aireAcondicionado);
+        seleccionada.setCamaraReversa(camaraReversa);
         seleccionada.setCombustible(combustible);
         seleccionada.setAutonomia(autonomia);
         seleccionada.setTiempoCarga(tiempoCarga);
@@ -799,8 +837,7 @@ public class Concesionario {
         return actualizado;
     }
 
-
-        /**
+    /**
      * Método para verificar la existencia de un cliente con su usuario.
      */
     public boolean clienteExistente(String usuario) {
@@ -814,8 +851,7 @@ public class Concesionario {
         return existente;
     }
 
-
-        /**
+    /**
      * Método para actualizar un cliente. Duda de si al actualizarlo también se le
      * pueda actualizar el usuario y contraseña(El que lo acualiza es el
      * administrador)
@@ -838,10 +874,10 @@ public class Concesionario {
     /**
      * Método para ver los reportes de un empleado en un tiempo dado
      */
-    public ObservableList<Transaccion> verTransaccionesEmpleado(Empleado empleado, LocalDate fecha1, LocalDate fecha2){
+    public ObservableList<Transaccion> verTransaccionesEmpleado(Empleado empleado, LocalDate fecha1, LocalDate fecha2) {
         ObservableList<Transaccion> transaccionesEmpleado = FXCollections.observableArrayList();
-        for(Transaccion transaccion: empleado.getTransacciones()){
-            if(transaccion.getfechaEntrega().isBefore(fecha2) && transaccion.getfechaEntrega().isAfter(fecha1)){
+        for (Transaccion transaccion : empleado.getTransacciones()) {
+            if (transaccion.getfechaEntrega().isBefore(fecha2) && transaccion.getfechaEntrega().isAfter(fecha1)) {
                 transaccionesEmpleado.add(transaccion);
             }
         }
@@ -851,10 +887,10 @@ public class Concesionario {
     /**
      * Método para obtener una lista de vehiculos para venta
      */
-    public ObservableList<Vehiculo> obtenerVehiculosVenta(){
+    public ObservableList<Vehiculo> obtenerVehiculosVenta() {
         ObservableList<Vehiculo> vehiculosVenta = FXCollections.observableArrayList();
-        for(Vehiculo vehiculo: vehiculos){
-            if(vehiculo.getTipoRegistro().equals(TipoRegistro.VENTA)){
+        for (Vehiculo vehiculo : vehiculos) {
+            if (vehiculo.getTipoRegistro().equals(TipoRegistro.VENTA)) {
                 vehiculosVenta.add(vehiculo);
             }
         }
@@ -864,28 +900,27 @@ public class Concesionario {
     /**
      * Método para obtener una lista de vehiculos para compra
      */
-    public ObservableList<Vehiculo> obtenerVehiculosAlquiler(){
+    public ObservableList<Vehiculo> obtenerVehiculosAlquiler() {
         ObservableList<Vehiculo> vehiculosAlquiler = FXCollections.observableArrayList();
-        for(Vehiculo vehiculo: vehiculos){
-            if(vehiculo.getTipoRegistro().equals(TipoRegistro.ALQUILER)){
+        for (Vehiculo vehiculo : vehiculos) {
+            if (vehiculo.getTipoRegistro().equals(TipoRegistro.ALQUILER)) {
                 vehiculosAlquiler.add(vehiculo);
             }
         }
         return vehiculosAlquiler;
     }
 
-
     /**
      * Método para validar si una fecha es posterior a otra
      */
-    public boolean validarFechaPosterior(LocalDate fecha1, LocalDate fecha2){
+    public boolean validarFechaPosterior(LocalDate fecha1, LocalDate fecha2) {
         return fecha1.isAfter(fecha2) || fecha1.isEqual(fecha2);
     }
 
     /**
      * Método para calcular los días entre dos fechas
      */
-        public int calcularDias(LocalDate fecha1, LocalDate fecha2){
+    public int calcularDias(LocalDate fecha1, LocalDate fecha2) {
         return (int) ChronoUnit.DAYS.between(fecha1, fecha2);
     }
 }
