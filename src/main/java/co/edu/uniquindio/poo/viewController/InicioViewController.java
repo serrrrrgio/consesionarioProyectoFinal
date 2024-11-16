@@ -4,6 +4,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+import co.edu.uniquindio.poo.App;
 import javafx.event.ActionEvent;
 
 public class InicioViewController {
@@ -22,13 +24,15 @@ public class InicioViewController {
 
     @FXML
     void handleBtnSalir(ActionEvent event) {
-
+        Stage stage = (Stage) btnSalir.getScene().getWindow();
+        stage.close();
     }
 
     @FXML
     void handleBtnIniciarSesion(ActionEvent event) {
-
+        App.cambiarEscena("/co/edu/uniquindio/poo/Inicio.fxml", "Inicio", event, getClass());
     }
+    
 
     @FXML
     void handleBtnRegistrarse(ActionEvent event) {
@@ -54,5 +58,4 @@ public class InicioViewController {
             button.setStyle("-fx-background-color: white; -fx-text-fill: black;");
         });
     }
-
 }

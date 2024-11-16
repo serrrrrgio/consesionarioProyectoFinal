@@ -3,11 +3,11 @@ package co.edu.uniquindio.poo.controller;
 import co.edu.uniquindio.poo.model.Concesionario;
 import co.edu.uniquindio.poo.model.Cliente;
 
-public class ClienteController {
+public class CrudClienteController {
     
     private Concesionario concesionario;
 
-    public ClienteController(Concesionario concesionario) {
+    public CrudClienteController(Concesionario concesionario) {
         this.concesionario = concesionario;
     }
 

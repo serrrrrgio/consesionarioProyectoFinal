@@ -1,7 +1,10 @@
 package co.edu.uniquindio.poo.model;
 
 import java.time.LocalDate;
-import java.util.LinkedList;
+import java.time.temporal.ChronoUnit;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class Concesionario {
 
@@ -10,19 +13,19 @@ public class Concesionario {
      */
     private String nombre;
     private double fondos;
-    private LinkedList<Transaccion> transacciones;
-    private LinkedList<Empleado> empleados;
-    private LinkedList<Cliente> clientes;
-    private LinkedList<Vehiculo> vehiculos;
-    private LinkedList<Bus> buses;
-    private LinkedList<Camion> camiones;
-    private LinkedList<Camioneta> camionetas;
-    private LinkedList<Carro> carros;
-    private LinkedList<Deportivo> deportivos;
-    private LinkedList<Moto> motos;
-    private LinkedList<PickUp> pickUps;
-    private LinkedList<Sedan> sedanes;
-    private LinkedList<Van> vans;
+    private ObservableList<Transaccion> transacciones;
+    private ObservableList<Empleado> empleados;
+    private ObservableList<Cliente> clientes;
+    private ObservableList<Vehiculo> vehiculos;
+    private ObservableList<Bus> buses;
+    private ObservableList<Camion> camiones;
+    private ObservableList<Camioneta> camionetas;
+    private ObservableList<Carro> carros;
+    private ObservableList<Deportivo> deportivos;
+    private ObservableList<Moto> motos;
+    private ObservableList<PickUp> pickUps;
+    private ObservableList<Sedan> sedanes;
+    private ObservableList<Van> vans;
     private Administrador administrador;
 
     /**
@@ -32,18 +35,18 @@ public class Concesionario {
         this.nombre = nombre;
         this.fondos = fondos;
         this.administrador = administrador;
-        this.transacciones = new LinkedList<>();
-        this.empleados = new LinkedList<>();
-        this.clientes = new LinkedList<>();
-        this.vehiculos = new LinkedList<>();
-        this.buses = new LinkedList<>();
-        this.camiones = new LinkedList<>();
-        this.carros = new LinkedList<>();
-        this.deportivos = new LinkedList<>();
-        this.motos = new LinkedList<>();
-        this.pickUps = new LinkedList<>();
-        this.sedanes = new LinkedList<>();
-        this.vans = new LinkedList<>();
+        this.transacciones = FXCollections.observableArrayList();
+        this.empleados = FXCollections.observableArrayList();
+        this.clientes = FXCollections.observableArrayList();
+        this.vehiculos = FXCollections.observableArrayList();
+        this.buses = FXCollections.observableArrayList();
+        this.camiones = FXCollections.observableArrayList();
+        this.carros = FXCollections.observableArrayList();
+        this.deportivos = FXCollections.observableArrayList();
+        this.motos = FXCollections.observableArrayList();
+        this.pickUps = FXCollections.observableArrayList();
+        this.sedanes = FXCollections.observableArrayList();
+        this.vans = FXCollections.observableArrayList();
     }
 
     /**
@@ -65,107 +68,107 @@ public class Concesionario {
         this.fondos = fondos;
     }
 
-    public LinkedList<Transaccion> getTransacciones() {
+    public ObservableList<Transaccion> getTransacciones() {
         return transacciones;
     }
 
-    public void setTransacciones(LinkedList<Transaccion> transacciones) {
+    public void setTransacciones(ObservableList<Transaccion> transacciones) {
         this.transacciones = transacciones;
     }
 
-    public LinkedList<Empleado> getEmpleados() {
+    public ObservableList<Empleado> getEmpleados() {
         return empleados;
     }
 
-    public void setEmpleados(LinkedList<Empleado> empleados) {
+    public void setEmpleados(ObservableList<Empleado> empleados) {
         this.empleados = empleados;
     }
 
-    public LinkedList<Cliente> getClientes() {
+    public ObservableList<Cliente> getClientes() {
         return clientes;
     }
 
-    public void setClientes(LinkedList<Cliente> clientes) {
+    public void setClientes(ObservableList<Cliente> clientes) {
         this.clientes = clientes;
     }
 
-    public LinkedList<Vehiculo> getVehiculos() {
+    public ObservableList<Vehiculo> getVehiculos() {
         return vehiculos;
     }
 
-    public void setVehiculos(LinkedList<Vehiculo> vehiculos) {
+    public void setVehiculos(ObservableList<Vehiculo> vehiculos) {
         this.vehiculos = vehiculos;
     }
 
-    public LinkedList<Bus> getBuses() {
+    public ObservableList<Bus> getBuses() {
         return buses;
     }
 
-    public void setBuses(LinkedList<Bus> buses) {
+    public void setBuses(ObservableList<Bus> buses) {
         this.buses = buses;
     }
 
-    public LinkedList<Camion> getCamiones() {
+    public ObservableList<Camion> getCamiones() {
         return camiones;
     }
 
-    public void setCamiones(LinkedList<Camion> camiones) {
+    public void setCamiones(ObservableList<Camion> camiones) {
         this.camiones = camiones;
     }
 
-    public LinkedList<Camioneta> getCamionetas() {
+    public ObservableList<Camioneta> getCamionetas() {
         return camionetas;
     }
 
-    public void setCamionetas(LinkedList<Camioneta> camionetas) {
+    public void setCamionetas(ObservableList<Camioneta> camionetas) {
         this.camionetas = camionetas;
     }
 
-    public LinkedList<Carro> getCarros() {
+    public ObservableList<Carro> getCarros() {
         return carros;
     }
 
-    public void setCarros(LinkedList<Carro> carros) {
+    public void setCarros(ObservableList<Carro> carros) {
         this.carros = carros;
     }
 
-    public LinkedList<Deportivo> getDeportivos() {
+    public ObservableList<Deportivo> getDeportivos() {
         return deportivos;
     }
 
-    public void setDeportivos(LinkedList<Deportivo> deportivos) {
+    public void setDeportivos(ObservableList<Deportivo> deportivos) {
         this.deportivos = deportivos;
     }
 
-    public LinkedList<Moto> getMotos() {
+    public ObservableList<Moto> getMotos() {
         return motos;
     }
 
-    public void setMotos(LinkedList<Moto> motos) {
+    public void setMotos(ObservableList<Moto> motos) {
         this.motos = motos;
     }
 
-    public LinkedList<PickUp> getPickUps() {
+    public ObservableList<PickUp> getPickUps() {
         return pickUps;
     }
 
-    public void setPickUps(LinkedList<PickUp> pickUps) {
+    public void setPickUps(ObservableList<PickUp> pickUps) {
         this.pickUps = pickUps;
     }
 
-    public LinkedList<Sedan> getSedanes() {
+    public ObservableList<Sedan> getSedanes() {
         return sedanes;
     }
 
-    public void setSedanes(LinkedList<Sedan> sedanes) {
+    public void setSedanes(ObservableList<Sedan> sedanes) {
         this.sedanes = sedanes;
     }
 
-    public LinkedList<Van> getVans() {
+    public ObservableList<Van> getVans() {
         return vans;
     }
 
-    public void setVans(LinkedList<Van> vans) {
+    public void setVans(ObservableList<Van> vans) {
         this.vans = vans;
     }
 
@@ -182,6 +185,14 @@ public class Concesionario {
      */
     public void agregarTransaccion(Transaccion transaccion) {
         transacciones.add(transaccion);
+    }
+
+
+    /**
+     * Método para eliminar transacción
+     */
+    public void eliminarTransaccion(Transaccion transaccion) {
+        transacciones.remove(transaccion);
     }
 
     /**
@@ -235,7 +246,7 @@ public class Concesionario {
      */
     public boolean actualizarEmpleado(Empleado seleccionado, String nombre, String apellido, String correo,
             String cedula, String telefono, String usuario, String contraseña,
-            String preguntaSeguridad, String respuesta, double salario) {
+            String preguntaSeguridad, String respuesta) {
         boolean actualizado = true;
         for (Empleado empleado : empleados) {
             if (empleado != seleccionado && empleado.getUsuario().equals(usuario)) {
@@ -251,6 +262,9 @@ public class Concesionario {
         seleccionado.setTelefono(telefono);
         seleccionado.setUsuario(usuario);
         seleccionado.setContraseña(contraseña);
+        seleccionado.setPreguntaSeguridad(preguntaSeguridad);
+        seleccionado.setRespuesta(respuesta);
+        
         return actualizado;
     }
 
@@ -780,10 +794,13 @@ public class Concesionario {
         seleccionado.setTelefono(telefono);
         seleccionado.setUsuario(usuario);
         seleccionado.setContraseña(contraseña);
+        seleccionado.setPreguntaSeguridad(preguntaSeguridad);
+        seleccionado.setRespuesta(respuesta);
         return actualizado;
     }
 
-    /**
+
+        /**
      * Método para verificar la existencia de un cliente con su usuario.
      */
     public boolean clienteExistente(String usuario) {
@@ -795,5 +812,80 @@ public class Concesionario {
             }
         }
         return existente;
+    }
+
+
+        /**
+     * Método para actualizar un cliente. Duda de si al actualizarlo también se le
+     * pueda actualizar el usuario y contraseña(El que lo acualiza es el
+     * administrador)
+     */
+    public void actualizarAdmin(Administrador admin, String nombre, String apellido, String correo, String cedula,
+            String telefono, String usuario, String contraseña,
+            String preguntaSeguridad, String respuesta) {
+        admin.setUsuario(usuario);
+        admin.setNombre(nombre);
+        admin.setApellido(apellido);
+        admin.setCorreo(correo);
+        admin.setCedula(cedula);
+        admin.setTelefono(telefono);
+        admin.setUsuario(usuario);
+        admin.setContraseña(contraseña);
+        admin.setPreguntaSeguridad(preguntaSeguridad);
+        admin.setRespuesta(respuesta);
+    }
+
+    /**
+     * Método para ver los reportes de un empleado en un tiempo dado
+     */
+    public ObservableList<Transaccion> verTransaccionesEmpleado(Empleado empleado, LocalDate fecha1, LocalDate fecha2){
+        ObservableList<Transaccion> transaccionesEmpleado = FXCollections.observableArrayList();
+        for(Transaccion transaccion: empleado.getTransacciones()){
+            if(transaccion.getfechaEntrega().isBefore(fecha2) && transaccion.getfechaEntrega().isAfter(fecha1)){
+                transaccionesEmpleado.add(transaccion);
+            }
+        }
+        return transaccionesEmpleado;
+    }
+
+    /**
+     * Método para obtener una lista de vehiculos para venta
+     */
+    public ObservableList<Vehiculo> obtenerVehiculosVenta(){
+        ObservableList<Vehiculo> vehiculosVenta = FXCollections.observableArrayList();
+        for(Vehiculo vehiculo: vehiculos){
+            if(vehiculo.getTipoRegistro().equals(TipoRegistro.VENTA)){
+                vehiculosVenta.add(vehiculo);
+            }
+        }
+        return vehiculosVenta;
+    }
+
+    /**
+     * Método para obtener una lista de vehiculos para compra
+     */
+    public ObservableList<Vehiculo> obtenerVehiculosAlquiler(){
+        ObservableList<Vehiculo> vehiculosAlquiler = FXCollections.observableArrayList();
+        for(Vehiculo vehiculo: vehiculos){
+            if(vehiculo.getTipoRegistro().equals(TipoRegistro.ALQUILER)){
+                vehiculosAlquiler.add(vehiculo);
+            }
+        }
+        return vehiculosAlquiler;
+    }
+
+
+    /**
+     * Método para validar si una fecha es posterior a otra
+     */
+    public boolean validarFechaPosterior(LocalDate fecha1, LocalDate fecha2){
+        return fecha1.isAfter(fecha2) || fecha1.isEqual(fecha2);
+    }
+
+    /**
+     * Método para calcular los días entre dos fechas
+     */
+        public int calcularDias(LocalDate fecha1, LocalDate fecha2){
+        return (int) ChronoUnit.DAYS.between(fecha1, fecha2);
     }
 }
