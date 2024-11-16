@@ -54,16 +54,6 @@
                         <Font size="12.0" />
                      </font>
                   </Button>
-                  <ImageView fitHeight="45.0" fitWidth="44.0" layoutX="269.0" layoutY="153.0">
-                     <image>
-                        <Image url="@Imagenes/view.gif" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="53.0" fitWidth="56.0" layoutX="263.0" layoutY="86.0">
-                     <image>
-                        <Image url="@Imagenes/profile.gif" />
-                     </image>
-                  </ImageView>
                </children>
             </AnchorPane>
                 <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="5.0" layoutX="201.0" layoutY="14.0" prefHeight="45.0" prefWidth="384.0" style="-fx-font-family: 'SansSerif'; -fx-font-weight: bold; -fx-font-size: 46;" text="INICIAR SESIÓN" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">

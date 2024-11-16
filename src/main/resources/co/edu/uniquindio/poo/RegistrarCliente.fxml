@@ -21,6 +21,12 @@
                 </Label>
                 <ToolBar layoutY="102.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="45.0" prefWidth="821.0" style="-fx-background-color: #fafafa;" AnchorPane.bottomAnchor="509.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="102.0">
                     <items>
+                  <ImageView fitHeight="31.0" fitWidth="32.0">
+                     <image>
+                        <Image url="@Imagenes/align-justify.png" />
+                     </image>
+                  </ImageView>
+                  <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
                         <Button fx:id="btnRegresar" mnemonicParsing="false" onAction="#handleBtnSalir" prefHeight="31.0" prefWidth="125.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Regresar">
                         </Button>
                         <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
@@ -31,58 +37,58 @@
                 </ToolBar>
                 <AnchorPane layoutX="314.0" layoutY="79.0" prefHeight="2.0" prefWidth="204.0" style="-fx-background-color: #202020;" AnchorPane.bottomAnchor="575.0" AnchorPane.leftAnchor="314.0" AnchorPane.rightAnchor="258.0" AnchorPane.topAnchor="79.0" />
                 <AnchorPane layoutX="-1.0" layoutY="146.0" prefHeight="2.0" prefWidth="776.0" style="-fx-background-color: #202020;" />
-            <AnchorPane layoutY="150.0" prefHeight="506.0" prefWidth="785.0">
+            <AnchorPane layoutX="1.0" layoutY="150.0" prefHeight="506.0" prefWidth="785.0">
                <children>
-                  <TextField fx:id="txtNombre" layoutX="306.0" layoutY="31.0" promptText="Sergio" />
-                  <TextField fx:id="txtApellido" layoutX="306.0" layoutY="73.0" promptText="Posada" />
-                  <TextField fx:id="txtCorreo" layoutX="306.0" layoutY="116.0" promptText="Sergio@gmail.com" />
-                  <Label layoutX="129.0" layoutY="34.0" text="Nombre:">
+                  <TextField fx:id="txtNombre" layoutX="306.0" layoutY="24.0" prefHeight="31.0" prefWidth="275.0" promptText="Nombre" />
+                  <TextField fx:id="txtApellido" layoutX="306.0" layoutY="73.0" prefHeight="31.0" prefWidth="275.0" promptText="Apellido" />
+                  <TextField fx:id="txtCorreo" layoutX="306.0" layoutY="127.0" prefHeight="31.0" prefWidth="275.0" promptText="Correo" />
+                  <TextField fx:id="txtTelefono" layoutX="307.0" layoutY="181.0" prefHeight="31.0" prefWidth="275.0" promptText="Telefono" />
+                  <Label layoutX="117.0" layoutY="332.0" text="Pregunta de Seguridad:">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <Label layoutX="129.0" layoutY="76.0" text="Apellido:">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="134.0" layoutY="119.0" text="Correo:">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="127.0" layoutY="159.0" text="Telefono:">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="131.0" layoutY="198.0" text="Usuario:">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="131.0" layoutY="241.0" text="Contraseña:">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="txtTelefono" layoutX="306.0" layoutY="156.0" promptText="3245844293" />
-                  <Label layoutX="131.0" layoutY="282.0" text="Pregunta de Seguridad:">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="txtUsuario" layoutX="306.0" layoutY="195.0" promptText="Sergio123" />
-                  <TextField fx:id="txtRespuesta" layoutX="306.0" layoutY="320.0" />
-                  <Label layoutX="129.0" layoutY="323.0" text="Respuesta:">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Label>
-                  <PasswordField fx:id="txtContrasena" layoutX="306.0" layoutY="238.0" promptText="Sergio*#9854" />
-                  <ChoiceBox fx:id="choicePreguntaSeguridad" layoutX="306.0" layoutY="279.0" prefHeight="31.0" prefWidth="323.0" />
-                  <Button fx:id="btnLimpiarCampos" layoutX="186.0" layoutY="373.0" mnemonicParsing="false" text="Limpiar Campos" />
-                  <Button fx:id="btnRegistrarse" layoutX="353.0" layoutY="373.0" mnemonicParsing="false" text="Registrarse" />
+                  <TextField fx:id="txtUsuario" layoutX="306.0" layoutY="238.0" prefHeight="31.0" prefWidth="275.0" promptText="Usuario" />
+                  <TextField fx:id="txtRespuesta" layoutX="306.0" layoutY="388.0" prefHeight="31.0" prefWidth="275.0" promptText="Respuesta" />
+                  <PasswordField fx:id="txtContrasena" layoutX="306.0" layoutY="289.0" prefHeight="31.0" prefWidth="275.0" promptText="Contraseñá" />
+                  <ChoiceBox fx:id="choicePreguntaSeguridad" layoutX="307.0" layoutY="337.0" prefHeight="31.0" prefWidth="323.0" />
+                  <Button fx:id="btnLimpiarCampos" layoutX="198.0" layoutY="445.0" mnemonicParsing="false" text="Limpiar Campos" />
+                  <Button fx:id="btnRegistrarse" layoutX="397.0" layoutY="445.0" mnemonicParsing="false" text="Registrarse" />
+                  <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="261.0" layoutY="24.0">
+                     <image>
+                        <Image url="@Imagenes/user%20(1).png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="261.0" layoutY="127.0">
+                     <image>
+                        <Image url="@Imagenes/envelope.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="261.0" layoutY="181.0">
+                     <image>
+                        <Image url="@Imagenes/phone-call.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="261.0" layoutY="238.0">
+                     <image>
+                        <Image url="@Imagenes/user-add.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="31.0" fitWidth="28.0" layoutX="261.0" layoutY="286.0">
+                     <image>
+                        <Image url="@Imagenes/eye%20(2).png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="31.0" fitWidth="28.0" layoutX="261.0" layoutY="385.0">
+                     <image>
+                        <Image url="@Imagenes/key.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="31.0" fitWidth="28.0" layoutX="261.0" layoutY="73.0">
+                     <image>
+                        <Image url="@../../../../../../../../../Downloads/fingerprint.png" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
             </children>
