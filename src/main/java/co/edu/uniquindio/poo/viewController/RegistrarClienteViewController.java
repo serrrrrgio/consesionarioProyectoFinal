@@ -12,7 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.image.ImageView;
 
-public class RegistrarseViewController {
+public class RegistrarClienteViewController {
 
     @FXML
     private Button btnIniciarSesion;
