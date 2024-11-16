@@ -30,32 +30,21 @@ public class InicioViewController {
 
     @FXML
     void handleBtnIniciarSesion(ActionEvent event) {
-        App.cambiarEscena("/co/edu/uniquindio/poo/Inicio.fxml", "Inicio", event, getClass());
+        App.cambiarEscena("/co/edu/uniquindio/poo/IniciarSesion.fxml", "IniciarSesion", event, getClass());
     }
     
 
     @FXML
     void handleBtnRegistrarse(ActionEvent event) {
-
+        App.cambiarEscena("/co/edu/uniquindio/poo/RegistrarCliente.fxml", "Registrar cliente", event, getClass());
     }
 
     @FXML
     public void initialize() {
-
-
         // Establecer efectos de hover para los botones
-        setButtonHoverEffect(btnSalir);
-        setButtonHoverEffect(btnIniciarSesion);
-        setButtonHoverEffect(btnRegistrarse);
+        App.setButtonHoverEffect(btnSalir);
+        App.setButtonHoverEffect(btnIniciarSesion);
+        App.setButtonHoverEffect(btnRegistrarse);
     }
 
-    private void setButtonHoverEffect(Button button) {
-        button.setStyle("-fx-background-color: white; -fx-text-fill: black;");
-        button.addEventHandler(MouseEvent.MOUSE_ENTERED, e -> {
-            button.setStyle("-fx-background-color: black; -fx-text-fill: white;");
-        });
-        button.addEventHandler(MouseEvent.MOUSE_EXITED, e -> {
-            button.setStyle("-fx-background-color: white; -fx-text-fill: black;");
-        });
-    }
 }

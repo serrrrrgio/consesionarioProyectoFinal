@@ -11,6 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.image.ImageView;
+import co.edu.uniquindio.poo.App;
 
 public class RegistrarClienteViewController {
 
@@ -72,21 +73,9 @@ public class RegistrarClienteViewController {
 
     @FXML
     public void initialize() {
-
-
         // Establecer efectos de hover para los botones
-        setButtonHoverEffect(btnRegresar);
-        setButtonHoverEffect(btnIniciarSesion);
-    }
-
-    private void setButtonHoverEffect(Button button) {
-        button.setStyle("-fx-background-color: white; -fx-text-fill: black;");
-        button.addEventHandler(MouseEvent.MOUSE_ENTERED, e -> {
-            button.setStyle("-fx-background-color: black; -fx-text-fill: white;");
-        });
-        button.addEventHandler(MouseEvent.MOUSE_EXITED, e -> {
-            button.setStyle("-fx-background-color: white; -fx-text-fill: black;");
-        });
+        App.setButtonHoverEffect(btnRegresar);
+        App.setButtonHoverEffect(btnIniciarSesion);
     }
 
 }
