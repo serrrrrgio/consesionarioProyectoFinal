@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="1183.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.InicioViewController">
+    <children>
+        <ImageView fx:id="backgroundImage" fitHeight="950.0" fitWidth="1188.0" opacity="0.56" preserveRatio="true" smooth="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="0.0">
+            <image>
+                <Image url="@imagenes/Imagen%20de%20WhatsApp%202024-11-03%20a%20las%2018.36.38_39cf80d9.jpg" />
+            </image>
+        </ImageView>
+        <AnchorPane layoutX="208.0" layoutY="173.0" opacity="0.8" prefHeight="655.0" prefWidth="776.0" style="-fx-background-color: #747474;" AnchorPane.bottomAnchor="122.0" AnchorPane.leftAnchor="208.0" AnchorPane.rightAnchor="199.0" AnchorPane.topAnchor="173.0">
+            <children>
+                <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="5.0" layoutX="292.0" layoutY="30.0" prefHeight="55.0" prefWidth="237.0" style="-fx-font-family: 'SansSerif'; -fx-font-weight: bold; -fx-font-size: 46;" text="HOME" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" AnchorPane.bottomAnchor="571.0" AnchorPane.leftAnchor="292.0" AnchorPane.rightAnchor="292.0" AnchorPane.topAnchor="30.0">
+                </Label>
+                <ToolBar layoutX="-1.0" layoutY="101.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="45.0" prefWidth="821.0" style="-fx-background-color: #fafafa;" AnchorPane.bottomAnchor="510.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="101.0">
+                    <items>
+                        <Button fx:id="btnSalir" mnemonicParsing="false" onAction="#handleBtnSalir" prefHeight="30.0" prefWidth="141.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Cerrar Sesion">
+                        </Button>
+                        <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
+                        <Button fx:id="btnIniciarSesion" mnemonicParsing="false" onAction="#handleBtnIniciarSesion" prefHeight="28.0" prefWidth="165.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Ragistrar Empleado">
+                        </Button>
+                        <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
+                        <Button fx:id="btnRegistrarse" mnemonicParsing="false" onAction="#handleBtnRegistrarse" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Actualizar Datos" textAlignment="CENTER">
+                        </Button>
+                  <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
+                  <Button fx:id="btnRegistrarse1" mnemonicParsing="false" onAction="#handleBtnRegistrarse" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Gestionar Fondos" textAlignment="CENTER" />
+                    </items>
+                </ToolBar>
+                <AnchorPane layoutX="328.0" layoutY="79.0" prefHeight="2.0" prefWidth="166.0" style="-fx-background-color: #fafafa;" AnchorPane.bottomAnchor="575.0" AnchorPane.leftAnchor="328.0" AnchorPane.rightAnchor="327.0" AnchorPane.topAnchor="79.0" />
+                <AnchorPane layoutX="-1.0" layoutY="146.0" prefHeight="459.0" prefWidth="776.0" style="-fx-background-color: #202020;">
+               <children>
+                      <ScrollPane prefHeight="509.0" prefWidth="776.0" />
+               </children></AnchorPane>
+            <TextField fx:id="txtNombredmin" editable="false" layoutX="557.0" layoutY="42.0" style="-fx-background-color: #747474; -fx-text-fill: #fafafa;" />
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

@@ -19,6 +19,12 @@
                 <ScrollPane layoutY="94.0" prefHeight="562.0" prefWidth="776.0" />
                 <ToolBar layoutY="102.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="45.0" prefWidth="821.0" style="-fx-background-color: #fafafa;" AnchorPane.bottomAnchor="509.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="102.0">
                     <items>
+                  <ImageView fitHeight="36.0" fitWidth="32.0">
+                     <image>
+                        <Image url="@Imagenes/align-justify.png" />
+                     </image>
+                  </ImageView>
+                  <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
                         <Button fx:id="btnRegresar" mnemonicParsing="false" onAction="#handleBtnSalir" prefHeight="31.0" prefWidth="125.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Regresar">
                         </Button>
                         <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
@@ -31,18 +37,8 @@
                 <AnchorPane layoutX="-1.0" layoutY="146.0" prefHeight="2.0" prefWidth="776.0" style="-fx-background-color: #202020;" />
             <AnchorPane layoutY="150.0" prefHeight="506.0" prefWidth="785.0">
                <children>
-                  <Label layoutX="192.0" layoutY="100.0" text="Usuario:">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="192.0" layoutY="163.0" text="Contraseña:">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="txtUsuario" layoutX="313.0" layoutY="97.0" promptText="Sergio123" />
-                  <PasswordField fx:id="txtContrasena" layoutX="313.0" layoutY="160.0" promptText="Sergio*#9854" />
+                  <TextField fx:id="txtUsuario" layoutX="313.0" layoutY="97.0" promptText="Usuario" />
+                  <PasswordField fx:id="txtContrasena" layoutX="313.0" layoutY="160.0" promptText="Contraseña" />
                   <Button fx:id="btnLimpiarCampos" layoutX="178.0" layoutY="292.0" mnemonicParsing="false" text="Limpiar Campos" />
                   <Button fx:id="btnRegistrarse" layoutX="353.0" layoutY="292.0" mnemonicParsing="false" text="Iniciar Sesion" />
                   <RadioButton layoutX="568.0" layoutY="76.0" mnemonicParsing="false" text="Cliente" />
@@ -58,6 +54,16 @@
                         <Font size="12.0" />
                      </font>
                   </Button>
+                  <ImageView fitHeight="45.0" fitWidth="44.0" layoutX="269.0" layoutY="153.0">
+                     <image>
+                        <Image url="@Imagenes/view.gif" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="53.0" fitWidth="56.0" layoutX="263.0" layoutY="86.0">
+                     <image>
+                        <Image url="@Imagenes/profile.gif" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
                 <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="5.0" layoutX="201.0" layoutY="14.0" prefHeight="45.0" prefWidth="384.0" style="-fx-font-family: 'SansSerif'; -fx-font-weight: bold; -fx-font-size: 46;" text="INICIAR SESIÓN" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
