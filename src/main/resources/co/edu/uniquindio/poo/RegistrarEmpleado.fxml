@@ -7,7 +7,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="1183.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.RegistrarseViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="1183.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.RegistrarEmpleadoViewController">
     <children>
         <ImageView fx:id="backgroundImage" fitHeight="950.0" fitWidth="1188.0" opacity="0.7" preserveRatio="true" smooth="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="0.0">
             <image>
@@ -27,11 +27,11 @@
                      </image>
                   </ImageView>
                   <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
-                        <Button fx:id="btnRegresar" mnemonicParsing="false" onAction="#handleBtnSalir" prefHeight="31.0" prefWidth="125.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Regresar">
+                        <Button fx:id="btnRegresar" mnemonicParsing="false" onAction="#handleBtnRegresar" prefHeight="31.0" prefWidth="125.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Regresar">
                         </Button>
                         <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
-                  <Button fx:id="btnRegresar1" mnemonicParsing="false" onAction="#handleBtnSalir" prefHeight="31.0" prefWidth="169.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Actualizar Datos" />
-                  <Button fx:id="btnRegresar11" mnemonicParsing="false" onAction="#handleBtnSalir" prefHeight="31.0" prefWidth="169.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Gestionar Fondos" />
+                  <Button fx:id="btnActualizarAdmin" mnemonicParsing="false" onAction="#handleBtnActualizarAdmin" prefHeight="31.0" prefWidth="169.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Actualizar Datos" />
+                  <Button fx:id="btnGestionarFondos" mnemonicParsing="false" onAction="#handleBtnGestionarFondos" prefHeight="31.0" prefWidth="169.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Gestionar Fondos" />
                     </items>
                 </ToolBar>
             </children>
@@ -53,10 +53,10 @@
                   <TextField fx:id="txtRespuesta" layoutX="747.0" layoutY="159.0" promptText="Respuesta" />
                   <PasswordField fx:id="txtContrasena" layoutX="747.0" layoutY="107.0" promptText="Contraseña" />
                   <ChoiceBox fx:id="choicePreguntaSeguridad" layoutX="304.0" layoutY="162.0" prefHeight="31.0" prefWidth="323.0" />
-                  <Button fx:id="btnLimpiarCampos" layoutX="465.0" layoutY="254.0" mnemonicParsing="false" text="Limpiar Campos" />
-                  <Button fx:id="btnRegistrarse" layoutX="489.0" layoutY="213.0" mnemonicParsing="false" text="Registrar" />
-                  <Button fx:id="btnRegistrarse1" layoutX="778.0" layoutY="213.0" mnemonicParsing="false" text="Actualizar" />
-                  <Button fx:id="btnRegistrarse2" layoutX="231.0" layoutY="213.0" mnemonicParsing="false" text="Eliminar" />
+                  <Button fx:id="btnLimpiarCampos" layoutX="465.0" layoutY="254.0" mnemonicParsing="false" onAction="#handleBtnLimpiarCampos" text="Limpiar Campos" />
+                  <Button fx:id="btnRegistrarEmpleado" layoutX="489.0" layoutY="213.0" mnemonicParsing="false" onAction="#handleBtnRegistrarEmpleado" text="Registrar" />
+                  <Button fx:id="btnActualizarEmpleado" layoutX="778.0" layoutY="213.0" mnemonicParsing="false" onAction="#handleBtnActualizarEmpleado" text="Actualizar" />
+                  <Button fx:id="btnDespedirEmpleado" layoutX="231.0" layoutY="213.0" mnemonicParsing="false" onAction="#handleBtnDespedirEmpleado" text="Despedir" />
                   <TableView layoutX="105.0" layoutY="303.0" prefHeight="378.0" prefWidth="835.0">
                     <columns>
                       <TableColumn prefWidth="154.0" text="Nombre" />
@@ -101,6 +101,7 @@
                         <Image url="@Imagenes/fingerprint.png" />
                      </image>
                   </ImageView>
+                  <TextField fx:id="txtSalario" layoutX="475.0" layoutY="7.0" promptText="Salario" />
                </children>
             </AnchorPane>
                   <Separator layoutX="689.0" layoutY="177.0" orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />

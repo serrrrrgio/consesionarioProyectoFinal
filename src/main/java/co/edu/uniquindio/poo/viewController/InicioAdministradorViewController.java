@@ -60,12 +60,12 @@ public class InicioAdministradorViewController {
 
     @FXML
     void handleBtnActualizarDatos(ActionEvent event) {
-        System.out.println();
+        App.cambiarEscena("/co/edu/uniquindio/poo/ActualizarDatosAdmin.fxml", "Inicio", event, getClass());
     }
 
     @FXML
     void handleBtnGestionarFondos(ActionEvent event) {
-        System.out.println();
+        App.cambiarEscena("/co/edu/uniquindio/poo/GestionarFondos.fxml", "Inicio", event, getClass());
     }
 
     @FXML
