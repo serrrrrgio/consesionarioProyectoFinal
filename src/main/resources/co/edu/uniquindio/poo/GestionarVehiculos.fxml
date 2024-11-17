@@ -18,7 +18,7 @@
          <children>
               <AnchorPane layoutX="67.0" layoutY="67.0" opacity="0.9" prefHeight="663.0" prefWidth="1062.0" style="-fx-background-color: #fafafa;" AnchorPane.bottomAnchor="233.0" AnchorPane.leftAnchor="67.0" AnchorPane.rightAnchor="56.0" AnchorPane.topAnchor="67.0">
                   <children>
-                      <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="5.0" layoutX="291.0" layoutY="23.0" prefHeight="55.0" prefWidth="254.0" style="-fx-font-family: 'SansSerif'; -fx-font-weight: bold; -fx-font-size: 46;" text="GESTION VEHICULAR" textAlignment="CENTER" textOverrun="CLIP" AnchorPane.bottomAnchor="578.0" AnchorPane.leftAnchor="291.0" AnchorPane.rightAnchor="231.0" AnchorPane.topAnchor="23.0">
+                      <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="5.0" layoutX="291.0" layoutY="23.0" prefHeight="55.0" prefWidth="254.0" style="-fx-font-family: 'SansSerif'; -fx-font-weight: bold; -fx-font-size: 46;" text="GESTIÓN VEHICULAR" textAlignment="CENTER" textOverrun="CLIP" AnchorPane.bottomAnchor="578.0" AnchorPane.leftAnchor="291.0" AnchorPane.rightAnchor="231.0" AnchorPane.topAnchor="23.0">
                 </Label>
                       <ToolBar layoutX="1.0" layoutY="92.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="52.0" prefWidth="1057.0" style="-fx-background-color: #fafafa;" AnchorPane.bottomAnchor="519.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="92.0">
                           <items>
@@ -61,7 +61,7 @@
                               <Image url="@Imagenes/envelope.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="31.0" fitWidth="28.0" layoutX="738.0" layoutY="102.0">
+                        <ImageView fitHeight="31.0" fitWidth="28.0" layoutX="738.0" layoutY="101.0">
                            <image>
                               <Image url="@Imagenes/eye%20(2).png" />
                            </image>
@@ -116,7 +116,7 @@
                         <TextField fx:id="txtTiempoCarga" layoutX="148.0" layoutY="260.0" promptText="Tiempo de Carga" />
                         <TextField fx:id="txtAutonomia" layoutX="148.0" layoutY="206.0" promptText="Autonomia" />
                         <ChoiceBox fx:id="choiceTipoRegistro" layoutX="784.0" layoutY="48.0" prefWidth="150.0" />
-                        <ChoiceBox fx:id="choiceTransmision" layoutX="773.0" layoutY="102.0" prefWidth="150.0" />
+                        <ChoiceBox fx:id="choiceTransmision" layoutX="782.0" layoutY="101.0" prefWidth="150.0" />
                         <ChoiceBox fx:id="choiceEstado" layoutX="784.0" layoutY="155.0" prefWidth="150.0" />
                         <TextField fx:id="txtCapacidadMaleteroBus" layoutX="150.0" layoutY="374.0" promptText="Capacidad Maletero" />
                         <TextField fx:id="txtNumeroBolsasAireBus" layoutX="150.0" layoutY="428.0" prefHeight="31.0" prefWidth="206.0" promptText="Numero de Bolsas de Aire" />
@@ -130,19 +130,18 @@
                               <Image url="@Imagenes/user-add.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="416.0" layoutY="434.0">
+                        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="411.0" layoutY="431.0">
                            <image>
                               <Image url="@Imagenes/user-add.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="416.0" layoutY="380.0">
+                        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="411.0" layoutY="377.0">
                            <image>
                               <Image url="@Imagenes/envelope.png" />
                            </image>
                         </ImageView>
-                        <TextField fx:id="txtNumeroSaliodasEmergenciaBus" layoutX="459.0" layoutY="431.0" prefHeight="31.0" prefWidth="204.0" promptText="Numero Salidas Emergencia" />
-                        <TextField fx:id="txtNumeroEjesBus" layoutX="450.0" layoutY="374.0" promptText="Numero de Ejes" />
-                        <RadioButton layoutX="100.0" layoutY="478.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="85.0" text="Camion" />
+                        <TextField fx:id="txtNumeroSaliodasEmergenciaBus" layoutX="454.0" layoutY="428.0" prefHeight="31.0" prefWidth="204.0" promptText="Numero Salidas Emergencia" />
+                        <TextField fx:id="txtNumeroEjesBus" layoutX="452.0" layoutY="374.0" promptText="Numero de Ejes" />
                         <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="114.0" layoutY="576.0">
                            <image>
                               <Image url="@Imagenes/user-add.png" />
@@ -155,14 +154,13 @@
                         </ImageView>
                         <TextField fx:id="txtNumeroEjesCamion" layoutX="157.0" layoutY="573.0" promptText="Numero de Ejes" />
                         <TextField fx:id="txtCapacidadCargaCamion" layoutX="157.0" layoutY="519.0" promptText="Capacidad Carga" />
-                        <ChoiceBox layoutX="460.0" layoutY="519.0" prefWidth="150.0" />
+                        <ChoiceBox fx:id="choiceTipoCamion" layoutX="460.0" layoutY="519.0" prefWidth="150.0" />
                         <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="414.0" layoutY="522.0">
                            <image>
                               <Image url="@Imagenes/phone-call.png" />
                            </image>
                         </ImageView>
-                        <RadioButton layoutX="480.0" layoutY="578.0" mnemonicParsing="false" text="Frenos de Aire" />
-                        <RadioButton layoutX="722.0" layoutY="332.0" mnemonicParsing="false" text="Camioneta" />
+                        <RadioButton fx:id="rdFrenosAireCamion" layoutX="434.0" layoutY="578.0" mnemonicParsing="false" text="Frenos de Aire" />
                         <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="722.0" layoutY="368.0">
                            <image>
                               <Image url="@Imagenes/envelope.png" />
@@ -237,18 +235,18 @@
                         </ImageView>
                         <TextField fx:id="txtUsuario113" layoutX="823.0" layoutY="904.0" promptText="Numero Bolsas Aire" />
                         <TextField fx:id="txtCorreo114" layoutX="823.0" layoutY="850.0" promptText="Capacidad Maletero" />
-                        <ChoiceBox fx:id="choiceCombustible" layoutX="470.0" layoutY="209.0" prefWidth="150.0" />
-                        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="424.0" layoutY="211.0">
+                        <ChoiceBox fx:id="choiceCombustible" layoutX="460.0" layoutY="206.0" prefWidth="150.0" />
+                        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="416.0" layoutY="212.0">
                            <image>
                               <Image url="@Imagenes/key.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="424.0" layoutY="265.0">
+                        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="102.0" layoutY="322.0">
                            <image>
                               <Image url="@Imagenes/key.png" />
                            </image>
                         </ImageView>
-                        <ChoiceBox fx:id="choiceVehiculo" layoutX="470.0" layoutY="263.0" prefWidth="150.0" />
+                        <ChoiceBox fx:id="choiceVehiculo" layoutX="148.0" layoutY="320.0" prefWidth="150.0" />
                      </children>
                   </AnchorPane>
                </content>
