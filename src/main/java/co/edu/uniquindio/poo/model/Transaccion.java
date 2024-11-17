@@ -1,5 +1,6 @@
 package co.edu.uniquindio.poo.model;
 
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 
 public class Transaccion {
@@ -80,7 +81,8 @@ public class Transaccion {
     }
 
     public String obtenerPrecioCadena(){
-        return String.valueOf(precio);
+        DecimalFormat formato = new DecimalFormat("#.################"); // Hasta 16 decimales
+        return formato.format(precio);
     }
 
 }

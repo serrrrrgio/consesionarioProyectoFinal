@@ -21,12 +21,10 @@ public class Camioneta extends Carro {
             int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado, boolean camaraReversa,
             double capacidadMaletero, boolean velocidadCrucero, int numeroBolsasAire,
             boolean sensoresColision, boolean sensorTraficoCruzado, boolean asistentepermanenciaCarril,
-            boolean cuatroPorCuatro, Combustible combustible, double autonomia,
+            boolean cuatroPorCuatro, double precio, Combustible combustible, double autonomia,
             double tiempoCarga, boolean enchufable,
             boolean hibridoLigero) {
-        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado,
-                capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa, combustible, autonomia,
-                tiempoCarga, enchufable, hibridoLigero);
+        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa, precio, combustible, autonomia, tiempoCarga, enchufable, hibridoLigero);
         this.capacidadMaletero = capacidadMaletero;
         this.velocidadCrucero = velocidadCrucero;
         this.numeroBolsasAire = numeroBolsasAire;

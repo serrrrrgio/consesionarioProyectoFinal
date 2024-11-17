@@ -1,5 +1,7 @@
 package co.edu.uniquindio.poo.model;
 
+import java.text.DecimalFormat;
+
 public class Vehiculo {
 
     /**
@@ -14,6 +16,7 @@ public class Vehiculo {
     public TipoRegistro tipoRegistro;
     public Transmision transmision;
     public Estado estado;
+    public double precio;
     public Combustible combustible;
 
     /**
@@ -32,7 +35,7 @@ public class Vehiculo {
      * Constructor
      */
     public Vehiculo(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
-            TipoRegistro tipoRegistro, Transmision transmision, Estado estado, Combustible combustible,
+            TipoRegistro tipoRegistro, Transmision transmision, Estado estado, double precio, Combustible combustible,
             double autonomia, double tiempoCarga, boolean enchufable, boolean hibridoLigero) {
         this.marca = marca;
         this.modelo = modelo;
@@ -48,6 +51,7 @@ public class Vehiculo {
         this.enchufable = enchufable;
         this.hibridoLigero = hibridoLigero;
         this.placa = placa;
+        this.precio = precio;
     }
 
     /**
@@ -165,6 +169,14 @@ public class Vehiculo {
         this.placa = placa;
     }
 
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
     public boolean esElectrico() {
         return combustible.equals(Combustible.ELECTRICO);
     }
@@ -215,6 +227,11 @@ public class Vehiculo {
             cadena = "No";
         }
         return cadena;
+    }
+
+    public String obtenerPrecioCadena() {
+        DecimalFormat formato = new DecimalFormat("#.################"); // Hasta 16 decimales
+        return formato.format(precio);
     }
 
 }
