@@ -7,7 +7,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="1183.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.RegistrarEmpleadoViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="1183.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.GestionarVehiculosViewController">
     <children>
         <ImageView fx:id="backgroundImage" fitHeight="950.0" fitWidth="1188.0" opacity="0.7" preserveRatio="true" smooth="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="0.0">
             <image>
@@ -48,10 +48,10 @@
                <content>
                   <AnchorPane prefHeight="1308.0" prefWidth="1140.0" style="-fx-background-color: #fafafa;">
                      <children>
-                        <TextField fx:id="txtMarca" layoutX="148.0" layoutY="55.0" promptText="Marca" />
-                        <TextField fx:id="txtCilindraje" layoutX="460.0" layoutY="155.0" promptText="Cilindraje" />
-                        <TextField fx:id="txtPlaca" layoutX="148.0" layoutY="101.0" promptText="Placa" />
-                        <TextField fx:id="txtModelo" layoutX="148.0" layoutY="155.0" promptText="Modelo" />
+                        <TextField fx:id="txtMarcaVehiculo" layoutX="148.0" layoutY="55.0" promptText="Marca" />
+                        <TextField fx:id="txtCilindrajeVehiculo" layoutX="460.0" layoutY="155.0" promptText="Cilindraje" />
+                        <TextField fx:id="txtPlacaVehiculo" layoutX="148.0" layoutY="101.0" promptText="Placa" />
+                        <TextField fx:id="txtModeloVehiculo" layoutX="148.0" layoutY="155.0" promptText="Modelo" />
                         <Button fx:id="btnLimpiarCampos" layoutX="468.0" layoutY="1202.0" mnemonicParsing="false" onAction="#handleBtnLimpiarCampos" text="Limpiar Campos" />
                         <Button fx:id="btnRegistrarEmpleado" layoutX="495.0" layoutY="1150.0" mnemonicParsing="false" onAction="#handleBtnRegistrarEmpleado" text="Registrar" />
                         <Button fx:id="btnActualizarEmpleado" layoutX="727.0" layoutY="1150.0" mnemonicParsing="false" onAction="#handleBtnActualizarEmpleado" text="Actualizar" />
@@ -91,8 +91,8 @@
                               <Image url="@Imagenes/fingerprint.png" />
                            </image>
                         </ImageView>
-                        <TextField fx:id="txtCambios" layoutX="460.0" layoutY="55.0" promptText="Numero de Cambios" />
-                        <TextField fx:id="txtVelocidadMaxima" layoutX="460.0" layoutY="101.0" promptText="Velocidad maxima" />
+                        <TextField fx:id="txtCambiosVehiculo" layoutX="460.0" layoutY="55.0" promptText="Numero de Cambios" />
+                        <TextField fx:id="txtVelocidadMaximaVehiculo" layoutX="460.0" layoutY="101.0" promptText="Velocidad maxima" />
                         <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="416.0" layoutY="58.0">
                            <image>
                               <Image url="@Imagenes/usd-circle.png" />
@@ -113,13 +113,13 @@
                               <Image url="@Imagenes/envelope.png" />
                            </image>
                         </ImageView>
-                        <TextField fx:id="txtTiempoCarga" layoutX="148.0" layoutY="260.0" promptText="Tiempo de Carga" />
-                        <TextField fx:id="txtAutonomia" layoutX="148.0" layoutY="206.0" promptText="Autonomia" />
-                        <ChoiceBox fx:id="choiceTipoRegistro" layoutX="784.0" layoutY="48.0" prefWidth="150.0" />
-                        <ChoiceBox fx:id="choiceTransmision" layoutX="773.0" layoutY="102.0" prefWidth="150.0" />
-                        <ChoiceBox fx:id="choiceEstado" layoutX="784.0" layoutY="155.0" prefWidth="150.0" />
-                        <TextField fx:id="txtCapacidadMaleteroBus" layoutX="150.0" layoutY="374.0" promptText="Capacidad Maletero" />
-                        <TextField fx:id="txtNumeroBolsasAireBus" layoutX="150.0" layoutY="428.0" prefHeight="31.0" prefWidth="206.0" promptText="Numero de Bolsas de Aire" />
+                        <TextField fx:id="txtTiempoCargaElectrico" layoutX="148.0" layoutY="260.0" promptText="Tiempo de Carga" />
+                        <TextField fx:id="txtAutonomiaElectrico" layoutX="148.0" layoutY="206.0" promptText="Autonomia" />
+                        <ChoiceBox fx:id="choiceTipoRegistroVehiculo" layoutX="784.0" layoutY="48.0" prefWidth="150.0" />
+                        <ChoiceBox fx:id="choiceTransmisionVehiculo" layoutX="773.0" layoutY="102.0" prefWidth="150.0" />
+                        <ChoiceBox fx:id="choiceEstadoVehiculo" layoutX="784.0" layoutY="155.0" prefWidth="150.0" />
+                        <TextField fx:id="txtCapacidadMaleteroBusCamioneta" layoutX="150.0" layoutY="374.0" promptText="Capacidad Maletero" />
+                        <TextField fx:id="txtNumeroBolsasAireBusCamioneta" layoutX="150.0" layoutY="428.0" prefHeight="31.0" prefWidth="206.0" promptText="Numero de Bolsas de Aire" />
                         <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="107.0" layoutY="377.0">
                            <image>
                               <Image url="@Imagenes/envelope.png" />
@@ -155,13 +155,13 @@
                         </ImageView>
                         <TextField fx:id="txtNumeroEjesCamion" layoutX="157.0" layoutY="573.0" promptText="Numero de Ejes" />
                         <TextField fx:id="txtCapacidadCargaCamion" layoutX="157.0" layoutY="519.0" promptText="Capacidad Carga" />
-                        <ChoiceBox layoutX="460.0" layoutY="519.0" prefWidth="150.0" />
+                        <ChoiceBox fx:id="choiceTipoCamion" layoutX="460.0" layoutY="519.0" prefWidth="150.0" />
                         <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="414.0" layoutY="522.0">
                            <image>
                               <Image url="@Imagenes/phone-call.png" />
                            </image>
                         </ImageView>
-                        <RadioButton layoutX="480.0" layoutY="578.0" mnemonicParsing="false" text="Frenos de Aire" />
+                        <RadioButton fx:id="rdFrenosAireCamion" layoutX="480.0" layoutY="578.0" mnemonicParsing="false" text="Frenos de Aire" />
                         <RadioButton layoutX="722.0" layoutY="332.0" mnemonicParsing="false" text="Camioneta" />
                         <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="722.0" layoutY="368.0">
                            <image>
@@ -237,7 +237,7 @@
                         </ImageView>
                         <TextField fx:id="txtUsuario113" layoutX="823.0" layoutY="904.0" promptText="Numero Bolsas Aire" />
                         <TextField fx:id="txtCorreo114" layoutX="823.0" layoutY="850.0" promptText="Capacidad Maletero" />
-                        <ChoiceBox fx:id="choiceCombustible" layoutX="470.0" layoutY="209.0" prefWidth="150.0" />
+                        <ChoiceBox fx:id="choiceCombustibleVehiculo" layoutX="470.0" layoutY="209.0" prefWidth="150.0" />
                         <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="424.0" layoutY="211.0">
                            <image>
                               <Image url="@Imagenes/key.png" />
@@ -249,6 +249,11 @@
                            </image>
                         </ImageView>
                         <ChoiceBox fx:id="choiceVehiculo" layoutX="470.0" layoutY="263.0" prefWidth="150.0" />
+                        <TextField fx:id="txtNumeroPasajerosCarro" layoutX="766.0" layoutY="206.0" promptText="Número pasajeros" />
+                        <TextField fx:id="txtNumeroPuertasCarro" layoutX="766.0" layoutY="245.0" promptText="Número puertas" />
+                        <RadioButton fx:id="rdAbsCarro" layoutX="722.0" layoutY="281.0" mnemonicParsing="false" text="Frenos ABS" />
+                        <RadioButton fx:id="rdAireAcondicionado" layoutX="876.0" layoutY="278.0" mnemonicParsing="false" text="Aire acondicionado" />
+                        <RadioButton fx:id="rdCamaraReversaPickUpBus" layoutX="876.0" layoutY="311.0" mnemonicParsing="false" text="Camara reversa" />
                      </children>
                   </AnchorPane>
                </content>

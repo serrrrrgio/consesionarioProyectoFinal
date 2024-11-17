@@ -4,6 +4,7 @@ import co.edu.uniquindio.poo.App;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.event.ActionEvent;
@@ -12,11 +13,45 @@ import java.net.URL;
 
 public class InicioClienteViewController {
 
+ 
+    @FXML
+    private Label lblComprarVehiculo;
+
+    @FXML
+    private Button btnAlquilarVehiculo;
+
     @FXML
     private ImageView backgroundImage;
 
     @FXML
-    private Button btnActualizarDatosInicio;
+    private Label lblVenderVehiculo;
+
+    @FXML
+    private ImageView btnAlquilarVehiculoInicioImage1;
+
+    @FXML
+    private Button btnAlquilarVehiculoInicio;
+
+    @FXML
+    private ImageView btnActualizarDatosInicioImage;
+
+    @FXML
+    private Label lblAlquilarVehiculo;
+
+    @FXML
+    private Label lblActualizarDatos;
+
+    @FXML
+    private Button btnActualizarDatos;
+
+    @FXML
+    private Button btnVenderVehiculo;
+
+    @FXML
+    private ImageView btnVenderVehiculoInicioImage;
+
+    @FXML
+    private Button btnRegresar;
 
     @FXML
     private Button btnComprarVehiculoInicio;
@@ -25,37 +60,19 @@ public class InicioClienteViewController {
     private Button btnVenderVehiculoInicio;
 
     @FXML
-    private Button btnAlquilarVehiculoInicio;
+    private Button btnActualizarDatosInicio;
 
     @FXML
-    private Button btnRegresar;
+    private Button btnComprarVehiculo;
 
     @FXML
-    private Label lblActualizarDatos;
-
-    @FXML
-    private Label lblComprarVehiculo;
-
-    @FXML
-    private Label lblVenderVehiculo;
-
-    @FXML
-    private Label lblAlquilarVehiculo;
-
-    @FXML
-    private ImageView btnActualizarDatosInicioImage;
+    private ImageView btnRegresarImage;
 
     @FXML
     private ImageView btnComprarVehiculoInicioImage;
 
     @FXML
-    private ImageView btnVenderVehiculoInicioImage;
-
-    @FXML
-    private ImageView btnAlquilarVehiculoInicioImage1;
-
-    @FXML
-    private ImageView btnRegresarImage;
+    private TextField txtNombredmin;
 
     private Image originalActualizarDatos;
     private Image originalComprarVehiculo;

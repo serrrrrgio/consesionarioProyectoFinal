@@ -9,7 +9,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="1183.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.InicioAdministradorViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="1183.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.InicioEmpleadoViewController">
     <children>
         <ImageView fx:id="backgroundImage" fitHeight="950.0" fitWidth="1188.0" opacity="0.56" preserveRatio="true" smooth="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="0.0">
             <image>
@@ -50,7 +50,7 @@
                             <content>
                                 <AnchorPane prefHeight="506.0" prefWidth="771.0">
                                     <children>
-                                        <Button fx:id="btnGestionarVehiculosInicio" layoutX="114.0" layoutY="72.0" mnemonicParsing="false" prefHeight="230.0" prefWidth="248.0">
+                                        <Button fx:id="btnGestionarVehiculosInicio" layoutX="114.0" layoutY="72.0" mnemonicParsing="false" onAction="#handleBtnGestionarVehiculos" prefHeight="230.0" prefWidth="248.0">
                                             <graphic>
                                                 <ImageView fx:id="btnGestionarVehiculosInicioImage" fitHeight="199.0" fitWidth="226.0">
                                                     <image>
@@ -59,7 +59,7 @@
                                                 </ImageView>
                                             </graphic>
                                         </Button>
-                                        <Button fx:id="btnActualizarDatosInicio" layoutX="420.0" layoutY="72.0" mnemonicParsing="false" prefHeight="230.0" prefWidth="232.0">
+                                        <Button fx:id="btnActualizarDatosInicio" layoutX="420.0" layoutY="72.0" mnemonicParsing="false" onAction="#handleBtnActualizarDatos" prefHeight="230.0" prefWidth="232.0">
                                             <graphic>
                                                 <ImageView fx:id="btnActualizarDatosInicioImage" fitHeight="211.0" fitWidth="211.0">
                                                     <image>
