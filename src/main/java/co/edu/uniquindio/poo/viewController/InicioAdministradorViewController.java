@@ -49,6 +49,32 @@ public class InicioAdministradorViewController {
     private Label lblActualizarDatos;
 
     @FXML
+    private ImageView imgGestionarFondosInicio;
+
+    @FXML
+    private ImageView imgRegistrarEmpleadoInicio;
+
+    @FXML
+    private ImageView imgActualizarDatosInicio;
+
+    @FXML
+    public void initialize() {
+        // Establecer efectos de hover para los botones principales
+        App.setButtonHoverEffect(btnRegresar);
+        App.setButtonHoverEffect(btnRegistrarEmpleado);
+        App.setButtonHoverEffect(btnGestionarFondos);
+        App.setButtonHoverEffect(btnActualizarDatos);
+
+        // Agregar efectos de hover a los botones de inicio y etiquetas
+        setHoverEffect(btnGestionarFondosInicio, imgGestionarFondosInicio, lblGestionarFondos, "imagenes/sack-dollar-white.png", "imagenes/sack-dollar.png");
+        setHoverEffect(btnRegistrarEmpleadoInicio, imgRegistrarEmpleadoInicio, lblRegistrarEmpleado, "imagenes/user-add-white.png", "imagenes/user-add.png");
+        setHoverEffect(btnActualizarDatosInicio, imgActualizarDatosInicio, lblActualizarDatos, "imagenes/apps-add-white.png", "imagenes/apps-add.png");
+
+        // Efecto hover para el botón de regresar
+        setHoverEffect(btnRegresar, null, null, "imagenes/exit-white.png", "imagenes/exit.png");
+    }
+
+    @FXML
     void handleBtnRegresar(ActionEvent event) {
         App.cambiarEscena("/co/edu/uniquindio/poo/IniciarSesion.fxml", "Inicio", event, getClass());
     }
@@ -66,32 +92,6 @@ public class InicioAdministradorViewController {
     @FXML
     void handleBtnGestionarFondos(ActionEvent event) {
         App.cambiarEscena("/co/edu/uniquindio/poo/GestionarFondos.fxml", "Inicio", event, getClass());
-    }
-
-    @FXML
-    private ImageView imgGestionarFondosInicio;
-
-    @FXML
-    private ImageView imgRegistrarEmpleadoInicio;
-
-    @FXML
-    private ImageView imgActualizarDatosInicio;
-    
-    @FXML
-    public void initialize() {
-        // Establecer efectos de hover para los botones principales
-        App.setButtonHoverEffect(btnRegresar);
-        App.setButtonHoverEffect(btnRegistrarEmpleado);
-        App.setButtonHoverEffect(btnGestionarFondos);
-        App.setButtonHoverEffect(btnActualizarDatos);
-
-        // Agregar efectos de hover a los botones de inicio y etiquetas
-        setHoverEffect(btnGestionarFondosInicio, imgGestionarFondosInicio, lblGestionarFondos, "imagenes/sack-dollar-white.png", "imagenes/sack-dollar.png");
-        setHoverEffect(btnRegistrarEmpleadoInicio, imgRegistrarEmpleadoInicio, lblRegistrarEmpleado, "imagenes/user-add-white.png", "imagenes/user-add.png");
-        setHoverEffect(btnActualizarDatosInicio, imgActualizarDatosInicio, lblActualizarDatos, "imagenes/apps-add-white.png", "imagenes/apps-add.png");
-
-        // Efecto hover para el botón de regresar
-        setHoverEffect(btnRegresar, null, null, "imagenes/exit%20(1)-white.png", "imagenes/exit%20(1).png");
     }
 
     private void setHoverEffect(Button button, ImageView imageView, Label label, String hoverImageUrl, String defaultImageUrl) {
