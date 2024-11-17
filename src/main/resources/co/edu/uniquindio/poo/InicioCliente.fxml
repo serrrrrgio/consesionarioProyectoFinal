@@ -9,84 +9,94 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="1183.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.InicioClienteViewController">
     <children>
-        <ImageView fx:id="backgroundImage" fitHeight="950.0" fitWidth="1188.0" opacity="0.7" preserveRatio="true" smooth="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="0.0">
+        <ImageView fx:id="backgroundImage" fitHeight="950.0" fitWidth="1188.0" opacity="0.56" preserveRatio="true" smooth="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="0.0">
             <image>
                 <Image url="@imagenes/Imagen%20de%20WhatsApp%202024-11-03%20a%20las%2018.36.38_39cf80d9.jpg" />
             </image>
         </ImageView>
-        <AnchorPane layoutX="208.0" layoutY="173.0" opacity="0.9" prefHeight="656.0" prefWidth="821.0" style="-fx-background-color: #747474;" AnchorPane.bottomAnchor="121.0" AnchorPane.leftAnchor="208.0" AnchorPane.rightAnchor="199.0" AnchorPane.topAnchor="173.0">
+        <AnchorPane layoutX="208.0" layoutY="173.0" opacity="0.8" prefHeight="655.0" prefWidth="776.0" style="-fx-background-color: #747474;" AnchorPane.bottomAnchor="122.0" AnchorPane.leftAnchor="208.0" AnchorPane.rightAnchor="199.0" AnchorPane.topAnchor="173.0">
             <children>
-                <ScrollPane prefHeight="656.0" prefWidth="776.0" />
-                <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="5.0" layoutX="292.0" layoutY="30.0" prefHeight="55.0" prefWidth="254.0" style="-fx-font-family: 'SansSerif'; -fx-font-weight: bold; -fx-font-size: 46;" text="REGISTRO" textAlignment="CENTER" textOverrun="CLIP" AnchorPane.bottomAnchor="571.0" AnchorPane.leftAnchor="292.0" AnchorPane.rightAnchor="230.0" AnchorPane.topAnchor="30.0">
-                </Label>
-                <ToolBar layoutY="102.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="45.0" prefWidth="821.0" style="-fx-background-color: #fafafa;" AnchorPane.bottomAnchor="509.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="102.0">
+                <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="5.0" layoutX="292.0" layoutY="30.0" prefHeight="55.0" prefWidth="237.0" style="-fx-font-family: 'SansSerif'; -fx-font-weight: bold; -fx-font-size: 46;" text="HOME" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" AnchorPane.bottomAnchor="571.0" AnchorPane.leftAnchor="292.0" AnchorPane.rightAnchor="292.0" AnchorPane.topAnchor="30.0" />
+                <ToolBar layoutX="-1.0" layoutY="108.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="45.0" prefWidth="821.0" style="-fx-background-color: #fafafa;" AnchorPane.bottomAnchor="503.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="108.0">
                     <items>
-                        <Button fx:id="btnRegresar" mnemonicParsing="false" onAction="#handleBtnSalir" prefHeight="31.0" prefWidth="125.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Regresar">
-                        </Button>
+                        <ImageView fitHeight="33.0" fitWidth="32.0">
+                            <image>
+                                <Image url="@Imagenes/align-justify.png" />
+                            </image>
+                        </ImageView>
                         <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
-                        <Button fx:id="btnIniciarSesion" mnemonicParsing="false" onAction="#handleBtnIniciarSesion" prefHeight="28.0" prefWidth="134.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Iniciar Sesión">
-                        </Button>
+                        <Button fx:id="btnRegresar" mnemonicParsing="false" onAction="#handleBtnRegresar" prefHeight="34.0" prefWidth="53.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="31.0">
+                           <image>
+                              <Image url="@Imagenes/exit%20(1).png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
                         <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
+                        <Button fx:id="btnRegistrarEmpleado" mnemonicParsing="false" onAction="#handleBtnRegistrarEmpleado" prefHeight="28.0" prefWidth="165.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Registrar Empleado" />
+                        <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
+                        <Button fx:id="btnActualiarDatos" mnemonicParsing="false" onAction="#handleBtnActualiarDatos" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Actualizar Datos" textAlignment="CENTER" />
+                        <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
+                        <Button fx:id="btnGestionarFondos" mnemonicParsing="false" onAction="#handleBtnGestionarFondos" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Gestionar Fondos" textAlignment="CENTER" />
                     </items>
                 </ToolBar>
-                <AnchorPane layoutX="314.0" layoutY="79.0" prefHeight="2.0" prefWidth="204.0" style="-fx-background-color: #202020;" AnchorPane.bottomAnchor="575.0" AnchorPane.leftAnchor="314.0" AnchorPane.rightAnchor="258.0" AnchorPane.topAnchor="79.0" />
-                <AnchorPane layoutX="-1.0" layoutY="146.0" prefHeight="2.0" prefWidth="776.0" style="-fx-background-color: #202020;" />
-            <AnchorPane layoutY="150.0" prefHeight="506.0" prefWidth="785.0">
-               <children>
-                  <RadioButton fx:id="rdbtnCliente" layoutX="150.0" layoutY="380.0" mnemonicParsing="false" text="Cliente" />
-                  <RadioButton fx:id="rdbtnEmpleado" layoutX="513.0" layoutY="380.0" mnemonicParsing="false" text="Empleado" />
-                  <TextField fx:id="txtNombre" layoutX="306.0" layoutY="31.0" promptText="Sergio" />
-                  <TextField fx:id="txtApellido" layoutX="306.0" layoutY="73.0" promptText="Posada" />
-                  <TextField fx:id="txtCorreo" layoutX="306.0" layoutY="116.0" promptText="Sergio@gmail.com" />
-                  <Label layoutX="129.0" layoutY="34.0" text="Nombre:">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="129.0" layoutY="76.0" text="Apellido:">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="134.0" layoutY="119.0" text="Correo:">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="127.0" layoutY="159.0" text="Telefono:">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="131.0" layoutY="198.0" text="Usuario:">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="131.0" layoutY="241.0" text="constrasena:">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="txtTelefono" layoutX="306.0" layoutY="156.0" promptText="3245844293" />
-                  <Label layoutX="131.0" layoutY="282.0" text="Pregunta de Seguridad:">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="txtUsuario" layoutX="306.0" layoutY="195.0" promptText="Sergio123" />
-                  <TextField fx:id="txtRespuesta" layoutX="306.0" layoutY="320.0" />
-                  <Label layoutX="129.0" layoutY="323.0" text="Respuesta:">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Label>
-                  <PasswordField fx:id="txtContrasena" layoutX="306.0" layoutY="238.0" promptText="Sergio*#9854" />
-                  <ChoiceBox fx:id="choicePreguntaSeguridad" layoutX="306.0" layoutY="279.0" prefHeight="31.0" prefWidth="323.0" />
-                  <Button fx:id="btnLimpiarCampos" layoutX="191.0" layoutY="434.0" mnemonicParsing="false" text="Limpiar Campos" />
-                  <Button fx:id="btnRegistrarse" layoutX="353.0" layoutY="434.0" mnemonicParsing="false" text="Registrarse" />
-               </children>
-            </AnchorPane>
+                <AnchorPane layoutX="328.0" layoutY="79.0" prefHeight="2.0" prefWidth="166.0" style="-fx-background-color: #fafafa;" AnchorPane.bottomAnchor="575.0" AnchorPane.leftAnchor="328.0" AnchorPane.rightAnchor="327.0" AnchorPane.topAnchor="79.0" />
+                <AnchorPane layoutX="-1.0" layoutY="146.0" prefHeight="459.0" prefWidth="776.0" style="-fx-background-color: #202020;">
+                    <children>
+                        <ScrollPane prefHeight="509.0" prefWidth="776.0">
+                            <content>
+                                <AnchorPane prefHeight="506.0" prefWidth="771.0">
+                                    <children>
+                                        <Button fx:id="btnGestionarFondosInicio" layoutY="75.0" mnemonicParsing="false" prefHeight="230.0" prefWidth="248.0">
+                                            <graphic>
+                                                <ImageView fitHeight="176.0" fitWidth="178.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@Imagenes/sack-dollar.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                        <Button fx:id="btnRegistrarEmpleadoInicio" layoutX="270.0" layoutY="75.0" mnemonicParsing="false" prefHeight="230.0" prefWidth="246.0">
+                                            <graphic>
+                                                <ImageView fitHeight="172.0" fitWidth="178.0">
+                                                    <image>
+                                                        <Image url="@Imagenes/user-add%20(1).png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                        <Button fx:id="btnActualizarDatosInicio" layoutX="537.0" layoutY="75.0" mnemonicParsing="false" prefHeight="230.0" prefWidth="232.0">
+                                            <graphic>
+                                                <ImageView fitHeight="178.0" fitWidth="193.0">
+                                                    <image>
+                                                        <Image url="@Imagenes/apps-add.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                              <Label fx:id="lblGestionarFondos" layoutX="47.0" layoutY="323.0" text="Gestionar Fondos" textFill="BLACK">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblRegistrarEmpleado" layoutX="307.0" layoutY="323.0" text="Registrar Empleado" textFill="BLACK">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblActualizarDatos" layoutX="582.0" layoutY="323.0" text="Actualizar Datos" textFill="BLACK">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </ScrollPane>
+                    </children>
+                </AnchorPane>
+                <TextField fx:id="txtNombredmin" editable="false" layoutX="557.0" layoutY="42.0" style="-fx-background-color: #747474; -fx-text-fill: #fafafa;" />
             </children>
         </AnchorPane>
     </children>
