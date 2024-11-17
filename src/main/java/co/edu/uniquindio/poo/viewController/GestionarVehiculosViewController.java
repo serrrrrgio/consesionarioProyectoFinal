@@ -1,12 +1,21 @@
 package co.edu.uniquindio.poo.viewController;
 
+import co.edu.uniquindio.poo.App;
+import co.edu.uniquindio.poo.controller.GestionarVehiculosController;
+import co.edu.uniquindio.poo.model.Bus;
+import co.edu.uniquindio.poo.model.Camion;
+import co.edu.uniquindio.poo.model.Camioneta;
 import co.edu.uniquindio.poo.model.Combustible;
+import co.edu.uniquindio.poo.model.Deportivo;
 import co.edu.uniquindio.poo.model.Estado;
 import co.edu.uniquindio.poo.model.Moto;
+import co.edu.uniquindio.poo.model.PickUp;
+import co.edu.uniquindio.poo.model.Sedan;
 import co.edu.uniquindio.poo.model.TipoCamion;
 import co.edu.uniquindio.poo.model.TipoRegistro;
 import co.edu.uniquindio.poo.model.TipoVehiculo;
 import co.edu.uniquindio.poo.model.Transmision;
+import co.edu.uniquindio.poo.model.Van;
 import co.edu.uniquindio.poo.model.Vehiculo;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -221,6 +230,8 @@ public class GestionarVehiculosViewController {
 
     private Vehiculo vehiculoSeleccionado;
 
+    GestionarVehiculosController gestionarVehiculosController;
+
     @FXML
     void handleBtnRegresar(ActionEvent event) {
 
@@ -251,6 +262,16 @@ public class GestionarVehiculosViewController {
 
     }
 
+    @FXML
+    public void initialize() {
+        gestionarVehiculosController = new GestionarVehiculosController(App.getConcesionario());
+
+
+        inicializarData();
+
+        agregarListener();
+    }
+
     private void inicializarData() {
         tbcEstado.setCellValueFactory(new PropertyValueFactory<>("estado"));
         tbcMarca.setCellValueFactory(new PropertyValueFactory<>("marca"));
@@ -264,17 +285,76 @@ public class GestionarVehiculosViewController {
     public void agregarListener() {
         tblListVehiculos.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             vehiculoSeleccionado = newValue;
-            mostrarInformacionVehiculo(newValue);
+            mostrarCamposVehiculo(newValue);
         });
 
     }
 
     // Método para cargar los datos del vehiculoseleccionada en los campos de texto
-    private void mostrarInformacionVehiculo(Vehiculo vehiculo) {
-
+    private void mostrarCamposVehiculo(Vehiculo vehiculo) {
+        if (vehiculo instanceof Bus) {
+            mostrarElementosBus();
+        } else if (vehiculo instanceof Camion) {
+            mostrarElementosCamion();
+        } else if (vehiculo instanceof Camioneta) {
+            mostrarElementosCamioneta();
+        } else if (vehiculo instanceof Deportivo) {
+            mostrarElementosDeportivo();
+        } else if (vehiculo instanceof Moto) {
+            mostrarElementosMoto();
+        } else if (vehiculo instanceof PickUp) {
+            mostrarElementosPickUp();
+        } else if (vehiculo instanceof Sedan) {
+            mostrarElementosSedan();
+        } else if (vehiculo instanceof Van) {
+            mostrarElementosVan();
+        }
     }
 
-    @FXML
+    private void mostrarinformacionVehiculo(Vehiculo vehiculo) {
+        if (vehiculo instanceof Bus) {
+            mostrarInformacionBus((Bus) vehiculo);
+        } else if (vehiculo instanceof Camion) {
+            mostrarElementosCamion();
+        } else if (vehiculo instanceof Camioneta) {
+            mostrarElementosCamioneta();
+        } else if (vehiculo instanceof Deportivo) {
+            mostrarElementosDeportivo();
+        } else if (vehiculo instanceof Moto) {
+            mostrarElementosMoto();
+        } else if (vehiculo instanceof PickUp) {
+            mostrarElementosPickUp();
+        } else if (vehiculo instanceof Sedan) {
+            mostrarElementosSedan();
+        } else if (vehiculo instanceof Van) {
+            mostrarElementosVan();
+        }
+    }
+
+    public void mostrarInformacionBus(Bus bus) {
+        if (bus != null) {
+            // Asignar los valores correspondientes a cada campo del Bus
+            txtMarcaVehiculo.setText(bus.getMarca());
+            txtPlacaVehiculo.setText(bus.getPlaca());
+            txtModeloVehiculo.setText(String.valueOf(bus.getModelo()));
+            choiceTransmisionVehiculo.setValue(bus.getTransmision()); // Asumiendo que el objeto Bus tiene el método getTransmision()
+            choiceEstadoVehiculo.setValue(bus.getEstado()); // Asumiendo que el objeto Bus tiene el método getEstado()
+            choiceCombustibleVehiculo.setValue(bus.getCombustible()); // Asumiendo que el objeto Bus tiene el método getCombustible()
+            txtNumeroBolsasAireBus.setText(String.valueOf(bus.getNumeroBolsasAire()));
+            txtNumeroEjesBus.setText(String.valueOf(bus.getNumeroEjes()));
+            txtNumeroSaliodasEmergenciaBus.setText(String.valueOf(bus.getNumeroSalidasEmergencia()));
+            txtPrecio.setText(String.valueOf(bus.getPrecio()));
+            txtAutonomiaElectrico.setText(String.valueOf(bus.getAutonomia()));
+            txtTiempoCargaElectrico.setText(String.valueOf(bus.getTiempoCarga()));
+            rdEnchufable.setSelected(bus.isEnchufable());
+            rdHibrido.setSelected(bus.isHibridoLigero());
+        } else {
+            limpiarCampos(); // Llamar a la función limpiarCampos si el bus es null
+        }
+    }
+    
+    
+
     private void ocultarElementosNoGenerales() {
         // Ocultar todos los TextFields irrelevantes
         txtTiempoCargaElectrico.setVisible(false);
@@ -592,7 +672,6 @@ public class GestionarVehiculosViewController {
         txtNumeroBolsasAireDeportivo.setVisible(false);
     }
 
-
     private void mostrarElementosPickUp() {
         // Mostrar los campos básicos de Vehiculo
         txtMarcaVehiculo.setVisible(true);
@@ -689,7 +768,6 @@ public class GestionarVehiculosViewController {
         txtNumeroBolsasAirePickUp.setVisible(false);
     }
 
-
     private void mostrarElementosVan() {
         // Mostrar los campos básicos de Vehiculo
         txtMarcaVehiculo.setVisible(true);
@@ -732,4 +810,69 @@ public class GestionarVehiculosViewController {
         txtNumeroBolsasAirePickUp.setVisible(false);
     }
 
+    // Método auxiliar para limpiar los campos de entrada
+    private void limpiarCampos() {
+        txtPlacaVehiculo.clear();
+        txtMarcaVehiculo.clear();
+        txtModeloVehiculo.clear();
+        txtPlacaVehiculo.clear();
+        txtCambiosVehiculo.clear();
+        txtVelocidadMaximaVehiculo.clear();
+        txtCilindrajeVehiculo.clear();
+        txtNumeroPasajerosCarro.clear();
+        txtNumeroPuertasCarro.clear();
+        txtCapacidadMaleteroCamioneta.clear();
+        txtNumeroBolsasAirePickUp.clear();
+        txtCapacidadCajaCargaPickUp.clear();
+        txtNumeroBolsasAireDeportivo.clear();
+        txtNumeroBolsasAireCamioneta.clear();
+        txtCapacidadCargaCamion.clear();
+        txtNumeroEjesCamion.clear();
+        txtNumeroCaballosFuerzaDeportivo.clear();
+        txtTiempoAlcanzar100kmhDeportivo.clear();
+        txtNumeroBolsasAireVan.clear();
+        txtCapacidadMaleteroVan.clear();
+        txtNumeroBolsasAireSedan.clear();
+        txtCapacidadMaleteroSedan.clear();
+        txtNumeroEjesBus.clear();
+        txtCapacidadMaleteroBus.clear();
+        txtNumeroSaliodasEmergenciaBus.clear();
+        txtAutonomiaElectrico.clear();
+        txtTiempoCargaElectrico.clear();
+        txtPrecio.clear();
+
+        // Limpiar las selecciones en ChoiceBox
+        choiceVehiculo.getSelectionModel().clearSelection();
+        choiceTransmisionVehiculo.getSelectionModel().clearSelection();
+        choiceEstadoVehiculo.getSelectionModel().clearSelection();
+        choiceCombustibleVehiculo.getSelectionModel().clearSelection();
+        choiceTipoCamion.getSelectionModel().clearSelection();
+        choiceTipoRegistroVehiculo.getSelectionModel().clearSelection();
+
+        // Limpiar los RadioButtons (RadioButton)
+        rdCuatroPorCuatroPickupa.setSelected(false);
+        rdCamaraReversaCarro.setSelected(false);
+        rdHibrido.setSelected(false);
+        rdSensorTraficoCruzadoCamioneta.setSelected(false);
+        rdAsistentePermanenciaCarrilCamioneta.setSelected(false);
+        rdVelocidadCruceroCamioneta.setSelected(false);
+        rdSensoresColisionCamioneta.setSelected(false);
+        rdCuatroPorCuatroCamioneta.setSelected(false);
+        rdFrenosAireCamion.setSelected(false);
+        rdVelocidadCruceroSedan.setSelected(false);
+        rdSensoresColisionSedan.setSelected(false);
+        rdSensorTraficoCruzadoSedan.setSelected(false);
+        rdAsistentePermanenteSedan.setSelected(false);
+        rdAbsCarro.setSelected(false);
+        rdAireAcondicionadoCarro.setSelected(false);
+        rdEnchufable.setSelected(false);
+
+        limpiarSeleccion();
+        mostrarCamposVehiculo(vehiculoSeleccionado);
+    }
+
+    private void limpiarSeleccion() {
+        tblListVehiculos.getSelectionModel().clearSelection(); // Deseleccionar el cliente en la tabla
+        vehiculoSeleccionado = null; // Reiniciar la referencia al cliente seleccionado
+    }
 }
