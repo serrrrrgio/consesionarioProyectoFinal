@@ -16,13 +16,10 @@ public class Bus extends Carro {
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado,
             int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado, boolean camaraReversa,
             double capacidadMaletero, int numeroBolsasAire, int numeroEjes,
-            int numeroSalidasEmergencia, Combustible combustible, double autonomia, double tiempoCarga,
+            int numeroSalidasEmergencia, double precio, Combustible combustible, double autonomia, double tiempoCarga,
             boolean enchufable,
             boolean hibridoLigero) {
-        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado,
-                capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa, combustible, autonomia,
-                tiempoCarga, enchufable, hibridoLigero);
-        this.capacidadMaletero = capacidadMaletero;
+        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa, precio, combustible, autonomia, tiempoCarga, enchufable, hibridoLigero);
         this.numeroBolsasAire = numeroBolsasAire;
         this.numeroEjes = numeroEjes;
         this.numeroSalidasEmergencia = numeroSalidasEmergencia;

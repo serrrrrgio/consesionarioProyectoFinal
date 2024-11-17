@@ -16,11 +16,9 @@ public class Sedan extends Carro {
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado,
             int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado, boolean camaraReversa,
             double capacidadMaletero, boolean velocidadCrucero, int numeroBolsasAire,
-            boolean sensoresColision, boolean sensorTraficoCruzado, boolean asistentePermanenciaCarril,
+            boolean sensoresColision, boolean sensorTraficoCruzado, boolean asistentePermanenciaCarril, double precio,
             Combustible combustible, double autonomia, double tiempoCarga, boolean enchufable, boolean hibridoLigero) {
-        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado,
-                capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa, combustible, autonomia,
-                tiempoCarga, enchufable, hibridoLigero);
+        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa, precio, combustible, autonomia, tiempoCarga, enchufable, hibridoLigero);
         this.capacidadMaletero = capacidadMaletero;
         this.velocidadCrucero = velocidadCrucero;
         this.numeroBolsasAire = numeroBolsasAire;

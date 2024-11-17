@@ -17,10 +17,10 @@ public class Deportivo extends Carro {
     public Deportivo(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado,
             int capacidadPasajeros, int cantidadPuertas, boolean abs, int numeroCaballosFuerza, int numeroBolsasAire,
-            double tiempoAlcanzar100kmh, Combustible combustible, double autonomia, double tiempoCarga,
+            double tiempoAlcanzar100kmh, double precio, Combustible combustible, double autonomia, double tiempoCarga,
             boolean enchufable, boolean hibridoLigero) {
         super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado,
-                capacidadPasajeros, cantidadPuertas, abs, false, false, combustible, autonomia, tiempoCarga, enchufable,
+                capacidadPasajeros, cantidadPuertas, abs, false, false, precio, combustible, autonomia, tiempoCarga, enchufable,
                 hibridoLigero);
         this.numeroBolsasAire = numeroBolsasAire;
         this.tiempoAlcanzar100kmh = tiempoAlcanzar100kmh;

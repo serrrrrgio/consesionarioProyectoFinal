@@ -17,11 +17,9 @@ public class Camion extends Carro {
     public Camion(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado,
             int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado,
-            double capacidadCarga, boolean frenosAire, int numeroEjes, TipoCamion tipoCamion, Combustible combustible,
+            double capacidadCarga, boolean frenosAire, int numeroEjes, TipoCamion tipoCamion, double precio, Combustible combustible,
             double autonomia, double tiempoCarga, boolean enchufable, boolean hibridoLigero) {
-        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado,
-                capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, frenosAire, combustible, autonomia,
-                tiempoCarga, enchufable, hibridoLigero);
+        super(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, frenosAire, precio, combustible, autonomia, tiempoCarga, enchufable, hibridoLigero);
         this.capacidadCarga = capacidadCarga;
         this.frenosAire = frenosAire;
         this.numeroEjes = numeroEjes;

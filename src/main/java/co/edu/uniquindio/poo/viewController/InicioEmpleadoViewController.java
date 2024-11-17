@@ -95,7 +95,7 @@ public class InicioEmpleadoViewController {
 
     @FXML
     void handleBtnGestionarVehiculos(ActionEvent event) {
-        App.cambiarEscena("/co/edu/uniquindio/poo/GestionarVehiculos.fxml", "Inicio", event, getClass());
+        App.cambiarEscena("/co/edu/uniquindio/poo/GestionarVehiculos2.fxml", "Inicio", event, getClass());
     }
 
     private void setHoverEffect(Button button, ImageView imageView, Label label, String hoverImagePath,

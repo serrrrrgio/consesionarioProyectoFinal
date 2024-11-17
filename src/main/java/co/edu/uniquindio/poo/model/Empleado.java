@@ -1,5 +1,6 @@
 package co.edu.uniquindio.poo.model;
 
+import java.text.DecimalFormat;
 import java.util.LinkedList;
 
 public class Empleado extends Persona {
@@ -48,6 +49,7 @@ public class Empleado extends Persona {
     }
 
     public String obtenerSalarioCadena(){
-        return String.valueOf(salario);
+        DecimalFormat formato = new DecimalFormat("#.################"); // Hasta 16 decimales
+        return formato.format(salario);
     }
 }
