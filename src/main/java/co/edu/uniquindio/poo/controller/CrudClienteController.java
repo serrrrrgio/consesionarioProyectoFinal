@@ -1,6 +1,7 @@
 package co.edu.uniquindio.poo.controller;
 
 import co.edu.uniquindio.poo.model.Concesionario;
+import co.edu.uniquindio.poo.model.PreguntaSeguridad;
 import co.edu.uniquindio.poo.model.Cliente;
 
 public class CrudClienteController {
@@ -15,7 +16,7 @@ public class CrudClienteController {
      * Método para crear un nuevo cliente.
      */
     public void crearCliente(String nombre, String apellido, String correo, String cedula, String telefono, String usuario, String constrasena,
-                             String preguntaSeguridad, String respuesta) {
+                             PreguntaSeguridad preguntaSeguridad, String respuesta) {
         concesionario.crearCliente(nombre, apellido, correo, cedula, telefono, usuario, constrasena, preguntaSeguridad, respuesta);
     }
 
@@ -30,7 +31,7 @@ public class CrudClienteController {
      * Método para actualizar un cliente.
      */
     public boolean actualizarCliente(Cliente seleccionado, String nombre, String apellido, String correo, String cedula, String telefono, String usuario, String constrasena,
-    String preguntaSeguridad, String respuesta) {
+    PreguntaSeguridad preguntaSeguridad, String respuesta) {
         return concesionario.actualizarCliente(seleccionado, nombre, apellido, correo, cedula, telefono, usuario, constrasena, preguntaSeguridad, respuesta);
     }
     

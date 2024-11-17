@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 import co.edu.uniquindio.poo.model.Concesionario;
 import co.edu.uniquindio.poo.model.Empleado;
+import co.edu.uniquindio.poo.model.PreguntaSeguridad;
 import co.edu.uniquindio.poo.model.Transaccion;
 import javafx.collections.ObservableList;
 
@@ -20,7 +21,7 @@ public class CrudEmpleadoAdminController {
 
     public boolean actualizarEmpleado(Empleado seleccionado, String nombre, String apellido, String correo,
             String cedula, String telefono, String usuario, String constrasena,
-            String preguntaSeguridad, String respuesta){
+            PreguntaSeguridad preguntaSeguridad, String respuesta){
             return concesionario.actualizarEmpleado(seleccionado, nombre, apellido, correo, cedula, telefono, usuario, constrasena, preguntaSeguridad, respuesta);
     }
 
@@ -31,7 +32,7 @@ public class CrudEmpleadoAdminController {
     public Empleado crearEmpleado(String nombre, String apellido, String correo, String cedula, String telefono,
             String usuario,
             String constrasena,
-            String preguntaSeguridad, String respuesta, double salario){
+            PreguntaSeguridad preguntaSeguridad, String respuesta, double salario){
                 return concesionario.crearEmpleado(nombre, apellido, correo, cedula, telefono, usuario, constrasena, preguntaSeguridad, respuesta, salario);
             }
 

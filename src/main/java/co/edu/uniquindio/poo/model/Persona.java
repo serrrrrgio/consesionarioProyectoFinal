@@ -8,7 +8,7 @@ public class Persona {
     public String telefono;
     public String usuario;
     public String constrasena;
-    public String preguntaSeguridad;
+    public PreguntaSeguridad preguntaSeguridad;
     public String respuesta;
 
     /**
@@ -17,7 +17,7 @@ public class Persona {
 
     public Persona(String nombre, String apellido, String correo, String cedula, String telefono, String usuario,
             String constrasena,
-            String preguntaSeguridad, String respuesta) {
+            PreguntaSeguridad preguntaSeguridad, String respuesta) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
@@ -88,11 +88,11 @@ public class Persona {
         this.constrasena = constrasena;
     }
 
-    public String getPreguntaSeguridad() {
+    public PreguntaSeguridad getPreguntaSeguridad() {
         return preguntaSeguridad;
     }
 
-    public void setPreguntaSeguridad(String preguntaSeguridad) {
+    public void setPreguntaSeguridad(PreguntaSeguridad preguntaSeguridad) {
         this.preguntaSeguridad = preguntaSeguridad;
     }
 

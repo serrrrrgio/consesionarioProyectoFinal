@@ -3,6 +3,7 @@ package co.edu.uniquindio.poo.controller;
 import co.edu.uniquindio.poo.model.Cliente;
 import co.edu.uniquindio.poo.model.Concesionario;
 import co.edu.uniquindio.poo.model.Empleado;
+import co.edu.uniquindio.poo.model.PreguntaSeguridad;
 
 public class RegistrarseIniciarSesionController {
      private Concesionario concesionario;
@@ -25,6 +26,11 @@ public class RegistrarseIniciarSesionController {
 
     public boolean agregarCliente(Cliente cliente){
         return concesionario.agregarCliente(cliente);
+    }
+
+    public void crearCliente(String nombre, String apellido, String correo, String cedula, String telefono, String usuario, String constrasena,
+                             PreguntaSeguridad preguntaSeguridad, String respuesta) {
+        concesionario.crearCliente(nombre, apellido, correo, cedula, telefono, usuario, constrasena, preguntaSeguridad, respuesta);
     }
 
 }

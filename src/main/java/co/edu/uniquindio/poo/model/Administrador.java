@@ -7,7 +7,7 @@ public class Administrador extends Persona{
     */
 
     public Administrador (String nombre, String apellido, String correo, String cedula, String telefono, String usuario, String constrasena,
-    String preguntaSeguridad, String respuesta){
+    PreguntaSeguridad preguntaSeguridad, String respuesta){
         super(nombre, apellido, correo, cedula, telefono, usuario, constrasena, preguntaSeguridad, respuesta);
     }
 }

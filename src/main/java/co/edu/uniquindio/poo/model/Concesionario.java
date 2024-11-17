@@ -216,7 +216,7 @@ public class Concesionario {
     public Empleado crearEmpleado(String nombre, String apellido, String correo, String cedula, String telefono,
             String usuario,
             String constrasena,
-            String preguntaSeguridad, String respuesta, double salario) {
+            PreguntaSeguridad preguntaSeguridad, String respuesta, double salario) {
         return new Empleado(nombre, apellido, correo, cedula, telefono, usuario, constrasena, preguntaSeguridad,
                 respuesta, salario);
     }
@@ -249,7 +249,7 @@ public class Concesionario {
      */
     public boolean actualizarEmpleado(Empleado seleccionado, String nombre, String apellido, String correo,
             String cedula, String telefono, String usuario, String constrasena,
-            String preguntaSeguridad, String respuesta) {
+            PreguntaSeguridad preguntaSeguridad, String respuesta) {
         boolean actualizado = true;
         for (Empleado empleado : empleados) {
             if (empleado != seleccionado && empleado.getUsuario().equals(usuario)) {
@@ -789,7 +789,7 @@ public class Concesionario {
      */
     public Cliente crearCliente(String nombre, String apellido, String correo, String cedula, String telefono,
             String usuario, String constrasena,
-            String preguntaSeguridad, String respuesta) {
+            PreguntaSeguridad preguntaSeguridad, String respuesta) {
         return new Cliente(nombre, apellido, correo, cedula, telefono, usuario, constrasena, preguntaSeguridad,
                 respuesta);
     }
@@ -820,7 +820,7 @@ public class Concesionario {
      */
     public boolean actualizarCliente(Cliente seleccionado, String nombre, String apellido, String correo, String cedula,
             String telefono, String usuario, String constrasena,
-            String preguntaSeguridad, String respuesta) {
+            PreguntaSeguridad preguntaSeguridad, String respuesta) {
         boolean actualizado = true;
         for (Cliente cliente : clientes) {
             if (cliente != seleccionado && cliente.getUsuario().equals(usuario)) {
@@ -897,7 +897,7 @@ public class Concesionario {
      */
     public void actualizarAdmin(Administrador admin, String nombre, String apellido, String correo, String cedula,
             String telefono, String usuario, String constrasena,
-            String preguntaSeguridad, String respuesta) {
+            PreguntaSeguridad preguntaSeguridad, String respuesta) {
         admin.setUsuario(usuario);
         admin.setNombre(nombre);
         admin.setApellido(apellido);
