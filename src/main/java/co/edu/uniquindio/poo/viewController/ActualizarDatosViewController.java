@@ -143,6 +143,9 @@ public class ActualizarDatosViewController {
             actualizarDatosAdministrador((Administrador) usuarioActivo);
         }
 
+        txtUsuarioNombre.setText(usuarioActivo.getUsuario());
+
+
         mostrarMensaje("Datos actualizados con éxito.");
     }
 
