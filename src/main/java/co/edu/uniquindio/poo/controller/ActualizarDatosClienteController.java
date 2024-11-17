@@ -11,9 +11,9 @@ public class ActualizarDatosClienteController {
     }
 
     public boolean actualizarCliente(Cliente seleccionado, String nombre, String apellido, String correo, String cedula,
-            String telefono, String usuario, String contraseña,
+            String telefono, String usuario, String constrasena,
             String preguntaSeguridad, String respuesta){
-                return concesionario.actualizarCliente(seleccionado, nombre, apellido, correo, cedula, telefono, usuario, contraseña, preguntaSeguridad, respuesta);
+                return concesionario.actualizarCliente(seleccionado, nombre, apellido, correo, cedula, telefono, usuario, constrasena, preguntaSeguridad, respuesta);
             }
 
 }

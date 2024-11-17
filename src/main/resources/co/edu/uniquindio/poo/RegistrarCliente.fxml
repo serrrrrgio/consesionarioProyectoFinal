@@ -21,7 +21,7 @@
                 </Label>
                 <ToolBar layoutY="102.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="45.0" prefWidth="821.0" style="-fx-background-color: #fafafa;" AnchorPane.bottomAnchor="509.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="102.0">
                     <items>
-                        <Button fx:id="btnRegresar" mnemonicParsing="false" onAction="#handleBtnSalir" prefHeight="31.0" prefWidth="125.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Regresar">
+                        <Button fx:id="btnRegresar" mnemonicParsing="false" onAction="#handleBtnRegresar" prefHeight="31.0" prefWidth="125.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Regresar">
                         </Button>
                         <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
                         <Button fx:id="btnIniciarSesion" mnemonicParsing="false" onAction="#handleBtnIniciarSesion" prefHeight="28.0" prefWidth="134.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Iniciar Sesión">
@@ -61,7 +61,7 @@
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <Label layoutX="131.0" layoutY="241.0" text="Contraseña:">
+                  <Label layoutX="131.0" layoutY="241.0" text="constrasena:">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -81,8 +81,8 @@
                   </Label>
                   <PasswordField fx:id="txtContrasena" layoutX="306.0" layoutY="238.0" promptText="Sergio*#9854" />
                   <ChoiceBox fx:id="choicePreguntaSeguridad" layoutX="306.0" layoutY="279.0" prefHeight="31.0" prefWidth="323.0" />
-                  <Button fx:id="btnLimpiarCampos" layoutX="186.0" layoutY="373.0" mnemonicParsing="false" text="Limpiar Campos" />
-                  <Button fx:id="btnRegistrarse" layoutX="353.0" layoutY="373.0" mnemonicParsing="false" text="Registrarse" />
+                  <Button fx:id="btnLimpiarCampos" layoutX="186.0" layoutY="373.0" mnemonicParsing="false" onAction="#handleBtnLimpiarCampos" text="Limpiar Campos" />
+                  <Button fx:id="btnRegistrarse" layoutX="353.0" layoutY="373.0" mnemonicParsing="false" onAction="#handleBtnRegistrarse" text="Registrarse" />
                </children>
             </AnchorPane>
             </children>

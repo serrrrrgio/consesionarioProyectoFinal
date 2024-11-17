@@ -7,7 +7,7 @@ public class Persona {
     public String cedula;
     public String telefono;
     public String usuario;
-    public String contraseña;
+    public String constrasena;
     public String preguntaSeguridad;
     public String respuesta;
 
@@ -16,7 +16,7 @@ public class Persona {
      */
 
     public Persona(String nombre, String apellido, String correo, String cedula, String telefono, String usuario,
-            String contraseña,
+            String constrasena,
             String preguntaSeguridad, String respuesta) {
         this.nombre = nombre;
         this.apellido = apellido;
@@ -24,7 +24,7 @@ public class Persona {
         this.cedula = cedula;
         this.telefono = telefono;
         this.usuario = usuario;
-        this.contraseña = contraseña;
+        this.constrasena = constrasena;
         this.preguntaSeguridad = preguntaSeguridad;
         this.respuesta = respuesta;
     }
@@ -80,12 +80,12 @@ public class Persona {
         this.usuario = usuario;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getconstrasena() {
+        return constrasena;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setconstrasena(String constrasena) {
+        this.constrasena = constrasena;
     }
 
     public String getPreguntaSeguridad() {
@@ -112,11 +112,11 @@ public class Persona {
     }
 
     /**
-     * Método para cambiar la contraseña
+     * Método para cambiar la constrasena
      */
     public boolean cambiarContrasena(String respuestaUsuario, String nuevaContrasena) {
         if (verificarRespuestaSeguridad(respuestaUsuario)) {
-            this.contraseña = nuevaContrasena;
+            this.constrasena = nuevaContrasena;
             return true;
         }
         return false;
