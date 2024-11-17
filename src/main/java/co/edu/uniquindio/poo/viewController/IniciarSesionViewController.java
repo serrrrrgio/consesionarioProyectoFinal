@@ -86,6 +86,7 @@ public class IniciarSesionViewController {
         if(rdAdministrador.isSelected()){
             if(registrarseIniciarSesionController.validarAdministrador(txtUsuario.getText(), txtContrasena.getText())){
                 App.mostrarMensaje("Inicio de sesión", "Se ha iniciado sesión correctamente como administrador", "Bienvenido " + txtUsuario.getText());
+                ActualizarDatosViewController.usuarioActivo=App.getConcesionario().getAdministrador();
                 App.cambiarEscena("/co/edu/uniquindio/poo/InicioAdministrador.fxml", "Inicio admin", event, getClass());
             }
             else{
@@ -97,6 +98,7 @@ public class IniciarSesionViewController {
             Cliente cliente = registrarseIniciarSesionController.obtenerCliente(txtUsuario.getText(), txtContrasena.getText());
             if(cliente != null){
                 App.mostrarMensaje("Inicio de sesión", "Se ha iniciado sesión correctamente", "Bienvenido " + txtUsuario.getText());
+                ActualizarDatosViewController.usuarioActivo=cliente;
                 App.cambiarEscena("/co/edu/uniquindio/poo/InicioCliente.fxml", "Inicio cliente", event, getClass());
             }
             else{
@@ -108,6 +110,7 @@ public class IniciarSesionViewController {
             Empleado empleado = registrarseIniciarSesionController.obtenerEmpleado(txtUsuario.getText(), txtContrasena.getText());
                 if(empleado != null){
                     App.mostrarMensaje("Inicio de sesión", "Se ha iniciado sesión correctamente", "Bienvenido " + txtUsuario.getText());
+                    ActualizarDatosViewController.usuarioActivo=empleado;
                     App.cambiarEscena("/co/edu/uniquindio/poo/InicioEmpleado.fxml", "Iniciar cliente", event, getClass());
                 }
 

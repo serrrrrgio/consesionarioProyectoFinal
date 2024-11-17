@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import javafx.scene.Node;
 import co.edu.uniquindio.poo.model.Administrador;
 import co.edu.uniquindio.poo.model.Concesionario;
+import co.edu.uniquindio.poo.model.PreguntaSeguridad;
 
 /**
  * JavaFX App
@@ -20,6 +21,7 @@ public class App {
 
     private static Concesionario concesionario;
     private static Administrador administrador;
+    
 
     public static void main(String[] args) {
         // Llamar a la función launchApp en el hilo de JavaFX
@@ -27,7 +29,7 @@ public class App {
     }
 
     public static void launchApp() {
-        administrador = new Administrador("Maicol", "Alvarez", "michael@gmail.com", "1", "310", "maicol", "12345", null, null);
+        administrador = new Administrador("Maicol", "Alvarez", "michael@gmail.com", "1", "310", "maicol", "12345", PreguntaSeguridad.BEST_FRIEND, "Victoria");
         concesionario = new Concesionario("Chevrolet", 130909002, administrador);
         try {
             // Cargar el archivo FXML

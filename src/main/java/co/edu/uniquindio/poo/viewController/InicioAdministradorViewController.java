@@ -113,7 +113,7 @@ public class InicioAdministradorViewController {
 
     @FXML
     void handleBtnActualizarDatos(ActionEvent event) {
-        App.cambiarEscena("/co/edu/uniquindio/poo/ActualizarDatosAdmin.fxml", "Inicio", event, getClass());
+        App.cambiarEscena("/co/edu/uniquindio/poo/ActualizarDatos.fxml", "Inicio", event, getClass());
     }
 
     @FXML
@@ -123,7 +123,7 @@ public class InicioAdministradorViewController {
 
     @FXML
     void handleBtnTransacciones(ActionEvent event) {
-        App.cambiarEscena("/co/edu/uniquindio/poo/ReporteTransacciones.fxml", "Transacciones", event, getClass());
+        App.cambiarEscena("/co/edu/uniquindio/poo/Transacciones.fxml", "Transacciones", event, getClass());
     }
 
     private void setHoverEffect(Button button, ImageView imageView, Label label, String hoverImagePath, Image originalImage) {
