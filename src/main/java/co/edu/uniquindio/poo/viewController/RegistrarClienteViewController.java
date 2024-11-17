@@ -56,7 +56,7 @@ public class RegistrarClienteViewController {
     @FXML
     private Button btnLimpiarCampos;
 
-    static RegistrarseIniciarSesionController registrarseIniciarSesionController;
+    private RegistrarseIniciarSesionController registrarseIniciarSesionController;
 
     @FXML
     void handleBtnRegresar(ActionEvent event) {

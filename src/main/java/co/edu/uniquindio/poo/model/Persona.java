@@ -80,11 +80,11 @@ public class Persona {
         this.usuario = usuario;
     }
 
-    public String getcontrasena() {
+    public String getContrasena() {
         return contrasena;
     }
 
-    public void setcontrasena(String contrasena) {
+    public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
     }
 

@@ -14,12 +14,11 @@
                 <Image url="@imagenes/Imagen%20de%20WhatsApp%202024-11-03%20a%20las%2018.36.38_39cf80d9.jpg" />
             </image>
         </ImageView>
-        <AnchorPane layoutX="204.0" layoutY="63.0" opacity="0.9" prefHeight="656.0" prefWidth="821.0" style="-fx-background-color: #747474;" AnchorPane.bottomAnchor="231.0" AnchorPane.leftAnchor="204.0" AnchorPane.rightAnchor="203.0" AnchorPane.topAnchor="63.0">
+        <AnchorPane layoutX="69.0" layoutY="69.0" opacity="0.9" prefHeight="650.0" prefWidth="1057.0" style="-fx-background-color: #fafafa;" AnchorPane.bottomAnchor="231.0" AnchorPane.leftAnchor="69.0" AnchorPane.rightAnchor="57.0" AnchorPane.topAnchor="69.0">
             <children>
-                <ScrollPane layoutX="-135.0" layoutY="-6.0" prefHeight="849.0" prefWidth="1057.0" />
                 <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="5.0" layoutX="292.0" layoutY="30.0" prefHeight="55.0" prefWidth="254.0" style="-fx-font-family: 'SansSerif'; -fx-font-weight: bold; -fx-font-size: 46;" text="REGISTRO" textAlignment="CENTER" textOverrun="CLIP" AnchorPane.bottomAnchor="571.0" AnchorPane.leftAnchor="292.0" AnchorPane.rightAnchor="230.0" AnchorPane.topAnchor="30.0">
                 </Label>
-                <ToolBar layoutX="-135.0" layoutY="102.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="45.0" prefWidth="1057.0" style="-fx-background-color: #fafafa;" AnchorPane.bottomAnchor="509.0" AnchorPane.leftAnchor="-135.0" AnchorPane.rightAnchor="-146.0" AnchorPane.topAnchor="102.0">
+                <ToolBar layoutX="-104.0" layoutY="102.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="39.0" prefWidth="1069.0" style="-fx-background-color: #fafafa;" AnchorPane.bottomAnchor="509.0" AnchorPane.leftAnchor="-104.0" AnchorPane.rightAnchor="92.0" AnchorPane.topAnchor="102.0">
                     <items>
                   <ImageView fitHeight="37.0" fitWidth="39.0">
                      <image>
@@ -38,7 +37,7 @@
         </AnchorPane>
       <AnchorPane layoutX="1.0" layoutY="-5.0" prefHeight="963.0" prefWidth="1185.0">
          <children>
-            <AnchorPane layoutX="68.0" layoutY="217.0" prefHeight="695.0" prefWidth="1057.0">
+            <AnchorPane layoutX="68.0" layoutY="217.0" prefHeight="695.0" prefWidth="1057.0" style="-fx-background-color: #fafafa;">
                <children>
                   <TextField fx:id="txtNombre" layoutX="220.0" layoutY="7.0" promptText="Nombre" />
                   <TextField fx:id="txtApellido" layoutX="747.0" layoutY="7.0" promptText="Apellido" />
@@ -57,13 +56,13 @@
                   <Button fx:id="btnRegistrarEmpleado" layoutX="489.0" layoutY="213.0" mnemonicParsing="false" onAction="#handleBtnRegistrarEmpleado" text="Registrar" />
                   <Button fx:id="btnActualizarEmpleado" layoutX="778.0" layoutY="213.0" mnemonicParsing="false" onAction="#handleBtnActualizarEmpleado" text="Actualizar" />
                   <Button fx:id="btnDespedirEmpleado" layoutX="231.0" layoutY="213.0" mnemonicParsing="false" onAction="#handleBtnDespedirEmpleado" text="Despedir" />
-                  <TableView layoutX="105.0" layoutY="303.0" prefHeight="378.0" prefWidth="835.0">
+                  <TableView fx:id="tblListEmpleado" layoutX="105.0" layoutY="303.0" prefHeight="378.0" prefWidth="835.0">
                     <columns>
-                      <TableColumn prefWidth="154.0" text="Nombre" />
-                      <TableColumn prefWidth="147.0" text="Apellido" />
-                        <TableColumn prefWidth="225.0" text="Correo" />
-                        <TableColumn prefWidth="149.0" text="Telefono" />
-                        <TableColumn prefWidth="159.0" text="Salario" />
+                      <TableColumn fx:id="tbcNombre" prefWidth="154.0" text="Nombre" />
+                      <TableColumn fx:id="tbcApellido" prefWidth="147.0" text="Apellido" />
+                        <TableColumn fx:id="tbcCorreo" prefWidth="225.0" text="Correo" />
+                        <TableColumn fx:id="tbcTelefono" prefWidth="149.0" text="Telefono" />
+                        <TableColumn fx:id="tbcSalario" prefWidth="159.0" text="Salario" />
                     </columns>
                   </TableView>
                   <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="177.0" layoutY="56.0">
@@ -102,11 +101,13 @@
                      </image>
                   </ImageView>
                   <TextField fx:id="txtSalario" layoutX="475.0" layoutY="7.0" promptText="Salario" />
+                  <Button fx:id="btnVerTransacciones" layoutX="918.0" layoutY="254.0" mnemonicParsing="false" onAction="#handleBtnVerTransacciones" text="Ver transacciones" />
+                  <TextField fx:id="txtCedula" layoutX="466.0" layoutY="81.0" promptText="Cedula" />
                </children>
             </AnchorPane>
-                  <Separator layoutX="689.0" layoutY="177.0" orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
             <AnchorPane layoutX="510.0" layoutY="152.0" prefHeight="1.0" prefWidth="213.0" style="-fx-background-color: #3c3c3c;" />
             <AnchorPane layoutX="73.0" layoutY="216.0" prefHeight="1.0" prefWidth="1047.0" style="-fx-background-color: #3c3c3c;" />
+                  <Separator layoutX="603.0" layoutY="179.0" orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
          </children>
       </AnchorPane>
     </children>

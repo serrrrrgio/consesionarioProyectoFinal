@@ -46,4 +46,8 @@ public class Empleado extends Persona {
         transacciones.add(transaccion);
         System.out.println("Transacción agregada al empleado: " + nombre + " " + apellido);
     }
+
+    public String obtenerSalarioCadena(){
+        return String.valueOf(salario);
+    }
 }

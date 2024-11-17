@@ -264,7 +264,7 @@ public class Concesionario {
         seleccionado.setCedula(cedula);
         seleccionado.setTelefono(telefono);
         seleccionado.setUsuario(usuario);
-        seleccionado.setcontrasena(contrasena);
+        seleccionado.setContrasena(contrasena);
         seleccionado.setPreguntaSeguridad(preguntaSeguridad);
         seleccionado.setRespuesta(respuesta);
 
@@ -835,7 +835,7 @@ public class Concesionario {
         seleccionado.setCedula(cedula);
         seleccionado.setTelefono(telefono);
         seleccionado.setUsuario(usuario);
-        seleccionado.setcontrasena(contrasena);
+        seleccionado.setContrasena(contrasena);
         seleccionado.setPreguntaSeguridad(preguntaSeguridad);
         seleccionado.setRespuesta(respuesta);
         return actualizado;
@@ -861,7 +861,7 @@ public class Concesionario {
     public Cliente obtenerCliente(String usuario, String contrasena) {
         Cliente clienteEncontrado = null;
         for (Cliente cliente : clientes) {
-            if (cliente.getUsuario().equals(usuario) && cliente.getcontrasena().equals(contrasena)) {
+            if (cliente.getUsuario().equals(usuario) && cliente.getContrasena().equals(contrasena)) {
                 clienteEncontrado = cliente;
                 break;
             }
@@ -875,7 +875,7 @@ public class Concesionario {
     public Empleado obtenerEmpleado(String usuario, String contrasena) {
         Empleado empleadoEncontrado = null;
         for (Empleado empleado : empleados) {
-            if (empleado.getUsuario().equals(usuario) && empleado.getcontrasena().equals(contrasena)) {
+            if (empleado.getUsuario().equals(usuario) && empleado.getContrasena().equals(contrasena)) {
                 empleadoEncontrado = empleado;
                 break;
             }
@@ -884,7 +884,7 @@ public class Concesionario {
     }
 
     public boolean validarAdministrador(String usuario, String contrasena){
-        return this.administrador.getUsuario().equals(usuario) && this.administrador.getcontrasena().equals(contrasena);
+        return this.administrador.getUsuario().equals(usuario) && this.administrador.getContrasena().equals(contrasena);
 
     }
 
@@ -905,7 +905,7 @@ public class Concesionario {
         admin.setCedula(cedula);
         admin.setTelefono(telefono);
         admin.setUsuario(usuario);
-        admin.setcontrasena(contrasena);
+        admin.setContrasena(contrasena);
         admin.setPreguntaSeguridad(preguntaSeguridad);
         admin.setRespuesta(respuesta);
     }
