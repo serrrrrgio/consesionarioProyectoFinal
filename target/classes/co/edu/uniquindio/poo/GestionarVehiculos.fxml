@@ -261,14 +261,14 @@
                         </RadioButton>
                         <RadioButton fx:id="rdHibrido" layoutX="390.0" layoutY="314.0" mnemonicParsing="false" text="Aire acondicionado" toggleGroup="$hibrido" />
                         <TextField fx:id="txtCapacidadMaleteroCamioneta" layoutX="766.0" layoutY="413.0" promptText="Capacidad Maletero" />
-                        <TableView layoutX="230.0" layoutY="176.0" prefHeight="440.0" prefWidth="619.0">
+                        <TableView fx:id="tblListVehiculos" layoutX="144.0" layoutY="1174.0" prefHeight="497.0" prefWidth="825.0">
                           <columns>
-                            <TableColumn prefWidth="103.0" text="Tipo vehículo" />
-                            <TableColumn prefWidth="131.0" text="Combus" />
-                              <TableColumn prefWidth="41.0" text="Column X" />
-                              <TableColumn prefWidth="119.0" text="Column X" />
-                              <TableColumn prefWidth="102.0" text="Column X" />
-                              <TableColumn prefWidth="122.0" text="Column X" />
+                            <TableColumn fx:id="tbcTipoVehiculo" prefWidth="118.0" text="Tipo vehículo" />
+                            <TableColumn fx:id="tbcTipoCombustible" prefWidth="146.0" text="Combustible" />
+                              <TableColumn fx:id="tbcMarca" minWidth="0.0" prefWidth="147.0" text="Marca" />
+                              <TableColumn fx:id="tbcModelo" prefWidth="144.0" text="Modelo" />
+                              <TableColumn fx:id="tbcEstado" prefWidth="115.0" text="Estado" />
+                              <TableColumn fx:id="tbPrecio" prefWidth="186.0" text="Precio" />
                           </columns>
                         </TableView>
                      </children>

@@ -219,6 +219,6 @@ public class ActualizarDatosViewController {
 
     @FXML
     void handleBtnRegresar(ActionEvent event) {
-        App.cambiarEscena("/co/edu/uniquindio/poo/MainMenu.fxml", "Menú Principal", event, getClass());
+        App.cambiarEscena("/co/edu/uniquindio/poo/InicioAdministrador.fxml", "Menú Principal", event, getClass());
     }
 }
