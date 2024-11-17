@@ -21,11 +21,17 @@
                 <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="5.0" layoutX="292.0" layoutY="30.0" prefHeight="55.0" prefWidth="237.0" style="-fx-font-family: 'SansSerif'; -fx-font-weight: bold; -fx-font-size: 46;" text="HOME" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" AnchorPane.bottomAnchor="571.0" AnchorPane.leftAnchor="292.0" AnchorPane.rightAnchor="292.0" AnchorPane.topAnchor="30.0" />
                 <ToolBar layoutX="-1.0" layoutY="108.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="45.0" prefWidth="821.0" style="-fx-background-color: #fafafa;" AnchorPane.bottomAnchor="503.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="108.0">
                     <items>
-                        <Button fx:id="btnRegresar" mnemonicParsing="false" onAction="#handleBtnRegresar" prefHeight="34.0" prefWidth="53.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;">
+                  <ImageView fitHeight="36.0" fitWidth="38.0">
+                     <image>
+                        <Image url="@Imagenes/align-justify.png" />
+                     </image>
+                  </ImageView>
+                  <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
+                        <Button fx:id="btnRegresar" mnemonicParsing="false" onAction="#handleBtnRegresar" prefHeight="38.0" prefWidth="47.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;">
                             <graphic>
-                                <ImageView>
+                                <ImageView fx:id="btnRegresarImage" fitHeight="28.0" fitWidth="30.0">
                                     <image>
-                                        <Image url="@imagenes/exit.svg" />
+                                        <Image url="@Imagenes/exit%20(1).png" />
                                     </image>
                                 </ImageView>
                             </graphic>
@@ -69,29 +75,29 @@
                             <content>
                                 <AnchorPane prefHeight="506.0" prefWidth="771.0">
                                     <children>
-                                        <Button fx:id="btnGestionarFondosInicio" layoutY="75.0" mnemonicParsing="false" prefHeight="230.0" prefWidth="248.0">
+                                        <Button fx:id="btnGestionarFondosInicio" layoutX="8.0" layoutY="75.0" mnemonicParsing="false" prefHeight="230.0" prefWidth="248.0">
                                             <graphic>
-                                                <ImageView>
+                                                <ImageView fx:id="btnGestionarFondosInicioImage" fitHeight="199.0" fitWidth="226.0">
                                                     <image>
-                                                        <Image url="@imagenes/sack-dollar.svg" />
+                                                        <Image url="@Imagenes/sack-dollar.png" />
                                                     </image>
                                                 </ImageView>
                                             </graphic>
                                         </Button>
                                         <Button fx:id="btnRegistrarEmpleadoInicio" layoutX="270.0" layoutY="75.0" mnemonicParsing="false" prefHeight="230.0" prefWidth="246.0">
                                             <graphic>
-                                                <ImageView>
+                                                <ImageView fx:id="btnRegistrarEmpleadoInicioImage" fitHeight="207.0" fitWidth="224.0">
                                                     <image>
-                                                        <Image url="@imagenes/user-add.svg" />
+                                                        <Image url="@Imagenes/user-add%20(1).png" />
                                                     </image>
                                                 </ImageView>
                                             </graphic>
                                         </Button>
                                         <Button fx:id="btnActualizarDatosInicio" layoutX="537.0" layoutY="75.0" mnemonicParsing="false" prefHeight="230.0" prefWidth="232.0">
                                             <graphic>
-                                                <ImageView>
+                                                <ImageView fx:id="btnActualizarDatosInicioImage" fitHeight="211.0" fitWidth="211.0">
                                                     <image>
-                                                        <Image url="@imagenes/apps-add.svg" />
+                                                        <Image url="@Imagenes/apps-add.png" />
                                                     </image>
                                                 </ImageView>
                                             </graphic>

@@ -9,11 +9,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.event.ActionEvent;
 import javafx.scene.input.MouseEvent;
+import java.net.URL;
 
 public class InicioAdministradorViewController {
-
-    @FXML
-    private Button btnRegresar;
 
     @FXML
     private ImageView backgroundImage;
@@ -22,56 +20,72 @@ public class InicioAdministradorViewController {
     private Button btnActualizarDatosInicio;
 
     @FXML
-    private Button btnRegistrarEmpleado;
-
-    @FXML
     private Button btnGestionarFondosInicio;
-
-    @FXML
-    private Label lblRegistrarEmpleado;
-
-    @FXML
-    private TextField txtNombredmin;
-
-    @FXML
-    private Button btnActualizarDatos;
-
-    @FXML
-    private Button btnGestionarFondos;
 
     @FXML
     private Button btnRegistrarEmpleadoInicio;
 
     @FXML
-    private Label lblGestionarFondos;
+    private Button btnRegresar;
 
     @FXML
     private Label lblActualizarDatos;
 
     @FXML
-    private ImageView imgGestionarFondosInicio;
+    private Label lblRegistrarEmpleado;
 
     @FXML
-    private ImageView imgRegistrarEmpleadoInicio;
+    private Label lblGestionarFondos;
 
     @FXML
-    private ImageView imgActualizarDatosInicio;
+    private TextField txtNombredmin;
+
+    @FXML
+    private ImageView btnGestionarFondosInicioImage;
+
+    @FXML
+    private ImageView btnRegistrarEmpleadoInicioImage;
+
+    @FXML
+    private ImageView btnActualizarDatosInicioImage;
+
+    @FXML
+    private ImageView btnRegresarImage;
+
+    private Image originalGestionarFondos;
+    private Image originalRegistrarEmpleado;
+    private Image originalActualizarDatos;
+    private Image originalRegresar;
 
     @FXML
     public void initialize() {
-        // Establecer efectos de hover para los botones principales
-        App.setButtonHoverEffect(btnRegresar);
-        App.setButtonHoverEffect(btnRegistrarEmpleado);
-        App.setButtonHoverEffect(btnGestionarFondos);
-        App.setButtonHoverEffect(btnActualizarDatos);
+        // Cargar imágenes originales y asignarlas
+        originalGestionarFondos = cargarImagen("/co/edu/uniquindio/poo/imagenes/sack-dollar.png", btnGestionarFondosInicioImage);
+        originalRegistrarEmpleado = cargarImagen("/co/edu/uniquindio/poo/imagenes/user-add (1).png", btnRegistrarEmpleadoInicioImage);
+        originalActualizarDatos = cargarImagen("/co/edu/uniquindio/poo/imagenes/apps-add.png", btnActualizarDatosInicioImage);
+        originalRegresar = cargarImagen("/co/edu/uniquindio/poo/imagenes/exit (1).png", btnRegresarImage);
 
-        // Agregar efectos de hover a los botones de inicio y etiquetas
-        setHoverEffect(btnGestionarFondosInicio, imgGestionarFondosInicio, lblGestionarFondos, "imagenes/sack-dollar-white.png", "imagenes/sack-dollar.png");
-        setHoverEffect(btnRegistrarEmpleadoInicio, imgRegistrarEmpleadoInicio, lblRegistrarEmpleado, "imagenes/user-add-white.png", "imagenes/user-add.png");
-        setHoverEffect(btnActualizarDatosInicio, imgActualizarDatosInicio, lblActualizarDatos, "imagenes/apps-add-white.png", "imagenes/apps-add.png");
+        // Aplicar efectos hover
+        setHoverEffect(btnGestionarFondosInicio, btnGestionarFondosInicioImage, lblGestionarFondos, 
+                       "/co/edu/uniquindio/poo/imagenes/sack-dollar (1).png", originalGestionarFondos);
+        setHoverEffect(btnRegistrarEmpleadoInicio, btnRegistrarEmpleadoInicioImage, lblRegistrarEmpleado, 
+                       "/co/edu/uniquindio/poo/imagenes/user-add (2).png", originalRegistrarEmpleado);
+        setHoverEffect(btnActualizarDatosInicio, btnActualizarDatosInicioImage, lblActualizarDatos, 
+                       "/co/edu/uniquindio/poo/imagenes/apps-add (2).png", originalActualizarDatos);
+        setHoverEffect(btnRegresar, btnRegresarImage, null, 
+                       "/co/edu/uniquindio/poo/imagenes/exit (2).png", originalRegresar);
+    }
 
-        // Efecto hover para el botón de regresar
-        setHoverEffect(btnRegresar, null, null, "imagenes/exit-white.png", "imagenes/exit.png");
+    private Image cargarImagen(String imageUrl, ImageView imageView) {
+        URL imageResource = getClass().getResource(imageUrl);
+        if (imageResource != null) {
+            Image image = new Image(imageResource.toExternalForm());
+            imageView.setImage(image);
+            return image;
+        } else {
+            System.out.println("Imagen no encontrada: " + imageUrl);
+            return null;
+        }
     }
 
     @FXML
@@ -94,23 +108,22 @@ public class InicioAdministradorViewController {
         App.cambiarEscena("/co/edu/uniquindio/poo/GestionarFondos.fxml", "Inicio", event, getClass());
     }
 
-    private void setHoverEffect(Button button, ImageView imageView, Label label, String hoverImageUrl, String defaultImageUrl) {
+    private void setHoverEffect(Button button, ImageView imageView, Label label, String hoverImagePath, Image originalImage) {
         button.setOnMouseEntered((MouseEvent event) -> {
-            if (imageView != null) {
-                imageView.setImage(new Image(hoverImageUrl));
-            }
-            button.setStyle("-fx-background-color: black;"); // Cambiar fondo a negro
+            cargarImagen(hoverImagePath, imageView);
+            button.setStyle("-fx-background-color: black;");
+            
             if (label != null) {
-                label.setStyle("-fx-text-fill: white; -fx-background-color: black;"); // Cambiar texto a blanco y fondo a negro
+                label.setStyle("-fx-text-fill: white; -fx-background-color: black;");
             }
         });
+
         button.setOnMouseExited((MouseEvent event) -> {
-            if (imageView != null) {
-                imageView.setImage(new Image(defaultImageUrl));
-            }
-            button.setStyle("-fx-background-color: white;"); // Restaurar fondo blanco
+            imageView.setImage(originalImage);  // Restaurar la imagen original
+            button.setStyle("-fx-background-color: transparent;");
+            
             if (label != null) {
-                label.setStyle("-fx-text-fill: black; -fx-background-color: transparent;"); // Restaurar texto a negro y fondo transparente
+                label.setStyle("-fx-text-fill: black; -fx-background-color: transparent;");
             }
         });
     }
