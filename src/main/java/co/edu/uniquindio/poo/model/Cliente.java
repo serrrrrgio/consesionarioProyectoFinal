@@ -10,9 +10,9 @@ public class Cliente extends Persona {
      * Constructor
      */
     public Cliente(String nombre, String apellido, String correo, String cedula, String telefono, String usuario,
-            String constrasena,
-            String preguntaSeguridad, String respuesta) {
-        super(nombre, apellido, correo, cedula, telefono, usuario, constrasena, preguntaSeguridad, respuesta);
+            String contrasena,
+            PreguntaSeguridad preguntaSeguridad, String respuesta) {
+        super(nombre, apellido, correo, cedula, telefono, usuario, contrasena, preguntaSeguridad, respuesta);
         this.transacciones = new LinkedList<>();
     }
 
