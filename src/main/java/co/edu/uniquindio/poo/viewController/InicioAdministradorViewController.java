@@ -29,6 +29,9 @@ public class InicioAdministradorViewController {
     private Button btnRegresar;
 
     @FXML
+    private Button btnTransaccionesInicio;
+
+    @FXML
     private Label lblActualizarDatos;
 
     @FXML
@@ -36,6 +39,9 @@ public class InicioAdministradorViewController {
 
     @FXML
     private Label lblGestionarFondos;
+
+    @FXML
+    private Label lblTransacciones;
 
     @FXML
     private TextField txtNombredmin;
@@ -52,10 +58,14 @@ public class InicioAdministradorViewController {
     @FXML
     private ImageView btnRegresarImage;
 
+    @FXML
+    private ImageView btnTransaccionesInicioImage1;
+
     private Image originalGestionarFondos;
     private Image originalRegistrarEmpleado;
     private Image originalActualizarDatos;
     private Image originalRegresar;
+    private Image originalTransacciones;
 
     @FXML
     public void initialize() {
@@ -64,6 +74,7 @@ public class InicioAdministradorViewController {
         originalRegistrarEmpleado = cargarImagen("/co/edu/uniquindio/poo/imagenes/user-add (1).png", btnRegistrarEmpleadoInicioImage);
         originalActualizarDatos = cargarImagen("/co/edu/uniquindio/poo/imagenes/apps-add.png", btnActualizarDatosInicioImage);
         originalRegresar = cargarImagen("/co/edu/uniquindio/poo/imagenes/exit (1).png", btnRegresarImage);
+        originalTransacciones = cargarImagen("/co/edu/uniquindio/poo/imagenes/document-signed.png", btnTransaccionesInicioImage1);
 
         // Aplicar efectos hover
         setHoverEffect(btnGestionarFondosInicio, btnGestionarFondosInicioImage, lblGestionarFondos, 
@@ -74,6 +85,8 @@ public class InicioAdministradorViewController {
                        "/co/edu/uniquindio/poo/imagenes/apps-add (2).png", originalActualizarDatos);
         setHoverEffect(btnRegresar, btnRegresarImage, null, 
                        "/co/edu/uniquindio/poo/imagenes/exit (2).png", originalRegresar);
+        setHoverEffect(btnTransaccionesInicio, btnTransaccionesInicioImage1, lblTransacciones, 
+                       "/co/edu/uniquindio/poo/imagenes/document-signed (1).png", originalTransacciones);
     }
 
     private Image cargarImagen(String imageUrl, ImageView imageView) {
@@ -106,6 +119,11 @@ public class InicioAdministradorViewController {
     @FXML
     void handleBtnGestionarFondos(ActionEvent event) {
         App.cambiarEscena("/co/edu/uniquindio/poo/GestionarFondos.fxml", "Inicio", event, getClass());
+    }
+
+    @FXML
+    void handleBtnTransacciones(ActionEvent event) {
+        App.cambiarEscena("/co/edu/uniquindio/poo/ReporteTransacciones.fxml", "Transacciones", event, getClass());
     }
 
     private void setHoverEffect(Button button, ImageView imageView, Label label, String hoverImagePath, Image originalImage) {
