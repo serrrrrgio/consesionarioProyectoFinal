@@ -12,8 +12,8 @@ public class ActualizarDatosAdminController {
     }
 
     public void actualizarAdmin(Administrador admin, String nombre, String apellido, String correo, String cedula,
-            String telefono, String usuario, String constrasena,
+            String telefono, String usuario, String contrasena,
             PreguntaSeguridad preguntaSeguridad, String respuesta){
-                concesionario.actualizarAdmin(admin, nombre, apellido, correo, cedula, telefono, usuario, constrasena, preguntaSeguridad, respuesta);
+                concesionario.actualizarAdmin(admin, nombre, apellido, correo, cedula, telefono, usuario, contrasena, preguntaSeguridad, respuesta);
             }
 }

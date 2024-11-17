@@ -215,9 +215,9 @@ public class Concesionario {
      */
     public Empleado crearEmpleado(String nombre, String apellido, String correo, String cedula, String telefono,
             String usuario,
-            String constrasena,
+            String contrasena,
             PreguntaSeguridad preguntaSeguridad, String respuesta, double salario) {
-        return new Empleado(nombre, apellido, correo, cedula, telefono, usuario, constrasena, preguntaSeguridad,
+        return new Empleado(nombre, apellido, correo, cedula, telefono, usuario, contrasena, preguntaSeguridad,
                 respuesta, salario);
     }
 
@@ -244,11 +244,11 @@ public class Concesionario {
 
     /**
      * Método para actualizar un empleado. Duda de si al actualizarlo también se le
-     * pueda actualizar el usuario y constrasena(El que lo acualiza es el
+     * pueda actualizar el usuario y contrasena(El que lo acualiza es el
      * administrador)
      */
     public boolean actualizarEmpleado(Empleado seleccionado, String nombre, String apellido, String correo,
-            String cedula, String telefono, String usuario, String constrasena,
+            String cedula, String telefono, String usuario, String contrasena,
             PreguntaSeguridad preguntaSeguridad, String respuesta) {
         boolean actualizado = true;
         for (Empleado empleado : empleados) {
@@ -264,7 +264,7 @@ public class Concesionario {
         seleccionado.setCedula(cedula);
         seleccionado.setTelefono(telefono);
         seleccionado.setUsuario(usuario);
-        seleccionado.setconstrasena(constrasena);
+        seleccionado.setcontrasena(contrasena);
         seleccionado.setPreguntaSeguridad(preguntaSeguridad);
         seleccionado.setRespuesta(respuesta);
 
@@ -788,9 +788,9 @@ public class Concesionario {
      * Método para crear un nuevo cliente.
      */
     public Cliente crearCliente(String nombre, String apellido, String correo, String cedula, String telefono,
-            String usuario, String constrasena,
+            String usuario, String contrasena,
             PreguntaSeguridad preguntaSeguridad, String respuesta) {
-        return new Cliente(nombre, apellido, correo, cedula, telefono, usuario, constrasena, preguntaSeguridad,
+        return new Cliente(nombre, apellido, correo, cedula, telefono, usuario, contrasena, preguntaSeguridad,
                 respuesta);
     }
 
@@ -815,11 +815,11 @@ public class Concesionario {
 
     /**
      * Método para actualizar un cliente. Duda de si al actualizarlo también se le
-     * pueda actualizar el usuario y constrasena(El que lo acualiza es el
+     * pueda actualizar el usuario y contrasena(El que lo acualiza es el
      * administrador)
      */
     public boolean actualizarCliente(Cliente seleccionado, String nombre, String apellido, String correo, String cedula,
-            String telefono, String usuario, String constrasena,
+            String telefono, String usuario, String contrasena,
             PreguntaSeguridad preguntaSeguridad, String respuesta) {
         boolean actualizado = true;
         for (Cliente cliente : clientes) {
@@ -835,7 +835,7 @@ public class Concesionario {
         seleccionado.setCedula(cedula);
         seleccionado.setTelefono(telefono);
         seleccionado.setUsuario(usuario);
-        seleccionado.setconstrasena(constrasena);
+        seleccionado.setcontrasena(contrasena);
         seleccionado.setPreguntaSeguridad(preguntaSeguridad);
         seleccionado.setRespuesta(respuesta);
         return actualizado;
@@ -861,7 +861,7 @@ public class Concesionario {
     public Cliente obtenerCliente(String usuario, String contrasena) {
         Cliente clienteEncontrado = null;
         for (Cliente cliente : clientes) {
-            if (cliente.getUsuario().equals(usuario) && cliente.getconstrasena().equals(contrasena)) {
+            if (cliente.getUsuario().equals(usuario) && cliente.getcontrasena().equals(contrasena)) {
                 clienteEncontrado = cliente;
                 break;
             }
@@ -875,7 +875,7 @@ public class Concesionario {
     public Empleado obtenerEmpleado(String usuario, String contrasena) {
         Empleado empleadoEncontrado = null;
         for (Empleado empleado : empleados) {
-            if (empleado.getUsuario().equals(usuario) && empleado.getconstrasena().equals(contrasena)) {
+            if (empleado.getUsuario().equals(usuario) && empleado.getcontrasena().equals(contrasena)) {
                 empleadoEncontrado = empleado;
                 break;
             }
@@ -884,7 +884,7 @@ public class Concesionario {
     }
 
     public boolean validarAdministrador(String usuario, String contrasena){
-        return this.administrador.getUsuario().equals(usuario) && this.administrador.getconstrasena().equals(contrasena);
+        return this.administrador.getUsuario().equals(usuario) && this.administrador.getcontrasena().equals(contrasena);
 
     }
 
@@ -892,11 +892,11 @@ public class Concesionario {
 
     /**
      * Método para actualizar un cliente. Duda de si al actualizarlo también se le
-     * pueda actualizar el usuario y constrasena(El que lo acualiza es el
+     * pueda actualizar el usuario y contrasena(El que lo acualiza es el
      * administrador)
      */
     public void actualizarAdmin(Administrador admin, String nombre, String apellido, String correo, String cedula,
-            String telefono, String usuario, String constrasena,
+            String telefono, String usuario, String contrasena,
             PreguntaSeguridad preguntaSeguridad, String respuesta) {
         admin.setUsuario(usuario);
         admin.setNombre(nombre);
@@ -905,7 +905,7 @@ public class Concesionario {
         admin.setCedula(cedula);
         admin.setTelefono(telefono);
         admin.setUsuario(usuario);
-        admin.setconstrasena(constrasena);
+        admin.setcontrasena(contrasena);
         admin.setPreguntaSeguridad(preguntaSeguridad);
         admin.setRespuesta(respuesta);
     }

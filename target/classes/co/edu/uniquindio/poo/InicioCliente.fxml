@@ -63,7 +63,7 @@
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <Label layoutX="131.0" layoutY="241.0" text="constrasena:">
+                  <Label layoutX="131.0" layoutY="241.0" text="contrasena:">
                      <font>
                         <Font size="16.0" />
                      </font>

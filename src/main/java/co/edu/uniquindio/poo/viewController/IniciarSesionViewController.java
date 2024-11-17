@@ -62,7 +62,7 @@ public class IniciarSesionViewController {
 
 
     @FXML
-    void handleBtnSalir(ActionEvent event) {
+    void handleBtnRegresar(ActionEvent event) {
         App.cambiarEscena("/co/edu/uniquindio/poo/Inicio.fxml", "Inicio", event, getClass());
     }
 

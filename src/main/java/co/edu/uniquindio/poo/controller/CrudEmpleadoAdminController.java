@@ -20,9 +20,9 @@ public class CrudEmpleadoAdminController {
     }
 
     public boolean actualizarEmpleado(Empleado seleccionado, String nombre, String apellido, String correo,
-            String cedula, String telefono, String usuario, String constrasena,
+            String cedula, String telefono, String usuario, String contrasena,
             PreguntaSeguridad preguntaSeguridad, String respuesta){
-            return concesionario.actualizarEmpleado(seleccionado, nombre, apellido, correo, cedula, telefono, usuario, constrasena, preguntaSeguridad, respuesta);
+            return concesionario.actualizarEmpleado(seleccionado, nombre, apellido, correo, cedula, telefono, usuario, contrasena, preguntaSeguridad, respuesta);
     }
 
     public void eliminarEmpleado(Empleado empleado){
@@ -31,9 +31,9 @@ public class CrudEmpleadoAdminController {
 
     public Empleado crearEmpleado(String nombre, String apellido, String correo, String cedula, String telefono,
             String usuario,
-            String constrasena,
+            String contrasena,
             PreguntaSeguridad preguntaSeguridad, String respuesta, double salario){
-                return concesionario.crearEmpleado(nombre, apellido, correo, cedula, telefono, usuario, constrasena, preguntaSeguridad, respuesta, salario);
+                return concesionario.crearEmpleado(nombre, apellido, correo, cedula, telefono, usuario, contrasena, preguntaSeguridad, respuesta, salario);
             }
 
     public boolean agregarEmpleado(Empleado empleado){

@@ -12,8 +12,8 @@ public class ActualizarDatosEmpleado {
     }
 
     public void actualizarEmpleado(Empleado seleccionado, String nombre, String apellido, String correo,
-            String cedula, String telefono, String usuario, String constrasena,
+            String cedula, String telefono, String usuario, String contrasena,
             PreguntaSeguridad preguntaSeguridad, String respuesta){
-                concesionario.actualizarEmpleado(seleccionado, nombre, apellido, correo, cedula, telefono, usuario, constrasena, preguntaSeguridad, respuesta);
+                concesionario.actualizarEmpleado(seleccionado, nombre, apellido, correo, cedula, telefono, usuario, contrasena, preguntaSeguridad, respuesta);
             }
 }

@@ -28,9 +28,9 @@ public class RegistrarseIniciarSesionController {
         return concesionario.agregarCliente(cliente);
     }
 
-    public void crearCliente(String nombre, String apellido, String correo, String cedula, String telefono, String usuario, String constrasena,
+    public Cliente crearCliente(String nombre, String apellido, String correo, String cedula, String telefono, String usuario, String contrasena,
                              PreguntaSeguridad preguntaSeguridad, String respuesta) {
-        concesionario.crearCliente(nombre, apellido, correo, cedula, telefono, usuario, constrasena, preguntaSeguridad, respuesta);
+        return concesionario.crearCliente(nombre, apellido, correo, cedula, telefono, usuario, contrasena, preguntaSeguridad, respuesta);
     }
 
 }

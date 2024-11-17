@@ -10,9 +10,9 @@ public class Empleado extends Persona {
      * Constructor
      */
     public Empleado(String nombre, String apellido, String correo, String cedula, String telefono, String usuario,
-            String constrasena,
+            String contrasena,
             PreguntaSeguridad preguntaSeguridad, String respuesta, double salario) {
-        super(nombre, apellido, correo, cedula, telefono, usuario, constrasena, preguntaSeguridad, respuesta);
+        super(nombre, apellido, correo, cedula, telefono, usuario, contrasena, preguntaSeguridad, respuesta);
         this.salario = salario;
         this.transacciones = new LinkedList<>();
     }
