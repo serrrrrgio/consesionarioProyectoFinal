@@ -5,7 +5,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.ImageView;
 
 public class GestionarVehiculosViewController {
@@ -14,31 +17,31 @@ public class GestionarVehiculosViewController {
     private TextField txtModeloVehiculo;
 
     @FXML
-    private TextField txtPlacaVehiculo;
+    private RadioButton rdCuatroPorCuatroPickupa;
 
     @FXML
-    private TextField txtNumeroBolsasAireBusCamioneta;
+    private TableColumn<?, ?> tbcMarca;
+
+    @FXML
+    private Button btnRegistrarVehiculo;
+
+    @FXML
+    private RadioButton rdCamaraReversaCarro;
 
     @FXML
     private ChoiceBox<?> choiceVehiculo;
 
     @FXML
-    private ImageView backgroundImage;
+    private TextField txtCapacidadMaleteroCamioneta;
 
     @FXML
-    private TextField txtNumeroPasajerosCarro;
+    private RadioButton rdHibrido;
 
     @FXML
     private ChoiceBox<?> choiceTransmisionVehiculo;
 
     @FXML
-    private TextField txtCilindrajeVehiculo;
-
-    @FXML
-    private RadioButton rdAbsCarro;
-
-    @FXML
-    private TextField txtCapacidadMaleteroBusCamioneta;
+    private TextField txtNumeroBolsasAirePickUp;
 
     @FXML
     private TextField txtTiempoCargaElectrico;
@@ -47,28 +50,19 @@ public class GestionarVehiculosViewController {
     private TextField txtMarcaVehiculo;
 
     @FXML
-    private TextField txtCambiosVehiculo;
-
-    @FXML
     private TextField txtNumeroBolsasAireDeportivo;
 
     @FXML
     private TextField txtNumeroBolsasAireCamioneta;
 
     @FXML
-    private Button btnRegresar;
+    private TableColumn<?, ?> tbcTipoCombustible;
+
+    @FXML
+    private TableColumn<?, ?> tbcModelo;
 
     @FXML
     private Button btnActualizarAdmin;
-
-    @FXML
-    private TextField txtVelocidadMaximaVehiculo;
-
-    @FXML
-    private Button btnRegistrarEmpleado;
-
-    @FXML
-    private TextField txtNumeroPuertasCarro;
 
     @FXML
     private TextField txtNumeroEjesBus;
@@ -77,46 +71,22 @@ public class GestionarVehiculosViewController {
     private TextField txtAutonomiaElectrico;
 
     @FXML
-    private TextField txtTiempoAlcanzar100kmh;
-
-    @FXML
-    private Button btnLimpiarCampos;
-
-    @FXML
-    private Button btnDespedirEmpleado;
+    private TextField txtNumeroBolsasAireSedan;
 
     @FXML
     private RadioButton rdSensorTraficoCruzadoCamioneta;
 
     @FXML
+    private TextField txtCapacidadCajaCargaPickUp;
+
+    @FXML
+    private Button btnActualizarVehiculo;
+
+    @FXML
     private RadioButton rdAireAcondicionadoCarro;
 
     @FXML
-    private TextField txtCapacidadCargaCamion;
-
-    @FXML
-    private TextField txtCorreo1131;
-
-    @FXML
-    private TextField txtNumeroSaliodasEmergenciaBus;
-
-    @FXML
-    private TextField txtCorreo11211;
-
-    @FXML
-    private TextField txtNumeroEjesCamion;
-
-    @FXML
     private TextField txtCorreo11311;
-
-    @FXML
-    private RadioButton rdCamaraReversaPickUpBusCamioneta;
-
-    @FXML
-    private ChoiceBox<?> choiceTipoCamion;
-
-    @FXML
-    private RadioButton rdCuatroPorCuatroCamioneta;
 
     @FXML
     private ChoiceBox<?> choiceEstadoVehiculo;
@@ -128,19 +98,13 @@ public class GestionarVehiculosViewController {
     private RadioButton rdAsistentePermanenciaCarrilCamioneta;
 
     @FXML
-    private Button btnActualizarEmpleado;
-
-    @FXML
-    private RadioButton rdFrenosAireCamion;
-
-    @FXML
-    private TextField txtUsuario11211;
+    private TableView<?> tblListVehiculos;
 
     @FXML
     private RadioButton rdVelocidadCruceroCamioneta;
 
     @FXML
-    private TextField txtCorreo114;
+    private RadioButton rdEnchufable;
 
     @FXML
     private RadioButton rdSensoresColisionCamioneta;
@@ -149,39 +113,126 @@ public class GestionarVehiculosViewController {
     private TextField txtNumeroCaballosFuerzaDeportivo;
 
     @FXML
-    private TextField txtUsuario113;
+    private TextField txtNumeroBolsasAireVan;
+
+    @FXML
+    private RadioButton rdVelocidadCruceroSedan;
+
+    @FXML
+    private TextField txtPlacaVehiculo;
+
+    @FXML
+    private TableColumn<?, ?> tbcTipoVehiculo;
+
+    @FXML
+    private ImageView backgroundImage;
+
+    @FXML
+    private TextField txtCapacidadMaleteroVan;
+
+    @FXML
+    private RadioButton rdSensoresColisionSedan;
+
+    @FXML
+    private TextField txtNumeroPasajerosCarro;
+
+    @FXML
+    private TextField txtCilindrajeVehiculo;
+
+    @FXML
+    private RadioButton rdAbsCarro;
+
+    @FXML
+    private ToggleGroup hibrido;
+
+    @FXML
+    private TextField txtCambiosVehiculo;
+
+    @FXML
+    private TextField txtTiempoAlcanzar100kmhDeportivo;
+
+    @FXML
+    private Button btnRegresar;
+
+    @FXML
+    private TextField txtVelocidadMaximaVehiculo;
+
+    @FXML
+    private TextField txtNumeroPuertasCarro;
+
+    @FXML
+    private TextField txtNumeroBolsasAireBus;
+
+    @FXML
+    private TextField txtCapacidadMaleteroBus;
+
+    @FXML
+    private RadioButton rdAsistentePermanenteSedan;
+
+    @FXML
+    private Button btnLimpiarCampos;
+
+    @FXML
+    private RadioButton rdSensorTraficoCruzadoSedan;
+
+    @FXML
+    private TextField txtCapacidadCargaCamion;
+
+    @FXML
+    private TextField txtNumeroSaliodasEmergenciaBus;
+
+    @FXML
+    private TextField txtNumeroEjesCamion;
+
+    @FXML
+    private ChoiceBox<?> choiceTipoCamion;
+
+    @FXML
+    private RadioButton rdCuatroPorCuatroCamioneta;
+
+    @FXML
+    private Button btnEliminarVehiculo;
+
+    @FXML
+    private TableColumn<?, ?> tbPrecio;
+
+    @FXML
+    private RadioButton rdFrenosAireCamion;
 
     @FXML
     private ChoiceBox<?> choiceTipoRegistroVehiculo;
 
     @FXML
+    private TableColumn<?, ?> tbcEstado;
+
+    @FXML
     void handleBtnRegresar(ActionEvent event) {
-        System.out.println();
+
     }
 
     @FXML
     void handleBtnActualizarAdmin(ActionEvent event) {
-        System.out.println();
+
     }
 
     @FXML
     void handleBtnLimpiarCampos(ActionEvent event) {
-        System.out.println();
+
     }
 
     @FXML
     void handleBtnRegistrarEmpleado(ActionEvent event) {
-        System.out.println();
+
     }
 
     @FXML
-    void handleBtnActualizarEmpleado(ActionEvent event) {
-        System.out.println();
+    void handleBtnActualizarVehiculo(ActionEvent event) {
+
     }
 
     @FXML
-    void handleBtnDespedirEmpleado(ActionEvent event) {
-        System.out.println();
+    void handleBtnEliminarVehiculo(ActionEvent event) {
+
     }
 
 }
