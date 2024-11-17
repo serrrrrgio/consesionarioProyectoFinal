@@ -9,7 +9,6 @@ import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.scene.image.ImageView;
 
-import java.util.Arrays;
 
 import co.edu.uniquindio.poo.App;
 import co.edu.uniquindio.poo.controller.RegistrarseIniciarSesionController;
@@ -76,6 +75,9 @@ public class RegistrarClienteViewController {
         txtCorreo.clear();
         txtTelefono.clear();
         txtUsuario.clear();
+        txtContrasena.clear();
+        txtRespuesta.clear();
+        choicePreguntaSeguridad.setValue(null);
     }
 
     @FXML
@@ -91,6 +93,7 @@ public class RegistrarClienteViewController {
         if (camposValidos(nombre, apellido, correo, correo, telefono, usuario, contrasena, preguntaSeleccionada, respuesta)){
             Cliente cliente = registrarseIniciarSesionController.crearCliente(nombre, apellido, correo, correo, telefono, usuario, contrasena, preguntaSeleccionada, respuesta);
             if(registrarseIniciarSesionController.agregarCliente(cliente)){
+                System.out.println("usuario registrado");
                 App.mostrarMensaje("Cliente registrado", "Se ha registrado un nuevo cliente", "Bienvenido a tu carro UQ");
                 App.cambiarEscena("/co/edu/uniquindio/poo/IniciarSesion.fxml", "Iniciar Sesión", event, getClass());
             }
@@ -102,6 +105,7 @@ public class RegistrarClienteViewController {
 
     @FXML
     public void initialize() {
+        registrarseIniciarSesionController = new RegistrarseIniciarSesionController(App.getConcesionario());
         // Establecer efectos de hover para los botones
         App.setButtonHoverEffect(btnRegresar);
         App.setButtonHoverEffect(btnIniciarSesion);
