@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="1183.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.RegistrarEmpleadoViewController">
+    <children>
+        <ImageView fx:id="backgroundImage" fitHeight="950.0" fitWidth="1188.0" opacity="0.7" preserveRatio="true" smooth="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="0.0">
+            <image>
+                <Image url="@imagenes/Imagen%20de%20WhatsApp%202024-11-03%20a%20las%2018.36.38_39cf80d9.jpg" />
+            </image>
+        </ImageView>
+      <AnchorPane layoutX="-45.0" layoutY="57.0" prefHeight="963.0" prefWidth="1185.0">
+         <children>
+              <AnchorPane layoutX="126.0" opacity="0.9" prefHeight="663.0" prefWidth="1007.0" style="-fx-background-color: #fafafa;" AnchorPane.bottomAnchor="231.0" AnchorPane.leftAnchor="126.0" AnchorPane.rightAnchor="52.0" AnchorPane.topAnchor="69.0">
+                  <children>
+                      <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="5.0" layoutX="272.0" layoutY="30.0" prefHeight="62.0" prefWidth="511.0" style="-fx-font-family: 'SansSerif'; -fx-font-weight: bold; -fx-font-size: 46;" text="GESTION DE FONDOS" textAlignment="CENTER" textOverrun="CLIP" AnchorPane.bottomAnchor="571.0" AnchorPane.leftAnchor="272.0" AnchorPane.rightAnchor="224.0" AnchorPane.topAnchor="30.0">
+                </Label>
+                      <ToolBar layoutX="1.0" layoutY="92.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="52.0" prefWidth="1057.0" style="-fx-background-color: #fafafa;" AnchorPane.bottomAnchor="519.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="92.0">
+                          <items>
+                        <ImageView fitHeight="37.0" fitWidth="39.0">
+                           <image>
+                              <Image url="@Imagenes/align-justify.png" />
+                           </image>
+                        </ImageView>
+                        <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
+                              <Button fx:id="btnRegresar" mnemonicParsing="false" onAction="#handleBtnRegresar" prefHeight="29.0" prefWidth="66.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;">
+                           <graphic>
+                              <ImageView fitHeight="31.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Imagenes/exit%20(1).png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                              <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
+                        <Button fx:id="btnActualizarAdmin" mnemonicParsing="false" onAction="#handleBtnActualizarAdmin" prefHeight="31.0" prefWidth="169.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Actualizar Datos" />
+                        <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
+                        <Button fx:id="btnActualizarAdmin1" mnemonicParsing="false" onAction="#handleBtnActualizarAdmin" prefHeight="31.0" prefWidth="169.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Ver transacciones" />
+                              <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
+                        <Button fx:id="btnActualizarAdmin11" mnemonicParsing="false" onAction="#handleBtnActualizarAdmin" prefHeight="31.0" prefWidth="169.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Registrar empleado" />
+                        <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
+                          </items>
+                      </ToolBar>
+                  </children>
+              </AnchorPane>
+            <AnchorPane layoutX="125.0" layoutY="216.0" prefHeight="526.0" prefWidth="1007.0" style="-fx-background-color: #fafafa;">
+               <children>
+                  <Button fx:id="btnActualizarEmpleado" layoutX="461.0" layoutY="284.0" mnemonicParsing="false" onAction="#handleBtnActualizarEmpleado" style="-fx-background-color: #262626;" text="Actualizar" textFill="WHITE" />
+                  <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="633.0" layoutY="92.0">
+                     <image>
+                        <Image url="@Imagenes/usd-circle.png" />
+                     </image>
+                  </ImageView>
+                  <TextField editable="false" layoutX="428.0" layoutY="89.0" />
+                  <Label layoutX="313.0" layoutY="94.0" text="Fondos totales" />
+                  <TextField layoutX="428.0" layoutY="153.0" promptText="Retirar fondos" />
+                  <TextField layoutX="428.0" layoutY="217.0" promptText="Deposoitar fondos" />
+                  <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="636.0" layoutY="156.0">
+                     <image>
+                        <Image url="@Imagenes/usd-circle.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="634.0" layoutY="221.0">
+                     <image>
+                        <Image url="@Imagenes/usd-circle.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="373.0" layoutY="152.0" prefHeight="1.0" prefWidth="564.0" style="-fx-background-color: #3c3c3c;" />
+            <AnchorPane layoutX="123.0" layoutY="216.0" prefHeight="1.0" prefWidth="997.0" style="-fx-background-color: #3c3c3c;" />
+         </children>
+      </AnchorPane>
+    </children>
+</AnchorPane>

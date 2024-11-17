@@ -61,7 +61,7 @@
                   <TextField fx:id="txtRespuesta" layoutX="306.0" layoutY="388.0" prefHeight="31.0" prefWidth="275.0" promptText="Respuesta" />
                   <PasswordField fx:id="txtContrasena" layoutX="306.0" layoutY="289.0" prefHeight="31.0" prefWidth="275.0" promptText="Contraseñá" />
                   <ChoiceBox fx:id="choicePreguntaSeguridad" layoutX="307.0" layoutY="337.0" prefHeight="31.0" prefWidth="323.0" />
-                  <Button fx:id="btnActualizarDAtos" layoutX="380.0" layoutY="446.0" mnemonicParsing="false" onAction="#handleBtnRegistrarse" text="Actualizar Datos" />
+                  <Button fx:id="btnActualizarDAtos" layoutX="380.0" layoutY="446.0" mnemonicParsing="false" onAction="#handleBtnRegistrarse" style="-fx-background-color: #434343;" text="Actualizar Datos" textFill="WHITE" />
                   <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="261.0" layoutY="24.0">
                      <image>
                         <Image url="@Imagenes/user%20(1).png" />
