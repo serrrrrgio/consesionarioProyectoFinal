@@ -34,7 +34,7 @@ public class InicioAdministradorViewController {
     private TextField txtNombredmin;
 
     @FXML
-    private Button btnActualiarDatos;
+    private Button btnActualizarDatos;
 
     @FXML
     private Button btnGestionarFondos;
@@ -47,6 +47,26 @@ public class InicioAdministradorViewController {
 
     @FXML
     private Label lblActualizarDatos;
+
+    @FXML
+    void handleBtnRegresar(ActionEvent event) {
+        App.cambiarEscena("/co/edu/uniquindio/poo/IniciarSesion.fxml", "Inicio", event, getClass());
+    }
+
+    @FXML
+    void handleBtnRegistrarEmpleado(ActionEvent event) {
+        App.cambiarEscena("/co/edu/uniquindio/poo/RegistrarEmpleado.fxml", "Inicio", event, getClass());
+    }
+
+    @FXML
+    void handleBtnActualizarDatos(ActionEvent event) {
+        System.out.println();
+    }
+
+    @FXML
+    void handleBtnGestionarFondos(ActionEvent event) {
+        System.out.println();
+    }
 
     @FXML
     private ImageView imgGestionarFondosInicio;
@@ -63,7 +83,7 @@ public class InicioAdministradorViewController {
         App.setButtonHoverEffect(btnRegresar);
         App.setButtonHoverEffect(btnRegistrarEmpleado);
         App.setButtonHoverEffect(btnGestionarFondos);
-        App.setButtonHoverEffect(btnActualiarDatos);
+        App.setButtonHoverEffect(btnActualizarDatos);
 
         // Agregar efectos de hover a los botones de inicio y etiquetas
         setHoverEffect(btnGestionarFondosInicio, imgGestionarFondosInicio, lblGestionarFondos, "imagenes/sack-dollar-white.png", "imagenes/sack-dollar.png");

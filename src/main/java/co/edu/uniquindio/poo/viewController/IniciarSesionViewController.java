@@ -86,7 +86,7 @@ public class IniciarSesionViewController {
         if(rdAdministrador.isSelected()){
             if(registrarseIniciarSesionController.validarAdministrador(txtUsuario.getText(), txtContrasena.getText())){
                 App.mostrarMensaje("Inicio de sesión", "Se ha iniciado sesión correctamente como administrador", "Bienvenido " + txtUsuario.getText());
-                App.cambiarEscena("/co/edu/uniquindio/poo/InicioUsuario.fxml", "Inicio admin", event, getClass());
+                App.cambiarEscena("/co/edu/uniquindio/poo/InicioAdministrador.fxml", "Inicio admin", event, getClass());
             }
             else{
                 App.mostrarAlerta("Error al iniciar sesión", "Esos no son lo datos del administrador");

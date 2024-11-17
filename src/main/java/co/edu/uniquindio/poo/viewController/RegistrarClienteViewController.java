@@ -93,7 +93,6 @@ public class RegistrarClienteViewController {
         if (camposValidos(nombre, apellido, correo, correo, telefono, usuario, contrasena, preguntaSeleccionada, respuesta)){
             Cliente cliente = registrarseIniciarSesionController.crearCliente(nombre, apellido, correo, correo, telefono, usuario, contrasena, preguntaSeleccionada, respuesta);
             if(registrarseIniciarSesionController.agregarCliente(cliente)){
-                System.out.println("usuario registrado");
                 App.mostrarMensaje("Cliente registrado", "Se ha registrado un nuevo cliente", "Bienvenido a tu carro UQ");
                 App.cambiarEscena("/co/edu/uniquindio/poo/IniciarSesion.fxml", "Iniciar Sesión", event, getClass());
             }

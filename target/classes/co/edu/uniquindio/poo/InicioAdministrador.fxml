@@ -36,7 +36,7 @@
                         <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
                         <Button fx:id="btnRegistrarEmpleado" mnemonicParsing="false" onAction="#handleBtnRegistrarEmpleado" prefHeight="28.0" prefWidth="165.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Registrar Empleado" />
                         <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
-                        <Button fx:id="btnActualiarDatos" mnemonicParsing="false" onAction="#handleBtnActualiarDatos" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Actualizar Datos" textAlignment="CENTER" />
+                        <Button fx:id="btnActualizarDatos" mnemonicParsing="false" onAction="#handleBtnActualizarDatos" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Actualizar Datos" textAlignment="CENTER" />
                         <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
                         <Button fx:id="btnGestionarFondos" mnemonicParsing="false" onAction="#handleBtnGestionarFondos" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Gestionar Fondos" textAlignment="CENTER" />
                     </items>
