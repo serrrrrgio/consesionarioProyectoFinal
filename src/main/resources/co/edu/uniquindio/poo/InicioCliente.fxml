@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.web.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.*?>
@@ -7,85 +9,102 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="1183.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.InicioClienteViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="1183.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.InicioAdministradorViewController">
     <children>
         <ImageView fx:id="backgroundImage" fitHeight="950.0" fitWidth="1188.0" opacity="0.56" preserveRatio="true" smooth="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="0.0">
             <image>
                 <Image url="@imagenes/Imagen%20de%20WhatsApp%202024-11-03%20a%20las%2018.36.38_39cf80d9.jpg" />
             </image>
         </ImageView>
-        <AnchorPane layoutX="208.0" layoutY="173.0" opacity="0.8" prefHeight="655.0" prefWidth="776.0" style="-fx-background-color: #747474;" AnchorPane.bottomAnchor="122.0" AnchorPane.leftAnchor="208.0" AnchorPane.rightAnchor="199.0" AnchorPane.topAnchor="173.0">
+        <AnchorPane layoutX="94.0" layoutY="37.0" opacity="0.8" prefHeight="656.0" prefWidth="994.0" style="-fx-background-color: #747474;" AnchorPane.bottomAnchor="257.0" AnchorPane.leftAnchor="94.0" AnchorPane.rightAnchor="95.0" AnchorPane.topAnchor="37.0">
             <children>
-                <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="5.0" layoutX="292.0" layoutY="30.0" prefHeight="55.0" prefWidth="237.0" style="-fx-font-family: 'SansSerif'; -fx-font-weight: bold; -fx-font-size: 46;" text="HOME" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" AnchorPane.bottomAnchor="571.0" AnchorPane.leftAnchor="292.0" AnchorPane.rightAnchor="292.0" AnchorPane.topAnchor="30.0" />
+                <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="5.0" layoutX="291.0" layoutY="30.0" prefHeight="55.0" prefWidth="237.0" style="-fx-font-family: 'SansSerif'; -fx-font-weight: bold; -fx-font-size: 46;" text="HOME" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" AnchorPane.bottomAnchor="571.0" AnchorPane.leftAnchor="291.0" AnchorPane.rightAnchor="293.0" AnchorPane.topAnchor="30.0" />
                 <ToolBar layoutX="-1.0" layoutY="108.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="45.0" prefWidth="821.0" style="-fx-background-color: #fafafa;" AnchorPane.bottomAnchor="503.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="108.0">
                     <items>
-                        <ImageView fitHeight="33.0" fitWidth="32.0">
-                            <image>
-                                <Image url="@Imagenes/align-justify.png" />
-                            </image>
-                        </ImageView>
+                  <ImageView fitHeight="36.0" fitWidth="38.0">
+                     <image>
+                        <Image url="@Imagenes/align-justify.png" />
+                     </image>
+                  </ImageView>
+                  <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
+                        <Button fx:id="btnRegresar" mnemonicParsing="false" onAction="#handleBtnRegresar" prefHeight="38.0" prefWidth="47.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;">
+                            <graphic>
+                                <ImageView fx:id="btnRegresarImage" fitHeight="28.0" fitWidth="30.0">
+                                    <image>
+                                        <Image url="@Imagenes/exit%20(1).png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
                         <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
-                        <Button fx:id="btnRegresar" mnemonicParsing="false" onAction="#handleBtnRegresar" prefHeight="34.0" prefWidth="53.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;">
-                     <graphic>
-                        <ImageView fitHeight="24.0" fitWidth="31.0">
-                           <image>
-                              <Image url="@Imagenes/exit%20(1).png" />
-                           </image>
-                        </ImageView>
-                     </graphic></Button>
+                        <Button fx:id="btnActualizarDatos" mnemonicParsing="false" onAction="#handleBtnActualizarDatos" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Actualizar Datos" textAlignment="CENTER" />
                         <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
-                        <Button fx:id="btnRegistrarEmpleado" mnemonicParsing="false" onAction="#handleBtnRegistrarEmpleado" prefHeight="28.0" prefWidth="165.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Registrar Empleado" />
+                        <Button fx:id="btnComprarVehiculo" mnemonicParsing="false" onAction="#handleBtnComprarVehiculo" prefHeight="28.0" prefWidth="165.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Comprar Vehiculo" />
                         <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
-                        <Button fx:id="btnActualiarDatos" mnemonicParsing="false" onAction="#handleBtnActualiarDatos" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Actualizar Datos" textAlignment="CENTER" />
-                        <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
-                        <Button fx:id="btnGestionarFondos" mnemonicParsing="false" onAction="#handleBtnGestionarFondos" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Gestionar Fondos" textAlignment="CENTER" />
+                        <Button fx:id="btnVenderVehiculo" mnemonicParsing="false" onAction="#handleBtnVenderVehiculo" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Vender Vehiculo" textAlignment="CENTER" />
+                  <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
+                  <Button fx:id="btnAlquilarVehiculo" mnemonicParsing="false" onAction="#handleBtnAlquilarVehiculo" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Alquilar Vehiculo" textAlignment="CENTER" />
                     </items>
                 </ToolBar>
-                <AnchorPane layoutX="328.0" layoutY="79.0" prefHeight="2.0" prefWidth="166.0" style="-fx-background-color: #fafafa;" AnchorPane.bottomAnchor="575.0" AnchorPane.leftAnchor="328.0" AnchorPane.rightAnchor="327.0" AnchorPane.topAnchor="79.0" />
+                <AnchorPane layoutX="439.0" layoutY="79.0" prefHeight="2.0" prefWidth="118.0" style="-fx-background-color: #fafafa;" AnchorPane.bottomAnchor="575.0" AnchorPane.leftAnchor="439.0" AnchorPane.rightAnchor="437.0" AnchorPane.topAnchor="79.0" />
                 <AnchorPane layoutX="-1.0" layoutY="146.0" prefHeight="459.0" prefWidth="776.0" style="-fx-background-color: #202020;">
                     <children>
-                        <ScrollPane prefHeight="509.0" prefWidth="776.0">
+                        <ScrollPane prefHeight="705.0" prefWidth="995.0">
                             <content>
-                                <AnchorPane prefHeight="506.0" prefWidth="771.0">
+                                <AnchorPane prefHeight="702.0" prefWidth="994.0">
                                     <children>
-                                        <Button fx:id="btnGestionarFondosInicio" layoutY="75.0" mnemonicParsing="false" prefHeight="230.0" prefWidth="248.0">
+                                        <Button fx:id="btnComprarVehiculoInicio" layoutX="156.0" layoutY="60.0" mnemonicParsing="false" prefHeight="230.0" prefWidth="248.0">
                                             <graphic>
-                                                <ImageView fitHeight="176.0" fitWidth="178.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="btnComprarVehiculoInicioImage" fitHeight="199.0" fitWidth="226.0">
                                                     <image>
-                                                        <Image url="@Imagenes/sack-dollar.png" />
+                                                        <Image url="@Imagenes/coins.png" />
                                                     </image>
                                                 </ImageView>
                                             </graphic>
                                         </Button>
-                                        <Button fx:id="btnRegistrarEmpleadoInicio" layoutX="270.0" layoutY="75.0" mnemonicParsing="false" prefHeight="230.0" prefWidth="246.0">
+                                        <Button fx:id="btnVenderVehiculoInicio" layoutX="606.0" layoutY="60.0" mnemonicParsing="false" prefHeight="230.0" prefWidth="246.0">
                                             <graphic>
-                                                <ImageView fitHeight="172.0" fitWidth="178.0">
+                                                <ImageView fx:id="btnVenderVehiculoInicioImage" fitHeight="207.0" fitWidth="224.0">
                                                     <image>
-                                                        <Image url="@Imagenes/user-add%20(1).png" />
+                                                        <Image url="@Imagenes/selling.png" />
                                                     </image>
                                                 </ImageView>
                                             </graphic>
                                         </Button>
-                                        <Button fx:id="btnActualizarDatosInicio" layoutX="537.0" layoutY="75.0" mnemonicParsing="false" prefHeight="230.0" prefWidth="232.0">
+                                        <Button fx:id="btnActualizarDatosInicio" layoutX="613.0" layoutY="383.0" mnemonicParsing="false" prefHeight="230.0" prefWidth="232.0">
                                             <graphic>
-                                                <ImageView fitHeight="178.0" fitWidth="193.0">
+                                                <ImageView fx:id="btnActualizarDatosInicioImage" fitHeight="211.0" fitWidth="211.0">
                                                     <image>
                                                         <Image url="@Imagenes/apps-add.png" />
                                                     </image>
                                                 </ImageView>
                                             </graphic>
                                         </Button>
-                              <Label fx:id="lblGestionarFondos" layoutX="47.0" layoutY="323.0" text="Gestionar Fondos" textFill="BLACK">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblRegistrarEmpleado" layoutX="307.0" layoutY="323.0" text="Registrar Empleado" textFill="BLACK">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblActualizarDatos" layoutX="582.0" layoutY="323.0" text="Actualizar Datos" textFill="BLACK">
+                                        <Label fx:id="lblComprarVehiculo" layoutX="204.0" layoutY="308.0" text="Comprar Vehiculo" textFill="BLACK">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="lblVenderVehiculo" layoutX="657.0" layoutY="308.0" text="Vender Vehiculo" textFill="BLACK">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="lblActualizarDatos" layoutX="658.0" layoutY="631.0" text="Actualizar Datos" textFill="BLACK">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                              <Button fx:id="btnAlquilarVehiculoInicio" layoutX="156.0" layoutY="383.0" mnemonicParsing="false" prefHeight="230.0" prefWidth="248.0">
+                                 <graphic>
+                                    <ImageView fx:id="btnAlquilarVehiculoInicioImage1" fitHeight="199.0" fitWidth="226.0">
+                                       <image>
+                                          <Image url="@Imagenes/handshake.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Label fx:id="lblAlquilarVehiculo" layoutX="209.0" layoutY="639.0" text="Alquilar Vehiculo" textFill="BLACK">
                                  <font>
                                     <Font size="20.0" />
                                  </font>
@@ -96,7 +115,7 @@
                         </ScrollPane>
                     </children>
                 </AnchorPane>
-                <TextField fx:id="txtNombredmin" editable="false" layoutX="557.0" layoutY="42.0" style="-fx-background-color: #747474; -fx-text-fill: #fafafa;" />
+                <TextField fx:id="txtNombredmin" editable="false" layoutX="756.0" layoutY="42.0" style="-fx-background-color: #747474; -fx-text-fill: #fafafa;" />
             </children>
         </AnchorPane>
     </children>

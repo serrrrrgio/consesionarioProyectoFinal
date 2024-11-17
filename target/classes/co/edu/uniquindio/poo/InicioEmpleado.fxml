@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.web.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.*?>
@@ -19,26 +21,26 @@
                 <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="5.0" layoutX="292.0" layoutY="30.0" prefHeight="55.0" prefWidth="237.0" style="-fx-font-family: 'SansSerif'; -fx-font-weight: bold; -fx-font-size: 46;" text="HOME" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" AnchorPane.bottomAnchor="571.0" AnchorPane.leftAnchor="292.0" AnchorPane.rightAnchor="292.0" AnchorPane.topAnchor="30.0" />
                 <ToolBar layoutX="-1.0" layoutY="108.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="45.0" prefWidth="821.0" style="-fx-background-color: #fafafa;" AnchorPane.bottomAnchor="503.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="108.0">
                     <items>
-                        <ImageView fitHeight="33.0" fitWidth="32.0">
-                            <image>
-                                <Image url="@Imagenes/align-justify.png" />
-                            </image>
-                        </ImageView>
+                  <ImageView fitHeight="36.0" fitWidth="38.0">
+                     <image>
+                        <Image url="@Imagenes/align-justify.png" />
+                     </image>
+                  </ImageView>
+                  <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
+                        <Button fx:id="btnRegresar" mnemonicParsing="false" onAction="#handleBtnRegresar" prefHeight="38.0" prefWidth="47.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;">
+                            <graphic>
+                                <ImageView fx:id="btnRegresarImage" fitHeight="28.0" fitWidth="30.0">
+                                    <image>
+                                        <Image url="@Imagenes/exit%20(1).png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
                         <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
-                        <Button fx:id="btnRegresar" mnemonicParsing="false" onAction="#handleBtnRegresar" prefHeight="34.0" prefWidth="53.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;">
-                     <graphic>
-                        <ImageView fitHeight="24.0" fitWidth="31.0">
-                           <image>
-                              <Image url="@Imagenes/exit%20(1).png" />
-                           </image>
-                        </ImageView>
-                     </graphic></Button>
+                        <Button fx:id="btnActualizarDatos" mnemonicParsing="false" onAction="#handleBtnActualizarDatos" prefHeight="28.0" prefWidth="165.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Actualizar Datos" />
                         <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
-                        <Button fx:id="btnRegistrarEmpleado" mnemonicParsing="false" onAction="#handleBtnRegistrarEmpleado" prefHeight="28.0" prefWidth="165.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Registrar Empleado" />
+                        <Button fx:id="btnGestionarVehiculos" mnemonicParsing="false" onAction="#handleBtnGestionarVehiculos" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Gestionar Vehiculos" textAlignment="CENTER" />
                         <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
-                        <Button fx:id="btnActualiarDatos" mnemonicParsing="false" onAction="#handleBtnActualiarDatos" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Actualizar Datos" textAlignment="CENTER" />
-                        <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
-                        <Button fx:id="btnGestionarFondos" mnemonicParsing="false" onAction="#handleBtnGestionarFondos" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Gestionar Fondos" textAlignment="CENTER" />
                     </items>
                 </ToolBar>
                 <AnchorPane layoutX="328.0" layoutY="79.0" prefHeight="2.0" prefWidth="166.0" style="-fx-background-color: #fafafa;" AnchorPane.bottomAnchor="575.0" AnchorPane.leftAnchor="328.0" AnchorPane.rightAnchor="327.0" AnchorPane.topAnchor="79.0" />
@@ -48,48 +50,34 @@
                             <content>
                                 <AnchorPane prefHeight="506.0" prefWidth="771.0">
                                     <children>
-                                        <Button fx:id="btnGestionarFondosInicio" layoutY="75.0" mnemonicParsing="false" prefHeight="230.0" prefWidth="248.0">
+                                        <Button fx:id="btnGestionarVehiculosInicio" layoutX="114.0" layoutY="72.0" mnemonicParsing="false" prefHeight="230.0" prefWidth="248.0">
                                             <graphic>
-                                                <ImageView fitHeight="176.0" fitWidth="178.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="btnGestionarVehiculosInicioImage" fitHeight="199.0" fitWidth="226.0">
                                                     <image>
-                                                        <Image url="@Imagenes/sack-dollar.png" />
+                                                        <Image url="@Imagenes/car-garage.png" />
                                                     </image>
                                                 </ImageView>
                                             </graphic>
                                         </Button>
-                                        <Button fx:id="btnRegistrarEmpleadoInicio" layoutX="270.0" layoutY="75.0" mnemonicParsing="false" prefHeight="230.0" prefWidth="246.0">
+                                        <Button fx:id="btnActualizarDatosInicio" layoutX="420.0" layoutY="72.0" mnemonicParsing="false" prefHeight="230.0" prefWidth="232.0">
                                             <graphic>
-                                                <ImageView fitHeight="172.0" fitWidth="178.0">
-                                                    <image>
-                                                        <Image url="@Imagenes/user-add%20(1).png" />
-                                                    </image>
-                                                </ImageView>
-                                            </graphic>
-                                        </Button>
-                                        <Button fx:id="btnActualizarDatosInicio" layoutX="537.0" layoutY="75.0" mnemonicParsing="false" prefHeight="230.0" prefWidth="232.0">
-                                            <graphic>
-                                                <ImageView fitHeight="178.0" fitWidth="193.0">
+                                                <ImageView fx:id="btnActualizarDatosInicioImage" fitHeight="211.0" fitWidth="211.0">
                                                     <image>
                                                         <Image url="@Imagenes/apps-add.png" />
                                                     </image>
                                                 </ImageView>
                                             </graphic>
                                         </Button>
-                              <Label fx:id="lblGestionarFondos" layoutX="47.0" layoutY="323.0" text="Gestionar Fondos" textFill="BLACK">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblRegistrarEmpleado" layoutX="307.0" layoutY="323.0" text="Registrar Empleado" textFill="BLACK">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblActualizarDatos" layoutX="582.0" layoutY="323.0" text="Actualizar Datos" textFill="BLACK">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Label>
+                                        <Label fx:id="lblGestionarVehiculos" layoutX="167.0" layoutY="320.0" text="Gestionar Vehiculos" textFill="BLACK">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="lblActualizarDatos" layoutX="465.0" layoutY="320.0" text="Actualizar Datos" textFill="BLACK">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
                                     </children>
                                 </AnchorPane>
                             </content>
