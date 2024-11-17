@@ -48,8 +48,8 @@
               </AnchorPane>
             <AnchorPane layoutX="68.0" layoutY="216.0" prefHeight="696.0" prefWidth="1062.0" style="-fx-background-color: #fafafa;">
                <children>
-                  <TextField fx:id="txtNombre" layoutX="220.0" layoutY="7.0" promptText="Nombre" />
-                  <TextField fx:id="txtApellido" layoutX="747.0" layoutY="7.0" promptText="Apellido" />
+                  <TextField fx:id="txtNombre" layoutX="233.0" layoutY="42.0" promptText="Nombre" />
+                  <TextField fx:id="txtApellido" layoutX="760.0" layoutY="42.0" promptText="Apellido" />
                   <Label layoutX="122.0" layoutY="165.0" text="Pregunta de Seguridad:">
                      <font>
                         <Font size="16.0" />
@@ -69,19 +69,19 @@
                         <TableColumn fx:id="tbcSalario" prefWidth="159.0" text="Salario" />
                     </columns>
                   </TableView>
-                  <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="177.0" layoutY="10.0">
+                  <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="190.0" layoutY="45.0">
                      <image>
                         <Image url="@Imagenes/user%20(1).png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="31.0" fitWidth="28.0" layoutX="710.0" layoutY="7.0">
+                  <ImageView fitHeight="31.0" fitWidth="28.0" layoutX="723.0" layoutY="42.0">
                      <image>
                         <Image url="@Imagenes/fingerprint.png" />
                      </image>
                   </ImageView>
-                  <TextField fx:id="txtSalario" layoutX="482.0" layoutY="7.0" promptText="Salario" />
+                  <TextField fx:id="txtSalario" layoutX="495.0" layoutY="42.0" promptText="Salario" />
                   <Button fx:id="btnVerTransacciones" layoutX="761.0" layoutY="254.0" mnemonicParsing="false" onAction="#handleBtnVerTransacciones" text="Ver transacciones" />
-                  <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="438.0" layoutY="10.0">
+                  <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="451.0" layoutY="45.0">
                      <image>
                         <Image url="@Imagenes/usd-circle.png" />
                      </image>

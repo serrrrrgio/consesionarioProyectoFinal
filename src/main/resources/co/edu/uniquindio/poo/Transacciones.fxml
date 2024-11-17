@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="1183.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.RegistrarEmpleadoViewController">
+    <children>
+        <ImageView fx:id="backgroundImage" fitHeight="950.0" fitWidth="1188.0" opacity="0.7" preserveRatio="true" smooth="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="0.0">
+            <image>
+                <Image url="@imagenes/Imagen%20de%20WhatsApp%202024-11-03%20a%20las%2018.36.38_39cf80d9.jpg" />
+            </image>
+        </ImageView>
+      <AnchorPane layoutX="1.0" layoutY="-5.0" prefHeight="963.0" prefWidth="1185.0">
+         <children>
+              <AnchorPane opacity="0.9" prefHeight="663.0" prefWidth="1064.0" style="-fx-background-color: #fafafa;" AnchorPane.bottomAnchor="231.0" AnchorPane.leftAnchor="69.0" AnchorPane.rightAnchor="52.0" AnchorPane.topAnchor="69.0">
+                  <children>
+                      <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="5.0" layoutX="159.0" layoutY="30.0" prefHeight="62.0" prefWidth="733.0" style="-fx-font-family: 'SansSerif'; -fx-font-weight: bold; -fx-font-size: 46;" text="REPORTE DE TRANSACCIONES" textAlignment="CENTER" textOverrun="CLIP" AnchorPane.bottomAnchor="571.0" AnchorPane.leftAnchor="159.0" AnchorPane.rightAnchor="172.0" AnchorPane.topAnchor="30.0">
+                </Label>
+                      <ToolBar layoutX="1.0" layoutY="92.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="52.0" prefWidth="1057.0" style="-fx-background-color: #fafafa;" AnchorPane.bottomAnchor="519.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="92.0">
+                          <items>
+                        <ImageView fitHeight="37.0" fitWidth="39.0">
+                           <image>
+                              <Image url="@Imagenes/align-justify.png" />
+                           </image>
+                        </ImageView>
+                        <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
+                              <Button fx:id="btnRegresar" mnemonicParsing="false" onAction="#handleBtnRegresar" prefHeight="29.0" prefWidth="66.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;">
+                           <graphic>
+                              <ImageView fitHeight="31.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Imagenes/exit%20(1).png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                              <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
+                        <Button fx:id="btnActualizarDatos" mnemonicParsing="false" onAction="#handleBtnActualizarDatos" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Actualizar Datos" textAlignment="CENTER" />
+                        <Separator orientation="VERTICAL" prefHeight="38.0" prefWidth="56.0" />
+                        <Button fx:id="btnGestionarFondos" mnemonicParsing="false" onAction="#handleBtnGestionarFondos" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Gestionar Fondos" textAlignment="CENTER" />
+                              <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
+                        <Button fx:id="btnRegistrarEmpleado" mnemonicParsing="false" onAction="#handleBtnRegistrarEmpleado" prefHeight="28.0" prefWidth="165.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Registrar Empleado" />
+                        <Separator orientation="VERTICAL" prefHeight="38.0" prefWidth="56.0" />
+                          </items>
+                      </ToolBar>
+                  </children>
+              </AnchorPane>
+            <AnchorPane layoutX="68.0" layoutY="216.0" prefHeight="696.0" prefWidth="1062.0" style="-fx-background-color: #fafafa;">
+               <children>
+                  <Button fx:id="btnLimpiarCampos" layoutX="454.0" layoutY="598.0" mnemonicParsing="false" onAction="#handleBtnLimpiarCampos" style="-fx-background-color: #434343;" text="Limpiar Campos" textFill="WHITE" />
+                  <TableView fx:id="tblListEmpleado" layoutX="179.0" layoutY="199.0" prefHeight="378.0" prefWidth="676.0">
+                    <columns>
+                      <TableColumn fx:id="tbcNombre" prefWidth="154.0" text="Cliente" />
+                      <TableColumn fx:id="tbcApellido" prefWidth="147.0" text="Empleado" />
+                        <TableColumn fx:id="tbcCorreo" prefWidth="225.0" text="Vehiculo" />
+                        <TableColumn fx:id="tbcTelefono" prefWidth="149.0" text="Precio" />
+                    </columns>
+                  </TableView>
+                  <Label layoutX="227.0" layoutY="48.0" text="Fecha inicial" />
+                  <DatePicker layoutX="327.0" layoutY="43.0" />
+                  <DatePicker layoutX="327.0" layoutY="112.0" />
+                  <Label layoutX="227.0" layoutY="117.0" text="Fecha final" />
+                  <Button layoutX="651.0" layoutY="81.0" mnemonicParsing="false" style="-fx-background-color: #434343;" text="Ver transacciones" textFill="#fcf8f8" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="254.0" layoutY="152.0" prefHeight="1.0" prefWidth="668.0" style="-fx-background-color: #3c3c3c;" />
+            <AnchorPane layoutX="73.0" layoutY="216.0" prefHeight="1.0" prefWidth="1047.0" style="-fx-background-color: #3c3c3c;" />
+         </children>
+      </AnchorPane>
+    </children>
+</AnchorPane>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="1183.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.RegistrarClienteViewController">
+    <children>
+        <ImageView fx:id="backgroundImage" fitHeight="950.0" fitWidth="1188.0" opacity="0.7" preserveRatio="true" smooth="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="0.0">
+            <image>
+                <Image url="@imagenes/Imagen%20de%20WhatsApp%202024-11-03%20a%20las%2018.36.38_39cf80d9.jpg" />
+            </image>
+        </ImageView>
+        <AnchorPane layoutX="208.0" layoutY="173.0" opacity="0.9" prefHeight="656.0" prefWidth="821.0" style="-fx-background-color: #747474;" AnchorPane.bottomAnchor="121.0" AnchorPane.leftAnchor="208.0" AnchorPane.rightAnchor="199.0" AnchorPane.topAnchor="173.0">
+            <children>
+                <ScrollPane prefHeight="656.0" prefWidth="776.0" />
+                <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="5.0" layoutX="44.0" layoutY="30.0" prefHeight="55.0" prefWidth="700.0" style="-fx-font-family: 'SansSerif'; -fx-font-weight: bold; -fx-font-size: 46;" text="ACTUALIZAR DATOS" textAlignment="CENTER" textOverrun="CLIP" AnchorPane.bottomAnchor="571.0" AnchorPane.leftAnchor="44.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="30.0">
+                </Label>
+                <ToolBar layoutY="102.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="45.0" prefWidth="821.0" style="-fx-background-color: #fafafa;" AnchorPane.bottomAnchor="509.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="102.0">
+                    <items>
+                  <ImageView fitHeight="31.0" fitWidth="32.0">
+                     <image>
+                        <Image url="@Imagenes/align-justify.png" />
+                     </image>
+                  </ImageView>
+                  <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
+                        <Button fx:id="btnRegresar" mnemonicParsing="false" onAction="#handleBtnRegresar" prefHeight="38.0" prefWidth="65.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;">
+                     <graphic>
+                        <ImageView fitHeight="28.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Imagenes/exit%20(1).png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                        <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
+                        <Button fx:id="btnIniciarSesion" mnemonicParsing="false" onAction="#handleBtnIniciarSesion" prefHeight="28.0" prefWidth="134.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;">
+                        </Button>
+                        <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
+                  <Button fx:id="btnIniciarSesion1" mnemonicParsing="false" onAction="#handleBtnIniciarSesion" prefHeight="28.0" prefWidth="134.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" />
+                  <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
+                  <Button fx:id="btnIniciarSesion2" mnemonicParsing="false" onAction="#handleBtnIniciarSesion" prefHeight="28.0" prefWidth="134.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" />
+                    </items>
+                </ToolBar>
+                <AnchorPane layoutX="177.0" layoutY="84.0" prefHeight="2.0" prefWidth="434.0" style="-fx-background-color: #202020;" AnchorPane.bottomAnchor="570.0" AnchorPane.leftAnchor="177.0" AnchorPane.rightAnchor="165.0" AnchorPane.topAnchor="84.0" />
+                <AnchorPane layoutX="-1.0" layoutY="146.0" prefHeight="2.0" prefWidth="776.0" style="-fx-background-color: #202020;" />
+            <AnchorPane layoutX="1.0" layoutY="150.0" prefHeight="506.0" prefWidth="785.0">
+               <children>
+                  <TextField fx:id="txtNombre" layoutX="306.0" layoutY="24.0" prefHeight="31.0" prefWidth="275.0" promptText="Nombre" />
+                  <TextField fx:id="txtApellido" layoutX="306.0" layoutY="73.0" prefHeight="31.0" prefWidth="275.0" promptText="Apellido" />
+                  <TextField fx:id="txtCorreo" layoutX="306.0" layoutY="127.0" prefHeight="31.0" prefWidth="275.0" promptText="Correo" />
+                  <TextField fx:id="txtTelefono" layoutX="307.0" layoutY="181.0" prefHeight="31.0" prefWidth="275.0" promptText="Telefono" />
+                  <Label layoutX="117.0" layoutY="332.0" text="Pregunta de Seguridad:">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtUsuario" layoutX="306.0" layoutY="238.0" prefHeight="31.0" prefWidth="275.0" promptText="Usuario" />
+                  <TextField fx:id="txtRespuesta" layoutX="306.0" layoutY="388.0" prefHeight="31.0" prefWidth="275.0" promptText="Respuesta" />
+                  <PasswordField fx:id="txtContrasena" layoutX="306.0" layoutY="289.0" prefHeight="31.0" prefWidth="275.0" promptText="Contraseñá" />
+                  <ChoiceBox fx:id="choicePreguntaSeguridad" layoutX="307.0" layoutY="337.0" prefHeight="31.0" prefWidth="323.0" />
+                  <Button fx:id="btnActualizarDAtos" layoutX="380.0" layoutY="446.0" mnemonicParsing="false" onAction="#handleBtnRegistrarse" style="-fx-background-color: #434343;" text="Actualizar Datos" textFill="WHITE" />
+                  <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="261.0" layoutY="24.0">
+                     <image>
+                        <Image url="@Imagenes/user%20(1).png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="261.0" layoutY="130.0">
+                     <image>
+                        <Image url="@Imagenes/envelope.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="261.0" layoutY="184.0">
+                     <image>
+                        <Image url="@Imagenes/phone-call.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="261.0" layoutY="238.0">
+                     <image>
+                        <Image url="@Imagenes/user-add.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="31.0" fitWidth="28.0" layoutX="261.0" layoutY="286.0">
+                     <image>
+                        <Image url="@Imagenes/eye%20(2).png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="31.0" fitWidth="28.0" layoutX="261.0" layoutY="385.0">
+                     <image>
+                        <Image url="@Imagenes/key.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="31.0" fitWidth="28.0" layoutX="261.0" layoutY="73.0">
+                     <image>
+                        <Image url="@../../../../../../../../../Downloads/fingerprint.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

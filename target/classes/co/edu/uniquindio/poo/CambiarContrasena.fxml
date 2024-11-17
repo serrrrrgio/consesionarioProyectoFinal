@@ -37,35 +37,24 @@
                         <Button fx:id="btnRegistrarse" mnemonicParsing="false" onAction="#handleBtnRegistrarse" prefHeight="28.0" prefWidth="134.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Registrarse">
                         </Button>
                         <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
+                  <Button fx:id="btnRegistrarse1" mnemonicParsing="false" onAction="#handleBtnRegistrarse" prefHeight="28.0" prefWidth="134.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Iniciar Sesion" />
                     </items>
                 </ToolBar>
-                <AnchorPane layoutX="234.0" layoutY="68.0" prefHeight="2.0" prefWidth="313.0" style="-fx-background-color: #fafafa;" AnchorPane.bottomAnchor="586.0" AnchorPane.leftAnchor="234.0" AnchorPane.rightAnchor="229.0" AnchorPane.topAnchor="68.0" />
+                <AnchorPane layoutX="141.0" layoutY="68.0" prefHeight="2.0" prefWidth="488.0" style="-fx-background-color: #fafafa;" AnchorPane.bottomAnchor="586.0" AnchorPane.leftAnchor="141.0" AnchorPane.rightAnchor="147.0" AnchorPane.topAnchor="68.0" />
                 <AnchorPane layoutX="-1.0" layoutY="146.0" prefHeight="2.0" prefWidth="776.0" style="-fx-background-color: #202020;" />
             <AnchorPane layoutY="150.0" prefHeight="506.0" prefWidth="785.0">
                <children>
-                  <TextField fx:id="txtUsuario" layoutX="313.0" layoutY="97.0" promptText="Usuario" />
-                  <PasswordField fx:id="txtContrasena" layoutX="313.0" layoutY="160.0" promptText="constrasena" />
-                  <Button fx:id="btnLimpiarCampos" layoutX="178.0" layoutY="292.0" mnemonicParsing="false" onAction="#handleBtnLimpiarCampos" text="Limpiar Campos" />
-                  <Button fx:id="btnIniciarSesion" layoutX="353.0" layoutY="292.0" mnemonicParsing="false" onAction="#handleBtnIniciarSesion" text="Iniciar Sesion" />
-                  <RadioButton fx:id="rdCliente" layoutX="568.0" layoutY="76.0" mnemonicParsing="false" onAction="#rdObtenerRol" text="Cliente">
-                     <toggleGroup>
-                        <ToggleGroup fx:id="rol" />
-                     </toggleGroup></RadioButton>
-                  <RadioButton fx:id="rdEmpleado" layoutX="568.0" layoutY="125.0" mnemonicParsing="false" onAction="#rdObtenerRol" text="Empleado" toggleGroup="$rol" />
-                  <RadioButton fx:id="rdAdministrador" layoutX="568.0" layoutY="178.0" mnemonicParsing="false" text="Administrador" toggleGroup="$rol" />
-                  <Button layoutX="436.0" layoutY="205.0" mnemonicParsing="false" opacity="0.9" style="-fx-background-color: #fafafa;" text="Registrarse">
-                     <font>
-                        <Font size="12.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="305.0" layoutY="205.0" mnemonicParsing="false" opacity="0.9" style="-fx-background-color: #fafafa;" text="Cmbiar constrasena">
-                     <font>
-                        <Font size="12.0" />
-                     </font>
-                  </Button>
+                  <TextField fx:id="txtUsuario" layoutX="313.0" layoutY="61.0" promptText="Usuario" />
+                  <PasswordField fx:id="txtContrasena" layoutX="315.0" layoutY="253.0" promptText="Nueva Contraseña" />
+                  <Button fx:id="btnLimpiarCampos" layoutX="125.0" layoutY="387.0" mnemonicParsing="false" onAction="#handleBtnLimpiarCampos" text="Limpiar Campos" />
+                  <Button fx:id="btnIniciarSesion" layoutX="331.0" layoutY="387.0" mnemonicParsing="false" onAction="#handleBtnIniciarSesion" text="Cambiar Contraseña" />
+                  <PasswordField fx:id="txtContrasena1" layoutX="315.0" layoutY="306.0" promptText="Rectificar Contraseña" />
+                  <ChoiceBox layoutX="332.0" layoutY="113.0" prefWidth="150.0" />
+                  <PasswordField fx:id="txtContrasena2" layoutX="313.0" layoutY="162.0" promptText="Respuesta" />
+                  <Label layoutX="162.0" layoutY="118.0" text="Pregunta Seguridad:" />
                </children>
             </AnchorPane>
-                <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="5.0" layoutX="201.0" layoutY="14.0" prefHeight="45.0" prefWidth="384.0" style="-fx-font-family: 'SansSerif'; -fx-font-weight: bold; -fx-font-size: 46;" text="INICIAR SESIÓN" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
+                <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="5.0" layoutX="109.0" layoutY="14.0" prefHeight="53.0" prefWidth="555.0" style="-fx-font-family: 'SansSerif'; -fx-font-weight: bold; -fx-font-size: 46;" text="CAMBIAR CONTRASEÑA" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
                 </Label>
             </children>
         </AnchorPane>
