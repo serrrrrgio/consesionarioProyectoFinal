@@ -37,12 +37,6 @@
                      </graphic>
                   </Button>
                         <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
-                        <Button fx:id="btnIniciarSesion" mnemonicParsing="false" prefHeight="28.0" prefWidth="134.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;">
-                        </Button>
-                        <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
-                  <Button fx:id="btnIniciarSesion1" mnemonicParsing="false" prefHeight="28.0" prefWidth="134.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" />
-                  <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
-                  <Button fx:id="btnIniciarSesion2" mnemonicParsing="false" prefHeight="28.0" prefWidth="134.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" />
                     </items>
                 </ToolBar>
                 <AnchorPane layoutX="71.0" layoutY="84.0" prefHeight="2.0" prefWidth="414.0" style="-fx-background-color: #202020;" AnchorPane.bottomAnchor="570.0" AnchorPane.leftAnchor="71.0" AnchorPane.rightAnchor="291.0" AnchorPane.topAnchor="84.0" />
@@ -62,7 +56,7 @@
                   <TextField fx:id="txtRespuesta" layoutX="306.0" layoutY="388.0" prefHeight="31.0" prefWidth="275.0" promptText="Respuesta" />
                   <PasswordField fx:id="txtContrasena" layoutX="306.0" layoutY="289.0" prefHeight="31.0" prefWidth="275.0" promptText="Contraseñá" />
                   <ChoiceBox fx:id="choicePreguntaSeguridad" layoutX="307.0" layoutY="337.0" prefHeight="31.0" prefWidth="323.0" />
-                  <Button fx:id="btnActualizarDaos" layoutX="380.0" layoutY="446.0" mnemonicParsing="false" onAction="#handleBtnActualizarDatos" style="-fx-background-color: #434343;" text="Actualizar Datos" textFill="WHITE" />
+                  <Button fx:id="btnActualizarDatos" layoutX="380.0" layoutY="446.0" mnemonicParsing="false" onAction="#handleBtnActualizarDatos" style="-fx-background-color: #434343;" text="Actualizar Datos" textFill="WHITE" />
                   <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="261.0" layoutY="24.0">
                      <image>
                         <Image url="@Imagenes/user%20(1).png" />
@@ -95,7 +89,7 @@
                   </ImageView>
                   <ImageView fitHeight="31.0" fitWidth="28.0" layoutX="261.0" layoutY="73.0">
                      <image>
-                        <Image url="@../../../../../../../../../Downloads/fingerprint.png" />
+                        <Image url="@Imagenes/fingerprint.png" />
                      </image>
                   </ImageView>
                </children>

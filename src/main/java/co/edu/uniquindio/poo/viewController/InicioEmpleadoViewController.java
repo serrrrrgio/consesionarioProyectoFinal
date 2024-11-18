@@ -93,7 +93,7 @@ public class InicioEmpleadoViewController {
 
     @FXML
     void handleBtnActualizarDatos(ActionEvent event) {
-        App.cambiarEscena("/co/edu/uniquindio/poo/ActualizarDatosEmpleado.fxml", "Inicio", event, getClass());
+        App.cambiarEscena("/co/edu/uniquindio/poo/ActualizarDatos.fxml", "Inicio", event, getClass());
     }
 
     @FXML
