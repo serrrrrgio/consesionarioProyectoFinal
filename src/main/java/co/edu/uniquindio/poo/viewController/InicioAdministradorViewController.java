@@ -87,6 +87,7 @@ public class InicioAdministradorViewController {
                        "/co/edu/uniquindio/poo/imagenes/exit (2).png", originalRegresar);
         setHoverEffect(btnTransaccionesInicio, btnTransaccionesInicioImage1, lblTransacciones, 
                        "/co/edu/uniquindio/poo/imagenes/document-signed (1).png", originalTransacciones);
+        App.setButtonHoverEffect(btnRegresar);
     }
 
     private Image cargarImagen(String imageUrl, ImageView imageView) {

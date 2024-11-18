@@ -29,20 +29,21 @@ public class GestionarFondosViewController {
     @FXML
     private TextField txtDepositarFondos;
 
-
     GestionarFondosController gestionarFondosController;
 
-
-    
     @FXML
     void initialize() {
-            gestionarFondosController= new GestionarFondosController(App.getConcesionario());
-            txtFondosTotales.setText(gestionarFondosController.getConcesionario().obtenerPrecioCadena());
-        }
+        gestionarFondosController = new GestionarFondosController(App.getConcesionario());
+        txtFondosTotales.setText(gestionarFondosController.getConcesionario().obtenerPrecioCadena());
+        App.setButtonHoverEffect(btnDepositarFondos);
+        App.setButtonHoverEffect(btnRegresar);
+        App.setButtonHoverEffect(btnRetirarFondos);
+
+    }
 
     @FXML
     void handleBtnRegresar(ActionEvent event) {
-        // Implementar la lógica para regresar a la vista anterior
+        App.cambiarEscena("/co/edu/uniquindio/poo/InicioAdministrador.fxml", "Inicio administrador", event, getClass());
     }
 
     @FXML
@@ -60,7 +61,9 @@ public class GestionarFondosViewController {
             if (cantidad > 0) {
                 // Se agregan los fondos
                 gestionarFondosController.agregarFondos(cantidad);
-                txtFondosTotales.setText(gestionarFondosController.getConcesionario().obtenerPrecioCadena()); // Actualizar los fondos
+                txtFondosTotales.setText(gestionarFondosController.getConcesionario().obtenerPrecioCadena()); // Actualizar
+                                                                                                              // los
+                                                                                                              // fondos
                 txtDepositarFondos.clear(); // Limpiar el campo de texto
             } else {
                 showAlert("Advertencia", "La cantidad a depositar debe ser mayor que 0.");
@@ -86,7 +89,9 @@ public class GestionarFondosViewController {
             if (cantidad > 0 && gestionarFondosController.getConcesionario().getFondos() >= cantidad) {
                 // Se retiran los fondos
                 gestionarFondosController.retirarFondos(cantidad);
-                txtFondosTotales.setText(String.valueOf(gestionarFondosController.getConcesionario().getFondos())); // Actualizar los fondos
+                txtFondosTotales.setText(String.valueOf(gestionarFondosController.getConcesionario().getFondos())); // Actualizar
+                                                                                                                    // los
+                                                                                                                    // fondos
                 txtRetirarFondos.clear(); // Limpiar el campo de texto
             } else if (cantidad <= 0) {
                 showAlert("Advertencia", "La cantidad a retirar debe ser mayor que 0.");

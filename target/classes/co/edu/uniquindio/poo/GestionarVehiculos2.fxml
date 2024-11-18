@@ -136,18 +136,8 @@
                         <TextField fx:id="txtCapacidadMaleteroSedan" layoutX="140.0" layoutY="299.0" promptText="Capacidad Maletero" />
                         <TextField fx:id="txtNumeroBolsasAireVan" layoutX="140.0" layoutY="347.0" promptText="Numero Bolsas Aire" />
                         <TextField fx:id="txtCapacidadMaleteroVan" layoutX="140.0" layoutY="299.0" promptText="Capacidad Maletero" />
-                        <ChoiceBox fx:id="choiceCombustibleVehiculo" layoutX="460.0" layoutY="251.0" prefWidth="150.0" />
-                        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="414.0" layoutY="251.0">
-                           <image>
-                              <Image url="@Imagenes/key.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="414.0" layoutY="305.0">
-                           <image>
-                              <Image url="@Imagenes/key.png" />
-                           </image>
-                        </ImageView>
-                        <ChoiceBox fx:id="choiceVehiculo" layoutX="460.0" layoutY="303.0" prefWidth="150.0" />
+                        <ChoiceBox fx:id="choiceCombustibleVehiculo" layoutX="460.0" layoutY="302.0" prefWidth="150.0" />
+                        <ChoiceBox fx:id="choiceVehiculo" layoutX="460.0" layoutY="251.0" prefWidth="150.0" />
                         <TextField fx:id="txtNumeroPasajerosCarro" layoutX="766.0" layoutY="206.0" promptText="Número pasajeros" />
                         <TextField fx:id="txtNumeroPuertasCarro" layoutX="766.0" layoutY="260.0" promptText="Número puertas" />
                         <RadioButton fx:id="rdAbsCarro" layoutX="808.0" layoutY="304.0" mnemonicParsing="false" text="Frenos ABS" />
@@ -171,6 +161,12 @@
                           </columns>
                         </TableView>
                         <TextField fx:id="txtPrecio" layoutX="463.0" layoutY="206.0" promptText="Precio" />
+                        <Label layoutX="371.0" layoutY="307.0" text="Combustible" />
+                        <Label layoutX="399.0" layoutY="256.0" text="Vehiculo" />
+                        <Label layoutX="941.0" layoutY="53.0" text="Tipo registro" />
+                        <Label layoutX="944.0" layoutY="106.0" text="Transmicion" />
+                        <Label layoutX="953.0" layoutY="159.0" text="Estado" />
+                        <Label fx:id="lbTipocamion" layoutX="372.0" layoutY="356.0" text="Tipo camión" />
                      </children>
                   </AnchorPane>
                </content>

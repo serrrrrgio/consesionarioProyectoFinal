@@ -100,6 +100,12 @@ public class InicioClienteViewController {
                        "/co/edu/uniquindio/poo/imagenes/handshake (1).png", originalAlquilarVehiculo);
         setHoverEffect(btnRegresar, btnRegresarImage, null, 
                        "/co/edu/uniquindio/poo/imagenes/exit (2).png", originalRegresar);
+
+        App.setButtonHoverEffect(btnActualizarDatos);
+        App.setButtonHoverEffect(btnAlquilarVehiculo);
+        App.setButtonHoverEffect(btnComprarVehiculo);
+        App.setButtonHoverEffect(btnRegresar);
+        App.setButtonHoverEffect(btnVenderVehiculo);
     }
 
     private Image cargarImagen(String imageUrl, ImageView imageView) {
@@ -112,31 +118,32 @@ public class InicioClienteViewController {
             System.out.println("Imagen no encontrada: " + imageUrl);
             return null;
         }
+        
     }
 
     @FXML
     void handleBtnRegresar(ActionEvent event) {
-        App.cambiarEscena("/co/edu/uniquindio/poo/IniciarSesion.fxml", "Inicio", event, getClass());
+        App.cambiarEscena("/co/edu/uniquindio/poo/IniciarSesion.fxml", "Inicio sesión", event, getClass());
     }
 
     @FXML
     void handleBtnComprarVehiculo(ActionEvent event) {
-        App.cambiarEscena("/co/edu/uniquindio/poo/ComprarVehiculo.fxml", "Inicio", event, getClass());
+        App.cambiarEscena("/co/edu/uniquindio/poo/ComprarVehiculo.fxml", "Comprar Vehiculo", event, getClass());
     }
 
     @FXML
     void handleBtnVenderVehiculo(ActionEvent event) {
-        App.cambiarEscena("/co/edu/uniquindio/poo/VenderVehiculo.fxml", "Inicio", event, getClass());
+        App.cambiarEscena("/co/edu/uniquindio/poo/VenderVehiculo.fxml", "Vender vehiculo", event, getClass());
     }
 
     @FXML
     void handleBtnActualizarDatos(ActionEvent event) {
-        App.cambiarEscena("/co/edu/uniquindio/poo/ActualizarDatosCliente.fxml", "Inicio", event, getClass());
+        App.cambiarEscena("/co/edu/uniquindio/poo/ActualizarDatos.fxml", "Actualizar Datos", event, getClass());
     }
 
     @FXML
     void handleBtnAlquilarVehiculo(ActionEvent event) {
-        App.cambiarEscena("/co/edu/uniquindio/poo/AlquilarVehiculo.fxml", "Inicio", event, getClass());
+        App.cambiarEscena("/co/edu/uniquindio/poo/AlquilarVehiculo.fxml", "Alquilar Vehiculo", event, getClass());
     }
 
     private void setHoverEffect(Button button, ImageView imageView, Label label, String hoverImagePath, Image originalImage) {

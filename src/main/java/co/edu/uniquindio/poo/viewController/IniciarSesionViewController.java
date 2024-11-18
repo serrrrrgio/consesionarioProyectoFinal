@@ -56,6 +56,12 @@ public class IniciarSesionViewController {
             registrarseIniciarSesionController = new RegistrarseIniciarSesionController(App.getConcesionario());
         }
 
+        App.setButtonHoverEffect(btnCambiarContrasena);
+        App.setButtonHoverEffect(btnIniciarSesion);
+        App.setButtonHoverEffect(btnLimpiarCampos);
+        App.setButtonHoverEffect(btnRegistrarse);
+        App.setButtonHoverEffect(btnRegresar);
+
         // Establecer efectos de hover para los botones
         if (btnRegistrarse != null) {
             App.setButtonHoverEffect(btnRegistrarse);

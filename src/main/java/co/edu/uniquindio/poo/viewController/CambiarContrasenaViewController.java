@@ -74,12 +74,13 @@ public class CambiarContrasenaViewController {
 
     @FXML
     void handleBtnAceptar(ActionEvent event) {
-        if(!cambioValido){
+        if (!cambioValido) {
             App.mostrarAlerta("Error al cambiar contraseña", "Por favor llene los demás campos");
             return;
         }
-        if(txtContrasena.getText().equals(txtContrasena1.getText())){
-            App.mostrarMensaje("Contraseña", "Contraseña restaurada", "La constraseña ha sido restaurada correctamente");
+        if (txtContrasena.getText().equals(txtContrasena1.getText())) {
+            App.mostrarMensaje("Contraseña", "Contraseña restaurada",
+                    "La constraseña ha sido restaurada correctamente");
             persona.setContrasena(txtContrasena.getText());
             App.cambiarEscena("/co/edu/uniquindio/poo/Inicio.fxml", "Inicio", event, getClass());
         }
@@ -98,6 +99,13 @@ public class CambiarContrasenaViewController {
         txtContrasena1.setVisible(false);
 
         choicePreguntaSeguridad.getItems().addAll(PreguntaSeguridad.values());
+
+        App.setButtonHoverEffect(btnAceptar);
+        App.setButtonHoverEffect(btnCambiarContrasena);
+        App.setButtonHoverEffect(btnLimpiarCampos);
+        App.setButtonHoverEffect(btnRegistrarse);
+        App.setButtonHoverEffect(btnRegistrarse1);
+        App.setButtonHoverEffect(btnRegresar);
 
     }
 
@@ -129,12 +137,11 @@ public class CambiarContrasenaViewController {
                 } else {
                     App.mostrarAlerta("Error al intentar cambiar de contraseña", "Pregunta o respuesta incorrecta");
                 }
-            }
-            else {
+            } else {
                 App.mostrarAlerta("Error al intentar cambiar contraseña",
                         "EL administrador " + txtUsuario.getText() + " no existe");
             }
-        } 
+        }
 
         else if (rdCliente.isSelected()) {
             Cliente cliente = recuperarContrasenaController.obtenerClienteUsuario(txtUsuario.getText());
@@ -145,18 +152,16 @@ public class CambiarContrasenaViewController {
                     txtContrasena1.setVisible(true);
                     cambioValido = true;
                     persona = cliente;
-                }
-                else {
+                } else {
                     App.mostrarAlerta("Error al intentar cambiar de contraseña", "Pregunta o respuesta incorrecta");
                 }
-            }
-            else{
+            } else {
                 App.mostrarAlerta("Error al intentar cambiar contraseña",
-                    "EL cliente " + txtUsuario.getText() + " no existe");
+                        "EL cliente " + txtUsuario.getText() + " no existe");
             }
         }
 
-        else if (rdEmpleado.isSelected()){
+        else if (rdEmpleado.isSelected()) {
             Empleado empleado = recuperarContrasenaController.obtenerEmpleadoUsuario(txtUsuario.getText());
             if (empleado != null) {
                 if (empleado.getPreguntaSeguridad().equals(choicePreguntaSeguridad.getValue())
@@ -165,18 +170,16 @@ public class CambiarContrasenaViewController {
                     txtContrasena1.setVisible(true);
                     cambioValido = true;
                     persona = empleado;
-                }
-                else {
+                } else {
                     App.mostrarAlerta("Error al intentar cambiar de contraseña", "Pregunta o respuesta incorrecta");
                 }
-            }
-            else{
+            } else {
                 App.mostrarAlerta("Error al intentar cambiar contraseña",
-                    "EL empleado " + txtUsuario.getText() + " no existe");
+                        "EL empleado " + txtUsuario.getText() + " no existe");
             }
         }
 
-        else{
+        else {
             App.mostrarAlerta("Error al cambiar contraseña", "Por favor seleccione su rol");
             return;
         }

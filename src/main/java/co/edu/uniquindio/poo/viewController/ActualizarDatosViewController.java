@@ -49,6 +49,8 @@ public class ActualizarDatosViewController {
 
     @FXML
     public void initialize() {
+        App.setButtonHoverEffect(btnActualizarDatos);
+        App.setButtonHoverEffect(btnRegresar);
         // Inicialización del usuario activo
         if (usuarioActivo instanceof Cliente) {
             cargarDatosCliente((Cliente) usuarioActivo);
@@ -222,6 +224,13 @@ public class ActualizarDatosViewController {
 
     @FXML
     void handleBtnRegresar(ActionEvent event) {
-        App.cambiarEscena("/co/edu/uniquindio/poo/InicioAdministrador.fxml", "Menú Principal", event, getClass());
+        if (usuarioActivo instanceof Cliente) {
+            App.cambiarEscena("/co/edu/uniquindio/poo/InicioCliente.fxml", "Menú Principal", event, getClass());
+        } else if (usuarioActivo instanceof Empleado) {
+            App.cambiarEscena("/co/edu/uniquindio/poo/InicioEmpleado.fxml", "Menú Principal", event, getClass());
+        } else if (usuarioActivo instanceof Administrador) {
+            App.cambiarEscena("/co/edu/uniquindio/poo/InicioAdministrador.fxml", "Menú Principal", event, getClass());
+        }
+        
     }
 }

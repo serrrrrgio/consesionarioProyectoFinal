@@ -19,11 +19,13 @@ import co.edu.uniquindio.poo.model.Transmision;
 import co.edu.uniquindio.poo.model.Van;
 import co.edu.uniquindio.poo.model.Vehiculo;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -62,6 +64,9 @@ public class GestionarVehiculosViewController {
     private RadioButton rdHibridoLigero;
 
     @FXML
+    private Label lbTipocamion;
+
+    @FXML
     private ChoiceBox<Transmision> choiceTransmisionVehiculo;
 
     @FXML
@@ -84,9 +89,6 @@ public class GestionarVehiculosViewController {
 
     @FXML
     private TableColumn<Vehiculo, String> tbcModelo;
-
-    @FXML
-    private Button btnActualizarAdmin;
 
     @FXML
     private TextField txtNumeroEjesBus;
@@ -233,6 +235,9 @@ public class GestionarVehiculosViewController {
 
     GestionarVehiculosController gestionarVehiculosController;
 
+    private ChangeListener<TipoVehiculo> tipoVehiculoListener;
+    private ChangeListener<Combustible> combustibleVehiculoListener;
+
     @FXML
     void handleBtnRegresar(ActionEvent event) {
         App.cambiarEscena("/co/edu/uniquindio/poo/InicioEmpleado.fxml", "Inicio Empleado", event, getClass());
@@ -289,7 +294,27 @@ public class GestionarVehiculosViewController {
                 tiempoCarga = 0;
             }
 
-            if (tipoVehiculo != TipoVehiculo.MOTO) {
+            if (tipoVehiculo.equals(TipoVehiculo.MOTO)) {
+                System.out.println(modelo + cambios + velocidadMaxima + cilindraje + precio + autonomia + tiempoCarga);
+                Moto moto = gestionarVehiculosController.crearMoto(marca, placa, modelo, cambios, velocidadMaxima,
+                        cilindraje, tipoRegistro, transmision, estado,
+                        precio, combustible, autonomia, tiempoCarga, enchufable, hibridoLigero);
+
+                if (gestionarVehiculosController.agregarVehiculo(moto)) {
+                    // Actualiza la tabla
+                    setVehiculos();
+
+                    // Limpiar campos después de agregar
+                    limpiarCampos();
+
+                    return;
+                } else {
+                    App.mostrarAlerta("Error",
+                            "Ya existe una moto con el número de matrícula " + placa);
+                }
+            }
+
+            else {
                 // Obtener atributos específicos de Carro
                 String capacidadPasajerosCadena = txtNumeroPasajerosCarro.getText();
                 String cantidadPuertasCadena = txtNumeroPuertasCarro.getText();
@@ -529,23 +554,6 @@ public class GestionarVehiculosViewController {
 
                     }
 
-                } else if(tipoVehiculo.equals(TipoVehiculo.MOTO)){
-                    Moto moto = gestionarVehiculosController.crearMoto(marca, placa, modelo, cambios, velocidadMaxima,
-                            cilindraje, tipoRegistro, transmision, estado,
-                            precio, combustible, autonomia, tiempoCarga, enchufable, hibridoLigero);
-
-                    if (gestionarVehiculosController.agregarVehiculo(moto)) {
-                        // Actualiza la tabla
-                        setVehiculos();
-
-                        // Limpiar campos después de agregar
-                        limpiarCampos();
-
-                        return;
-                    } else {
-                        App.mostrarAlerta("Error",
-                                "Ya existe una moto con el número de matrícula " + placa);
-                    }
                 }
             }
         }
@@ -598,7 +606,25 @@ public class GestionarVehiculosViewController {
                 tiempoCarga = 0;
             }
 
-            if (tipoVehiculo != TipoVehiculo.MOTO) {
+            if (tipoVehiculo == TipoVehiculo.MOTO) {
+                if (gestionarVehiculosController.actualizarMoto((Moto) vehiculoSeleccionado, marca, placa,
+                        modelo, cambios, velocidadMaxima,
+                        cilindraje, tipoRegistro, transmision, estado, precio, combustible, autonomia, tiempoCarga,
+                        enchufable, hibridoLigero)) {
+                    // Actualiza la tabla
+                    setVehiculos();
+
+                    // Limpiar campos después de agregar
+                    limpiarCampos();
+
+                    tblListVehiculos.refresh();
+
+                    return;
+                } else {
+                    App.mostrarAlerta("Error",
+                            "Ya existe una moto con el número de matrícula " + placa);
+                }
+            } else {
                 // Obtener atributos específicos de Carro
                 String capacidadPasajerosCadena = txtNumeroPasajerosCarro.getText();
                 String cantidadPuertasCadena = txtNumeroPuertasCarro.getText();
@@ -841,20 +867,6 @@ public class GestionarVehiculosViewController {
 
                     }
 
-                } else if (gestionarVehiculosController.actualizarMoto((Moto) vehiculoSeleccionado, marca, placa,
-                        modelo, cambios, velocidadMaxima,
-                        cilindraje, tipoRegistro, transmision, estado, precio, combustible, autonomia, tiempoCarga,
-                        enchufable, hibridoLigero)) {
-                    // Actualiza la tabla
-                    setVehiculos();
-
-                    // Limpiar campos después de agregar
-                    limpiarCampos();
-
-                    return;
-                } else {
-                    App.mostrarAlerta("Error",
-                            "Ya existe una moto con el número de matrícula " + placa);
                 }
             }
         }
@@ -881,11 +893,8 @@ public class GestionarVehiculosViewController {
         ocultarCamposIrrelevantes();
         mostrarCamposGenerales();
 
-        inicializarData();
-
-        agregarListener();
-
         setVehiculos();
+        inicializarData();
 
         choiceVehiculo.setItems(FXCollections.observableArrayList(TipoVehiculo.values()));
         choiceTransmisionVehiculo.setItems(FXCollections.observableArrayList(Transmision.values()));
@@ -893,6 +902,15 @@ public class GestionarVehiculosViewController {
         choiceCombustibleVehiculo.setItems(FXCollections.observableArrayList(Combustible.values()));
         choiceTipoCamion.setItems(FXCollections.observableArrayList(TipoCamion.values()));
         choiceTipoRegistroVehiculo.setItems(FXCollections.observableArrayList(TipoRegistro.values()));
+
+        agregarListener();
+
+        App.setButtonHoverEffect(btnActualizarVehiculo);
+        App.setButtonHoverEffect(btnEliminarVehiculo);
+        App.setButtonHoverEffect(btnLimpiarCampos);
+        App.setButtonHoverEffect(btnRegistrarVehiculo);
+        App.setButtonHoverEffect(btnRegresar);
+        
 
     }
 
@@ -909,26 +927,33 @@ public class GestionarVehiculosViewController {
     public void agregarListener() {
         tblListVehiculos.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             vehiculoSeleccionado = newValue;
+            System.out.println("Old Value: " + oldValue);
+            System.out.println("New Value: " + newValue);
             mostrarInformacionVehiculo(newValue);
             mostrarCamposVehiculo(newValue);
         });
 
-        choiceVehiculo.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue != null) {
+        inicializarListeners();
 
-                mostrarCamposSegunTipoVehiculo(newValue);
-                limpiarCamposEspecificos();
-
-            }
-        });
+        choiceVehiculo.getSelectionModel().selectedItemProperty().addListener(tipoVehiculoListener);
 
         choiceCombustibleVehiculo.getSelectionModel().selectedItemProperty()
-                .addListener((observable, oldValue, newValue) -> {
-                    if (newValue != null) {
+                .addListener(combustibleVehiculoListener);
+    }
 
-                        mostrarCamposSegunCombustible(newValue);
-                    }
-                });
+    private void inicializarListeners() {
+        tipoVehiculoListener = (observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                mostrarCamposSegunTipoVehiculo(newValue);
+                limpiarCamposEspecificos();
+            }
+        };
+
+        combustibleVehiculoListener = (observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                mostrarCamposSegunCombustible(newValue);
+            }
+        };
     }
 
     // Método para establecer la lista de camionetas
@@ -1341,6 +1366,9 @@ public class GestionarVehiculosViewController {
 
     public void mostrarInformacionVehiculo(Vehiculo vehiculo) {
         if (vehiculo != null) {
+
+            choiceVehiculo.getSelectionModel().selectedItemProperty()
+                    .removeListener(tipoVehiculoListener);
             // Set common vehiculo fields
             txtMarcaVehiculo.setText(vehiculo.getMarca());
             txtPlacaVehiculo.setText(vehiculo.getPlaca());
@@ -1351,7 +1379,12 @@ public class GestionarVehiculosViewController {
             choiceTipoRegistroVehiculo.setValue(vehiculo.getTipoRegistro());
             choiceTransmisionVehiculo.setValue(vehiculo.getTransmision());
             choiceEstadoVehiculo.setValue(vehiculo.getEstado());
+            choiceCombustibleVehiculo.getSelectionModel().selectedItemProperty()
+                    .removeListener(combustibleVehiculoListener);
             choiceCombustibleVehiculo.setValue(vehiculo.getCombustible());
+
+            choiceCombustibleVehiculo.getSelectionModel().selectedItemProperty()
+                    .addListener(combustibleVehiculoListener);
             txtPrecio.setText(String.valueOf(vehiculo.getPrecio()));
             txtAutonomiaElectrico.setText(String.valueOf(vehiculo.getAutonomia()));
             txtTiempoCargaElectrico.setText(String.valueOf(vehiculo.getTiempoCarga()));
@@ -1431,6 +1464,8 @@ public class GestionarVehiculosViewController {
                 rdCamaraReversaCarro.setSelected(carro.isCamaraReversa());
             }
 
+            choiceVehiculo.getSelectionModel().selectedItemProperty().addListener(tipoVehiculoListener);
+
         } else {
             limpiarCampos(); // Llamar a la función limpiarCampos si el vehículo es null
         }
@@ -1470,6 +1505,7 @@ public class GestionarVehiculosViewController {
         txtTiempoAlcanzar100kmhDeportivo.setVisible(false);
         txtNumeroBolsasAireDeportivo.setVisible(false);
         txtCapacidadMaleteroCamioneta.setVisible(false);
+        lbTipocamion.setVisible(false);
     }
 
     private void mostrarCamposGenerales() {
@@ -1512,6 +1548,7 @@ public class GestionarVehiculosViewController {
         rdFrenosAireCamion.setVisible(true);
         txtNumeroEjesCamion.setVisible(true);
         choiceTipoCamion.setVisible(true);
+        lbTipocamion.setVisible(true);
 
     }
 
