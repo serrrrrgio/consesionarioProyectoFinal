@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import co.edu.uniquindio.poo.App;
+import co.edu.uniquindio.poo.controller.AlquilarVehiculoController;
 import co.edu.uniquindio.poo.controller.RegistrarseIniciarSesionController;
 import co.edu.uniquindio.poo.model.Cliente;
 import co.edu.uniquindio.poo.model.Empleado;
@@ -117,6 +118,7 @@ public class IniciarSesionViewController {
             if (cliente != null) {
                 App.mostrarMensaje("Inicio de sesión", "Se ha iniciado sesión correctamente", "Bienvenido " + txtUsuario.getText());
                 ActualizarDatosViewController.usuarioActivo = cliente;
+                AlquilarVehiculoViewController.cliente = cliente;
                 App.cambiarEscena("/co/edu/uniquindio/poo/InicioCliente.fxml", "Inicio cliente", event, getClass());
             } else {
                 App.mostrarAlerta("Error al iniciar sesión", "No existe un cliente con ese usuario y contraseña");

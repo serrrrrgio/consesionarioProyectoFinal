@@ -1,96 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
+<?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="1183.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.RegistrarEmpleadoViewController">
-    <children>
-        <ImageView fx:id="backgroundImage" fitHeight="950.0" fitWidth="1188.0" opacity="0.7" preserveRatio="true" smooth="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="0.0">
-            <image>
-                <Image url="@imagenes/Imagen%20de%20WhatsApp%202024-11-03%20a%20las%2018.36.38_39cf80d9.jpg" />
-            </image>
-        </ImageView>
-      <AnchorPane layoutX="1.0" layoutY="-5.0" prefHeight="963.0" prefWidth="1185.0">
-         <children>
-              <AnchorPane opacity="0.9" prefHeight="663.0" prefWidth="1064.0" style="-fx-background-color: #fafafa;" AnchorPane.bottomAnchor="231.0" AnchorPane.leftAnchor="69.0" AnchorPane.rightAnchor="52.0" AnchorPane.topAnchor="69.0">
-                  <children>
-                      <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="5.0" layoutX="292.0" layoutY="30.0" prefHeight="55.0" prefWidth="254.0" style="-fx-font-family: 'SansSerif'; -fx-font-weight: bold; -fx-font-size: 46;" text="REGISTRO" textAlignment="CENTER" textOverrun="CLIP" AnchorPane.bottomAnchor="571.0" AnchorPane.leftAnchor="292.0" AnchorPane.rightAnchor="230.0" AnchorPane.topAnchor="30.0">
-                </Label>
-                      <ToolBar layoutX="1.0" layoutY="92.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="52.0" prefWidth="1057.0" style="-fx-background-color: #fafafa;" AnchorPane.bottomAnchor="519.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="92.0">
-                          <items>
-                        <ImageView fitHeight="37.0" fitWidth="39.0">
-                           <image>
-                              <Image url="@Imagenes/align-justify.png" />
-                           </image>
-                        </ImageView>
-                        <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
-                              <Button fx:id="btnRegresar" mnemonicParsing="false" onAction="#handleBtnRegresar" prefHeight="29.0" prefWidth="66.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;">
-                           <graphic>
-                              <ImageView fitHeight="31.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@Imagenes/exit%20(1).png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                              <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
-                        <Button fx:id="btnActualizarAdmin" mnemonicParsing="false" onAction="#handleBtnActualizarAdmin" prefHeight="31.0" prefWidth="169.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Actualizar Datos" />
-                        <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
-                        <Button fx:id="btnGestionarFondos" mnemonicParsing="false" onAction="#handleBtnGestionarFondos" prefHeight="31.0" prefWidth="169.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Gestionar Fondos" />
-                              <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
-                          </items>
-                      </ToolBar>
-                  </children>
-              </AnchorPane>
-            <AnchorPane layoutX="68.0" layoutY="216.0" prefHeight="696.0" prefWidth="1062.0" style="-fx-background-color: #fafafa;">
-               <children>
-                  <TextField fx:id="txtNombre" layoutX="233.0" layoutY="42.0" promptText="Nombre" />
-                  <TextField fx:id="txtApellido" layoutX="760.0" layoutY="42.0" promptText="Apellido" />
-                  <Label layoutX="122.0" layoutY="165.0" text="Pregunta de Seguridad:">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Label>
-                  <ChoiceBox fx:id="choicePreguntaSeguridad" layoutX="304.0" layoutY="162.0" prefHeight="31.0" prefWidth="323.0" />
-                  <Button fx:id="btnLimpiarCampos" layoutX="465.0" layoutY="254.0" mnemonicParsing="false" onAction="#handleBtnLimpiarCampos" text="Limpiar Campos" />
-                  <Button fx:id="btnRegistrarEmpleado" layoutX="489.0" layoutY="213.0" mnemonicParsing="false" onAction="#handleBtnRegistrarEmpleado" text="Registrar" />
-                  <Button fx:id="btnActualizarEmpleado" layoutX="778.0" layoutY="213.0" mnemonicParsing="false" onAction="#handleBtnActualizarEmpleado" text="Actualizar" />
-                  <Button fx:id="btnDespedirEmpleado" layoutX="231.0" layoutY="213.0" mnemonicParsing="false" onAction="#handleBtnDespedirEmpleado" text="Despedir" />
-                  <TableView fx:id="tblListEmpleado" layoutX="105.0" layoutY="303.0" prefHeight="378.0" prefWidth="835.0">
-                    <columns>
-                      <TableColumn fx:id="tbcNombre" prefWidth="154.0" text="Nombre" />
-                      <TableColumn fx:id="tbcApellido" prefWidth="147.0" text="Apellido" />
-                        <TableColumn fx:id="tbcCorreo" prefWidth="225.0" text="Correo" />
-                        <TableColumn fx:id="tbcTelefono" prefWidth="149.0" text="Telefono" />
-                        <TableColumn fx:id="tbcSalario" prefWidth="159.0" text="Salario" />
-                    </columns>
-                  </TableView>
-                  <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="190.0" layoutY="45.0">
-                     <image>
-                        <Image url="@Imagenes/user%20(1).png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="31.0" fitWidth="28.0" layoutX="723.0" layoutY="42.0">
-                     <image>
-                        <Image url="@Imagenes/fingerprint.png" />
-                     </image>
-                  </ImageView>
-                  <TextField fx:id="txtSalario" layoutX="495.0" layoutY="42.0" promptText="Salario" />
-                  <Button fx:id="btnVerTransacciones" layoutX="761.0" layoutY="254.0" mnemonicParsing="false" onAction="#handleBtnVerTransacciones" text="Ver transacciones" />
-                  <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="451.0" layoutY="45.0">
-                     <image>
-                        <Image url="@Imagenes/usd-circle.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </AnchorPane>
-            <AnchorPane layoutX="510.0" layoutY="152.0" prefHeight="1.0" prefWidth="213.0" style="-fx-background-color: #3c3c3c;" />
-            <AnchorPane layoutX="73.0" layoutY="216.0" prefHeight="1.0" prefWidth="1047.0" style="-fx-background-color: #3c3c3c;" />
-         </children>
-      </AnchorPane>
-    </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="664.0" prefWidth="1081.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.AlquilarVehiculoViewController">
+   <children>
+      <Label layoutX="407.0" layoutY="59.0" prefHeight="27.0" prefWidth="276.0" text="Alquilar Vehiculo">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="92.0" layoutY="131.0" text="Escoja un vehiculo para reservar:">
+         <font>
+            <Font name="System Italic" size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblListVehiculosAlquiler" layoutX="89.0" layoutY="194.0" prefHeight="244.0" prefWidth="621.0">
+        <columns>
+          <TableColumn fx:id="tbcVehiculo" prefWidth="96.0" text="Vehiculo" />
+          <TableColumn fx:id="tbcMarca" minWidth="0.0" prefWidth="149.0" text="Marca" />
+            <TableColumn fx:id="tbcModelo" prefWidth="110.0" text="Modelo" />
+            <TableColumn fx:id="tbcEstado" prefWidth="162.0" text="Estado" />
+            <TableColumn fx:id="tbcPrecio" prefWidth="93.0" text="Precio" />
+        </columns>
+      </TableView>
+      <Label layoutX="89.0" layoutY="453.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtDias" editable="false" layoutX="389.0" layoutY="454.0" />
+      <Button fx:id="btnAlquilar" layoutX="483.0" layoutY="586.0" mnemonicParsing="false" onAction="#handloBtnAlquilar" text="Alquilar" />
+      <Line endX="100.0" layoutX="539.0" layoutY="99.0" startX="-100.0" />
+      <Button fx:id="btnRegresar" layoutX="57.0" layoutY="44.0" mnemonicParsing="false" onAction="#regresar" text="Regresar" />
+      <Label layoutX="858.0" layoutY="143.0" text="Vehículo">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtEmpleado" editable="false" layoutX="782.0" layoutY="285.0" prefHeight="31.0" prefWidth="233.0" />
+      <DatePicker fx:id="datePickerFechaEntrega" editable="false" layoutX="389.0" layoutY="493.0" prefHeight="31.0" prefWidth="117.0" />
+      <Label layoutX="169.0" layoutY="497.0" text="Fecha entrega">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="169.0" layoutY="528.0" text="Fecha devolución">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="datePickerFechaDevolucion" editable="false" layoutX="389.0" layoutY="528.0" prefHeight="31.0" prefWidth="117.0" />
+      <Button fx:id="btnCalcularDias" layoutX="161.0" layoutY="454.0" mnemonicParsing="false" onAction="#calcularDias" text="Calcular días reserva" />
+      <Label layoutX="855.0" layoutY="252.0" text="Empleado ">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+   </children>
 </AnchorPane>

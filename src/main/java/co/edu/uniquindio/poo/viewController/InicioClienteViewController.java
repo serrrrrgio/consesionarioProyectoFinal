@@ -128,11 +128,19 @@ public class InicioClienteViewController {
 
     @FXML
     void handleBtnComprarVehiculo(ActionEvent event) {
+        if(App.getConcesionario().getEmpleados().isEmpty()){
+            App.mostrarAlerta("Error", "No hay empleados que lo atiendan");
+            return;
+        }
         App.cambiarEscena("/co/edu/uniquindio/poo/ComprarVehiculo.fxml", "Comprar Vehiculo", event, getClass());
     }
 
     @FXML
     void handleBtnVenderVehiculo(ActionEvent event) {
+        if(App.getConcesionario().getEmpleados().isEmpty()){
+            App.mostrarAlerta("Error", "No hay empleados que lo atiendan");
+            return;
+        }
         App.cambiarEscena("/co/edu/uniquindio/poo/VenderVehiculo.fxml", "Vender vehiculo", event, getClass());
     }
 
@@ -143,6 +151,10 @@ public class InicioClienteViewController {
 
     @FXML
     void handleBtnAlquilarVehiculo(ActionEvent event) {
+        if(App.getConcesionario().getEmpleados().isEmpty()){
+            App.mostrarAlerta("Error", "No hay empleados que lo atiendan");
+            return;
+        }
         App.cambiarEscena("/co/edu/uniquindio/poo/AlquilarVehiculo.fxml", "Alquilar Vehiculo", event, getClass());
     }
 
