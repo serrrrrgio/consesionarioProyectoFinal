@@ -7,7 +7,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="1183.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.RegistrarEmpleadoViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="1183.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.GestionarFondosViewController">
     <children>
         <ImageView fx:id="backgroundImage" fitHeight="950.0" fitWidth="1188.0" opacity="0.7" preserveRatio="true" smooth="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="0.0">
             <image>
@@ -38,11 +38,11 @@
                            </graphic>
                         </Button>
                               <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
-                        <Button fx:id="btnActualizarAdmin" mnemonicParsing="false" onAction="#handleBtnActualizarAdmin" prefHeight="31.0" prefWidth="169.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Actualizar Datos" />
+                        <Button fx:id="btnActualizarAdmin" mnemonicParsing="false" prefHeight="31.0" prefWidth="169.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Actualizar Datos" />
                         <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
-                        <Button fx:id="btnActualizarAdmin1" mnemonicParsing="false" onAction="#handleBtnActualizarAdmin" prefHeight="31.0" prefWidth="169.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Ver transacciones" />
+                        <Button fx:id="btnActualizarAdmin1" mnemonicParsing="false" prefHeight="31.0" prefWidth="169.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Ver transacciones" />
                               <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
-                        <Button fx:id="btnActualizarAdmin11" mnemonicParsing="false" onAction="#handleBtnActualizarAdmin" prefHeight="31.0" prefWidth="169.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Registrar empleado" />
+                        <Button fx:id="btnActualizarAdmin11" mnemonicParsing="false" prefHeight="31.0" prefWidth="169.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Registrar empleado" />
                         <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
                           </items>
                       </ToolBar>
@@ -50,16 +50,16 @@
               </AnchorPane>
             <AnchorPane layoutX="125.0" layoutY="216.0" prefHeight="526.0" prefWidth="1007.0" style="-fx-background-color: #fafafa;">
                <children>
-                  <Button fx:id="btnActualizarEmpleado" layoutX="461.0" layoutY="284.0" mnemonicParsing="false" onAction="#handleBtnActualizarEmpleado" style="-fx-background-color: #262626;" text="Actualizar" textFill="WHITE" />
+                  <Button fx:id="btnRetirarFondos" layoutX="369.0" layoutY="289.0" mnemonicParsing="false" onAction="#handleBtnRetirarFondos" style="-fx-background-color: #262626;" text="Retirar Fondos" textFill="WHITE" />
                   <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="633.0" layoutY="92.0">
                      <image>
                         <Image url="@Imagenes/usd-circle.png" />
                      </image>
                   </ImageView>
-                  <TextField editable="false" layoutX="428.0" layoutY="89.0" />
+                  <TextField fx:id="txtFondosTotales" editable="false" layoutX="428.0" layoutY="89.0" />
                   <Label layoutX="313.0" layoutY="94.0" text="Fondos totales" />
-                  <TextField layoutX="428.0" layoutY="153.0" promptText="Retirar fondos" />
-                  <TextField layoutX="428.0" layoutY="217.0" promptText="Deposoitar fondos" />
+                  <TextField fx:id="txtRetirarFondos" layoutX="428.0" layoutY="153.0" promptText="Retirar fondos" />
+                  <TextField fx:id="txtDepositarFondos" layoutX="428.0" layoutY="217.0" promptText="Deposoitar fondos" />
                   <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="636.0" layoutY="156.0">
                      <image>
                         <Image url="@Imagenes/usd-circle.png" />
@@ -70,6 +70,7 @@
                         <Image url="@Imagenes/usd-circle.png" />
                      </image>
                   </ImageView>
+                  <Button fx:id="btnDepositarFondos" layoutX="608.0" layoutY="289.0" mnemonicParsing="false" onAction="#handleBtnDepositarFondos" style="-fx-background-color: #262626;" text="DepositarFondos" textFill="WHITE" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="373.0" layoutY="152.0" prefHeight="1.0" prefWidth="564.0" style="-fx-background-color: #3c3c3c;" />
