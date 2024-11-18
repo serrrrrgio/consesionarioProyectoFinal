@@ -6,20 +6,14 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.Alert.AlertType;
 import co.edu.uniquindio.poo.model.Cliente;
-import co.edu.uniquindio.poo.model.Concesionario;
 import co.edu.uniquindio.poo.model.Empleado;
 import co.edu.uniquindio.poo.model.Administrador;
 import co.edu.uniquindio.poo.model.Persona;
-import co.edu.uniquindio.poo.App;
 import co.edu.uniquindio.poo.model.PreguntaSeguridad;
+import co.edu.uniquindio.poo.App;
 import co.edu.uniquindio.poo.controller.RecuperarContrasenaController;
 
-import java.util.List;
-
 public class CambiarContrasenaViewController {
-
-    @FXML
-    private PasswordField txtContrasena2;
 
     @FXML
     private Button btnRegresar;
@@ -31,16 +25,13 @@ public class CambiarContrasenaViewController {
     private ImageView backgroundImage;
 
     @FXML
-    private Button btnRegistrarse1;
+    private Button btnCambiarContrasena;
 
     @FXML
     private PasswordField txtContrasena1;
 
     @FXML
-    private Button btnCambiarContrasena;
-
-    @FXML
-    private Button btnRegistrarse;
+    private PasswordField txtRespuestaSeguridad;
 
     @FXML
     private TextField txtUsuario;
@@ -49,135 +40,131 @@ public class CambiarContrasenaViewController {
     private Button btnLimpiarCampos;
 
     @FXML
-    private ChoiceBox<PreguntaSeguridad> choicePreguntaSeguridad;
+    private ChoiceBox<PreguntaSeguridad> choicePreguntaSeguridad; // Nombre corregido
 
-    @FXML
-    private TextField txtRespuestaSeguridad;
-
-    // Listas para almacenar los usuarios
-    private List<Cliente> listaClientes;
-    private List<Empleado> listaEmpleados;
-    private List<Administrador> listaAdministradores;
-
-    // Instancia del controlador para recuperar contraseñas
     private RecuperarContrasenaController recuperarController;
 
-    public CambiarContrasenaViewController() {
-        // Aquí debes inicializar el Concesionario correctamente. 
-        // Si Concesionario requiere algún parámetro, deberías proporcionarlo.
-        Concesionario concesionario = new Concesionario(null, 0, null); // Usa un constructor adecuado según tu diseño.
-        this.recuperarController = new RecuperarContrasenaController(concesionario);
-    }
-
-    // Método que se ejecuta cuando el controlador es inicializado
     @FXML
     private void initialize() {
-        // Aquí puedes hacer cualquier inicialización necesaria, como cargar las listas de preguntas de seguridad
-        // También es un buen lugar para asegurarte de que los campos de contraseña estén invisibles al inicio
+        System.out.println("Inicializando CambiarContrasenaViewController...");
+        recuperarController = new RecuperarContrasenaController(App.getConcesionario());
+
+        // Ocultar los campos de contraseña al iniciar
         txtContrasena.setVisible(false);
         txtContrasena1.setVisible(false);
-        txtContrasena2.setVisible(false);
+
+        // Verificar si el ChoiceBox es nulo
+        if (choicePreguntaSeguridad == null) {
+            System.out.println("El ChoiceBox es nulo. Verifique el archivo FXML.");
+            return;
+        }
+
+        // Agregar las opciones del enum al ChoiceBox
+        choicePreguntaSeguridad.getItems().addAll(PreguntaSeguridad.values());
+        System.out.println("ChoiceBox inicializado correctamente con las preguntas de seguridad.");
     }
 
-    // Método que maneja el evento de regresar
     @FXML
     void handleBtnRegresar(ActionEvent event) {
-        // Cambiar de escena hacia la pantalla de inicio
+        System.out.println("Botón 'Regresar' presionado");
         App.cambiarEscena("/co/edu/uniquindio/poo/Inicio.fxml", "Iniciar Sesión", event, getClass());
     }
 
-    // Método para limpiar los campos de texto
     @FXML
     void handleBtnLimpiarCampos(ActionEvent event) {
+        System.out.println("Limpiando campos de texto...");
         txtUsuario.clear();
         txtContrasena.clear();
         txtContrasena1.clear();
-        txtContrasena2.clear();
         txtRespuestaSeguridad.clear();
+        choicePreguntaSeguridad.getSelectionModel().clearSelection(); // Limpiar selección
     }
 
-    // Método para cambiar la contraseña del usuario
     @FXML
     void handleBtnCambiarContrasena(ActionEvent event) {
+        System.out.println("Botón 'Cambiar Contraseña' presionado");
+
         String usuario = txtUsuario.getText();
         String nuevaContrasena = txtContrasena.getText();
         String rectificarContrasena = txtContrasena1.getText();
         String respuesta = txtRespuestaSeguridad.getText();
-        PreguntaSeguridad pregunta = choicePreguntaSeguridad.getValue();
+        PreguntaSeguridad pregunta = choicePreguntaSeguridad.getValue(); // Obtener pregunta seleccionada
 
-        // Buscar al usuario por el nombre de usuario ingresado
-        Persona usuarioEncontrado = buscarUsuario(usuario);
-
-        if (usuarioEncontrado == null) {
-            mostrarMensaje("Error", "Usuario no encontrado", AlertType.ERROR);
+        if (pregunta == null) {
+            System.out.println("No se ha seleccionado ninguna pregunta de seguridad");
+            mostrarMensaje("Error", "Debe seleccionar una pregunta de seguridad", AlertType.ERROR);
             return;
         }
 
-        // Verificar la respuesta de seguridad
-        boolean respuestaCorrecta = false;
-        if (usuarioEncontrado instanceof Cliente) {
-            respuestaCorrecta = ((Cliente) usuarioEncontrado).getPreguntaSeguridad().equals(pregunta)
-                    && ((Cliente) usuarioEncontrado).getRespuesta().equals(respuesta);
-        } else if (usuarioEncontrado instanceof Empleado) {
-            respuestaCorrecta = ((Empleado) usuarioEncontrado).getPreguntaSeguridad().equals(pregunta)
-                    && ((Empleado) usuarioEncontrado).getRespuesta().equals(respuesta);
-        } else if (usuarioEncontrado instanceof Administrador) {
-            respuestaCorrecta = ((Administrador) usuarioEncontrado).getPreguntaSeguridad().equals(pregunta)
-                    && ((Administrador) usuarioEncontrado).getRespuesta().equals(respuesta);
+        System.out.println("Usuario ingresado: " + usuario);
+        Persona usuarioEncontrado = buscarUsuario(usuario);
+
+        if (usuarioEncontrado == null) {
+            System.out.println("Usuario no encontrado");
+            mostrarMensaje("Error", "Usuario no encontrado", AlertType.ERROR);
+            return;
         }
+        System.out.println("Usuario encontrado: " + usuarioEncontrado.getClass().getSimpleName());
+
+        boolean respuestaCorrecta = verificarRespuestaSeguridad(usuarioEncontrado, pregunta, respuesta);
 
         if (!respuestaCorrecta) {
+            System.out.println("Respuesta de seguridad incorrecta");
             mostrarMensaje("Error", "Respuesta de seguridad incorrecta", AlertType.ERROR);
             return;
         }
 
-        // Verificar que la nueva contraseña y la rectificación coincidan
         if (!nuevaContrasena.equals(rectificarContrasena)) {
+            System.out.println("Las contraseñas no coinciden");
             mostrarMensaje("Error", "Las contraseñas no coinciden", AlertType.ERROR);
             return;
         }
 
-        // Si todo está correcto, mostrar los campos de la nueva contraseña
+        System.out.println("Contraseña cambiada con éxito");
         txtContrasena.setVisible(true);
         txtContrasena1.setVisible(true);
-        txtContrasena2.setVisible(true);
 
-        // Aquí puedes añadir más lógica para actualizar la contraseña en la base de datos o en el objeto
         mostrarMensaje("Éxito", "Contraseña cambiada con éxito", AlertType.INFORMATION);
     }
 
-    // Método para buscar al usuario por su nombre de usuario usando el controlador RecuperarContrasenaController
     private Persona buscarUsuario(String usuario) {
+        System.out.println("Buscando usuario: " + usuario);
         Empleado empleado = recuperarController.obtenerEmpleadoUsuario(usuario);
         if (empleado != null) {
+            System.out.println("Empleado encontrado");
             return empleado;
         }
 
         Cliente cliente = recuperarController.obtenerClienteUsuario(usuario);
         if (cliente != null) {
+            System.out.println("Cliente encontrado");
             return cliente;
         }
 
+        System.out.println("Usuario no encontrado en el sistema");
         return null;
     }
 
-    // Método para mostrar un mensaje de alerta
+    private boolean verificarRespuestaSeguridad(Persona usuario, PreguntaSeguridad pregunta, String respuesta) {
+        System.out.println("Verificando respuesta de seguridad...");
+        if (usuario instanceof Cliente) {
+            return ((Cliente) usuario).getPreguntaSeguridad().equals(pregunta)
+                    && ((Cliente) usuario).getRespuesta().equals(respuesta);
+        } else if (usuario instanceof Empleado) {
+            return ((Empleado) usuario).getPreguntaSeguridad().equals(pregunta)
+                    && ((Empleado) usuario).getRespuesta().equals(respuesta);
+        } else if (usuario instanceof Administrador) {
+            return ((Administrador) usuario).getPreguntaSeguridad().equals(pregunta)
+                    && ((Administrador) usuario).getRespuesta().equals(respuesta);
+        }
+        return false;
+    }
+
     private void mostrarMensaje(String titulo, String contenido, AlertType tipo) {
+        System.out.println("Mostrando mensaje: " + titulo + " - " + contenido);
         Alert alert = new Alert(tipo);
         alert.setTitle(titulo);
         alert.setContentText(contenido);
         alert.show();
-    }
-
-    // Método que aplica los efectos de hover sobre el botón de cambiar contraseña
-    @FXML
-    void aplicarEfectoHover(ActionEvent event) {
-        btnCambiarContrasena.setStyle("-fx-background-color: black; -fx-text-fill: white;");
-    }
-
-    // Método que restaura el estilo del botón al estado inicial
-    @FXML
-    void restaurarEstiloBoton(ActionEvent event) {
-        btnCambiarContrasena.setStyle("-fx-background-color: transparent; -fx-text-fill: black;");
     }
 }

@@ -38,7 +38,7 @@
                            </graphic>
                         </Button>
                               <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
-                        <Button fx:id="btnActualizarAdmin" mnemonicParsing="false" onAction="#handleBtnActualizarAdmin" prefHeight="31.0" prefWidth="169.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Actualizar Datos" />
+                        <Button fx:id="btnActualizarDatos" mnemonicParsing="false" onAction="#handleBtnActualizarAdmin" prefHeight="31.0" prefWidth="169.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-family: 'SansSerif'; -fx-font-size: 15;" text="Actualizar Datos" />
                         <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="28.0" />
                           </items>
                       </ToolBar>
@@ -52,10 +52,10 @@
                         <TextField fx:id="txtCilindrajeVehiculo" layoutX="460.0" layoutY="155.0" promptText="Cilindraje" />
                         <TextField fx:id="txtPlacaVehiculo" layoutX="148.0" layoutY="101.0" promptText="Placa" />
                         <TextField fx:id="txtModeloVehiculo" layoutX="148.0" layoutY="155.0" promptText="Modelo" />
-                        <Button fx:id="btnLimpiarCampos" layoutX="486.0" layoutY="1106.0" mnemonicParsing="false" onAction="#handleBtnLimpiarCampos" text="Limpiar Campos" />
-                        <Button fx:id="btnRegistrarVehiculo" layoutX="484.0" layoutY="1034.0" mnemonicParsing="false" onAction="#handleBtnRegistrarEmpleado" text="Registrar vehículo" />
-                        <Button fx:id="btnActualizarVehiculo" layoutX="794.0" layoutY="1031.0" mnemonicParsing="false" onAction="#handleBtnActualizarVehiculo" text="Actualizar vehículo" />
-                        <Button fx:id="btnEliminarVehiculo" layoutX="211.0" layoutY="1029.0" mnemonicParsing="false" onAction="#handleBtnEliminarVehiculo" text="Eliminar vehículo" />
+                        <Button fx:id="btnLimpiarCampos" layoutX="497.0" layoutY="766.0" mnemonicParsing="false" onAction="#handleBtnLimpiarCampos" text="Limpiar Campos" />
+                        <Button fx:id="btnRegistrarVehiculo" layoutX="495.0" layoutY="694.0" mnemonicParsing="false" onAction="#handleBtnRegistrarVehiculo" text="Registrar vehículo" />
+                        <Button fx:id="btnActualizarVehiculo" layoutX="805.0" layoutY="691.0" mnemonicParsing="false" onAction="#handleBtnActualizarVehiculo" text="Actualizar vehículo" />
+                        <Button fx:id="btnEliminarVehiculo" layoutX="222.0" layoutY="689.0" mnemonicParsing="false" onAction="#handleBtnEliminarVehiculo" text="Eliminar vehículo" />
                         <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="105.0" layoutY="104.0">
                            <image>
                               <Image url="@Imagenes/envelope.png" />
@@ -116,152 +116,61 @@
                         <TextField fx:id="txtTiempoCargaElectrico" layoutX="148.0" layoutY="260.0" promptText="Tiempo de Carga" />
                         <TextField fx:id="txtAutonomiaElectrico" layoutX="148.0" layoutY="206.0" promptText="Autonomia" />
                         <ChoiceBox fx:id="choiceTipoRegistroVehiculo" layoutX="784.0" layoutY="48.0" prefWidth="150.0" />
-                        <ChoiceBox fx:id="choiceTransmisionVehiculo" layoutX="773.0" layoutY="102.0" prefWidth="150.0" />
+                        <ChoiceBox fx:id="choiceTransmisionVehiculo" layoutX="784.0" layoutY="101.0" prefWidth="150.0" />
                         <ChoiceBox fx:id="choiceEstadoVehiculo" layoutX="784.0" layoutY="155.0" prefWidth="150.0" />
-                        <TextField fx:id="txtCapacidadMaleteroBus" layoutX="150.0" layoutY="374.0" promptText="Capacidad Maletero" />
-                        <TextField fx:id="txtNumeroBolsasAireBus" layoutX="150.0" layoutY="428.0" prefHeight="31.0" prefWidth="206.0" promptText="Numero de Bolsas de Aire" />
-                        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="107.0" layoutY="377.0">
-                           <image>
-                              <Image url="@Imagenes/envelope.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="107.0" layoutY="431.0">
-                           <image>
-                              <Image url="@Imagenes/user-add.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="416.0" layoutY="434.0">
-                           <image>
-                              <Image url="@Imagenes/user-add.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="416.0" layoutY="380.0">
-                           <image>
-                              <Image url="@Imagenes/envelope.png" />
-                           </image>
-                        </ImageView>
-                        <TextField fx:id="txtNumeroSaliodasEmergenciaBus" layoutX="459.0" layoutY="431.0" prefHeight="31.0" prefWidth="204.0" promptText="Numero Salidas Emergencia" />
-                        <TextField fx:id="txtNumeroEjesBus" layoutX="450.0" layoutY="374.0" promptText="Numero de Ejes" />
-                        <RadioButton layoutX="100.0" layoutY="478.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="85.0" text="Camion" />
-                        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="114.0" layoutY="576.0">
-                           <image>
-                              <Image url="@Imagenes/user-add.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="114.0" layoutY="522.0">
-                           <image>
-                              <Image url="@Imagenes/envelope.png" />
-                           </image>
-                        </ImageView>
-                        <TextField fx:id="txtNumeroEjesCamion" layoutX="157.0" layoutY="573.0" promptText="Numero de Ejes" />
-                        <TextField fx:id="txtCapacidadCargaCamion" layoutX="157.0" layoutY="519.0" promptText="Capacidad Carga" />
-                        <ChoiceBox fx:id="choiceTipoCamion" layoutX="460.0" layoutY="519.0" prefWidth="150.0" />
-                        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="414.0" layoutY="522.0">
-                           <image>
-                              <Image url="@Imagenes/phone-call.png" />
-                           </image>
-                        </ImageView>
-                        <RadioButton fx:id="rdFrenosAireCamion" layoutX="480.0" layoutY="578.0" mnemonicParsing="false" text="Frenos de Aire" />
-                        <RadioButton layoutX="722.0" layoutY="332.0" mnemonicParsing="false" text="Camioneta" />
-                        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="722.0" layoutY="368.0">
-                           <image>
-                              <Image url="@Imagenes/envelope.png" />
-                           </image>
-                        </ImageView>
-                        <TextField fx:id="txtNumeroBolsasAireCamioneta" layoutX="766.0" layoutY="365.0" promptText="Numero Bolsas Aire" />
-                        <RadioButton fx:id="rdCuatroPorCuatroCamioneta" layoutX="772.0" layoutY="590.0" mnemonicParsing="false" text="4x4" />
-                        <RadioButton fx:id="rdAsistentePermanenciaCarrilCamioneta" layoutX="766.0" layoutY="552.0" mnemonicParsing="false" text="Asistente de Permanencia en el Carril" />
-                        <RadioButton fx:id="rdSensorTraficoCruzadoCamioneta" layoutX="766.0" layoutY="518.0" mnemonicParsing="false" text="Sensor de Trafico Cruzado" />
-                        <RadioButton fx:id="rdSensoresColisionCamioneta" layoutX="766.0" layoutY="489.0" mnemonicParsing="false" text="Sensores de Colision" />
-                        <RadioButton fx:id="rdVelocidadCruceroCamioneta" layoutX="766.0" layoutY="458.0" mnemonicParsing="false" text="Velocidad crucero" />
-                        <TextField fx:id="txtNumeroCaballosFuerzaDeportivo" layoutX="148.0" layoutY="674.0" promptText="Numero Caballos de Fuerza" />
-                        <TextField fx:id="txtNumeroBolsasAireDeportivo" layoutX="148.0" layoutY="728.0" promptText="Numero Bolsas Aire" />
-                        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="105.0" layoutY="677.0">
-                           <image>
-                              <Image url="@Imagenes/envelope.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="105.0" layoutY="731.0">
-                           <image>
-                              <Image url="@Imagenes/user-add.png" />
-                           </image>
-                        </ImageView>
-                        <RadioButton layoutX="91.0" layoutY="633.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="122.0" text="Deportivo" />
-                        <TextField fx:id="txtTiempoAlcanzar100kmhDeportivo" layoutX="457.0" layoutY="674.0" promptText="Tiempo en Alcanzar 100kmh" />
-                        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="414.0" layoutY="677.0">
-                           <image>
-                              <Image url="@Imagenes/envelope.png" />
-                           </image>
-                        </ImageView>
-                        <RadioButton layoutX="717.0" layoutY="627.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="85.0" text="Pick Up" />
-                        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="731.0" layoutY="725.0">
-                           <image>
-                              <Image url="@Imagenes/user-add.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="731.0" layoutY="671.0">
-                           <image>
-                              <Image url="@Imagenes/envelope.png" />
-                           </image>
-                        </ImageView>
-                        <TextField fx:id="txtCapacidadCajaCargaPickUp" layoutX="774.0" layoutY="722.0" promptText="Capacidadd de Carga de la Caja" />
-                        <TextField fx:id="txtNumeroBolsasAirePickUp" layoutX="774.0" layoutY="668.0" promptText="Numero bolsas de aire" />
-                        <RadioButton fx:id="rdCuatroPorCuatroPickupa" layoutX="989.0" layoutY="673.0" mnemonicParsing="false" text="4x4" />
-                        <RadioButton fx:id="rdVelocidadCruceroSedan" layoutX="127.0" layoutY="876.0" mnemonicParsing="false" text="Velocidad crucero" />
-                        <RadioButton fx:id="rdSensoresColisionSedan" layoutX="127.0" layoutY="907.0" mnemonicParsing="false" text="Sensores de Colision" />
-                        <RadioButton fx:id="rdSensorTraficoCruzadoSedan" layoutX="127.0" layoutY="936.0" mnemonicParsing="false" text="Sensor de Trafico Cruzado" />
-                        <RadioButton fx:id="rdAsistentePermanenteSedan" layoutX="375.0" layoutY="884.0" mnemonicParsing="false" text="Asistente de Permanencia en el Carril" />
-                        <TextField fx:id="txtNumeroBolsasAireSedan" layoutX="126.0" layoutY="823.0" promptText="Numero Bolsas Aire" />
-                        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="83.0" layoutY="826.0">
-                           <image>
-                              <Image url="@Imagenes/envelope.png" />
-                           </image>
-                        </ImageView>
-                        <RadioButton layoutX="83.0" layoutY="790.0" mnemonicParsing="false" text="Sedan" />
-                        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="385.0" layoutY="829.0">
-                           <image>
-                              <Image url="@Imagenes/envelope.png" />
-                           </image>
-                        </ImageView>
-                        <TextField fx:id="txtCapacidadMaleteroSedan" layoutX="428.0" layoutY="826.0" promptText="Capacidad Maletero" />
-                        <RadioButton layoutX="780.0" layoutY="808.0" mnemonicParsing="false" text="Van" />
-                        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="780.0" layoutY="907.0">
-                           <image>
-                              <Image url="@Imagenes/user-add.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="780.0" layoutY="853.0">
-                           <image>
-                              <Image url="@Imagenes/envelope.png" />
-                           </image>
-                        </ImageView>
-                        <TextField fx:id="txtNumeroBolsasAireVan" layoutX="823.0" layoutY="904.0" promptText="Numero Bolsas Aire" />
-                        <TextField fx:id="txtCapacidadMaleteroVan" layoutX="823.0" layoutY="850.0" promptText="Capacidad Maletero" />
-                        <ChoiceBox fx:id="choiceCombustibleVehiculo" layoutX="470.0" layoutY="209.0" prefWidth="150.0" />
-                        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="424.0" layoutY="211.0">
+                        <TextField fx:id="txtCapacidadMaleteroBus" layoutX="125.0" layoutY="418.0" promptText="Capacidad Maletero" />
+                        <TextField fx:id="txtNumeroBolsasAireBus" layoutX="125.0" layoutY="472.0" prefHeight="31.0" prefWidth="206.0" promptText="Numero de Bolsas de Aire" />
+                        <TextField fx:id="txtNumeroSaliodasEmergenciaBus" layoutX="424.0" layoutY="473.0" prefHeight="31.0" prefWidth="204.0" promptText="Numero Salidas Emergencia" />
+                        <TextField fx:id="txtNumeroEjesBus" layoutX="425.0" layoutY="418.0" promptText="Numero de Ejes" />
+                        <TextField fx:id="txtNumeroEjesCamion" layoutX="124.0" layoutY="469.0" promptText="Numero de Ejes" />
+                        <TextField fx:id="txtCapacidadCargaCamion" layoutX="124.0" layoutY="415.0" promptText="Capacidad Carga" />
+                        <ChoiceBox fx:id="choiceTipoCamion" layoutX="427.0" layoutY="415.0" prefWidth="150.0" />
+                        <RadioButton fx:id="rdFrenosAireCamion" layoutX="447.0" layoutY="474.0" mnemonicParsing="false" text="Frenos de Aire" />
+                        <TextField fx:id="txtNumeroBolsasAireCamioneta" layoutX="123.0" layoutY="420.0" promptText="Numero Bolsas Aire" />
+                        <RadioButton fx:id="rdCuatroPorCuatroCamioneta" layoutX="126.0" layoutY="645.0" mnemonicParsing="false" text="4x4" />
+                        <RadioButton fx:id="rdAsistentePermanenciaCarrilCamioneta" layoutX="123.0" layoutY="607.0" mnemonicParsing="false" text="Asistente de Permanencia en el Carril" />
+                        <RadioButton fx:id="rdSensorTraficoCruzadoCamioneta" layoutX="123.0" layoutY="573.0" mnemonicParsing="false" text="Sensor de Trafico Cruzado" />
+                        <RadioButton fx:id="rdSensoresColisionCamioneta" layoutX="123.0" layoutY="544.0" mnemonicParsing="false" text="Sensores de Colision" />
+                        <RadioButton fx:id="rdVelocidadCruceroCamioneta" layoutX="123.0" layoutY="513.0" mnemonicParsing="false" text="Velocidad crucero" />
+                        <TextField fx:id="txtNumeroCaballosFuerzaDeportivo" layoutX="124.0" layoutY="418.0" promptText="Numero Caballos de Fuerza" />
+                        <TextField fx:id="txtNumeroBolsasAireDeportivo" layoutX="124.0" layoutY="472.0" promptText="Numero Bolsas Aire" />
+                        <TextField fx:id="txtTiempoAlcanzar100kmhDeportivo" layoutX="425.0" layoutY="420.0" promptText="Tiempo en Alcanzar 100kmh" />
+                        <TextField fx:id="txtCapacidadCajaCargaPickUp" layoutX="123.0" layoutY="469.0" promptText="Capacidadd de Carga de la Caja" />
+                        <TextField fx:id="txtNumeroBolsasAirePickUp" layoutX="123.0" layoutY="415.0" promptText="Numero bolsas de aire" />
+                        <RadioButton fx:id="rdCuatroPorCuatroPickupa" layoutX="366.0" layoutY="420.0" mnemonicParsing="false" text="4x4" />
+                        <RadioButton fx:id="rdVelocidadCruceroSedan" layoutX="124.0" layoutY="470.0" mnemonicParsing="false" text="Velocidad crucero" />
+                        <RadioButton fx:id="rdSensoresColisionSedan" layoutX="124.0" layoutY="501.0" mnemonicParsing="false" text="Sensores de Colision" />
+                        <RadioButton fx:id="rdSensorTraficoCruzadoSedan" layoutX="124.0" layoutY="530.0" mnemonicParsing="false" text="Sensor de Trafico Cruzado" />
+                        <RadioButton fx:id="rdAsistentePermanenteSedan" layoutX="372.0" layoutY="478.0" mnemonicParsing="false" text="Asistente de Permanencia en el Carril" />
+                        <TextField fx:id="txtNumeroBolsasAireSedan" layoutX="123.0" layoutY="417.0" promptText="Numero Bolsas Aire" />
+                        <TextField fx:id="txtCapacidadMaleteroSedan" layoutX="425.0" layoutY="420.0" promptText="Capacidad Maletero" />
+                        <TextField fx:id="txtNumeroBolsasAireVan" layoutX="123.0" layoutY="469.0" promptText="Numero Bolsas Aire" />
+                        <TextField fx:id="txtCapacidadMaleteroVan" layoutX="123.0" layoutY="415.0" promptText="Capacidad Maletero" />
+                        <ChoiceBox fx:id="choiceCombustibleVehiculo" layoutX="460.0" layoutY="251.0" prefWidth="150.0" />
+                        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="414.0" layoutY="251.0">
                            <image>
                               <Image url="@Imagenes/key.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="424.0" layoutY="265.0">
+                        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="414.0" layoutY="305.0">
                            <image>
                               <Image url="@Imagenes/key.png" />
                            </image>
                         </ImageView>
-                        <ChoiceBox fx:id="choiceVehiculo" layoutX="470.0" layoutY="263.0" prefWidth="150.0" />
+                        <ChoiceBox fx:id="choiceVehiculo" layoutX="460.0" layoutY="303.0" prefWidth="150.0" />
                         <TextField fx:id="txtNumeroPasajerosCarro" layoutX="766.0" layoutY="206.0" promptText="Número pasajeros" />
-                        <TextField fx:id="txtNumeroPuertasCarro" layoutX="766.0" layoutY="245.0" promptText="Número puertas" />
-                        <RadioButton fx:id="rdAbsCarro" layoutX="722.0" layoutY="281.0" mnemonicParsing="false" text="Frenos ABS" />
-                        <RadioButton fx:id="rdAireAcondicionadoCarro" layoutX="876.0" layoutY="278.0" mnemonicParsing="false" text="Aire acondicionado" />
-                        <RadioButton fx:id="rdCamaraReversaCarro" layoutX="876.0" layoutY="311.0" mnemonicParsing="false" text="Camara reversa" />
+                        <TextField fx:id="txtNumeroPuertasCarro" layoutX="766.0" layoutY="260.0" promptText="Número puertas" />
+                        <RadioButton fx:id="rdAbsCarro" layoutX="808.0" layoutY="304.0" mnemonicParsing="false" text="Frenos ABS" />
+                        <RadioButton fx:id="rdAireAcondicionadoCarro" layoutX="808.0" layoutY="381.0" mnemonicParsing="false" text="Aire acondicionado" />
+                        <RadioButton fx:id="rdCamaraReversaCarro" layoutX="808.0" layoutY="341.0" mnemonicParsing="false" text="Camara reversa" />
                         <RadioButton fx:id="rdEnchufable" layoutX="132.0" layoutY="313.0" mnemonicParsing="false" text="Enchufable">
                            <toggleGroup>
                               <ToggleGroup fx:id="hibrido" />
                            </toggleGroup>
                         </RadioButton>
-                        <RadioButton fx:id="rdHibridoLigero" layoutX="390.0" layoutY="314.0" mnemonicParsing="false" text="Hibrido ligero" toggleGroup="$hibrido" />
-                        <TextField fx:id="txtCapacidadMaleteroCamioneta" layoutX="766.0" layoutY="413.0" promptText="Capacidad Maletero" />
-                        <TableView fx:id="tblListVehiculos" layoutX="144.0" layoutY="1174.0" prefHeight="497.0" prefWidth="825.0">
+                        <RadioButton fx:id="rdHibridoLigero" layoutX="137.0" layoutY="352.0" mnemonicParsing="false" text="Hibrido ligero" toggleGroup="$hibrido" />
+                        <TextField fx:id="txtCapacidadMaleteroCamioneta" layoutX="123.0" layoutY="468.0" promptText="Capacidad Maletero" />
+                        <TableView fx:id="tblListVehiculos" layoutX="155.0" layoutY="834.0" prefHeight="497.0" prefWidth="825.0">
                           <columns>
                             <TableColumn fx:id="tbcTipoVehiculo" prefWidth="118.0" text="Tipo vehículo" />
                             <TableColumn fx:id="tbcTipoCombustible" prefWidth="146.0" text="Combustible" />
@@ -271,7 +180,7 @@
                               <TableColumn fx:id="tbPrecio" prefWidth="186.0" text="Precio" />
                           </columns>
                         </TableView>
-                        <TextField fx:id="txtPrecio" layoutX="452.0" layoutY="14.0" promptText="Precio" />
+                        <TextField fx:id="txtPrecio" layoutX="463.0" layoutY="206.0" promptText="Precio" />
                      </children>
                   </AnchorPane>
                </content>

@@ -49,8 +49,8 @@
                   <Button fx:id="btnLimpiarCampos" layoutX="125.0" layoutY="387.0" mnemonicParsing="false" onAction="#handleBtnLimpiarCampos" text="Limpiar Campos" />
                   <Button fx:id="btnCambiarContrasena" layoutX="331.0" layoutY="387.0" mnemonicParsing="false" onAction="#handleBtnCambiarContrasena" text="Cambiar Contraseña" />
                   <PasswordField fx:id="txtContrasena1" layoutX="315.0" layoutY="306.0" promptText="Rectificar Contraseña" visible="false" />
-                  <ChoiceBox layoutX="318.0" layoutY="113.0" prefWidth="150.0" />
-                  <PasswordField fx:id="txtContrasena2" layoutX="313.0" layoutY="162.0" promptText="Respuesta" />
+                  <ChoiceBox fx:id="choicePreguntaSeguridad" layoutX="318.0" layoutY="113.0" prefWidth="150.0" />
+                  <PasswordField fx:id="txtRespuesta" layoutX="313.0" layoutY="162.0" promptText="Respuesta" />
                   <Label layoutX="162.0" layoutY="118.0" text="Pregunta Seguridad:" />
                </children>
             </AnchorPane>
