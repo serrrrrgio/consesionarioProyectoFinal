@@ -6,11 +6,13 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.Alert.AlertType;
 import co.edu.uniquindio.poo.model.Cliente;
+import co.edu.uniquindio.poo.model.Concesionario;
 import co.edu.uniquindio.poo.model.Empleado;
 import co.edu.uniquindio.poo.model.Administrador;
 import co.edu.uniquindio.poo.model.Persona;
 import co.edu.uniquindio.poo.App;
 import co.edu.uniquindio.poo.model.PreguntaSeguridad;
+import co.edu.uniquindio.poo.controller.RecuperarContrasenaController;
 
 import java.util.List;
 
@@ -56,6 +58,26 @@ public class CambiarContrasenaViewController {
     private List<Cliente> listaClientes;
     private List<Empleado> listaEmpleados;
     private List<Administrador> listaAdministradores;
+
+    // Instancia del controlador para recuperar contraseñas
+    private RecuperarContrasenaController recuperarController;
+
+    public CambiarContrasenaViewController() {
+        // Aquí debes inicializar el Concesionario correctamente. 
+        // Si Concesionario requiere algún parámetro, deberías proporcionarlo.
+        Concesionario concesionario = new Concesionario(null, 0, null); // Usa un constructor adecuado según tu diseño.
+        this.recuperarController = new RecuperarContrasenaController(concesionario);
+    }
+
+    // Método que se ejecuta cuando el controlador es inicializado
+    @FXML
+    private void initialize() {
+        // Aquí puedes hacer cualquier inicialización necesaria, como cargar las listas de preguntas de seguridad
+        // También es un buen lugar para asegurarte de que los campos de contraseña estén invisibles al inicio
+        txtContrasena.setVisible(false);
+        txtContrasena1.setVisible(false);
+        txtContrasena2.setVisible(false);
+    }
 
     // Método que maneja el evento de regresar
     @FXML
@@ -124,24 +146,16 @@ public class CambiarContrasenaViewController {
         mostrarMensaje("Éxito", "Contraseña cambiada con éxito", AlertType.INFORMATION);
     }
 
-    // Método para buscar al usuario por su nombre de usuario
+    // Método para buscar al usuario por su nombre de usuario usando el controlador RecuperarContrasenaController
     private Persona buscarUsuario(String usuario) {
-        for (Cliente cliente : listaClientes) {
-            if (cliente.getNombre().equals(usuario)) {
-                return cliente;
-            }
+        Empleado empleado = recuperarController.obtenerEmpleadoUsuario(usuario);
+        if (empleado != null) {
+            return empleado;
         }
 
-        for (Empleado empleado : listaEmpleados) {
-            if (empleado.getNombre().equals(usuario)) {
-                return empleado;
-            }
-        }
-
-        for (Administrador admin : listaAdministradores) {
-            if (admin.getNombre().equals(usuario)) {
-                return admin;
-            }
+        Cliente cliente = recuperarController.obtenerClienteUsuario(usuario);
+        if (cliente != null) {
+            return cliente;
         }
 
         return null;

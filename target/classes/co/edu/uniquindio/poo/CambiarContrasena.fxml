@@ -45,11 +45,11 @@
             <AnchorPane layoutY="150.0" prefHeight="506.0" prefWidth="785.0">
                <children>
                   <TextField fx:id="txtUsuario" layoutX="313.0" layoutY="61.0" promptText="Usuario" />
-                  <PasswordField fx:id="txtContrasena" layoutX="315.0" layoutY="253.0" promptText="Nueva Contraseña" />
+                  <PasswordField fx:id="txtContrasena" layoutX="315.0" layoutY="253.0" promptText="Nueva Contraseña" visible="false" />
                   <Button fx:id="btnLimpiarCampos" layoutX="125.0" layoutY="387.0" mnemonicParsing="false" onAction="#handleBtnLimpiarCampos" text="Limpiar Campos" />
                   <Button fx:id="btnCambiarContrasena" layoutX="331.0" layoutY="387.0" mnemonicParsing="false" onAction="#handleBtnCambiarContrasena" text="Cambiar Contraseña" />
-                  <PasswordField fx:id="txtContrasena1" layoutX="315.0" layoutY="306.0" promptText="Rectificar Contraseña" />
-                  <ChoiceBox layoutX="332.0" layoutY="113.0" prefWidth="150.0" />
+                  <PasswordField fx:id="txtContrasena1" layoutX="315.0" layoutY="306.0" promptText="Rectificar Contraseña" visible="false" />
+                  <ChoiceBox layoutX="318.0" layoutY="113.0" prefWidth="150.0" />
                   <PasswordField fx:id="txtContrasena2" layoutX="313.0" layoutY="162.0" promptText="Respuesta" />
                   <Label layoutX="162.0" layoutY="118.0" text="Pregunta Seguridad:" />
                </children>
