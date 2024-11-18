@@ -1,5 +1,6 @@
 package co.edu.uniquindio.poo.model;
 
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -184,7 +185,8 @@ public class Concesionario {
     }
 
     public String obtenerPrecioCadena(){
-        return String.valueOf(fondos);
+        DecimalFormat formato = new DecimalFormat("#.################"); // Hasta 16 decimales
+        return formato.format(fondos);
     }
 
     /**
