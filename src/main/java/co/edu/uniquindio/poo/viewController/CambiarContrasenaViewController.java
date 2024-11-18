@@ -16,155 +16,169 @@ import co.edu.uniquindio.poo.controller.RecuperarContrasenaController;
 public class CambiarContrasenaViewController {
 
     @FXML
-    private Button btnRegresar;
-
-    @FXML
     private PasswordField txtContrasena;
 
     @FXML
     private ImageView backgroundImage;
 
     @FXML
-    private Button btnCambiarContrasena;
-
-    @FXML
     private PasswordField txtContrasena1;
 
     @FXML
-    private PasswordField txtRespuestaSeguridad;
+    private Button btnCambiarContrasena;
+
+    @FXML
+    private Button btnRegistrarse;
+
+    @FXML
+    private ToggleGroup rol;
 
     @FXML
     private TextField txtUsuario;
 
     @FXML
-    private Button btnLimpiarCampos;
+    private Button btnRegresar;
 
     @FXML
-    private ChoiceBox<PreguntaSeguridad> choicePreguntaSeguridad; // Nombre corregido
+    private ChoiceBox<PreguntaSeguridad> choicePreguntaSeguridad;
 
-    private RecuperarContrasenaController recuperarController;
+    @FXML
+    private Button btnAceptar;
+
+    @FXML
+    private RadioButton rdEmpleado;
+
+    @FXML
+    private Button btnRegistrarse1;
+
+    @FXML
+    private PasswordField txtRespuesta;
+
+    @FXML
+    private RadioButton rdCliente;
+
+    @FXML
+    private RadioButton rdAdministrador;
+
+    @FXML
+    private Button btnLimpiarCampos;
+
+    boolean cambioValido;
+
+    static Persona persona;
+
+    @FXML
+    void handleBtnRegistrarse(ActionEvent event) {
+        App.cambiarEscena("/co/edu/uniquindio/poo/RegistrarCliente.fxml", "Registrarse", event, getClass());
+    }
+
+    @FXML
+    void handleBtnAceptar(ActionEvent event) {
+        if(!cambioValido){
+            App.mostrarAlerta("Error al cambiar contraseña", "Por favor llene los demás campos");
+            return;
+        }
+        if(txtContrasena.getText().equals(txtContrasena1.getText())){
+            App.mostrarMensaje("Contraseña", "Contraseña restaurada", "La constraseña ha sido restaurada correctamente");
+            persona.setContrasena(txtContrasena.getText());
+            App.cambiarEscena("/co/edu/uniquindio/poo/Inicio.fxml", "Inicio", event, getClass());
+        }
+
+    }
+
+    private RecuperarContrasenaController recuperarContrasenaController;
 
     @FXML
     private void initialize() {
-        System.out.println("Inicializando CambiarContrasenaViewController...");
-        recuperarController = new RecuperarContrasenaController(App.getConcesionario());
+        recuperarContrasenaController = new RecuperarContrasenaController(App.getConcesionario());
+        cambioValido = false;
 
         // Ocultar los campos de contraseña al iniciar
         txtContrasena.setVisible(false);
         txtContrasena1.setVisible(false);
 
-        // Verificar si el ChoiceBox es nulo
-        if (choicePreguntaSeguridad == null) {
-            System.out.println("El ChoiceBox es nulo. Verifique el archivo FXML.");
-            return;
-        }
-
-        // Agregar las opciones del enum al ChoiceBox
         choicePreguntaSeguridad.getItems().addAll(PreguntaSeguridad.values());
-        System.out.println("ChoiceBox inicializado correctamente con las preguntas de seguridad.");
+
     }
 
     @FXML
     void handleBtnRegresar(ActionEvent event) {
-        System.out.println("Botón 'Regresar' presionado");
         App.cambiarEscena("/co/edu/uniquindio/poo/Inicio.fxml", "Iniciar Sesión", event, getClass());
     }
 
     @FXML
     void handleBtnLimpiarCampos(ActionEvent event) {
-        System.out.println("Limpiando campos de texto...");
         txtUsuario.clear();
         txtContrasena.clear();
         txtContrasena1.clear();
-        txtRespuestaSeguridad.clear();
+        txtRespuesta.clear();
         choicePreguntaSeguridad.getSelectionModel().clearSelection(); // Limpiar selección
     }
 
     @FXML
     void handleBtnCambiarContrasena(ActionEvent event) {
-        System.out.println("Botón 'Cambiar Contraseña' presionado");
+        if (rdAdministrador.isSelected()) {
+            Administrador administrador = recuperarContrasenaController.obtenerAmAdministrador();
+            if (txtUsuario.getText().equals(administrador.getUsuario())) {
+                if (administrador.getPreguntaSeguridad().equals(choicePreguntaSeguridad.getValue())
+                        && administrador.getRespuesta().equals(txtRespuesta.getText())) {
+                    txtContrasena.setVisible(true);
+                    txtContrasena1.setVisible(true);
+                    cambioValido = true;
+                    persona = administrador;
+                } else {
+                    App.mostrarAlerta("Error al intentar cambiar de contraseña", "Pregunta o respuesta incorrecta");
+                }
+            }
+            else {
+                App.mostrarAlerta("Error al intentar cambiar contraseña",
+                        "EL administrador " + txtUsuario.getText() + " no existe");
+            }
+        } 
 
-        String usuario = txtUsuario.getText();
-        String nuevaContrasena = txtContrasena.getText();
-        String rectificarContrasena = txtContrasena1.getText();
-        String respuesta = txtRespuestaSeguridad.getText();
-        PreguntaSeguridad pregunta = choicePreguntaSeguridad.getValue(); // Obtener pregunta seleccionada
+        else if (rdCliente.isSelected()) {
+            Cliente cliente = recuperarContrasenaController.obtenerClienteUsuario(txtUsuario.getText());
+            if (cliente != null) {
+                if (cliente.getPreguntaSeguridad().equals(choicePreguntaSeguridad.getValue())
+                        && cliente.getRespuesta().equals(txtRespuesta.getText())) {
+                    txtContrasena.setVisible(true);
+                    txtContrasena1.setVisible(true);
+                    cambioValido = true;
+                    persona = cliente;
+                }
+                else {
+                    App.mostrarAlerta("Error al intentar cambiar de contraseña", "Pregunta o respuesta incorrecta");
+                }
+            }
+            else{
+                App.mostrarAlerta("Error al intentar cambiar contraseña",
+                    "EL cliente " + txtUsuario.getText() + " no existe");
+            }
+        }
 
-        if (pregunta == null) {
-            System.out.println("No se ha seleccionado ninguna pregunta de seguridad");
-            mostrarMensaje("Error", "Debe seleccionar una pregunta de seguridad", AlertType.ERROR);
+        else if (rdEmpleado.isSelected()){
+            Empleado empleado = recuperarContrasenaController.obtenerEmpleadoUsuario(txtUsuario.getText());
+            if (empleado != null) {
+                if (empleado.getPreguntaSeguridad().equals(choicePreguntaSeguridad.getValue())
+                        && empleado.getRespuesta().equals(txtRespuesta.getText())) {
+                    txtContrasena.setVisible(true);
+                    txtContrasena1.setVisible(true);
+                    cambioValido = true;
+                    persona = empleado;
+                }
+                else {
+                    App.mostrarAlerta("Error al intentar cambiar de contraseña", "Pregunta o respuesta incorrecta");
+                }
+            }
+            else{
+                App.mostrarAlerta("Error al intentar cambiar contraseña",
+                    "EL empleado " + txtUsuario.getText() + " no existe");
+            }
+        }
+
+        else{
+            App.mostrarAlerta("Error al cambiar contraseña", "Por favor seleccione su rol");
             return;
         }
-
-        System.out.println("Usuario ingresado: " + usuario);
-        Persona usuarioEncontrado = buscarUsuario(usuario);
-
-        if (usuarioEncontrado == null) {
-            System.out.println("Usuario no encontrado");
-            mostrarMensaje("Error", "Usuario no encontrado", AlertType.ERROR);
-            return;
-        }
-        System.out.println("Usuario encontrado: " + usuarioEncontrado.getClass().getSimpleName());
-
-        boolean respuestaCorrecta = verificarRespuestaSeguridad(usuarioEncontrado, pregunta, respuesta);
-
-        if (!respuestaCorrecta) {
-            System.out.println("Respuesta de seguridad incorrecta");
-            mostrarMensaje("Error", "Respuesta de seguridad incorrecta", AlertType.ERROR);
-            return;
-        }
-
-        if (!nuevaContrasena.equals(rectificarContrasena)) {
-            System.out.println("Las contraseñas no coinciden");
-            mostrarMensaje("Error", "Las contraseñas no coinciden", AlertType.ERROR);
-            return;
-        }
-
-        System.out.println("Contraseña cambiada con éxito");
-        txtContrasena.setVisible(true);
-        txtContrasena1.setVisible(true);
-
-        mostrarMensaje("Éxito", "Contraseña cambiada con éxito", AlertType.INFORMATION);
-    }
-
-    private Persona buscarUsuario(String usuario) {
-        System.out.println("Buscando usuario: " + usuario);
-        Empleado empleado = recuperarController.obtenerEmpleadoUsuario(usuario);
-        if (empleado != null) {
-            System.out.println("Empleado encontrado");
-            return empleado;
-        }
-
-        Cliente cliente = recuperarController.obtenerClienteUsuario(usuario);
-        if (cliente != null) {
-            System.out.println("Cliente encontrado");
-            return cliente;
-        }
-
-        System.out.println("Usuario no encontrado en el sistema");
-        return null;
-    }
-
-    private boolean verificarRespuestaSeguridad(Persona usuario, PreguntaSeguridad pregunta, String respuesta) {
-        System.out.println("Verificando respuesta de seguridad...");
-        if (usuario instanceof Cliente) {
-            return ((Cliente) usuario).getPreguntaSeguridad().equals(pregunta)
-                    && ((Cliente) usuario).getRespuesta().equals(respuesta);
-        } else if (usuario instanceof Empleado) {
-            return ((Empleado) usuario).getPreguntaSeguridad().equals(pregunta)
-                    && ((Empleado) usuario).getRespuesta().equals(respuesta);
-        } else if (usuario instanceof Administrador) {
-            return ((Administrador) usuario).getPreguntaSeguridad().equals(pregunta)
-                    && ((Administrador) usuario).getRespuesta().equals(respuesta);
-        }
-        return false;
-    }
-
-    private void mostrarMensaje(String titulo, String contenido, AlertType tipo) {
-        System.out.println("Mostrando mensaje: " + titulo + " - " + contenido);
-        Alert alert = new Alert(tipo);
-        alert.setTitle(titulo);
-        alert.setContentText(contenido);
-        alert.show();
     }
 }

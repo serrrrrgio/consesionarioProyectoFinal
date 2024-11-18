@@ -1,5 +1,6 @@
 package co.edu.uniquindio.poo.controller;
 
+import co.edu.uniquindio.poo.model.Administrador;
 import co.edu.uniquindio.poo.model.Cliente;
 import co.edu.uniquindio.poo.model.Concesionario;
 import co.edu.uniquindio.poo.model.Empleado;
@@ -17,6 +18,10 @@ public class RecuperarContrasenaController {
 
     public Cliente obtenerClienteUsuario(String usuario){
         return concesionario.obtenerClienteUsuario(usuario);
+    }
+
+    public Administrador obtenerAmAdministrador(){
+        return concesionario.getAdministrador();
     }
 
 

@@ -363,7 +363,7 @@ public class Concesionario {
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado,
             int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado, boolean camaraReversa,
             double capacidadMaletero, int numeroBolsasAire, int numeroEjes,
-            int numeroSalidasEmergencia, Combustible combustible, double autonomia, double tiempoCarga,
+            int numeroSalidasEmergencia, double precio, Combustible combustible, double autonomia, double tiempoCarga,
             boolean enchufable,
             boolean hibridoLigero) {
         boolean actualizado = true;
@@ -396,6 +396,7 @@ public class Concesionario {
         seleccionada.setTiempoCarga(tiempoCarga);
         seleccionada.setEnchufable(enchufable);
         seleccionada.setHibridoLigero(hibridoLigero);
+        seleccionada.setPrecio(precio);
         return actualizado;
     }
 
@@ -405,7 +406,7 @@ public class Concesionario {
             double velocidadMaxima, double cilindraje,
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado,
             int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado,
-            double capacidadCarga, boolean frenosAire, int numeroEjes, TipoCamion tipoCamion, Combustible combustible,
+            double capacidadCarga, boolean frenosAire, int numeroEjes, TipoCamion tipoCamion, Combustible combustible, double precio,
             double autonomia, double tiempoCarga, boolean enchufable, boolean hibridoLigero) {
 
         boolean actualizado = true;
@@ -438,6 +439,7 @@ public class Concesionario {
         seleccionada.setTiempoCarga(tiempoCarga);
         seleccionada.setEnchufable(enchufable);
         seleccionada.setHibridoLigero(hibridoLigero);
+        seleccionada.setPrecio(precio);
 
         return actualizado;
     }
@@ -449,7 +451,7 @@ public class Concesionario {
             Estado estado,
             int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado, boolean camaraReversa,
             double capacidadMaletero, boolean velocidadCrucero, int numeroBolsasAire, boolean sensoresColision,
-            boolean sensorTraficoCruzado, boolean asistentepermanenciaCarril, boolean cuatroPorCuatro,
+            boolean sensorTraficoCruzado, boolean asistentepermanenciaCarril, boolean cuatroPorCuatro, double precio,
             Combustible combustible, double autonomia, double tiempoCarga, boolean enchufable, boolean hibridoLigero) {
 
         boolean actualizado = true;
@@ -486,6 +488,7 @@ public class Concesionario {
         seleccionada.setTiempoCarga(tiempoCarga);
         seleccionada.setEnchufable(enchufable);
         seleccionada.setHibridoLigero(hibridoLigero);
+        seleccionada.setPrecio(precio);
 
         return actualizado;
     }
@@ -495,7 +498,7 @@ public class Concesionario {
     public boolean actualizarCarro(Carro seleccionada, String marca, String placa, int modelo, int cambios,
             double velocidadMaxima, double cilindraje, TipoRegistro tipoRegistro, Transmision transmision,
             Estado estado, int capacidadPasajeros, int cantidadPuertas, boolean abs,
-            boolean aireAcondicionado, boolean camaraReversa, Combustible combustible,
+            boolean aireAcondicionado, boolean camaraReversa, double precio, Combustible combustible,
             double autonomia, double tiempoCarga, boolean enchufable, boolean hibridoLigero) {
 
         boolean actualizado = true;
@@ -525,6 +528,7 @@ public class Concesionario {
         seleccionada.setTiempoCarga(tiempoCarga);
         seleccionada.setEnchufable(enchufable);
         seleccionada.setHibridoLigero(hibridoLigero);
+        seleccionada.setPrecio(precio);
 
         return actualizado;
     }
@@ -535,7 +539,7 @@ public class Concesionario {
             double velocidadMaxima, double cilindraje, TipoRegistro tipoRegistro, Transmision transmision,
             Estado estado,
             int capacidadPasajeros, int cantidadPuertas, boolean abs, int numeroCaballosFuerza, int numeroBolsasAire,
-            double tiempoAlcanzar100kmh, Combustible combustible, double autonomia, double tiempoCarga,
+            double tiempoAlcanzar100kmh, double precio, Combustible combustible, double autonomia, double tiempoCarga,
             boolean enchufable, boolean hibridoLigero) {
 
         boolean actualizado = true;
@@ -566,6 +570,7 @@ public class Concesionario {
         seleccionada.setTiempoCarga(tiempoCarga);
         seleccionada.setEnchufable(enchufable);
         seleccionada.setHibridoLigero(hibridoLigero);
+        seleccionada.setPrecio(precio);
 
         return actualizado;
     }
@@ -574,7 +579,7 @@ public class Concesionario {
     // placa
     public boolean actualizarMoto(Moto seleccionada, String marca, String placa, int modelo, int cambios,
             double velocidadMaxima, double cilindraje, TipoRegistro tipoRegistro, Transmision transmision,
-            Estado estado,
+            Estado estado, double precio,
             Combustible combustible, double autonomia, double tiempoCarga, boolean enchufable, boolean hibridoLigero) {
 
         boolean actualizado = true;
@@ -599,6 +604,7 @@ public class Concesionario {
         seleccionada.setTiempoCarga(tiempoCarga);
         seleccionada.setEnchufable(enchufable);
         seleccionada.setHibridoLigero(hibridoLigero);
+        seleccionada.setPrecio(precio);
 
         return actualizado;
     }
@@ -609,7 +615,7 @@ public class Concesionario {
             double velocidadMaxima, double cilindraje, TipoRegistro tipoRegistro, Transmision transmision,
             Estado estado,
             int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado, boolean camaraReversa,
-            int numeroBolsasAire, boolean cuatroPorCuatro, double capacidadCajaCarga, Combustible combustible,
+            int numeroBolsasAire, boolean cuatroPorCuatro, double capacidadCajaCarga, double precio,Combustible combustible,
             double autonomia, double tiempoCarga, boolean enchufable, boolean hibridoLigero) {
 
         boolean actualizado = true;
@@ -642,6 +648,7 @@ public class Concesionario {
         seleccionada.setTiempoCarga(tiempoCarga);
         seleccionada.setEnchufable(enchufable);
         seleccionada.setHibridoLigero(hibridoLigero);
+        seleccionada.setPrecio(precio);
 
         return actualizado;
     }
@@ -653,7 +660,7 @@ public class Concesionario {
             Estado estado,
             int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado, boolean camaraReversa,
             double capacidadMaletero, boolean velocidadCrucero, int numeroBolsasAire,
-            boolean sensoresColision, boolean sensorTraficoCruzado, boolean asistentePermanenciaCarril,
+            boolean sensoresColision, boolean sensorTraficoCruzado, boolean asistentePermanenciaCarril, double precio,
             Combustible combustible, double autonomia, double tiempoCarga, boolean enchufable, boolean hibridoLigero) {
 
         boolean actualizado = true;
@@ -689,6 +696,7 @@ public class Concesionario {
         seleccionada.setTiempoCarga(tiempoCarga);
         seleccionada.setEnchufable(enchufable);
         seleccionada.setHibridoLigero(hibridoLigero);
+        seleccionada.setPrecio(precio);
 
         return actualizado;
     }
@@ -699,7 +707,7 @@ public class Concesionario {
             double velocidadMaxima, double cilindraje, TipoRegistro tipoRegistro, Transmision transmision,
             Estado estado,
             int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado, boolean camaraReversa,
-            double capacidadMaletero, int bolsasAire, Combustible combustible, double autonomia, double tiempoCarga,
+            double capacidadMaletero, int bolsasAire, double precio, Combustible combustible, double autonomia, double tiempoCarga,
             boolean enchufable, boolean hibridoLigero) {
 
         boolean actualizado = true;
@@ -731,6 +739,7 @@ public class Concesionario {
         seleccionada.setTiempoCarga(tiempoCarga);
         seleccionada.setEnchufable(enchufable);
         seleccionada.setHibridoLigero(hibridoLigero);
+        seleccionada.setPrecio(precio);
 
         return actualizado;
     }

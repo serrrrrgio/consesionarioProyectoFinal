@@ -69,6 +69,9 @@ public class InicioEmpleadoViewController {
                 "/co/edu/uniquindio/poo/imagenes/car-garage (1).png", originalGestionarVehiculos);
         setHoverEffect(btnRegresar, btnRegresarImage, null,
                 "/co/edu/uniquindio/poo/imagenes/exit (2).png", originalRegresar);
+        App.setButtonHoverEffect(btnActualizarDatos);
+        App.setButtonHoverEffect(btnGestionarVehiculos);
+        App.setButtonHoverEffect(btnRegresar);
     }
 
     private Image cargarImagen(String imageUrl, ImageView imageView) {

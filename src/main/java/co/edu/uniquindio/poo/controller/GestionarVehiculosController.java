@@ -78,25 +78,26 @@ public class GestionarVehiculosController {
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado,
             int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado, boolean camaraReversa,
             double capacidadMaletero, int numeroBolsasAire, int numeroEjes,
-            int numeroSalidasEmergencia, Combustible combustible, double autonomia, double tiempoCarga,
+            int numeroSalidasEmergencia, double precio, Combustible combustible, double autonomia, double tiempoCarga,
             boolean enchufable,
             boolean hibridoLigero) {
         return concesionario.actualizarBus(seleccionada, marca, placa, modelo, cambios, velocidadMaxima, cilindraje,
                 tipoRegistro, transmision, estado, capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado,
-                camaraReversa, capacidadMaletero, numeroBolsasAire, numeroEjes, numeroSalidasEmergencia, combustible,
-                autonomia, tiempoCarga, enchufable, hibridoLigero);
+                camaraReversa, capacidadMaletero, numeroBolsasAire, numeroEjes, numeroSalidasEmergencia, precio,
+                combustible, autonomia, tiempoCarga, enchufable, hibridoLigero);
     }
 
     public boolean actualizarCamion(Camion seleccionada, String marca, String placa, int modelo, int cambios,
             double velocidadMaxima, double cilindraje,
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado,
             int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado,
-            double capacidadCarga, boolean frenosAire, int numeroEjes, TipoCamion tipoCamion, Combustible combustible,
+            double capacidadCarga, boolean frenosAire, int numeroEjes, TipoCamion tipoCamion, double precio,
+            Combustible combustible,
             double autonomia, double tiempoCarga, boolean enchufable, boolean hibridoLigero) {
         return concesionario.actualizarCamion(seleccionada, marca, placa, modelo, cambios, velocidadMaxima, cilindraje,
                 tipoRegistro, transmision, estado, capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado,
-                capacidadCarga, frenosAire, numeroEjes, tipoCamion, combustible, autonomia, tiempoCarga, enchufable,
-                hibridoLigero);
+                capacidadCarga, frenosAire, numeroEjes, tipoCamion, combustible, precio, autonomia, tiempoCarga,
+                enchufable, hibridoLigero);
     }
 
     public boolean actualizarCamioneta(Camioneta seleccionada, String marca, String placa, int modelo, int cambios,
@@ -104,52 +105,56 @@ public class GestionarVehiculosController {
             Estado estado,
             int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado, boolean camaraReversa,
             double capacidadMaletero, boolean velocidadCrucero, int numeroBolsasAire, boolean sensoresColision,
-            boolean sensorTraficoCruzado, boolean asistentepermanenciaCarril, boolean cuatroPorCuatro,
+            boolean sensorTraficoCruzado, boolean asistentepermanenciaCarril, boolean cuatroPorCuatro, double precio,
             Combustible combustible, double autonomia, double tiempoCarga, boolean enchufable, boolean hibridoLigero) {
         return concesionario.actualizarCamioneta(seleccionada, marca, placa, modelo, cambios, velocidadMaxima,
                 cilindraje, tipoRegistro, transmision, estado, capacidadPasajeros, cantidadPuertas, abs,
                 aireAcondicionado, camaraReversa, capacidadMaletero, velocidadCrucero, numeroBolsasAire,
-                sensoresColision, sensorTraficoCruzado, asistentepermanenciaCarril, cuatroPorCuatro, combustible,
-                autonomia, tiempoCarga, enchufable, hibridoLigero);
+                sensoresColision, sensorTraficoCruzado, asistentepermanenciaCarril, cuatroPorCuatro, precio,
+                combustible, autonomia, tiempoCarga, enchufable, hibridoLigero);
     }
 
     public boolean actualizarCarro(Carro seleccionada, String marca, String placa, int modelo, int cambios,
             double velocidadMaxima, double cilindraje, TipoRegistro tipoRegistro, Transmision transmision,
             Estado estado, int capacidadPasajeros, int cantidadPuertas, boolean abs,
-            boolean aireAcondicionado, boolean camaraReversa, Combustible combustible,
-            double autonomia, double tiempoCarga, boolean enchufable, boolean hibridoLigero){
-                return concesionario.actualizarCarro(seleccionada, marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa, combustible, autonomia, tiempoCarga, enchufable, hibridoLigero);
-            }
+            boolean aireAcondicionado, boolean camaraReversa, double precio, Combustible combustible,
+            double autonomia, double tiempoCarga, boolean enchufable, boolean hibridoLigero) {
+        return concesionario.actualizarCarro(seleccionada, marca, placa, modelo, cambios, velocidadMaxima, cilindraje,
+                tipoRegistro, transmision, estado, capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado,
+                camaraReversa, precio, combustible, autonomia, tiempoCarga, enchufable, hibridoLigero);
+    }
 
     public boolean actualizarDeportivo(Deportivo seleccionada, String marca, String placa, int modelo, int cambios,
-            double velocidadMaxima, double cilindraje, TipoRegistro tipoRegistro, Transmision transmision,
-            Estado estado,
+            double velocidadMaxima, double cilindraje,
+            TipoRegistro tipoRegistro, Transmision transmision, Estado estado,
             int capacidadPasajeros, int cantidadPuertas, boolean abs, int numeroCaballosFuerza, int numeroBolsasAire,
-            double tiempoAlcanzar100kmh, Combustible combustible, double autonomia, double tiempoCarga,
+            double tiempoAlcanzar100kmh, double precio, Combustible combustible, double autonomia, double tiempoCarga,
             boolean enchufable, boolean hibridoLigero) {
         return concesionario.actualizarDeportivo(seleccionada, marca, placa, modelo, cambios, velocidadMaxima,
                 cilindraje, tipoRegistro, transmision, estado, capacidadPasajeros, cantidadPuertas, abs,
-                numeroCaballosFuerza, numeroBolsasAire, tiempoAlcanzar100kmh, combustible, autonomia, tiempoCarga,
-                enchufable, hibridoLigero);
+                numeroCaballosFuerza, numeroBolsasAire, tiempoAlcanzar100kmh, precio, combustible, autonomia,
+                tiempoCarga, enchufable, hibridoLigero);
     }
 
     public boolean actualizarMoto(Moto seleccionada, String marca, String placa, int modelo, int cambios,
             double velocidadMaxima, double cilindraje, TipoRegistro tipoRegistro, Transmision transmision,
-            Estado estado,
+            Estado estado, double precio,
             Combustible combustible, double autonomia, double tiempoCarga, boolean enchufable, boolean hibridoLigero) {
         return concesionario.actualizarMoto(seleccionada, marca, placa, modelo, cambios, velocidadMaxima, cilindraje,
-                tipoRegistro, transmision, estado, combustible, autonomia, tiempoCarga, enchufable, hibridoLigero);
+                tipoRegistro, transmision, estado, precio, combustible, autonomia, tiempoCarga, enchufable,
+                hibridoLigero);
     }
 
     public boolean actualizarPickUp(PickUp seleccionada, String marca, String placa, int modelo, int cambios,
             double velocidadMaxima, double cilindraje, TipoRegistro tipoRegistro, Transmision transmision,
             Estado estado,
             int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado, boolean camaraReversa,
-            int numeroBolsasAire, boolean cuatroPorCuatro, double capacidadCajaCarga, Combustible combustible,
+            int numeroBolsasAire, boolean cuatroPorCuatro, double capacidadCajaCarga, double precio,
+            Combustible combustible,
             double autonomia, double tiempoCarga, boolean enchufable, boolean hibridoLigero) {
         return concesionario.actualizarPickUp(seleccionada, marca, placa, modelo, cambios, velocidadMaxima, cilindraje,
                 tipoRegistro, transmision, estado, capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado,
-                camaraReversa, numeroBolsasAire, cuatroPorCuatro, capacidadCajaCarga, combustible, autonomia,
+                camaraReversa, numeroBolsasAire, cuatroPorCuatro, capacidadCajaCarga, precio, combustible, autonomia,
                 tiempoCarga, enchufable, hibridoLigero);
     }
 
@@ -158,17 +163,134 @@ public class GestionarVehiculosController {
             Estado estado,
             int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado, boolean camaraReversa,
             double capacidadMaletero, boolean velocidadCrucero, int numeroBolsasAire,
-            boolean sensoresColision, boolean sensorTraficoCruzado, boolean asistentePermanenciaCarril,
-            Combustible combustible, double autonomia, double tiempoCarga, boolean enchufable, boolean hibridoLigero){
-                return concesionario.actualizarSedan(seleccionada, marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa, capacidadMaletero, velocidadCrucero, numeroBolsasAire, sensoresColision, sensorTraficoCruzado, asistentePermanenciaCarril, combustible, autonomia, tiempoCarga, enchufable, hibridoLigero);
-            }
+            boolean sensoresColision, boolean sensorTraficoCruzado, boolean asistentePermanenciaCarril, double precio,
+            Combustible combustible, double autonomia, double tiempoCarga, boolean enchufable, boolean hibridoLigero) {
+        return concesionario.actualizarSedan(seleccionada, marca, placa, modelo, cambios, velocidadMaxima, cilindraje,
+                tipoRegistro, transmision, estado, capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado,
+                camaraReversa, capacidadMaletero, velocidadCrucero, numeroBolsasAire, sensoresColision,
+                sensorTraficoCruzado, asistentePermanenciaCarril, precio, combustible, autonomia, tiempoCarga,
+                enchufable, hibridoLigero);
+    }
 
     public boolean actualizarVan(Van seleccionada, String marca, String placa, int modelo, int cambios,
             double velocidadMaxima, double cilindraje, TipoRegistro tipoRegistro, Transmision transmision,
             Estado estado,
             int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado, boolean camaraReversa,
-            double capacidadMaletero, int bolsasAire, Combustible combustible, double autonomia, double tiempoCarga,
-            boolean enchufable, boolean hibridoLigero){
-                return concesionario.actualizarVan(seleccionada, marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado, capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa, capacidadMaletero, bolsasAire, combustible, autonomia, tiempoCarga, enchufable, hibridoLigero);
-            }
+            double capacidadMaletero, int bolsasAire, double precio, Combustible combustible, double autonomia,
+            double tiempoCarga,
+            boolean enchufable, boolean hibridoLigero) {
+        return concesionario.actualizarVan(seleccionada, marca, placa, modelo, cambios, velocidadMaxima, cilindraje,
+                tipoRegistro, transmision, estado, capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado,
+                camaraReversa, capacidadMaletero, bolsasAire, precio, combustible, autonomia, tiempoCarga, enchufable,
+                hibridoLigero);
+    }
+
+    public Deportivo crearDeportivo(String marca, String placa, int modelo, int cambios, double velocidadMaxima,
+            double cilindraje,
+            TipoRegistro tipoRegistro, Transmision transmision, Estado estado,
+            int capacidadPasajeros, int cantidadPuertas, boolean abs, int numeroCaballosFuerza, int numeroBolsasAire,
+            double tiempoAlcanzar100kmh, double precio, Combustible combustible, double autonomia, double tiempoCarga,
+            boolean enchufable, boolean hibridoLigero) {
+
+        return new Deportivo(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision,
+                estado, capacidadPasajeros, cantidadPuertas, abs, numeroCaballosFuerza, numeroBolsasAire,
+                tiempoAlcanzar100kmh, precio, combustible, autonomia, tiempoCarga, enchufable, hibridoLigero);
+    }
+
+    public Sedan crearSedan(String marca, String placa, int modelo, int cambios, double velocidadMaxima,
+            double cilindraje,
+            TipoRegistro tipoRegistro, Transmision transmision, Estado estado,
+            int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado, boolean camaraReversa,
+            double capacidadMaletero, boolean velocidadCrucero, int numeroBolsasAire,
+            boolean sensoresColision, boolean sensorTraficoCruzado, boolean asistentePermanenciaCarril, double precio,
+            Combustible combustible, double autonomia, double tiempoCarga, boolean enchufable, boolean hibridoLigero) {
+
+        return new Sedan(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado,
+                capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa, capacidadMaletero,
+                velocidadCrucero,
+                numeroBolsasAire, sensoresColision, sensorTraficoCruzado, asistentePermanenciaCarril, precio,
+                combustible,
+                autonomia, tiempoCarga, enchufable, hibridoLigero);
+    }
+
+    public PickUp crearPickUp(String marca, String placa, int modelo, int cambios, double velocidadMaxima,
+            double cilindraje,
+            TipoRegistro tipoRegistro, Transmision transmision, Estado estado,
+            int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado, boolean camaraReversa,
+            int numeroBolsasAire, boolean cuatroPorCuatro, double capacidadCajaCarga, double precio,
+            Combustible combustible,
+            double autonomia, double tiempoCarga, boolean enchufable, boolean hibridoLigero) {
+
+        return new PickUp(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado,
+                capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa, numeroBolsasAire,
+                cuatroPorCuatro,
+                capacidadCajaCarga, precio, combustible, autonomia, tiempoCarga, enchufable, hibridoLigero);
+    }
+
+    public Van crearVan(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
+            TipoRegistro tipoRegistro, Transmision transmision, Estado estado,
+            int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado, boolean camaraReversa,
+            double capacidadMaletero, int bolsasAire, double precio, Combustible combustible, double autonomia,
+            double tiempoCarga,
+            boolean enchufable, boolean hibridoLigero) {
+
+        return new Van(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado,
+                capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa, capacidadMaletero,
+                bolsasAire,
+                precio, combustible, autonomia, tiempoCarga, enchufable, hibridoLigero);
+    }
+
+    public Camioneta crearCamioneta(String marca, String placa, int modelo, int cambios, double velocidadMaxima,
+            double cilindraje,
+            TipoRegistro tipoRegistro, Transmision transmision, Estado estado,
+            int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado, boolean camaraReversa,
+            double capacidadMaletero, boolean velocidadCrucero, int numeroBolsasAire,
+            boolean sensoresColision, boolean sensorTraficoCruzado, boolean asistentepermanenciaCarril,
+            boolean cuatroPorCuatro, double precio, Combustible combustible, double autonomia,
+            double tiempoCarga, boolean enchufable,
+            boolean hibridoLigero) {
+
+        return new Camioneta(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision,
+                estado, capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa, capacidadMaletero,
+                velocidadCrucero, numeroBolsasAire, sensoresColision, sensorTraficoCruzado, asistentepermanenciaCarril,
+                cuatroPorCuatro, precio, combustible, autonomia, tiempoCarga, enchufable, hibridoLigero);
+    }
+
+    public Camion crearCamion(String marca, String placa, int modelo, int cambios, double velocidadMaxima,
+            double cilindraje,
+            TipoRegistro tipoRegistro, Transmision transmision, Estado estado,
+            int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado,
+            double capacidadCarga, boolean frenosAire, int numeroEjes, TipoCamion tipoCamion, double precio,
+            Combustible combustible,
+            double autonomia, double tiempoCarga, boolean enchufable, boolean hibridoLigero) {
+
+        return new Camion(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado,
+                capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, capacidadCarga, frenosAire, numeroEjes,
+                tipoCamion, precio, combustible, autonomia, tiempoCarga, enchufable, hibridoLigero);
+    }
+
+    public Moto crearMoto(String marca, String placa, int modelo, int cambios, double velocidadMaxima,
+            double cilindraje,
+            TipoRegistro tipoRegistro, Transmision transmision, Estado estado, double precio, Combustible combustible,
+            double autonomia, double tiempoCarga, boolean enchufable, boolean hibridoLigero) {
+
+        return new Moto(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado,
+                precio, combustible, autonomia, tiempoCarga, enchufable, hibridoLigero);
+
+    }
+
+    public Bus crearBus(String marca, String placa, int modelo, int cambios, double velocidadMaxima, double cilindraje,
+            TipoRegistro tipoRegistro, Transmision transmision, Estado estado,
+            int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado, boolean camaraReversa,
+            double capacidadMaletero, int numeroBolsasAire, int numeroEjes,
+            int numeroSalidasEmergencia, double precio, Combustible combustible, double autonomia, double tiempoCarga,
+            boolean enchufable,
+            boolean hibridoLigero) {
+
+        return new Bus(marca, placa, modelo, cambios, velocidadMaxima, cilindraje, tipoRegistro, transmision, estado,
+                capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa, capacidadMaletero,
+                numeroBolsasAire, numeroEjes, numeroSalidasEmergencia, precio, combustible, autonomia, tiempoCarga,
+                enchufable, hibridoLigero);
+    }
+
 }
