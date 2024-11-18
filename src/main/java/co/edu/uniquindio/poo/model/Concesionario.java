@@ -236,6 +236,34 @@ public class Concesionario {
     }
 
     /**
+     * Método para obtener un empleado con su usuario.
+     */
+    public Empleado obtenerEmpleadoUsuario(String usuario) {
+        Empleado empleadoEncontrado = null;
+        for (Empleado empleado : empleados) {
+            if (empleado.getUsuario().equals(usuario)) {
+                empleadoEncontrado = empleado;
+                break;
+            }
+        }
+        return empleadoEncontrado;
+    }
+
+    /**
+     * Método para obtener un empleado con su usuario.
+     */
+    public Cliente obtenerClienteUsuario(String usuario) {
+        Cliente clienteEncontrado = null;
+        for (Cliente cliente : clientes) {
+            if (cliente.getUsuario().equals(usuario)) {
+                clienteEncontrado = cliente;
+                break;
+            }
+        }
+        return clienteEncontrado;
+    }
+
+    /**
      * Método para eliminar un empleado.
      */
     public void eliminarEmpleado(Empleado empleado) {
