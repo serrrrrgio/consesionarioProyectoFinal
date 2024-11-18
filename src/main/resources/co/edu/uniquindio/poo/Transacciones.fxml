@@ -51,19 +51,19 @@
             <AnchorPane layoutX="68.0" layoutY="216.0" prefHeight="696.0" prefWidth="1062.0" style="-fx-background-color: #fafafa;">
                <children>
                   <Button fx:id="btnLimpiarCampos" layoutX="454.0" layoutY="598.0" mnemonicParsing="false" onAction="#handleBtnLimpiarCampos" style="-fx-background-color: #434343;" text="Limpiar Campos" textFill="WHITE" />
-                  <TableView fx:id="tblListEmpleado" layoutX="179.0" layoutY="199.0" prefHeight="378.0" prefWidth="676.0">
+                  <TableView fx:id="tblListTransacciones" layoutX="179.0" layoutY="199.0" prefHeight="378.0" prefWidth="676.0">
                     <columns>
-                      <TableColumn fx:id="tbcNombre" prefWidth="154.0" text="Cliente" />
-                      <TableColumn fx:id="tbcApellido" prefWidth="147.0" text="Empleado" />
-                        <TableColumn fx:id="tbcCorreo" prefWidth="225.0" text="Vehiculo" />
-                        <TableColumn fx:id="tbcTelefono" prefWidth="149.0" text="Precio" />
+                      <TableColumn fx:id="tbcCliente" prefWidth="154.0" text="Cliente" />
+                      <TableColumn fx:id="tbcEmpleado" prefWidth="147.0" text="Empleado" />
+                        <TableColumn fx:id="tbcVehiculo" prefWidth="225.0" text="Vehiculo" />
+                        <TableColumn fx:id="tbcPrecio" prefWidth="149.0" text="Precio" />
                     </columns>
                   </TableView>
                   <Label layoutX="227.0" layoutY="48.0" text="Fecha inicial" />
-                  <DatePicker layoutX="327.0" layoutY="43.0" />
-                  <DatePicker layoutX="327.0" layoutY="112.0" />
+                  <DatePicker fx:id="datePickerFechaInicial" editable="false" layoutX="327.0" layoutY="43.0" />
+                  <DatePicker fx:id="datePickerFechaFinal" editable="false" layoutX="327.0" layoutY="112.0" />
                   <Label layoutX="227.0" layoutY="117.0" text="Fecha final" />
-                  <Button layoutX="651.0" layoutY="81.0" mnemonicParsing="false" style="-fx-background-color: #434343;" text="Ver transacciones" textFill="#fcf8f8" />
+                  <Button fx:id="btnVerTransacciones" layoutX="651.0" layoutY="81.0" mnemonicParsing="false" onAction="#handleBtnVerTransacciones" style="-fx-background-color: #434343;" text="Ver transacciones" textFill="#fcf8f8" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="254.0" layoutY="152.0" prefHeight="1.0" prefWidth="668.0" style="-fx-background-color: #3c3c3c;" />

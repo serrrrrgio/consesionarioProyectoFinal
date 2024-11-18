@@ -2,6 +2,9 @@ package co.edu.uniquindio.poo.model;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -269,6 +272,36 @@ public class Concesionario {
     public void eliminarEmpleado(Empleado empleado) {
         empleados.remove(empleado);
     }
+
+    /**
+     * Método para obtener un empleado aleatorio
+     */
+    public Empleado obtenerEmpleadoAleatorio() {
+        Random random = new Random();
+        int indiceAleatorio = random.nextInt(empleados.size());
+        return empleados.get(indiceAleatorio);
+    }
+
+
+    /**
+     * Método para obtener una lista de transacciones dentro de 2 fechas
+     */
+    public  ObservableList<Transaccion> obtenerTransaccionesFechas(LocalDate fechaInicio, LocalDate fechaFin) {
+
+        ObservableList<Transaccion> transaccionesFiltradas = FXCollections.observableArrayList();
+
+        for (Transaccion transaccion : transacciones) {
+            LocalDate fechaTransaccion = transaccion.getfechaEntrega();
+            if (fechaTransaccion != null &&
+                    (fechaTransaccion.isEqual(fechaInicio) || fechaTransaccion.isAfter(fechaInicio)) &&
+                    (fechaTransaccion.isEqual(fechaFin) || fechaTransaccion.isBefore(fechaFin))) {
+                transaccionesFiltradas.add(transaccion);
+            }
+        }
+
+        return transaccionesFiltradas;
+    }
+
 
     /**
      * Método para actualizar un empleado. Duda de si al actualizarlo también se le
