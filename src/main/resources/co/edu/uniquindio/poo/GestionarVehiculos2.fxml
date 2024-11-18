@@ -46,7 +46,7 @@
               </AnchorPane>
             <ScrollPane layoutX="68.0" layoutY="220.0" opacity="0.9" prefHeight="693.0" prefWidth="1062.0">
                <content>
-                  <AnchorPane prefHeight="1244.0" prefWidth="1140.0" style="-fx-background-color: #fafafa;">
+                  <AnchorPane prefHeight="1244.0" prefWidth="1049.0" style="-fx-background-color: #fafafa;">
                      <children>
                         <TextField fx:id="txtMarcaVehiculo" layoutX="140.0" layoutY="55.0" promptText="Marca" />
                         <TextField fx:id="txtCilindrajeVehiculo" layoutX="460.0" layoutY="155.0" promptText="Cilindraje" />
@@ -56,53 +56,8 @@
                         <Button fx:id="btnRegistrarVehiculo" layoutX="480.0" layoutY="546.0" mnemonicParsing="false" onAction="#handleBtnRegistrarVehiculo" text="Registrar vehículo" />
                         <Button fx:id="btnActualizarVehiculo" layoutX="797.0" layoutY="541.0" mnemonicParsing="false" onAction="#handleBtnActualizarVehiculo" text="Actualizar vehículo" />
                         <Button fx:id="btnEliminarVehiculo" layoutX="209.0" layoutY="537.0" mnemonicParsing="false" onAction="#handleBtnEliminarVehiculo" text="Eliminar vehículo" />
-                        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="105.0" layoutY="104.0">
-                           <image>
-                              <Image url="@Imagenes/envelope.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="31.0" fitWidth="28.0" layoutX="738.0" layoutY="102.0">
-                           <image>
-                              <Image url="@Imagenes/eye%20(2).png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="738.0" layoutY="157.0">
-                           <image>
-                              <Image url="@Imagenes/key.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="738.0" layoutY="51.0">
-                           <image>
-                              <Image url="@Imagenes/phone-call.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="105.0" layoutY="58.0">
-                           <image>
-                              <Image url="@Imagenes/user%20(1).png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="105.0" layoutY="158.0">
-                           <image>
-                              <Image url="@Imagenes/user-add.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="31.0" fitWidth="28.0" layoutX="416.0" layoutY="155.0">
-                           <image>
-                              <Image url="@Imagenes/fingerprint.png" />
-                           </image>
-                        </ImageView>
                         <TextField fx:id="txtCambiosVehiculo" layoutX="460.0" layoutY="55.0" promptText="Numero de Cambios" />
                         <TextField fx:id="txtVelocidadMaximaVehiculo" layoutX="460.0" layoutY="101.0" promptText="Velocidad maxima" />
-                        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="416.0" layoutY="58.0">
-                           <image>
-                              <Image url="@Imagenes/usd-circle.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="416.0" layoutY="104.0">
-                           <image>
-                              <Image url="@Imagenes/id-badge.png" />
-                           </image>
-                        </ImageView>
                         <TextField fx:id="txtTiempoCargaElectrico" layoutX="140.0" layoutY="260.0" promptText="Tiempo de Carga" />
                         <TextField fx:id="txtAutonomiaElectrico" layoutX="140.0" layoutY="206.0" promptText="Autonomia" />
                         <ChoiceBox fx:id="choiceTipoRegistroVehiculo" layoutX="784.0" layoutY="48.0" prefWidth="150.0" />
@@ -138,8 +93,8 @@
                         <TextField fx:id="txtCapacidadMaleteroVan" layoutX="140.0" layoutY="299.0" promptText="Capacidad Maletero" />
                         <ChoiceBox fx:id="choiceCombustibleVehiculo" layoutX="460.0" layoutY="302.0" prefWidth="150.0" />
                         <ChoiceBox fx:id="choiceVehiculo" layoutX="460.0" layoutY="251.0" prefWidth="150.0" />
-                        <TextField fx:id="txtNumeroPasajerosCarro" layoutX="766.0" layoutY="206.0" promptText="Número pasajeros" />
-                        <TextField fx:id="txtNumeroPuertasCarro" layoutX="766.0" layoutY="260.0" promptText="Número puertas" />
+                        <TextField fx:id="txtNumeroPasajerosCarro" layoutX="779.0" layoutY="206.0" promptText="Número pasajeros" />
+                        <TextField fx:id="txtNumeroPuertasCarro" layoutX="779.0" layoutY="260.0" promptText="Número puertas" />
                         <RadioButton fx:id="rdAbsCarro" layoutX="808.0" layoutY="304.0" mnemonicParsing="false" text="Frenos ABS" />
                         <RadioButton fx:id="rdAireAcondicionadoCarro" layoutX="808.0" layoutY="381.0" mnemonicParsing="false" text="Aire acondicionado" />
                         <RadioButton fx:id="rdCamaraReversaCarro" layoutX="808.0" layoutY="341.0" mnemonicParsing="false" text="Camara reversa" />
