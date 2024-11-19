@@ -5,7 +5,8 @@ public enum PreguntaSeguridad {
     PET_NAME("¿Cuál es el nombre de tu mascota?"),
     FAVORITE_COLOR("¿Cuál es tu color favorito?"),
     CHILDHOOD_NICKNAME("¿Cuál es tu apodo de infancia?"),
-    BEST_FRIEND("¿Cuál es el nombre de tu mejor amigo(a) en la escuela?");
+    BEST_FRIEND("¿Cuál es el nombre de tu mejor amigo(a) en la escuela?"),
+    FAVORITE_FOOD("¿Cuál es tu comida favorita?");
 
     private final String question;
 

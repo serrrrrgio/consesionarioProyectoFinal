@@ -263,11 +263,6 @@ public class VenderVehiculoViewController {
         App.setButtonHoverEffect(btnActualizarDatos);
     }
 
-    public Transaccion crearTransaccion() {
-        return new Transaccion(LocalDate.now(), null,
-                vehiculo.getPrecio(), TipoTransaccion.COMPRA, empleado, cliente, vehiculo);
-    }
-
     @FXML
     public void handleBtnVenderVehiculo(ActionEvent event) {
         // Obtener los datos generales del vehículo
@@ -320,13 +315,8 @@ public class VenderVehiculoViewController {
                         App.mostrarAlerta("Error", "No hay suficientes fondos para comprar este vehículo");
                         return;
                     }
-                    venderVehiculoController.setFondos(venderVehiculoController.getFondos() - precio);
                     vehiculo = moto;
-                    transaccion = crearTransaccion();
-                    cliente.agregarTransaccion(transaccion);
-                    venderVehiculoController.agregarTransaccion(transaccion);
-                    empleado.agregarTransaccion(transaccion);
-
+                    venderVehiculoController.venderVehiculo(empleado, cliente, moto, precio, LocalDate.now(), null);
                     App.mostrarMensaje("Vehículo registrado", "Nuevo vehículo",
                             "Su vehículo ha sido comprado por nosotros");
                     App.cambiarEscena("/co/edu/uniquindio/poo/InicioCliente.fxml", "Inicio administrador", event,
@@ -376,12 +366,8 @@ public class VenderVehiculoViewController {
                                     App.mostrarAlerta("Error", "No hay suficientes fondos para comprar este vehículo");
                                     return;
                                 }
-                                venderVehiculoController.setFondos(venderVehiculoController.getFondos() - precio);
                                 vehiculo = bus;
-                                transaccion = crearTransaccion();
-                                cliente.agregarTransaccion(transaccion);
-                                venderVehiculoController.agregarTransaccion(transaccion);
-                                empleado.agregarTransaccion(transaccion);
+                                venderVehiculoController.venderVehiculo(empleado, cliente, bus, precio, LocalDate.now(), null);
                                 App.mostrarMensaje("Vehículo registrado", "Nuevo vehículo",
                                         "Su vehículo ha sido comprado por nosotros");
                                 App.cambiarEscena("/co/edu/uniquindio/poo/InicioCliente.fxml", "Inicio administrador",
@@ -420,12 +406,8 @@ public class VenderVehiculoViewController {
                                     App.mostrarAlerta("Error", "No hay suficientes fondos para comprar este vehículo");
                                     return;
                                 }
-                                venderVehiculoController.setFondos(venderVehiculoController.getFondos() - precio);
                                 vehiculo = camioneta;
-                                transaccion = crearTransaccion();
-                                cliente.agregarTransaccion(transaccion);
-                                venderVehiculoController.agregarTransaccion(transaccion);
-                                empleado.agregarTransaccion(transaccion);
+                                venderVehiculoController.venderVehiculo(empleado, cliente, camioneta, precio, LocalDate.now(), null);
                                 App.mostrarMensaje("Vehículo registrado", "Nuevo vehículo",
                                         "Su vehículo ha sido comprado por nosotros");
                                 App.cambiarEscena("/co/edu/uniquindio/poo/InicioCliente.fxml", "Inicio administrador",
@@ -459,12 +441,8 @@ public class VenderVehiculoViewController {
                                     App.mostrarAlerta("Error", "No hay suficientes fondos para comprar este vehículo");
                                     return;
                                 }
-                                venderVehiculoController.setFondos(venderVehiculoController.getFondos() - precio);
                                 vehiculo = camion;
-                                transaccion = crearTransaccion();
-                                cliente.agregarTransaccion(transaccion);
-                                venderVehiculoController.agregarTransaccion(transaccion);
-                                empleado.agregarTransaccion(transaccion);
+                                venderVehiculoController.venderVehiculo(empleado, cliente, camion, precio, LocalDate.now(), null);
                                 App.mostrarMensaje("Vehículo registrado", "Nuevo vehículo",
                                         "Su vehículo ha sido comprado por nosotros");
                                 App.cambiarEscena("/co/edu/uniquindio/poo/InicioCliente.fxml", "Inicio administrador",
@@ -497,12 +475,8 @@ public class VenderVehiculoViewController {
                                     App.mostrarAlerta("Error", "No hay suficientes fondos para comprar este vehículo");
                                     return;
                                 }
-                                venderVehiculoController.setFondos(venderVehiculoController.getFondos() - precio);
                                 vehiculo = deportivo;
-                                transaccion = crearTransaccion();
-                                cliente.agregarTransaccion(transaccion);
-                                venderVehiculoController.agregarTransaccion(transaccion);
-                                empleado.agregarTransaccion(transaccion);
+                                venderVehiculoController.venderVehiculo(empleado, cliente, deportivo, precio, LocalDate.now(), null);
                                 App.mostrarMensaje("Vehículo registrado", "Nuevo vehículo",
                                         "Su vehículo ha sido comprado por nosotros");
                                 App.cambiarEscena("/co/edu/uniquindio/poo/InicioCliente.fxml", "Inicio administrador",
@@ -537,12 +511,8 @@ public class VenderVehiculoViewController {
                                     App.mostrarAlerta("Error", "No hay suficientes fondos para comprar este vehículo");
                                     return;
                                 }
-                                venderVehiculoController.setFondos(venderVehiculoController.getFondos() - precio);
                                 vehiculo = pickUp;
-                                transaccion = crearTransaccion();
-                                cliente.agregarTransaccion(transaccion);
-                                venderVehiculoController.agregarTransaccion(transaccion);
-                                empleado.agregarTransaccion(transaccion);
+                                venderVehiculoController.venderVehiculo(empleado, cliente, pickUp, precio, LocalDate.now(), null);
                                 App.mostrarMensaje("Vehículo registrado", "Nuevo vehículo",
                                         "Su vehículo ha sido comprado por nosotros");
                                 App.cambiarEscena("/co/edu/uniquindio/poo/InicioCliente.fxml", "Inicio administrador",
@@ -583,12 +553,8 @@ public class VenderVehiculoViewController {
                                     App.mostrarAlerta("Error", "No hay suficientes fondos para comprar este vehículo");
                                     return;
                                 }
-                                venderVehiculoController.setFondos(venderVehiculoController.getFondos() - precio);
                                 vehiculo = sedan;
-                                transaccion = crearTransaccion();
-                                cliente.agregarTransaccion(transaccion);
-                                venderVehiculoController.agregarTransaccion(transaccion);
-                                empleado.agregarTransaccion(transaccion);
+                                venderVehiculoController.venderVehiculo(empleado, cliente, sedan, precio, LocalDate.now(), null);
                                 App.mostrarMensaje("Vehículo registrado", "Nuevo vehículo",
                                         "Su vehículo ha sido comprado por nosotros");
                                 App.cambiarEscena("/co/edu/uniquindio/poo/InicioCliente.fxml", "Inicio administrador",
@@ -622,12 +588,8 @@ public class VenderVehiculoViewController {
                                     App.mostrarAlerta("Error", "No hay suficientes fondos para comprar este vehículo");
                                     return;
                                 }
-                                venderVehiculoController.setFondos(venderVehiculoController.getFondos() - precio);
                                 vehiculo = van;
-                                transaccion = crearTransaccion();
-                                cliente.agregarTransaccion(transaccion);
-                                venderVehiculoController.agregarTransaccion(transaccion);
-                                empleado.agregarTransaccion(transaccion);
+                                venderVehiculoController.venderVehiculo(empleado, cliente, van, precio, LocalDate.now(), null);
                                 App.mostrarMensaje("Vehículo registrado", "Nuevo vehículo",
                                         "Su vehículo ha sido comprado por nosotros");
                                 App.cambiarEscena("/co/edu/uniquindio/poo/InicioCliente.fxml", "Inicio administrador",

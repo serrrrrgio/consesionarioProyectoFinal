@@ -1,8 +1,11 @@
 package co.edu.uniquindio.poo.controller;
 
+import java.time.LocalDate;
+
 import co.edu.uniquindio.poo.model.Bus;
 import co.edu.uniquindio.poo.model.Camion;
 import co.edu.uniquindio.poo.model.Camioneta;
+import co.edu.uniquindio.poo.model.Cliente;
 import co.edu.uniquindio.poo.model.Combustible;
 import co.edu.uniquindio.poo.model.Concesionario;
 import co.edu.uniquindio.poo.model.Deportivo;
@@ -152,5 +155,10 @@ public class VenderVehiculoController {
         public void agregarTransaccion(Transaccion transaccion){
         concesionario.agregarTransaccion(transaccion);
     }
+
+    public void venderVehiculo(Empleado empleado, Cliente cliente, Vehiculo vehiculo, double precio,
+            LocalDate fechaEntrega, LocalDate fechaDevolucion){
+                concesionario.venderVehiculo(empleado, cliente, vehiculo, precio, fechaEntrega, fechaDevolucion);
+            }
 
 }

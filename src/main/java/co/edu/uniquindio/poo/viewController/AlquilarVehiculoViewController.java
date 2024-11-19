@@ -150,6 +150,7 @@ public class AlquilarVehiculoViewController {
                         listaFiltrada = alquilarVehiculoController.obtenerInterseccion(
                                 alquilarVehiculoController.obtenerVehiculosAlquiler(),
                                 FXCollections.observableArrayList(alquilarVehiculoController.obtenerVans()));
+                                System.out.println((alquilarVehiculoController.obtenerVans()));
                         break;
                     default:
                         // Si no se selecciona nada, mostrar todos los vehículos en venta
@@ -176,13 +177,12 @@ public class AlquilarVehiculoViewController {
     public void handloBtnAlquilar(ActionEvent event) {
         if (vehiculoSeleccionado != null) {
             if (diasValidos() && fechasValidas()) {
-                Transaccion transaccion = crearTransaccion();
-                cliente.agregarTransaccion(transaccion);
-                alquilarVehiculoController.eliminarVehiculo(vehiculoSeleccionado);
-                alquilarVehiculoController.agregarTransaccion(transaccion);
-                empleado.agregarTransaccion(transaccion);
+                alquilarVehiculoController.alquilarVehiculo(empleado, cliente, vehiculoSeleccionado,
+                        datePickerFechaEntrega.getValue(), datePickerFechaDevolucion.getValue());
+                setVehiculos();
                 tblListVehiculosAlquiler.refresh();
-                App.mostrarMensaje("Vehiuclo alquilado", "", "El vehiculo ha sido alquilado correctamente");
+                choiceVehiculo.setValue(null);
+                App.mostrarMensaje("Vehiculo alquilado", "", "El vehiculo ha sido alquilado correctamente");
             }
         }
 
@@ -211,7 +211,8 @@ public class AlquilarVehiculoViewController {
     }
 
     public boolean fechasValidas() {
-        if (!alquilarVehiculoController.validarFechaPosterior(datePickerFechaDevolucion.getValue(), datePickerFechaEntrega.getValue())) {
+        if (!alquilarVehiculoController.validarFechaPosterior(datePickerFechaDevolucion.getValue(),
+                datePickerFechaEntrega.getValue())) {
             App.mostrarAlerta("Error", "La fecha de entrega del vehiculo no puede ser anterior a hoy");
             return false;
         }

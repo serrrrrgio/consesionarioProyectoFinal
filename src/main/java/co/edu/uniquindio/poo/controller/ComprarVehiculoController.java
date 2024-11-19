@@ -3,6 +3,7 @@ package co.edu.uniquindio.poo.controller;
 import co.edu.uniquindio.poo.model.Bus;
 import co.edu.uniquindio.poo.model.Camion;
 import co.edu.uniquindio.poo.model.Camioneta;
+import co.edu.uniquindio.poo.model.Cliente;
 import co.edu.uniquindio.poo.model.Concesionario;
 import co.edu.uniquindio.poo.model.Deportivo;
 import co.edu.uniquindio.poo.model.Empleado;
@@ -80,5 +81,9 @@ public class ComprarVehiculoController {
 
     public double getFondos() {
         return concesionario.getFondos();
+    }
+
+    public void comprarVehiculo(Empleado empleado, Cliente cliente, Vehiculo vehiculo, double precio){
+        concesionario.comprarVehiculo(empleado, cliente, vehiculo, precio);
     }
 }

@@ -234,4 +234,9 @@ public class Vehiculo {
         return formato.format(precio);
     }
 
+    public double obtenerPrecioAlquiler(int dias){
+        return (precio / 200) * dias;
+
+    }
+
 }

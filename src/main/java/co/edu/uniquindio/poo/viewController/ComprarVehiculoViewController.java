@@ -75,13 +75,10 @@ public class ComprarVehiculoViewController {
             return;
         }
 
-        transaccion = crearTransaccion();
-        empleado.agregarTransaccion(transaccion);
-        cliente.agregarTransaccion(transaccion);
-        comprarVehiculoController.agregarTransaccion(transaccion);
-        comprarVehiculoController.setFondos(comprarVehiculoController.getFondos() + transaccion.getPrecio());
-        comprarVehiculoController.eliminarVehiculo(vehiculoSeleccionado);
+        comprarVehiculoController.comprarVehiculo(empleado, cliente, vehiculoSeleccionado, vehiculoSeleccionado.getPrecio());
+        setVehiculos();
         tblListVehiculosComprar.refresh();
+        choiceVehiculo.setValue(null);
         App.mostrarMensaje("Vehículo", "Vehículo vendido", "Usted ha comprado un vehículo");
 
     }
@@ -155,6 +152,7 @@ public class ComprarVehiculoViewController {
                     listaFiltrada = comprarVehiculoController.obtenerInterseccion(
                             comprarVehiculoController.obtenerVehiculosVenta(),
                             FXCollections.observableArrayList(comprarVehiculoController.obtenerVans()));
+                            System.out.println((comprarVehiculoController.obtenerVans()));
                     break;
                 default:
                     // Si no se selecciona nada, mostrar todos los vehículos en venta
@@ -176,11 +174,6 @@ public class ComprarVehiculoViewController {
                             vehiculoSeleccionado.getClass().getSimpleName() + ": " + vehiculoSeleccionado.getModelo());
                 });
 
-    }
-
-    public Transaccion crearTransaccion() {
-        return new Transaccion(LocalDate.now(), null,
-                vehiculoSeleccionado.getPrecio(), TipoTransaccion.VENTA, empleado, cliente, vehiculoSeleccionado);
     }
 
     // Método para establecer la lista de motos

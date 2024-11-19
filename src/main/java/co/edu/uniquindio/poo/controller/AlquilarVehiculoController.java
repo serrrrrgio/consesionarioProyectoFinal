@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import co.edu.uniquindio.poo.model.Bus;
 import co.edu.uniquindio.poo.model.Camion;
 import co.edu.uniquindio.poo.model.Camioneta;
+import co.edu.uniquindio.poo.model.Cliente;
 import co.edu.uniquindio.poo.model.Concesionario;
 import co.edu.uniquindio.poo.model.Deportivo;
 import co.edu.uniquindio.poo.model.Empleado;
@@ -17,13 +18,13 @@ import co.edu.uniquindio.poo.model.Vehiculo;
 import javafx.collections.ObservableList;
 
 public class AlquilarVehiculoController {
-        private Concesionario concesionario;
+    private Concesionario concesionario;
 
     public AlquilarVehiculoController(Concesionario concesionario) {
         this.concesionario = concesionario;
     }
 
-    public ObservableList<Vehiculo> obtenerVehiculosAlquiler(){
+    public ObservableList<Vehiculo> obtenerVehiculosAlquiler() {
         return concesionario.obtenerVehiculosAlquiler();
     }
 
@@ -63,28 +64,35 @@ public class AlquilarVehiculoController {
         return concesionario.getVans();
     }
 
-    public void agregarTransaccion(Transaccion transaccion){
+    public void agregarTransaccion(Transaccion transaccion) {
         concesionario.agregarTransaccion(transaccion);
     }
 
-    public void eliminarVehiculo(Vehiculo vehiculo){
+    public void eliminarVehiculo(Vehiculo vehiculo) {
         concesionario.eliminarVehiculo(vehiculo);
     }
 
-    public boolean validarFechaPosterior(LocalDate fecha1, LocalDate fecha2){
+    public boolean validarFechaPosterior(LocalDate fecha1, LocalDate fecha2) {
         return concesionario.validarFechaPosterior(fecha1, fecha2);
     }
-    
-    public int calcularDias(LocalDate fecha1, LocalDate fecha2){
+
+    public int calcularDias(LocalDate fecha1, LocalDate fecha2) {
         return concesionario.calcularDias(fecha1, fecha2);
     }
 
-    public ObservableList<Vehiculo> obtenerInterseccion(ObservableList<Vehiculo> lista1, ObservableList<Vehiculo> lista2){
+    public ObservableList<Vehiculo> obtenerInterseccion(ObservableList<Vehiculo> lista1,
+            ObservableList<Vehiculo> lista2) {
         return concesionario.obtenerInterseccion(lista1, lista2);
     }
 
-        public Empleado obtenerEmpleadoAzar(){
+    public Empleado obtenerEmpleadoAzar() {
         return concesionario.obtenerEmpleadoAleatorio();
     }
-    
+
+    public void alquilarVehiculo(Empleado empleado, Cliente cliente, Vehiculo vehiculo,
+            LocalDate fechaEntrega,
+            LocalDate fechaEntregaDevolucion) {
+        concesionario.alquilarVehiculo(empleado, cliente, vehiculo, fechaEntrega, fechaEntregaDevolucion);
+    }
+
 }

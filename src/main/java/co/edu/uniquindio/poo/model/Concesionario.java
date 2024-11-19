@@ -43,6 +43,7 @@ public class Concesionario {
         this.vehiculos = FXCollections.observableArrayList();
         this.buses = FXCollections.observableArrayList();
         this.camiones = FXCollections.observableArrayList();
+        this.camionetas = FXCollections.observableArrayList();
         this.carros = FXCollections.observableArrayList();
         this.deportivos = FXCollections.observableArrayList();
         this.motos = FXCollections.observableArrayList();
@@ -182,7 +183,7 @@ public class Concesionario {
         this.administrador = administrador;
     }
 
-    public String obtenerPrecioCadena(){
+    public String obtenerPrecioCadena() {
         DecimalFormat formato = new DecimalFormat("#.################"); // Hasta 16 decimales
         return formato.format(fondos);
     }
@@ -282,11 +283,10 @@ public class Concesionario {
         return empleados.get(indiceAleatorio);
     }
 
-
     /**
      * Método para obtener una lista de transacciones dentro de 2 fechas
      */
-    public  ObservableList<Transaccion> obtenerTransaccionesFechas(LocalDate fechaInicio, LocalDate fechaFin) {
+    public ObservableList<Transaccion> obtenerTransaccionesFechas(LocalDate fechaInicio, LocalDate fechaFin) {
 
         ObservableList<Transaccion> transaccionesFiltradas = FXCollections.observableArrayList();
 
@@ -301,7 +301,6 @@ public class Concesionario {
 
         return transaccionesFiltradas;
     }
-
 
     /**
      * Método para actualizar un empleado. Duda de si al actualizarlo también se le
@@ -344,8 +343,6 @@ public class Concesionario {
                 camiones.add((Camion) vehiculo);
             } else if (vehiculo instanceof Camioneta) {
                 camionetas.add((Camioneta) vehiculo);
-            } else if (vehiculo instanceof Carro) {
-                carros.add((Carro) vehiculo);
             } else if (vehiculo instanceof Deportivo) {
                 deportivos.add((Deportivo) vehiculo);
             } else if (vehiculo instanceof Moto) {
@@ -357,10 +354,14 @@ public class Concesionario {
             } else if (vehiculo instanceof Van) {
                 vans.add((Van) vehiculo);
             }
+            if (vehiculo instanceof Carro) {
+                carros.add((Carro) vehiculo);
+            }
             vehiculos.add(vehiculo);
             agregado = true;
         }
         return agregado;
+
     }
 
     /**
@@ -439,7 +440,8 @@ public class Concesionario {
             double velocidadMaxima, double cilindraje,
             TipoRegistro tipoRegistro, Transmision transmision, Estado estado,
             int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado,
-            double capacidadCarga, boolean frenosAire, int numeroEjes, TipoCamion tipoCamion, Combustible combustible, double precio,
+            double capacidadCarga, boolean frenosAire, int numeroEjes, TipoCamion tipoCamion, Combustible combustible,
+            double precio,
             double autonomia, double tiempoCarga, boolean enchufable, boolean hibridoLigero) {
 
         boolean actualizado = true;
@@ -648,7 +650,8 @@ public class Concesionario {
             double velocidadMaxima, double cilindraje, TipoRegistro tipoRegistro, Transmision transmision,
             Estado estado,
             int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado, boolean camaraReversa,
-            int numeroBolsasAire, boolean cuatroPorCuatro, double capacidadCajaCarga, double precio,Combustible combustible,
+            int numeroBolsasAire, boolean cuatroPorCuatro, double capacidadCajaCarga, double precio,
+            Combustible combustible,
             double autonomia, double tiempoCarga, boolean enchufable, boolean hibridoLigero) {
 
         boolean actualizado = true;
@@ -740,7 +743,8 @@ public class Concesionario {
             double velocidadMaxima, double cilindraje, TipoRegistro tipoRegistro, Transmision transmision,
             Estado estado,
             int capacidadPasajeros, int cantidadPuertas, boolean abs, boolean aireAcondicionado, boolean camaraReversa,
-            double capacidadMaletero, int bolsasAire, double precio, Combustible combustible, double autonomia, double tiempoCarga,
+            double capacidadMaletero, int bolsasAire, double precio, Combustible combustible, double autonomia,
+            double tiempoCarga,
             boolean enchufable, boolean hibridoLigero) {
 
         boolean actualizado = true;
@@ -793,19 +797,20 @@ public class Concesionario {
     /**
      * Método para registrar una compra de vehículo
      */
-    public void comprarVehiculo(LocalDate fechaEntrega, LocalDate fechaDevolucion, Empleado empleado, Cliente cliente,
+    public void comprarVehiculo(Empleado empleado, Cliente cliente,
             Vehiculo vehiculo, double precio) {
-        Transaccion transaccion = new Transaccion(fechaEntrega, fechaDevolucion, precio, TipoTransaccion.COMPRA,
+        Transaccion transaccion = new Transaccion(LocalDate.now(), null, precio, TipoTransaccion.VENTA,
                 empleado, cliente,
                 vehiculo);
 
         // Agregar transacción de forma independiente al concesionario y al cliente
         agregarTransaccion(transaccion);
         cliente.agregarTransaccion(transaccion);
+        empleado.agregarTransaccion(transaccion);
 
         // Actualizar lista de vehículos y fondos
-        vehiculos.remove(vehiculo);
-        fondos -= precio;
+        eliminarVehiculo(vehiculo);
+        fondos += precio;
         mostrarMensaje("Compra de vehículo registrada.");
     }
 
@@ -814,36 +819,38 @@ public class Concesionario {
      */
     public void venderVehiculo(Empleado empleado, Cliente cliente, Vehiculo vehiculo, double precio,
             LocalDate fechaEntrega, LocalDate fechaDevolucion) {
-        Transaccion transaccion = new Transaccion(fechaEntrega, fechaDevolucion, precio, TipoTransaccion.VENTA,
+        Transaccion transaccion = new Transaccion(fechaEntrega, fechaDevolucion, precio, TipoTransaccion.COMPRA,
                 empleado, cliente,
                 vehiculo);
 
         // Agregar transacción de forma independiente al concesionario y al cliente
         agregarTransaccion(transaccion);
         cliente.agregarTransaccion(transaccion);
+        empleado.agregarTransaccion(transaccion);
 
-        // Actualizar lista de vehículos y fondos
-        vehiculos.remove(vehiculo);
-        fondos += precio;
+        agregarVehiculo(vehiculo);
+        fondos -= precio;
         mostrarMensaje("Venta de vehículo registrada.");
     }
 
     /**
      * Método para registrar un alquiler de vehículo
      */
-    public void alquilarVehiculo(Empleado empleado, Cliente cliente, Vehiculo vehiculo, double precio,
+    public void alquilarVehiculo(Empleado empleado, Cliente cliente, Vehiculo vehiculo,
             LocalDate fechaEntrega,
             LocalDate fechaEntregaDevolucion) {
-        Transaccion transaccion = new Transaccion(fechaEntrega, fechaEntregaDevolucion, precio,
+        Transaccion transaccion = new Transaccion(fechaEntrega, fechaEntregaDevolucion,
+                vehiculo.obtenerPrecioAlquiler(calcularDias(fechaEntrega, fechaEntregaDevolucion)),
                 TipoTransaccion.ALQUILER, empleado, cliente,
                 vehiculo);
 
         // Agregar transacción de forma independiente al concesionario y al cliente
         agregarTransaccion(transaccion);
         cliente.agregarTransaccion(transaccion);
+        empleado.agregarTransaccion(transaccion);
+        fondos += transaccion.getPrecio();
+        eliminarVehiculo(vehiculo);
 
-        // Actualizar los fondos en caso de alquiler
-        fondos += precio;
         mostrarMensaje("Alquiler de vehículo registrado.");
     }
 
@@ -925,7 +932,7 @@ public class Concesionario {
         return existente;
     }
 
-        /**
+    /**
      * Método para obtener un cliente por su ususario y contraseña
      */
     public Cliente obtenerCliente(String usuario, String contrasena) {
@@ -939,7 +946,7 @@ public class Concesionario {
         return clienteEncontrado;
     }
 
-        /**
+    /**
      * Método para obtener un empleado por su usrio y contraseña]
      */
     public Empleado obtenerEmpleado(String usuario, String contrasena) {
@@ -953,12 +960,10 @@ public class Concesionario {
         return empleadoEncontrado;
     }
 
-    public boolean validarAdministrador(String usuario, String contrasena){
+    public boolean validarAdministrador(String usuario, String contrasena) {
         return this.administrador.getUsuario().equals(usuario) && this.administrador.getContrasena().equals(contrasena);
 
     }
-
-
 
     /**
      * Método para actualizar un cliente. Duda de si al actualizarlo también se le
@@ -1033,13 +1038,13 @@ public class Concesionario {
         return (int) ChronoUnit.DAYS.between(fecha1, fecha2);
     }
 
-
     /**
      * Método para cobtener la intersección entre 2 listas
      */
-    public ObservableList<Vehiculo> obtenerInterseccion(ObservableList<Vehiculo> lista1, ObservableList<Vehiculo> lista2) {
+    public ObservableList<Vehiculo> obtenerInterseccion(ObservableList<Vehiculo> lista1,
+            ObservableList<Vehiculo> lista2) {
         ObservableList<Vehiculo> interseccion = FXCollections.observableArrayList();
-        
+
         for (Vehiculo vehiculo : lista1) {
             if (lista2.contains(vehiculo)) {
                 interseccion.add(vehiculo);
