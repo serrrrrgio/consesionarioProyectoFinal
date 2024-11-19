@@ -87,6 +87,9 @@ public class AlquilarVehiculoViewController {
         setVehiculos();
         inicializarData();
         agregarListener();
+        App.setButtonHoverEffect(btnAlquilar);
+        App.setButtonHoverEffect(btnCalcularDias);
+        App.setButtonHoverEffect(btnRegresar);
     }
 
     public void agregarListener() {

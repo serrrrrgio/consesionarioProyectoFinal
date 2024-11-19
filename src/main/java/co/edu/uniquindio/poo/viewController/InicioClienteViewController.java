@@ -106,6 +106,7 @@ public class InicioClienteViewController {
         App.setButtonHoverEffect(btnComprarVehiculo);
         App.setButtonHoverEffect(btnRegresar);
         App.setButtonHoverEffect(btnVenderVehiculo);
+        
     }
 
     private Image cargarImagen(String imageUrl, ImageView imageView) {
@@ -132,7 +133,7 @@ public class InicioClienteViewController {
             App.mostrarAlerta("Error", "No hay empleados que lo atiendan");
             return;
         }
-        App.cambiarEscena("/co/edu/uniquindio/poo/CompraVehiculo.fxml", "Comprar Vehiculo", event, getClass());
+        App.cambiarEscena("/co/edu/uniquindio/poo/ComprarVehiculo.fxml", "Comprar Vehiculo", event, getClass());
     }
 
     @FXML

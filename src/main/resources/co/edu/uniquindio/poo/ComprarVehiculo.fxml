@@ -7,7 +7,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="1183.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.ComprarVEhiculoViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="1183.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.ComprarVehiculoViewController">
     <children>
         <ImageView fx:id="backgroundImage" fitHeight="950.0" fitWidth="1188.0" opacity="0.7" preserveRatio="true" smooth="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="0.0">
             <image>
@@ -58,7 +58,7 @@
                         <Font name="System Bold" size="21.0" />
                      </font>
                   </Label>
-                  <Button fx:id="btnComprar" layoutX="496.0" layoutY="549.0" mnemonicParsing="false" onAction="#handloBtnComprar" text="Comprar" />
+                  <Button fx:id="btnComprar" layoutX="496.0" layoutY="549.0" mnemonicParsing="false" onAction="#handleBtnComprar" text="Comprar" />
                   <TableView fx:id="tblListVehiculosComprar" layoutX="60.0" layoutY="173.0" prefHeight="244.0" prefWidth="727.0">
                      <columns>
                         <TableColumn fx:id="tbcVehiculo" prefWidth="96.0" text="Vehiculo" />

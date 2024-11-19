@@ -52,10 +52,7 @@ public class IniciarSesionViewController {
 
     @FXML
     public void initialize() {
-        // Verificar si el controlador es null
-        if (registrarseIniciarSesionController == null) {
-            registrarseIniciarSesionController = new RegistrarseIniciarSesionController(App.getConcesionario());
-        }
+        registrarseIniciarSesionController = new RegistrarseIniciarSesionController(App.getConcesionario());
 
         App.setButtonHoverEffect(btnCambiarContrasena);
         App.setButtonHoverEffect(btnIniciarSesion);
@@ -63,19 +60,6 @@ public class IniciarSesionViewController {
         App.setButtonHoverEffect(btnRegistrarse);
         App.setButtonHoverEffect(btnRegresar);
 
-        // Establecer efectos de hover para los botones
-        if (btnRegistrarse != null) {
-            App.setButtonHoverEffect(btnRegistrarse);
-        }
-        if (btnRegresar != null) {
-            App.setButtonHoverEffect(btnRegresar);
-        }
-        if (btnIniciarSesion != null) {
-            App.setButtonHoverEffect(btnIniciarSesion);
-        }
-        if (btnCambiarContrasena != null) {
-            App.setButtonHoverEffect(btnCambiarContrasena);
-        }
     }
 
     @FXML
@@ -106,28 +90,35 @@ public class IniciarSesionViewController {
     @FXML
     void handleBtnIniciarSesion(ActionEvent event) {
         if (rdAdministrador.isSelected()) {
-            if (registrarseIniciarSesionController.validarAdministrador(txtUsuario.getText(), txtContrasena.getText())) {
-                App.mostrarMensaje("Inicio de sesión", "Se ha iniciado sesión correctamente como administrador", "Bienvenido " + txtUsuario.getText());
+            if (registrarseIniciarSesionController.validarAdministrador(txtUsuario.getText(),
+                    txtContrasena.getText())) {
+                App.mostrarMensaje("Inicio de sesión", "Se ha iniciado sesión correctamente como administrador",
+                        "Bienvenido " + txtUsuario.getText());
                 ActualizarDatosViewController.usuarioActivo = App.getConcesionario().getAdministrador();
                 App.cambiarEscena("/co/edu/uniquindio/poo/InicioAdministrador.fxml", "Inicio admin", event, getClass());
             } else {
                 App.mostrarAlerta("Error al iniciar sesión", "Esos no son los datos del administrador");
             }
         } else if (rdCliente.isSelected()) {
-            Cliente cliente = registrarseIniciarSesionController.obtenerCliente(txtUsuario.getText(), txtContrasena.getText());
+            Cliente cliente = registrarseIniciarSesionController.obtenerCliente(txtUsuario.getText(),
+                    txtContrasena.getText());
             if (cliente != null) {
-                App.mostrarMensaje("Inicio de sesión", "Se ha iniciado sesión correctamente", "Bienvenido " + txtUsuario.getText());
+                App.mostrarMensaje("Inicio de sesión", "Se ha iniciado sesión correctamente",
+                        "Bienvenido " + txtUsuario.getText());
                 ActualizarDatosViewController.usuarioActivo = cliente;
                 AlquilarVehiculoViewController.cliente = cliente;
                 ComprarVehiculoViewController.cliente = cliente;
+                VenderVehiculoViewController.cliente = cliente;
                 App.cambiarEscena("/co/edu/uniquindio/poo/InicioCliente.fxml", "Inicio cliente", event, getClass());
             } else {
                 App.mostrarAlerta("Error al iniciar sesión", "No existe un cliente con ese usuario y contraseña");
             }
         } else if (rdEmpleado.isSelected()) {
-            Empleado empleado = registrarseIniciarSesionController.obtenerEmpleado(txtUsuario.getText(), txtContrasena.getText());
+            Empleado empleado = registrarseIniciarSesionController.obtenerEmpleado(txtUsuario.getText(),
+                    txtContrasena.getText());
             if (empleado != null) {
-                App.mostrarMensaje("Inicio de sesión", "Se ha iniciado sesión correctamente", "Bienvenido " + txtUsuario.getText());
+                App.mostrarMensaje("Inicio de sesión", "Se ha iniciado sesión correctamente",
+                        "Bienvenido " + txtUsuario.getText());
                 ActualizarDatosViewController.usuarioActivo = empleado;
                 App.cambiarEscena("/co/edu/uniquindio/poo/InicioEmpleado.fxml", "Inicio empleado", event, getClass());
             } else {

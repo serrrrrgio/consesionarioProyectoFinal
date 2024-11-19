@@ -220,6 +220,9 @@ public class GestionarVehiculosViewController {
     private Button btnEliminarVehiculo;
 
     @FXML
+    private Button btnActualizarDatos;
+
+    @FXML
     private TableColumn<Vehiculo, String> tbPrecio;
 
     @FXML
@@ -301,6 +304,8 @@ public class GestionarVehiculosViewController {
                         precio, combustible, autonomia, tiempoCarga, enchufable, hibridoLigero);
 
                 if (gestionarVehiculosController.agregarVehiculo(moto)) {
+
+                    gestionarVehiculosController.setFondos(gestionarVehiculosController.getFondos() + precio);
                     // Actualiza la tabla
                     setVehiculos();
 
@@ -347,6 +352,8 @@ public class GestionarVehiculosViewController {
                                     enchufable, hibridoLigero);
 
                             if (gestionarVehiculosController.agregarVehiculo(bus)) {
+
+                                gestionarVehiculosController.setFondos(gestionarVehiculosController.getFondos() + precio);
                                 // Actualiza la tabla
                                 setVehiculos();
 
@@ -382,6 +389,8 @@ public class GestionarVehiculosViewController {
                                     hibridoLigero);
 
                             if (gestionarVehiculosController.agregarVehiculo(camioneta)) {
+
+                                gestionarVehiculosController.setFondos(gestionarVehiculosController.getFondos() + precio);
                                 // Actualiza la tabla
                                 setVehiculos();
 
@@ -412,6 +421,8 @@ public class GestionarVehiculosViewController {
                                     tipoCamion, precio, combustible, autonomia, tiempoCarga, enchufable, hibridoLigero);
 
                             if (gestionarVehiculosController.agregarVehiculo(camion)) {
+
+                                gestionarVehiculosController.setFondos(gestionarVehiculosController.getFondos() + precio);
                                 // Actualiza la tabla
                                 setVehiculos();
 
@@ -441,6 +452,8 @@ public class GestionarVehiculosViewController {
                                     hibridoLigero);
 
                             if (gestionarVehiculosController.agregarVehiculo(deportivo)) {
+
+                                gestionarVehiculosController.setFondos(gestionarVehiculosController.getFondos() + precio);
                                 // Actualiza la tabla
                                 setVehiculos();
 
@@ -472,6 +485,8 @@ public class GestionarVehiculosViewController {
                                     hibridoLigero);
 
                             if (gestionarVehiculosController.agregarVehiculo(pickUp)) {
+
+                                gestionarVehiculosController.setFondos(gestionarVehiculosController.getFondos() + precio);
                                 // Actualiza la tabla
                                 setVehiculos();
 
@@ -509,6 +524,8 @@ public class GestionarVehiculosViewController {
                                     autonomia, tiempoCarga, enchufable, hibridoLigero);
 
                             if (gestionarVehiculosController.agregarVehiculo(sedan)) {
+
+                                gestionarVehiculosController.setFondos(gestionarVehiculosController.getFondos() + precio);
                                 // Actualiza la tabla
                                 setVehiculos();
 
@@ -539,6 +556,8 @@ public class GestionarVehiculosViewController {
                                     precio, combustible, autonomia, tiempoCarga, enchufable, hibridoLigero);
 
                             if (gestionarVehiculosController.agregarVehiculo(van)) {
+
+                                gestionarVehiculosController.setFondos(gestionarVehiculosController.getFondos() + precio);
                                 // Actualiza la tabla
                                 setVehiculos();
 
@@ -909,7 +928,8 @@ public class GestionarVehiculosViewController {
         App.setButtonHoverEffect(btnEliminarVehiculo);
         App.setButtonHoverEffect(btnLimpiarCampos);
         App.setButtonHoverEffect(btnRegistrarVehiculo);
-        App.setButtonHoverEffect(btnRegresar);    
+        App.setButtonHoverEffect(btnRegresar);   
+        App.setButtonHoverEffect(btnActualizarDatos); 
     }
 
     private void inicializarData() {

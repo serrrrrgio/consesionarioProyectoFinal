@@ -293,4 +293,12 @@ public class GestionarVehiculosController {
                 enchufable, hibridoLigero);
     }
 
+    public void setFondos(double fondos) {
+        concesionario.setFondos(fondos);
+    }
+
+    public double getFondos() {
+        return concesionario.getFondos();
+    }
+
 }

@@ -69,7 +69,7 @@ public class ComprarVehiculoViewController {
     static Cliente cliente;
 
     @FXML
-    void handloBtnComprar(ActionEvent event) {
+    void handleBtnComprar(ActionEvent event) {
         if (vehiculoSeleccionado == null) {
             App.mostrarAlerta("Error al comprar un vehículo", "Por favor selecciona el vehiculo que quieras comprar");
             return;
@@ -101,6 +101,7 @@ public class ComprarVehiculoViewController {
         agregarListener();
         agregarListenerChoiceBox();
         App.setButtonHoverEffect(btnComprar);
+        App.setButtonHoverEffect(btnRegresar);
 
     }
 

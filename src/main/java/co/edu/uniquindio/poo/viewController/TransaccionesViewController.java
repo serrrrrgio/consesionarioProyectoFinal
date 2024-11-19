@@ -69,6 +69,12 @@ public class TransaccionesViewController {
         tbcPrecio.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().obtenerPrecioCadena()));
         tbcVehiculo.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getVehiculo().getClass().getSimpleName()));
         setTransacciones();
+        App.setButtonHoverEffect(btnActualizarDatos);
+        App.setButtonHoverEffect(btnGestionarFondos);
+        App.setButtonHoverEffect(btnLimpiarCampos);
+        App.setButtonHoverEffect(btnRegistrarEmpleado);
+        App.setButtonHoverEffect(btnRegresar);
+        App.setButtonHoverEffect(btnVerTransacciones);
     }
 
     public void setTransaccionesFecha(){
