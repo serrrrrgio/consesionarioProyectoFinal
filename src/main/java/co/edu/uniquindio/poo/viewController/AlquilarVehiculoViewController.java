@@ -86,6 +86,8 @@ public class AlquilarVehiculoViewController {
         txtEmpleado.setText(empleado.getNombre());
         setVehiculos();
         inicializarData();
+        choiceVehiculo.setItems(FXCollections.observableArrayList(TipoVehiculo.values()));
+        agregarListenerChoiceBox();
         agregarListener();
         App.setButtonHoverEffect(btnAlquilar);
         App.setButtonHoverEffect(btnCalcularDias);
@@ -173,13 +175,14 @@ public class AlquilarVehiculoViewController {
     @FXML
     public void handloBtnAlquilar(ActionEvent event) {
         if (vehiculoSeleccionado != null) {
-            if (diasValidos()) {
+            if (diasValidos() && fechasValidas()) {
                 Transaccion transaccion = crearTransaccion();
                 cliente.agregarTransaccion(transaccion);
                 alquilarVehiculoController.eliminarVehiculo(vehiculoSeleccionado);
                 alquilarVehiculoController.agregarTransaccion(transaccion);
                 empleado.agregarTransaccion(transaccion);
-                App.mostrarMensaje("Vehiuclo alquilado", "", "El vehiculo se ha alquilado correctamente");
+                tblListVehiculosAlquiler.refresh();
+                App.mostrarMensaje("Vehiuclo alquilado", "", "El vehiculo ha sido alquilado correctamente");
             }
         }
 
@@ -200,8 +203,15 @@ public class AlquilarVehiculoViewController {
     }
 
     public boolean diasValidos() {
-        if (!alquilarVehiculoController.validarFechaPosterior(datePickerFechaEntrega.getValue(),
-                LocalDate.now())) {
+        if (!alquilarVehiculoController.validarFechaPosterior(datePickerFechaEntrega.getValue(), LocalDate.now())) {
+            App.mostrarAlerta("Error", "La fecha de entrega del vehiculo no puede ser anterior a hoy");
+            return false;
+        }
+        return true;
+    }
+
+    public boolean fechasValidas() {
+        if (!alquilarVehiculoController.validarFechaPosterior(datePickerFechaDevolucion.getValue(), datePickerFechaEntrega.getValue())) {
             App.mostrarAlerta("Error", "La fecha de entrega del vehiculo no puede ser anterior a hoy");
             return false;
         }

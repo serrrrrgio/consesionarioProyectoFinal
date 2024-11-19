@@ -1395,7 +1395,7 @@ public class GestionarVehiculosViewController {
 
             choiceCombustibleVehiculo.getSelectionModel().selectedItemProperty()
                     .addListener(combustibleVehiculoListener);
-            txtPrecio.setText(String.valueOf(vehiculo.getPrecio()));
+            txtPrecio.setText(vehiculo.obtenerPrecioCadena());
             txtAutonomiaElectrico.setText(String.valueOf(vehiculo.getAutonomia()));
             txtTiempoCargaElectrico.setText(String.valueOf(vehiculo.getTiempoCarga()));
             rdEnchufable.setSelected(vehiculo.isEnchufable());

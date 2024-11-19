@@ -2,23 +2,23 @@ package co.edu.uniquindio.poo.viewController;
 
 import co.edu.uniquindio.poo.App;
 import co.edu.uniquindio.poo.controller.TransaccionesController;
-import co.edu.uniquindio.poo.model.PreguntaSeguridad;
+import co.edu.uniquindio.poo.model.TipoTransaccion;
 import co.edu.uniquindio.poo.model.Transaccion;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 
 public class TransaccionesViewController {
 
     @FXML
     private TableColumn<Transaccion, String> tbcVehiculo;
+    
 
     @FXML
     private ImageView backgroundImage;
@@ -37,6 +37,9 @@ public class TransaccionesViewController {
 
     @FXML
     private TableColumn<Transaccion, String> tbcEmpleado;
+
+    @FXML
+    private TableColumn<Transaccion, TipoTransaccion> tbcTransaccion;
 
     @FXML
     private Button btnActualizarDatos;
@@ -68,6 +71,9 @@ public class TransaccionesViewController {
         tbcEmpleado.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getEmpleado().getNombre()));
         tbcPrecio.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().obtenerPrecioCadena()));
         tbcVehiculo.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getVehiculo().getClass().getSimpleName()));
+        tbcTransaccion.setCellValueFactory(cellData -> new SimpleObjectProperty<>(cellData.getValue().getTipoTransaccion()));
+
+        
         setTransacciones();
         App.setButtonHoverEffect(btnActualizarDatos);
         App.setButtonHoverEffect(btnGestionarFondos);

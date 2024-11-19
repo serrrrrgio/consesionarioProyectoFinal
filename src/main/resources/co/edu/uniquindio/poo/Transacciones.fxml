@@ -51,12 +51,13 @@
             <AnchorPane layoutX="68.0" layoutY="216.0" prefHeight="696.0" prefWidth="1062.0" style="-fx-background-color: #fafafa;">
                <children>
                   <Button fx:id="btnLimpiarCampos" layoutX="454.0" layoutY="598.0" mnemonicParsing="false" onAction="#handleBtnLimpiarCampos" style="-fx-background-color: #434343;" text="Limpiar Campos" textFill="WHITE" />
-                  <TableView fx:id="tblListTransacciones" layoutX="179.0" layoutY="199.0" prefHeight="378.0" prefWidth="676.0">
+                  <TableView fx:id="tblListTransacciones" layoutX="139.0" layoutY="199.0" prefHeight="378.0" prefWidth="818.0">
                     <columns>
                       <TableColumn fx:id="tbcCliente" prefWidth="154.0" text="Cliente" />
                       <TableColumn fx:id="tbcEmpleado" prefWidth="147.0" text="Empleado" />
                         <TableColumn fx:id="tbcVehiculo" prefWidth="225.0" text="Vehiculo" />
-                        <TableColumn fx:id="tbcPrecio" prefWidth="149.0" text="Precio" />
+                        <TableColumn fx:id="tbcPrecio" prefWidth="134.0" text="Precio" />
+                        <TableColumn fx:id="tbcTransaccion" prefWidth="157.0" text="Tipo transacción" />
                     </columns>
                   </TableView>
                   <Label layoutX="227.0" layoutY="48.0" text="Fecha inicial" />

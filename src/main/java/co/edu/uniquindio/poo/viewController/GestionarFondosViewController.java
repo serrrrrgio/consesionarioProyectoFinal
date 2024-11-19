@@ -5,9 +5,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import co.edu.uniquindio.poo.App;
 import co.edu.uniquindio.poo.controller.GestionarFondosController;
-import co.edu.uniquindio.poo.model.Concesionario;
 
 public class GestionarFondosViewController {
 
@@ -21,13 +21,46 @@ public class GestionarFondosViewController {
     private TextField txtFondosTotales;
 
     @FXML
-    private Button btnDepositarFondos;
+    private ImageView backgroundImage;
+
+    @FXML
+    private Button btnActualizarAdmin;
+
+    @FXML
+    private Button btnRegistrarEmpleado;
 
     @FXML
     private TextField txtRetirarFondos;
 
     @FXML
+    private Button btnVerTransacciones;
+
+    @FXML
     private TextField txtDepositarFondos;
+
+    @FXML
+    private Button btnDepositarFondos;
+
+
+
+    @FXML
+    void handleBtnActualizarDatos(ActionEvent event) {
+        App.cambiarEscena("/co/edu/uniquindio/poo/ActualizarDatos.fxml", "Actualizar Datos", event,
+        getClass());
+    }
+
+    @FXML
+    void handleBtnVerTransacciones(ActionEvent event) {
+        App.cambiarEscena("/co/edu/uniquindio/poo/Transacciones.fxml", "Transacciones", event,
+        getClass());
+    }
+
+    @FXML
+    void handleBtnRegistrarEmpleado(ActionEvent event) {
+        App.cambiarEscena("/co/edu/uniquindio/poo/RegistrarEmpleado.fxml", "Registrar empleado", event,
+        getClass());
+    }
+
 
     GestionarFondosController gestionarFondosController;
 
@@ -38,6 +71,8 @@ public class GestionarFondosViewController {
         App.setButtonHoverEffect(btnDepositarFondos);
         App.setButtonHoverEffect(btnRegresar);
         App.setButtonHoverEffect(btnRetirarFondos);
+        App.setButtonHoverEffect(btnActualizarAdmin);
+        App.setButtonHoverEffect(btnVerTransacciones);
 
     }
 
@@ -89,7 +124,7 @@ public class GestionarFondosViewController {
             if (cantidad > 0 && gestionarFondosController.getConcesionario().getFondos() >= cantidad) {
                 // Se retiran los fondos
                 gestionarFondosController.retirarFondos(cantidad);
-                txtFondosTotales.setText(String.valueOf(gestionarFondosController.getConcesionario().getFondos())); // Actualizar
+                txtFondosTotales.setText(gestionarFondosController.getConcesionario().obtenerPrecioCadena()); // Actualizar
                                                                                                                     // los
                                                                                                                     // fondos
                 txtRetirarFondos.clear(); // Limpiar el campo de texto

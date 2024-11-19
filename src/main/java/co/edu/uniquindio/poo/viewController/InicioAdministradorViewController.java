@@ -14,52 +14,64 @@ import java.net.URL;
 public class InicioAdministradorViewController {
 
     @FXML
+    private Button btnTransacciones;
+
+    @FXML
     private ImageView backgroundImage;
-
-    @FXML
-    private Button btnActualizarDatosInicio;
-
-    @FXML
-    private Button btnGestionarFondosInicio;
-
-    @FXML
-    private Button btnRegistrarEmpleadoInicio;
-
-    @FXML
-    private Button btnRegresar;
-
-    @FXML
-    private Button btnTransaccionesInicio;
-
-    @FXML
-    private Label lblActualizarDatos;
-
-    @FXML
-    private Label lblRegistrarEmpleado;
-
-    @FXML
-    private Label lblGestionarFondos;
-
-    @FXML
-    private Label lblTransacciones;
-
-    @FXML
-    private TextField txtNombredmin;
 
     @FXML
     private ImageView btnGestionarFondosInicioImage;
 
     @FXML
-    private ImageView btnRegistrarEmpleadoInicioImage;
+    private Button btnGestionarFondosInicio;
+
+    @FXML
+    private Button btnTransaccionesInicio;
+
+    @FXML
+    private Label lblTransacciones;
 
     @FXML
     private ImageView btnActualizarDatosInicioImage;
 
     @FXML
-    private ImageView btnRegresarImage;
+    private Label lblActualizarDatos;
+
+    @FXML
+    private Button btnActualizarDatos;
+
+    @FXML
+    private Button btnRegresar;
+
+    @FXML
+    private ImageView btnRegistrarEmpleadoInicioImage;
+
+    @FXML
+    private Button btnActualizarDatosInicio;
+
+    @FXML
+    private Button btnRegistrarEmpleado;
+
+    @FXML
+    private Label lblRegistrarEmpleado;
 
     @FXML
     private ImageView btnTransaccionesInicioImage1;
+
+    @FXML
+    private ImageView btnRegresarImage;
+
+    @FXML
+    private TextField txtNombredmin;
+
+    @FXML
+    private Button btnGestionarFondos;
+
+    @FXML
+    private Button btnRegistrarEmpleadoInicio;
+
+    @FXML
+    private Label lblGestionarFondos;
 
     private Image originalGestionarFondos;
     private Image originalRegistrarEmpleado;
@@ -88,6 +100,10 @@ public class InicioAdministradorViewController {
         setHoverEffect(btnTransaccionesInicio, btnTransaccionesInicioImage1, lblTransacciones, 
                        "/co/edu/uniquindio/poo/imagenes/document-signed (1).png", originalTransacciones);
         App.setButtonHoverEffect(btnRegresar);
+        App.setButtonHoverEffect(btnActualizarDatos);
+        App.setButtonHoverEffect(btnGestionarFondos);
+        App.setButtonHoverEffect(btnRegistrarEmpleado);
+        App.setButtonHoverEffect(btnTransacciones);        
         
     }
 

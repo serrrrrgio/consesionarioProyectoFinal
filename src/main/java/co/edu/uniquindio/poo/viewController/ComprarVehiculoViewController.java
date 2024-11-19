@@ -80,6 +80,8 @@ public class ComprarVehiculoViewController {
         cliente.agregarTransaccion(transaccion);
         comprarVehiculoController.agregarTransaccion(transaccion);
         comprarVehiculoController.setFondos(comprarVehiculoController.getFondos() + transaccion.getPrecio());
+        comprarVehiculoController.eliminarVehiculo(vehiculoSeleccionado);
+        tblListVehiculosComprar.refresh();
         App.mostrarMensaje("Vehículo", "Vehículo vendido", "Usted ha comprado un vehículo");
 
     }
