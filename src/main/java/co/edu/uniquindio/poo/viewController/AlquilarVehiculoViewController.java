@@ -7,12 +7,16 @@ import co.edu.uniquindio.poo.controller.AlquilarVehiculoController;
 import co.edu.uniquindio.poo.model.Cliente;
 import co.edu.uniquindio.poo.model.Empleado;
 import co.edu.uniquindio.poo.model.TipoTransaccion;
+import co.edu.uniquindio.poo.model.TipoVehiculo;
 import co.edu.uniquindio.poo.model.Transaccion;
 import co.edu.uniquindio.poo.model.Vehiculo;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -38,6 +42,9 @@ public class AlquilarVehiculoViewController {
 
     @FXML
     private TableColumn<Vehiculo, String> tbcPrecio;
+
+    @FXML
+    private ChoiceBox<TipoVehiculo> choiceVehiculo;
 
     @FXML
     private TextField txtVehiculo;
@@ -70,7 +77,6 @@ public class AlquilarVehiculoViewController {
     static Empleado empleado;
     static Cliente cliente;
 
-
     AlquilarVehiculoController alquilarVehiculoController;
 
     @FXML
@@ -93,6 +99,64 @@ public class AlquilarVehiculoViewController {
 
     }
 
+    public void agregarListenerChoiceBox() {
+        choiceVehiculo.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                ObservableList<Vehiculo> listaFiltrada;
+
+                // Selecciona la lista de vehículos según el tipo seleccionado
+                switch (newValue) {
+                    case BUS:
+                        listaFiltrada = alquilarVehiculoController.obtenerInterseccion(
+                                alquilarVehiculoController.obtenerVehiculosAlquiler(),
+                                FXCollections.observableArrayList(alquilarVehiculoController.obtenerBuses()));
+                        break;
+                    case CAMION:
+                        listaFiltrada = alquilarVehiculoController.obtenerInterseccion(
+                                alquilarVehiculoController.obtenerVehiculosAlquiler(),
+                                FXCollections.observableArrayList(alquilarVehiculoController.obtenerCamiones()));
+                        break;
+                    case CAMIONETA:
+                        listaFiltrada = alquilarVehiculoController.obtenerInterseccion(
+                                alquilarVehiculoController.obtenerVehiculosAlquiler(),
+                                FXCollections.observableArrayList(alquilarVehiculoController.obtenerCamionetas()));
+                        break;
+                    case DEPORTIVO:
+                        listaFiltrada = alquilarVehiculoController.obtenerInterseccion(
+                                alquilarVehiculoController.obtenerVehiculosAlquiler(),
+                                FXCollections.observableArrayList(alquilarVehiculoController.obtenerDeportivos()));
+                        break;
+                    case MOTO:
+                        listaFiltrada = alquilarVehiculoController.obtenerInterseccion(
+                                alquilarVehiculoController.obtenerVehiculosAlquiler(),
+                                FXCollections.observableArrayList(alquilarVehiculoController.obtenerMotos()));
+                        break;
+                    case PICK_UP:
+                        listaFiltrada = alquilarVehiculoController.obtenerInterseccion(
+                                alquilarVehiculoController.obtenerVehiculosAlquiler(),
+                                FXCollections.observableArrayList(alquilarVehiculoController.obtenerPickUps()));
+                        break;
+                    case SEDAN:
+                        listaFiltrada = alquilarVehiculoController.obtenerInterseccion(
+                                alquilarVehiculoController.obtenerVehiculosAlquiler(),
+                                FXCollections.observableArrayList(alquilarVehiculoController.obtenerSedanes()));
+                        break;
+                    case VAN:
+                        listaFiltrada = alquilarVehiculoController.obtenerInterseccion(
+                                alquilarVehiculoController.obtenerVehiculosAlquiler(),
+                                FXCollections.observableArrayList(alquilarVehiculoController.obtenerVans()));
+                        break;
+                    default:
+                        // Si no se selecciona nada, mostrar todos los vehículos en venta
+                        listaFiltrada = alquilarVehiculoController.obtenerVehiculosAlquiler();
+                }
+
+                // Actualiza los ítems de la tabla con la lista filtrada
+                tblListVehiculosAlquiler.setItems(listaFiltrada);
+            }
+        });
+    }
+
     public void inicializarData() {
         tbcMarca.setCellValueFactory(new PropertyValueFactory<>("marca"));
         tbcEstado.setCellValueFactory(new PropertyValueFactory<>("estado"));
@@ -105,7 +169,7 @@ public class AlquilarVehiculoViewController {
 
     @FXML
     public void handloBtnAlquilar(ActionEvent event) {
-        if(vehiculoSeleccionado != null){
+        if (vehiculoSeleccionado != null) {
             if (diasValidos()) {
                 Transaccion transaccion = crearTransaccion();
                 cliente.agregarTransaccion(transaccion);
@@ -116,10 +180,9 @@ public class AlquilarVehiculoViewController {
             }
         }
 
-        else{
+        else {
             App.mostrarAlerta("Error", "Seleccione un vehiculo");
         }
-        
 
     }
 
@@ -146,7 +209,7 @@ public class AlquilarVehiculoViewController {
     public void calcularDias() {
         if (diasValidos()) {
             txtDias.setText(
-                alquilarVehiculoController.calcularDias(datePickerFechaEntrega.getValue(),
+                    alquilarVehiculoController.calcularDias(datePickerFechaEntrega.getValue(),
                             datePickerFechaDevolucion.getValue())
                             + "");
         }
