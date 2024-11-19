@@ -1,14 +1,11 @@
 package co.edu.uniquindio.poo.viewController;
 
-import java.time.LocalDate;
-
 import co.edu.uniquindio.poo.App;
 import co.edu.uniquindio.poo.controller.ComprarVehiculoController;
 import co.edu.uniquindio.poo.model.Cliente;
 import co.edu.uniquindio.poo.model.Combustible;
 import co.edu.uniquindio.poo.model.Empleado;
 import co.edu.uniquindio.poo.model.Estado;
-import co.edu.uniquindio.poo.model.TipoTransaccion;
 import co.edu.uniquindio.poo.model.TipoVehiculo;
 import co.edu.uniquindio.poo.model.Transaccion;
 import co.edu.uniquindio.poo.model.Vehiculo;
@@ -75,7 +72,9 @@ public class ComprarVehiculoViewController {
             return;
         }
 
+        txtVehiculo.clear();
         comprarVehiculoController.comprarVehiculo(empleado, cliente, vehiculoSeleccionado, vehiculoSeleccionado.getPrecio());
+        vehiculoSeleccionado = null;
         setVehiculos();
         tblListVehiculosComprar.refresh();
         choiceVehiculo.setValue(null);
@@ -168,11 +167,17 @@ public class ComprarVehiculoViewController {
 
     public void agregarListener() {
         tblListVehiculosComprar.getSelectionModel().selectedItemProperty()
-                .addListener((observable, oldValue, newValue) -> {
-                    vehiculoSeleccionado = newValue;
-                    txtVehiculo.setText(
-                            vehiculoSeleccionado.getClass().getSimpleName() + ": " + vehiculoSeleccionado.getModelo());
-                });
+        .addListener((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                vehiculoSeleccionado = newValue;
+                txtVehiculo.setText(
+                        vehiculoSeleccionado.getClass().getSimpleName() + ": " + vehiculoSeleccionado.getModelo());
+            } else {
+                // Maneja el caso cuando no hay vehículo seleccionado
+                txtVehiculo.clear();
+            }
+        });
+
 
     }
 

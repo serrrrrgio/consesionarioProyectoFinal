@@ -76,12 +76,14 @@ public class AlquilarVehiculoViewController {
     Vehiculo vehiculoSeleccionado;
     static Empleado empleado;
     static Cliente cliente;
+    boolean fecha;
 
     AlquilarVehiculoController alquilarVehiculoController;
 
     @FXML
     public void initialize() {
         alquilarVehiculoController = new AlquilarVehiculoController(App.getConcesionario());
+        fecha = false;
         empleado = alquilarVehiculoController.obtenerEmpleadoAzar();
         txtEmpleado.setText(empleado.getNombre());
         setVehiculos();
@@ -97,11 +99,16 @@ public class AlquilarVehiculoViewController {
     public void agregarListener() {
         tblListVehiculosAlquiler.getSelectionModel().selectedItemProperty()
                 .addListener((observable, oldValue, newValue) -> {
-                    vehiculoSeleccionado = newValue;
-                    txtVehiculo.setText(
-                            vehiculoSeleccionado.getClass().getSimpleName() + ": " + vehiculoSeleccionado.getModelo());
+                    if (newValue != null) {
+                        vehiculoSeleccionado = newValue;
+                        txtVehiculo.setText(
+                                vehiculoSeleccionado.getClass().getSimpleName() + ": "
+                                        + vehiculoSeleccionado.getModelo());
+                    } else {
+                        // Limpiar el campo de texto si no hay selección
+                        txtVehiculo.clear();
+                    }
                 });
-
     }
 
     public void agregarListenerChoiceBox() {
@@ -150,7 +157,7 @@ public class AlquilarVehiculoViewController {
                         listaFiltrada = alquilarVehiculoController.obtenerInterseccion(
                                 alquilarVehiculoController.obtenerVehiculosAlquiler(),
                                 FXCollections.observableArrayList(alquilarVehiculoController.obtenerVans()));
-                                System.out.println((alquilarVehiculoController.obtenerVans()));
+                        System.out.println((alquilarVehiculoController.obtenerVans()));
                         break;
                     default:
                         // Si no se selecciona nada, mostrar todos los vehículos en venta
@@ -175,13 +182,20 @@ public class AlquilarVehiculoViewController {
 
     @FXML
     public void handloBtnAlquilar(ActionEvent event) {
+        if (!fecha) {
+            App.mostrarAlerta("Error al realizar el alquiler", "Por favor calcule los días el alquiler");
+            return;
+        }
         if (vehiculoSeleccionado != null) {
             if (diasValidos() && fechasValidas()) {
+                txtVehiculo.clear();
                 alquilarVehiculoController.alquilarVehiculo(empleado, cliente, vehiculoSeleccionado,
                         datePickerFechaEntrega.getValue(), datePickerFechaDevolucion.getValue());
                 setVehiculos();
+                vehiculoSeleccionado = null;
                 tblListVehiculosAlquiler.refresh();
                 choiceVehiculo.setValue(null);
+
                 App.mostrarMensaje("Vehiculo alquilado", "", "El vehiculo ha sido alquilado correctamente");
             }
         }
@@ -219,13 +233,22 @@ public class AlquilarVehiculoViewController {
         return true;
     }
 
+    public boolean fechasIngresadas() {
+        if (datePickerFechaEntrega.getValue() == null || datePickerFechaDevolucion.getValue() == null) {
+            App.mostrarAlerta("Error al hacer el alquiler", "Ingrese las fechas del alquiler");
+            return false;
+        }
+        return true;
+    }
+
     @FXML
     public void calcularDias() {
-        if (diasValidos()) {
+        if (fechasIngresadas() && diasValidos()) {
             txtDias.setText(
                     alquilarVehiculoController.calcularDias(datePickerFechaEntrega.getValue(),
                             datePickerFechaDevolucion.getValue())
                             + "");
+            fecha = true;
         }
     }
 
