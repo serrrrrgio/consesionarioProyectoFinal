@@ -386,7 +386,7 @@ public class VenderVehiculoViewController {
                         boolean sensorTraficoCruzado = rdSensorTraficoCruzadoCamioneta.isSelected();
                         boolean asistentePermanenciaCarril = rdAsistentePermanenciaCarrilCamioneta.isSelected();
                         boolean cuatroPorCuatro = rdCuatroPorCuatroCamioneta.isSelected();
-                        String numeroBolsasAireCadena = txtNumeroBolsasAireBus.getText();
+                        String numeroBolsasAireCadena = txtNumeroBolsasAireCamioneta.getText();
                         String capacidadMaleteroCadena = txtCapacidadMaleteroCamioneta.getText();
 
                         if (camposValidosCamioneta(tiempoCargaCadena, numeroBolsasAireCadena)) {
@@ -491,7 +491,7 @@ public class VenderVehiculoViewController {
                     }
 
                     else if (tipoVehiculo == TipoVehiculo.PICK_UP) {
-                        String numeroBolsasAireCadena = txtNumeroBolsasAireDeportivo.getText();
+                        String numeroBolsasAireCadena = txtNumeroBolsasAirePickUp.getText();
                         String capacidadCajaCargaCadena = txtCapacidadCajaCargaPickUp.getText();
                         boolean cuatroPorCuatro = rdCuatroPorCuatroPickupa.isSelected();
 
@@ -528,8 +528,8 @@ public class VenderVehiculoViewController {
                     }
 
                     else if (tipoVehiculo == TipoVehiculo.SEDAN) {
-                        String numeroBolsasAireCadena = txtNumeroBolsasAireDeportivo.getText();
-                        String capacidadMaleteroCadena = txtCapacidadMaleteroVan.getText();
+                        String numeroBolsasAireCadena = txtNumeroBolsasAireSedan.getText();
+                        String capacidadMaleteroCadena = txtCapacidadMaleteroSedan.getText();
                         boolean velocidadCrucero = rdVelocidadCruceroSedan.isSelected();
                         boolean sensoresColision = rdSensoresColisionSedan.isSelected();
                         boolean sensorTraficoCruzado = rdSensorTraficoCruzadoSedan.isSelected();

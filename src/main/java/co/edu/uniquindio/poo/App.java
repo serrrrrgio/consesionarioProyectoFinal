@@ -191,8 +191,8 @@ public class App {
                 3, // Número de salidas de emergencia
                 200000.0, // Precio
                 Combustible.DIESEL, // Combustible
-                0.0, // Autonomía (no aplica a diésel en este contexto)
-                0.0, // Tiempo de carga (no aplica a diésel)
+                13, // Autonomía (no aplica a diésel en este contexto)
+                14, // Tiempo de carga (no aplica a diésel)
                 false, // Enchufable
                 false // Híbrido ligero
         );
@@ -204,7 +204,7 @@ public class App {
                 2023, // Modelo
                 1, // Cambios (transmisión automática)
                 200.0, // Velocidad Máxima (km/h)
-                0.0, // Cilindraje (no aplica para vehículos eléctricos)
+                9, // Cilindraje (no aplica para vehículos eléctricos)
                 TipoRegistro.ALQUILER, // Tipo de registro
                 Transmision.AUTOMATICA, // Transmisión
                 Estado.NUEVO, // Estado
@@ -253,8 +253,8 @@ public class App {
                 true, // Cuatro por cuatro
                 50000.0, // Precio
                 Combustible.GASOLINA, // Combustible
-                0.0, // Autonomía (no aplica para gasolina)
-                0.0, // Tiempo de carga (no aplica para gasolina)
+                12, // Autonomía (no aplica para gasolina)
+                9, // Tiempo de carga (no aplica para gasolina)
                 false, // Enchufable
                 false // Híbrido ligero
         );
@@ -272,8 +272,8 @@ public class App {
                 Estado.NUEVO, // Estado
                 30000.0, // Precio
                 Combustible.HIBRIDO, // Combustible
-                0, // Autonomía (km)
-                0, // Tiempo de carga (horas)
+                9, // Autonomía (km)
+                12, // Tiempo de carga (horas)
                 false, // Enchufable
                 true // Híbrido ligero
         );
@@ -291,8 +291,8 @@ public class App {
                 Estado.USADO, // Estado
                 25000.0, // Precio
                 Combustible.GASOLINA, // Combustible
-                0.0, // Autonomía (no aplica para gasolina)
-                0.0, // Tiempo de carga (no aplica para gasolina)
+                6, // Autonomía (no aplica para gasolina)
+                12, // Tiempo de carga (no aplica para gasolina)
                 false, // Enchufable
                 false // Híbrido ligero
         );
@@ -304,7 +304,7 @@ public class App {
                 2023, // Modelo
                 1, // Cambios (transmisión automática)
                 150.0, // Velocidad Máxima (km/h)
-                0.0, // Cilindraje (no aplica para vehículos eléctricos)
+                133, // Cilindraje (no aplica para vehículos eléctricos)
                 TipoRegistro.VENTA, // Tipo de registro
                 Transmision.AUTOMATICA, // Transmisión
                 Estado.NUEVO, // Estado
@@ -343,8 +343,8 @@ public class App {
                 8, // Número de bolsas de aire
                 90000.0, // Precio
                 Combustible.HIBRIDO, // Combustible
-                0, // Autonomía (km)
-                0, // Tiempo de carga (horas)
+                9, // Autonomía (km)
+                12, // Tiempo de carga (horas)
                 true, // Enchufable
                 true // Híbrido ligero
         );
@@ -369,8 +369,8 @@ public class App {
                 6, // Número de bolsas de aire
                 80000.0, // Precio
                 Combustible.DIESEL, // Combustible
-                0.0, // Autonomía (no aplica para diésel)
-                0.0, // Tiempo de carga (no aplica para diésel)
+                6, // Autonomía (no aplica para diésel)
+                12, // Tiempo de carga (no aplica para diésel)
                 false, // Enchufable
                 false // Híbrido ligero
         );
