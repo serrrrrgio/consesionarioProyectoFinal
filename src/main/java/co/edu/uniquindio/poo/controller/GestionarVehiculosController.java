@@ -292,13 +292,4 @@ public class GestionarVehiculosController {
                 numeroBolsasAire, numeroEjes, numeroSalidasEmergencia, precio, combustible, autonomia, tiempoCarga,
                 enchufable, hibridoLigero);
     }
-
-    public void setFondos(double fondos) {
-        concesionario.setFondos(fondos);
-    }
-
-    public double getFondos() {
-        return concesionario.getFondos();
-    }
-
 }

@@ -305,7 +305,6 @@ public class GestionarVehiculosViewController {
 
                 if (gestionarVehiculosController.agregarVehiculo(moto)) {
 
-                    gestionarVehiculosController.setFondos(gestionarVehiculosController.getFondos() + precio);
                     // Actualiza la tabla
                     setVehiculos();
 
@@ -353,7 +352,6 @@ public class GestionarVehiculosViewController {
 
                             if (gestionarVehiculosController.agregarVehiculo(bus)) {
 
-                                gestionarVehiculosController.setFondos(gestionarVehiculosController.getFondos() + precio);
                                 // Actualiza la tabla
                                 setVehiculos();
 
@@ -390,7 +388,6 @@ public class GestionarVehiculosViewController {
 
                             if (gestionarVehiculosController.agregarVehiculo(camioneta)) {
 
-                                gestionarVehiculosController.setFondos(gestionarVehiculosController.getFondos() + precio);
                                 // Actualiza la tabla
                                 setVehiculos();
 
@@ -422,7 +419,6 @@ public class GestionarVehiculosViewController {
 
                             if (gestionarVehiculosController.agregarVehiculo(camion)) {
 
-                                gestionarVehiculosController.setFondos(gestionarVehiculosController.getFondos() + precio);
                                 // Actualiza la tabla
                                 setVehiculos();
 
@@ -453,7 +449,6 @@ public class GestionarVehiculosViewController {
 
                             if (gestionarVehiculosController.agregarVehiculo(deportivo)) {
 
-                                gestionarVehiculosController.setFondos(gestionarVehiculosController.getFondos() + precio);
                                 // Actualiza la tabla
                                 setVehiculos();
 
@@ -486,7 +481,6 @@ public class GestionarVehiculosViewController {
 
                             if (gestionarVehiculosController.agregarVehiculo(pickUp)) {
 
-                                gestionarVehiculosController.setFondos(gestionarVehiculosController.getFondos() + precio);
                                 // Actualiza la tabla
                                 setVehiculos();
 
@@ -525,7 +519,6 @@ public class GestionarVehiculosViewController {
 
                             if (gestionarVehiculosController.agregarVehiculo(sedan)) {
 
-                                gestionarVehiculosController.setFondos(gestionarVehiculosController.getFondos() + precio);
                                 // Actualiza la tabla
                                 setVehiculos();
 
@@ -557,7 +550,6 @@ public class GestionarVehiculosViewController {
 
                             if (gestionarVehiculosController.agregarVehiculo(van)) {
 
-                                gestionarVehiculosController.setFondos(gestionarVehiculosController.getFondos() + precio);
                                 // Actualiza la tabla
                                 setVehiculos();
 
