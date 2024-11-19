@@ -11,6 +11,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.scene.Node;
 import co.edu.uniquindio.poo.model.Administrador;
+import co.edu.uniquindio.poo.model.Cliente;
 import co.edu.uniquindio.poo.model.Concesionario;
 import co.edu.uniquindio.poo.model.Empleado;
 import co.edu.uniquindio.poo.model.PreguntaSeguridad;
@@ -41,11 +42,23 @@ public class App {
                 "Negro", // Respuesta a la pregunta de seguridad
                 2500.0 // Salario
         );
+        Cliente cliente = new Cliente("Sergio", // Nombre
+                "Posada", // Apellido
+                "Sergio@gmail.com", // Correo
+                "1", // Cédula
+                "3014750404", // Teléfono
+                "Sergi", // Usuario
+                "1", // Contraseña
+                PreguntaSeguridad.FAVORITE_COLOR, // Pregunta de seguridad
+                "Negro" // Respuesta a la pregunta de seguridad
+        );
+
         administrador = new Administrador("Maicol", "Alvarez", "michael@gmail.com", "1", "310", "maicol", "12345",
                 PreguntaSeguridad.BEST_FRIEND, "Victoria");
 
         concesionario = new Concesionario("Chevrolet", 130909002, administrador);
         concesionario.agregarEmpleado(empleadoPrueba);
+        concesionario.agregarCliente(cliente);
         try {
             // Cargar el archivo FXML
             Parent root = FXMLLoader.load(App.class.getResource("Inicio.fxml"));

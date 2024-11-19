@@ -141,7 +141,7 @@ public class InicioClienteViewController {
             App.mostrarAlerta("Error", "No hay empleados que lo atiendan");
             return;
         }
-        App.cambiarEscena("/co/edu/uniquindio/poo/VenderVehiculo.fxml", "Vender vehiculo", event, getClass());
+        App.cambiarEscena("/co/edu/uniquindio/poo/VentaVehiculo.fxml", "Vender vehiculo", event, getClass());
     }
 
     @FXML

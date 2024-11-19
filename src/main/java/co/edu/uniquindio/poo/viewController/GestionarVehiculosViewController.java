@@ -909,9 +909,7 @@ public class GestionarVehiculosViewController {
         App.setButtonHoverEffect(btnEliminarVehiculo);
         App.setButtonHoverEffect(btnLimpiarCampos);
         App.setButtonHoverEffect(btnRegistrarVehiculo);
-        App.setButtonHoverEffect(btnRegresar);
-        
-
+        App.setButtonHoverEffect(btnRegresar);    
     }
 
     private void inicializarData() {
