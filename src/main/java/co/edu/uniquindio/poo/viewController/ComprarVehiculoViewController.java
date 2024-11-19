@@ -73,8 +73,12 @@ public class ComprarVehiculoViewController {
         }
 
         txtVehiculo.clear();
-        comprarVehiculoController.comprarVehiculo(empleado, cliente, vehiculoSeleccionado, vehiculoSeleccionado.getPrecio());
-        vehiculoSeleccionado = null;
+        Vehiculo temporal = vehiculoSeleccionado;
+        tblListVehiculosComprar.getSelectionModel().clearSelection(); // Deseleccionar el cliente en la tabla
+        vehiculoSeleccionado = null; // Reiniciar la referencia al cliente seleccionado
+        tblListVehiculosComprar.getSelectionModel().clearSelection(); // Deseleccionar el cliente en la tabla
+        comprarVehiculoController.comprarVehiculo(empleado, cliente, temporal,
+                temporal.getPrecio());
         setVehiculos();
         tblListVehiculosComprar.refresh();
         choiceVehiculo.setValue(null);
@@ -103,81 +107,78 @@ public class ComprarVehiculoViewController {
 
     }
 
-
-
     public void agregarListenerChoiceBox() {
-    choiceVehiculo.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-        if (newValue != null) {
-            ObservableList<Vehiculo> listaFiltrada;
+        choiceVehiculo.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                ObservableList<Vehiculo> listaFiltrada;
 
-            // Selecciona la lista de vehículos según el tipo seleccionado
-            switch (newValue) {
-                case BUS:
-                    listaFiltrada = comprarVehiculoController.obtenerInterseccion(
-                            comprarVehiculoController.obtenerVehiculosVenta(),
-                            FXCollections.observableArrayList(comprarVehiculoController.obtenerBuses()));
-                    break;
-                case CAMION:
-                    listaFiltrada = comprarVehiculoController.obtenerInterseccion(
-                            comprarVehiculoController.obtenerVehiculosVenta(),
-                            FXCollections.observableArrayList(comprarVehiculoController.obtenerCamiones()));
-                    break;
-                case CAMIONETA:
-                    listaFiltrada = comprarVehiculoController.obtenerInterseccion(
-                            comprarVehiculoController.obtenerVehiculosVenta(),
-                            FXCollections.observableArrayList(comprarVehiculoController.obtenerCamionetas()));
-                    break;
-                case DEPORTIVO:
-                    listaFiltrada = comprarVehiculoController.obtenerInterseccion(
-                            comprarVehiculoController.obtenerVehiculosVenta(),
-                            FXCollections.observableArrayList(comprarVehiculoController.obtenerDeportivos()));
-                    break;
-                case MOTO:
-                    listaFiltrada = comprarVehiculoController.obtenerInterseccion(
-                            comprarVehiculoController.obtenerVehiculosVenta(),
-                            FXCollections.observableArrayList(comprarVehiculoController.obtenerMotos()));
-                    break;
-                case PICK_UP:
-                    listaFiltrada = comprarVehiculoController.obtenerInterseccion(
-                            comprarVehiculoController.obtenerVehiculosVenta(),
-                            FXCollections.observableArrayList(comprarVehiculoController.obtenerPickUps()));
-                    break;
-                case SEDAN:
-                    listaFiltrada = comprarVehiculoController.obtenerInterseccion(
-                            comprarVehiculoController.obtenerVehiculosVenta(),
-                            FXCollections.observableArrayList(comprarVehiculoController.obtenerSedanes()));
-                    break;
-                case VAN:
-                    listaFiltrada = comprarVehiculoController.obtenerInterseccion(
-                            comprarVehiculoController.obtenerVehiculosVenta(),
-                            FXCollections.observableArrayList(comprarVehiculoController.obtenerVans()));
-                            System.out.println((comprarVehiculoController.obtenerVans()));
-                    break;
-                default:
-                    // Si no se selecciona nada, mostrar todos los vehículos en venta
-                    listaFiltrada = comprarVehiculoController.obtenerVehiculosVenta();
+                // Selecciona la lista de vehículos según el tipo seleccionado
+                switch (newValue) {
+                    case BUS:
+                        listaFiltrada = comprarVehiculoController.obtenerInterseccion(
+                                comprarVehiculoController.obtenerVehiculosVenta(),
+                                FXCollections.observableArrayList(comprarVehiculoController.obtenerBuses()));
+                        break;
+                    case CAMION:
+                        listaFiltrada = comprarVehiculoController.obtenerInterseccion(
+                                comprarVehiculoController.obtenerVehiculosVenta(),
+                                FXCollections.observableArrayList(comprarVehiculoController.obtenerCamiones()));
+                        break;
+                    case CAMIONETA:
+                        listaFiltrada = comprarVehiculoController.obtenerInterseccion(
+                                comprarVehiculoController.obtenerVehiculosVenta(),
+                                FXCollections.observableArrayList(comprarVehiculoController.obtenerCamionetas()));
+                        break;
+                    case DEPORTIVO:
+                        listaFiltrada = comprarVehiculoController.obtenerInterseccion(
+                                comprarVehiculoController.obtenerVehiculosVenta(),
+                                FXCollections.observableArrayList(comprarVehiculoController.obtenerDeportivos()));
+                        break;
+                    case MOTO:
+                        listaFiltrada = comprarVehiculoController.obtenerInterseccion(
+                                comprarVehiculoController.obtenerVehiculosVenta(),
+                                FXCollections.observableArrayList(comprarVehiculoController.obtenerMotos()));
+                        break;
+                    case PICK_UP:
+                        listaFiltrada = comprarVehiculoController.obtenerInterseccion(
+                                comprarVehiculoController.obtenerVehiculosVenta(),
+                                FXCollections.observableArrayList(comprarVehiculoController.obtenerPickUps()));
+                        break;
+                    case SEDAN:
+                        listaFiltrada = comprarVehiculoController.obtenerInterseccion(
+                                comprarVehiculoController.obtenerVehiculosVenta(),
+                                FXCollections.observableArrayList(comprarVehiculoController.obtenerSedanes()));
+                        break;
+                    case VAN:
+                        listaFiltrada = comprarVehiculoController.obtenerInterseccion(
+                                comprarVehiculoController.obtenerVehiculosVenta(),
+                                FXCollections.observableArrayList(comprarVehiculoController.obtenerVans()));
+                        System.out.println((comprarVehiculoController.obtenerVans()));
+                        break;
+                    default:
+                        // Si no se selecciona nada, mostrar todos los vehículos en venta
+                        listaFiltrada = comprarVehiculoController.obtenerVehiculosVenta();
+                }
+
+                // Actualiza los ítems de la tabla con la lista filtrada
+                tblListVehiculosComprar.setItems(listaFiltrada);
             }
-
-            // Actualiza los ítems de la tabla con la lista filtrada
-            tblListVehiculosComprar.setItems(listaFiltrada);
-        }
-    });
-}
-
+        });
+    }
 
     public void agregarListener() {
         tblListVehiculosComprar.getSelectionModel().selectedItemProperty()
-        .addListener((observable, oldValue, newValue) -> {
-            if (newValue != null) {
-                vehiculoSeleccionado = newValue;
-                txtVehiculo.setText(
-                        vehiculoSeleccionado.getClass().getSimpleName() + ": " + vehiculoSeleccionado.getModelo());
-            } else {
-                // Maneja el caso cuando no hay vehículo seleccionado
-                txtVehiculo.clear();
-            }
-        });
-
+                .addListener((observable, oldValue, newValue) -> {
+                    if (newValue != null) {
+                        vehiculoSeleccionado = newValue;
+                        txtVehiculo.setText(
+                                vehiculoSeleccionado.getClass().getSimpleName() + ": "
+                                        + vehiculoSeleccionado.getModelo());
+                    } else {
+                        // Maneja el caso cuando no hay vehículo seleccionado
+                        txtVehiculo.clear();
+                    }
+                });
 
     }
 

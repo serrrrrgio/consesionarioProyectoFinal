@@ -189,10 +189,12 @@ public class AlquilarVehiculoViewController {
         if (vehiculoSeleccionado != null) {
             if (diasValidos() && fechasValidas()) {
                 txtVehiculo.clear();
-                alquilarVehiculoController.alquilarVehiculo(empleado, cliente, vehiculoSeleccionado,
+                Vehiculo temporal = vehiculoSeleccionado;
+                tblListVehiculosAlquiler.getSelectionModel().clearSelection(); // Deseleccionar el cliente en la tabla
+                vehiculoSeleccionado = null; // Reiniciar la referencia al cliente seleccionado
+                alquilarVehiculoController.alquilarVehiculo(empleado, cliente, temporal,
                         datePickerFechaEntrega.getValue(), datePickerFechaDevolucion.getValue());
                 setVehiculos();
-                vehiculoSeleccionado = null;
                 tblListVehiculosAlquiler.refresh();
                 choiceVehiculo.setValue(null);
 
