@@ -73,6 +73,7 @@ public class GestionarFondosViewController {
         App.setButtonHoverEffect(btnRetirarFondos);
         App.setButtonHoverEffect(btnActualizarAdmin);
         App.setButtonHoverEffect(btnVerTransacciones);
+        App.setButtonHoverEffect(btnRegistrarEmpleado);
 
     }
 
