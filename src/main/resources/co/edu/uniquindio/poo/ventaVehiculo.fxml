@@ -43,7 +43,6 @@
                           </items>
                       </ToolBar>
                   <Label fx:id="txtEmpleado" layoutX="87.0" layoutY="45.0" prefHeight="10.0" prefWidth="35.0" text=" " />
-                  <Label fx:id="txtEmpleado" layoutX="105.0" layoutY="56.0" text="Label" />
                   </children>
               </AnchorPane>
             <ScrollPane layoutX="68.0" layoutY="220.0" opacity="0.9" prefHeight="693.0" prefWidth="1062.0">

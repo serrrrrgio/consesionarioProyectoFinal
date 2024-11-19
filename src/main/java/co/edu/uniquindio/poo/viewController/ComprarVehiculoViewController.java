@@ -99,7 +99,12 @@ public class ComprarVehiculoViewController {
         setVehiculos();
         inicializarData();
         agregarListener();
+<<<<<<< HEAD
         agregarListenerChoiceBox();
+=======
+
+        App.setButtonHoverEffect(btnComprar);
+>>>>>>> 5568ee57885e4af9466c06aa2f0454ae4740cdbe
     }
 
 

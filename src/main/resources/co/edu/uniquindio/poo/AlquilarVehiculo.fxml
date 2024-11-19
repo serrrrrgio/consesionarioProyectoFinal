@@ -61,5 +61,8 @@
             <Font name="System Bold" size="21.0" />
          </font>
       </Label>
+      <TextField fx:id="txtVehiculo" layoutX="785.0" layoutY="179.0" prefHeight="31.0" prefWidth="233.0" />
+      <ChoiceBox fx:id="choiceVehiuculo" layoutX="826.0" layoutY="454.0" prefWidth="150.0" />
+      <Label layoutX="710.0" layoutY="459.0" text="Filtrar Vehiculo" />
    </children>
 </AnchorPane>
