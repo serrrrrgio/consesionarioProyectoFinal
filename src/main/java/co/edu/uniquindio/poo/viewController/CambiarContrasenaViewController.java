@@ -73,6 +73,11 @@ public class CambiarContrasenaViewController {
     }
 
     @FXML
+    void handleBtnIniciarSesion(ActionEvent event) {
+        App.cambiarEscena("/co/edu/uniquindio/poo/IniciarSesion", "Registrarse", event, getClass());
+    }
+
+    @FXML
     void handleBtnAceptar(ActionEvent event) {
         if (!cambioValido) {
             App.mostrarAlerta("Error al cambiar contraseña", "Por favor llene los demás campos");

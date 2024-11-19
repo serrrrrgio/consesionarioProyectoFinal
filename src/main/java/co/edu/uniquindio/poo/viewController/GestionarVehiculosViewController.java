@@ -1706,6 +1706,7 @@ public class GestionarVehiculosViewController {
         txtNumeroCaballosFuerzaDeportivo.clear();
         txtTiempoAlcanzar100kmhDeportivo.clear();
         txtNumeroBolsasAireDeportivo.clear();
+        txtNumeroBolsasAireCamioneta.clear();
 
         // Limpiar las selecciones en ChoiceBox
         choiceTipoCamion.getSelectionModel().clearSelection();

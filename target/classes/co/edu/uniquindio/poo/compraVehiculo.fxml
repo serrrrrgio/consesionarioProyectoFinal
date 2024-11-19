@@ -7,7 +7,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="664.0" prefWidth="1081.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.ViewController.AlquilarVehiculoViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="664.0" prefWidth="1081.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.ComprarVehiculoViewController">
    <children>
       <Label layoutX="409.0" layoutY="55.0" prefHeight="27.0" prefWidth="276.0" text="Comprar Vehiculo">
          <font>
@@ -19,13 +19,14 @@
             <Font name="System Italic" size="18.0" />
          </font>
       </Label>
-      <TableView fx:id="tblListVehiculosComprar" layoutX="89.0" layoutY="210.0" prefHeight="244.0" prefWidth="621.0">
+      <TableView fx:id="tblListVehiculosComprar" layoutX="47.0" layoutY="210.0" prefHeight="244.0" prefWidth="727.0">
         <columns>
           <TableColumn fx:id="tbcVehiculo" prefWidth="96.0" text="Vehiculo" />
           <TableColumn fx:id="tbcMarca" minWidth="0.0" prefWidth="149.0" text="Marca" />
-            <TableColumn fx:id="tbcModelo" prefWidth="110.0" text="Modelo" />
-            <TableColumn fx:id="tbcEstado" prefWidth="162.0" text="Estado" />
+            <TableColumn fx:id="tbcModelo" prefWidth="129.0" text="Modelo" />
+            <TableColumn fx:id="tbcEstado" prefWidth="143.0" text="Estado" />
             <TableColumn fx:id="tbcPrecio" prefWidth="93.0" text="Precio" />
+            <TableColumn fx:id="tbcCombustible" prefWidth="116.0" text="Combustible" />
         </columns>
       </TableView>
       <Label layoutX="89.0" layoutY="453.0">
@@ -35,8 +36,8 @@
       </Label>
       <Button fx:id="btnComprar" layoutX="483.0" layoutY="586.0" mnemonicParsing="false" onAction="#handloBtnComprar" text="Comprar" />
       <Line endX="100.0" layoutX="539.0" layoutY="99.0" startX="-100.0" />
-      <Button fx:id="btnRegresar" layoutX="57.0" layoutY="44.0" mnemonicParsing="false" onAction="#regresar" text="Regresar" />
-      <Label layoutX="859.0" layoutY="238.0" text="Vehículo">
+      <Button fx:id="btnRegresar" layoutX="57.0" layoutY="44.0" mnemonicParsing="false" onAction="#handleBtnRegresar" text="Regresar" />
+      <Label layoutX="859.0" layoutY="217.0" text="Vehículo">
          <font>
             <Font name="System Bold" size="21.0" />
          </font>
@@ -47,5 +48,8 @@
             <Font name="System Bold" size="21.0" />
          </font>
       </Label>
+      <TextField fx:id="txtVehiculo" editable="false" layoutX="785.0" layoutY="248.0" prefHeight="31.0" prefWidth="233.0" />
+      <ChoiceBox fx:id="choiceVehiculo" layoutX="408.0" layoutY="480.0" prefWidth="150.0" />
+      <Label layoutX="292.0" layoutY="485.0" text="Filtrar vehiculo" />
    </children>
 </AnchorPane>

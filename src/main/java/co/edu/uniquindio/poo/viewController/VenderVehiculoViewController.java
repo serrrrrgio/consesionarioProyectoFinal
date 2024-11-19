@@ -1,21 +1,28 @@
 package co.edu.uniquindio.poo.viewController;
 
+import java.time.LocalDate;
+
 import co.edu.uniquindio.poo.App;
 import co.edu.uniquindio.poo.controller.VenderVehiculoController;
 import co.edu.uniquindio.poo.model.Bus;
 import co.edu.uniquindio.poo.model.Camion;
 import co.edu.uniquindio.poo.model.Camioneta;
+import co.edu.uniquindio.poo.model.Cliente;
 import co.edu.uniquindio.poo.model.Combustible;
 import co.edu.uniquindio.poo.model.Deportivo;
+import co.edu.uniquindio.poo.model.Empleado;
 import co.edu.uniquindio.poo.model.Estado;
 import co.edu.uniquindio.poo.model.Moto;
 import co.edu.uniquindio.poo.model.PickUp;
 import co.edu.uniquindio.poo.model.Sedan;
 import co.edu.uniquindio.poo.model.TipoCamion;
 import co.edu.uniquindio.poo.model.TipoRegistro;
+import co.edu.uniquindio.poo.model.TipoTransaccion;
 import co.edu.uniquindio.poo.model.TipoVehiculo;
+import co.edu.uniquindio.poo.model.Transaccion;
 import co.edu.uniquindio.poo.model.Transmision;
 import co.edu.uniquindio.poo.model.Van;
+import co.edu.uniquindio.poo.model.Vehiculo;
 import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -121,6 +128,9 @@ public class VenderVehiculoViewController {
     private TextField txtNumeroBolsasAireVan;
 
     @FXML
+    private TextField txtEmpleado;
+
+    @FXML
     private RadioButton rdVelocidadCruceroSedan;
 
     @FXML
@@ -202,6 +212,12 @@ public class VenderVehiculoViewController {
     private ChoiceBox<TipoRegistro> choiceTipoRegistroVehiculo;
 
     VenderVehiculoController venderVehiculoController;
+    static Cliente cliente;
+    static Empleado empleado;
+
+    Vehiculo vehiculo;
+
+    Transaccion transaccion;
 
     private ChangeListener<TipoVehiculo> tipoVehiculoListener;
     private ChangeListener<Combustible> combustibleVehiculoListener;
@@ -216,23 +232,23 @@ public class VenderVehiculoViewController {
         App.cambiarEscena("/co/edu/uniquindio/poo/ActualizarDatos.fxml", "Inicio administrador", event, getClass());
     }
 
-
     @FXML
     void handleBtnLimpiarCampos(ActionEvent event) {
         limpiarCampos();
     }
 
-
     @FXML
     public void initialize() {
         venderVehiculoController = new VenderVehiculoController(App.getConcesionario());
+        empleado = venderVehiculoController.obtenerEmpleadoAzar();
+        txtEmpleado.setText(empleado.getNombre());
         inicializarListeners();
         choiceVehiculo.getSelectionModel().selectedItemProperty().addListener(tipoVehiculoListener);
 
         choiceCombustibleVehiculo.getSelectionModel().selectedItemProperty()
                 .addListener(combustibleVehiculoListener);
 
-                ocultarCamposIrrelevantes();
+        ocultarCamposIrrelevantes();
         mostrarCamposGenerales();
 
         choiceVehiculo.setItems(FXCollections.observableArrayList(TipoVehiculo.values()));
@@ -245,6 +261,11 @@ public class VenderVehiculoViewController {
         App.setButtonHoverEffect(btnVenderVehiculo);
         App.setButtonHoverEffect(btnRegresar);
         App.setButtonHoverEffect(btnActualizarDatos);
+    }
+
+    public Transaccion crearTransaccion() {
+        return new Transaccion(LocalDate.now(), null,
+                vehiculo.getPrecio(), TipoTransaccion.COMPRA, empleado, cliente, vehiculo);
     }
 
     @FXML
@@ -295,13 +316,21 @@ public class VenderVehiculoViewController {
                         precio, combustible, autonomia, tiempoCarga, enchufable, hibridoLigero);
 
                 if (venderVehiculoController.agregarVehiculo(moto)) {
-                    if(venderVehiculoController.getFondos() <= precio){
+                    if (venderVehiculoController.getFondos() <= precio) {
                         App.mostrarAlerta("Error", "No hay suficientes fondos para comprar este vehículo");
                         return;
                     }
                     venderVehiculoController.setFondos(venderVehiculoController.getFondos() - precio);
-                    App.mostrarMensaje("Vehículo registrado", "Nuevo vehículo", "Su vehículo ha sido comprado por nosotros");
-                    App.cambiarEscena("/co/edu/uniquindio/poo/InicioCliente.fxml", "Inicio administrador", event, getClass());
+                    vehiculo = moto;
+                    transaccion = crearTransaccion();
+                    cliente.agregarTransaccion(transaccion);
+                    venderVehiculoController.agregarTransaccion(transaccion);
+                    empleado.agregarTransaccion(transaccion);
+
+                    App.mostrarMensaje("Vehículo registrado", "Nuevo vehículo",
+                            "Su vehículo ha sido comprado por nosotros");
+                    App.cambiarEscena("/co/edu/uniquindio/poo/InicioCliente.fxml", "Inicio administrador", event,
+                            getClass());
 
                     return;
                 } else {
@@ -343,13 +372,20 @@ public class VenderVehiculoViewController {
                                     enchufable, hibridoLigero);
 
                             if (venderVehiculoController.agregarVehiculo(bus)) {
-                                if(venderVehiculoController.getFondos() <= precio){
+                                if (venderVehiculoController.getFondos() <= precio) {
                                     App.mostrarAlerta("Error", "No hay suficientes fondos para comprar este vehículo");
                                     return;
                                 }
                                 venderVehiculoController.setFondos(venderVehiculoController.getFondos() - precio);
-                                App.mostrarMensaje("Vehículo registrado", "Nuevo vehículo", "Su vehículo ha sido comprado por nosotros");
-                                App.cambiarEscena("/co/edu/uniquindio/poo/InicioCliente.fxml", "Inicio administrador", event, getClass());
+                                vehiculo = bus;
+                                transaccion = crearTransaccion();
+                                cliente.agregarTransaccion(transaccion);
+                                venderVehiculoController.agregarTransaccion(transaccion);
+                                empleado.agregarTransaccion(transaccion);
+                                App.mostrarMensaje("Vehículo registrado", "Nuevo vehículo",
+                                        "Su vehículo ha sido comprado por nosotros");
+                                App.cambiarEscena("/co/edu/uniquindio/poo/InicioCliente.fxml", "Inicio administrador",
+                                        event, getClass());
 
                                 return;
                             } else {
@@ -380,13 +416,20 @@ public class VenderVehiculoViewController {
                                     hibridoLigero);
 
                             if (venderVehiculoController.agregarVehiculo(camioneta)) {
-                                if(venderVehiculoController.getFondos() <= precio){
+                                if (venderVehiculoController.getFondos() <= precio) {
                                     App.mostrarAlerta("Error", "No hay suficientes fondos para comprar este vehículo");
                                     return;
                                 }
                                 venderVehiculoController.setFondos(venderVehiculoController.getFondos() - precio);
-                                App.mostrarMensaje("Vehículo registrado", "Nuevo vehículo", "Su vehículo ha sido comprado por nosotros");
-                                App.cambiarEscena("/co/edu/uniquindio/poo/InicioCliente.fxml", "Inicio administrador", event, getClass());
+                                vehiculo = camioneta;
+                                transaccion = crearTransaccion();
+                                cliente.agregarTransaccion(transaccion);
+                                venderVehiculoController.agregarTransaccion(transaccion);
+                                empleado.agregarTransaccion(transaccion);
+                                App.mostrarMensaje("Vehículo registrado", "Nuevo vehículo",
+                                        "Su vehículo ha sido comprado por nosotros");
+                                App.cambiarEscena("/co/edu/uniquindio/poo/InicioCliente.fxml", "Inicio administrador",
+                                        event, getClass());
 
                                 return;
                             } else {
@@ -412,13 +455,20 @@ public class VenderVehiculoViewController {
                                     tipoCamion, precio, combustible, autonomia, tiempoCarga, enchufable, hibridoLigero);
 
                             if (venderVehiculoController.agregarVehiculo(camion)) {
-                                if(venderVehiculoController.getFondos() <= precio){
+                                if (venderVehiculoController.getFondos() <= precio) {
                                     App.mostrarAlerta("Error", "No hay suficientes fondos para comprar este vehículo");
                                     return;
                                 }
                                 venderVehiculoController.setFondos(venderVehiculoController.getFondos() - precio);
-                                App.mostrarMensaje("Vehículo registrado", "Nuevo vehículo", "Su vehículo ha sido comprado por nosotros");
-                                App.cambiarEscena("/co/edu/uniquindio/poo/InicioCliente.fxml", "Inicio administrador", event, getClass());
+                                vehiculo = camion;
+                                transaccion = crearTransaccion();
+                                cliente.agregarTransaccion(transaccion);
+                                venderVehiculoController.agregarTransaccion(transaccion);
+                                empleado.agregarTransaccion(transaccion);
+                                App.mostrarMensaje("Vehículo registrado", "Nuevo vehículo",
+                                        "Su vehículo ha sido comprado por nosotros");
+                                App.cambiarEscena("/co/edu/uniquindio/poo/InicioCliente.fxml", "Inicio administrador",
+                                        event, getClass());
 
                                 return;
                             } else {
@@ -443,13 +493,20 @@ public class VenderVehiculoViewController {
                                     hibridoLigero);
 
                             if (venderVehiculoController.agregarVehiculo(deportivo)) {
-                                if(venderVehiculoController.getFondos() <= precio){
+                                if (venderVehiculoController.getFondos() <= precio) {
                                     App.mostrarAlerta("Error", "No hay suficientes fondos para comprar este vehículo");
                                     return;
                                 }
                                 venderVehiculoController.setFondos(venderVehiculoController.getFondos() - precio);
-                                App.mostrarMensaje("Vehículo registrado", "Nuevo vehículo", "Su vehículo ha sido comprado por nosotros");
-                                App.cambiarEscena("/co/edu/uniquindio/poo/InicioCliente.fxml", "Inicio administrador", event, getClass());
+                                vehiculo = deportivo;
+                                transaccion = crearTransaccion();
+                                cliente.agregarTransaccion(transaccion);
+                                venderVehiculoController.agregarTransaccion(transaccion);
+                                empleado.agregarTransaccion(transaccion);
+                                App.mostrarMensaje("Vehículo registrado", "Nuevo vehículo",
+                                        "Su vehículo ha sido comprado por nosotros");
+                                App.cambiarEscena("/co/edu/uniquindio/poo/InicioCliente.fxml", "Inicio administrador",
+                                        event, getClass());
 
                                 return;
                             } else {
@@ -476,13 +533,20 @@ public class VenderVehiculoViewController {
                                     hibridoLigero);
 
                             if (venderVehiculoController.agregarVehiculo(pickUp)) {
-                                if(venderVehiculoController.getFondos() <= precio){
+                                if (venderVehiculoController.getFondos() <= precio) {
                                     App.mostrarAlerta("Error", "No hay suficientes fondos para comprar este vehículo");
                                     return;
                                 }
                                 venderVehiculoController.setFondos(venderVehiculoController.getFondos() - precio);
-                                App.mostrarMensaje("Vehículo registrado", "Nuevo vehículo", "Su vehículo ha sido comprado por nosotros");
-                                App.cambiarEscena("/co/edu/uniquindio/poo/InicioCliente.fxml", "Inicio administrador", event, getClass());
+                                vehiculo = pickUp;
+                                transaccion = crearTransaccion();
+                                cliente.agregarTransaccion(transaccion);
+                                venderVehiculoController.agregarTransaccion(transaccion);
+                                empleado.agregarTransaccion(transaccion);
+                                App.mostrarMensaje("Vehículo registrado", "Nuevo vehículo",
+                                        "Su vehículo ha sido comprado por nosotros");
+                                App.cambiarEscena("/co/edu/uniquindio/poo/InicioCliente.fxml", "Inicio administrador",
+                                        event, getClass());
 
                                 return;
                             } else {
@@ -515,13 +579,20 @@ public class VenderVehiculoViewController {
                                     autonomia, tiempoCarga, enchufable, hibridoLigero);
 
                             if (venderVehiculoController.agregarVehiculo(sedan)) {
-                                if(venderVehiculoController.getFondos() <= precio){
+                                if (venderVehiculoController.getFondos() <= precio) {
                                     App.mostrarAlerta("Error", "No hay suficientes fondos para comprar este vehículo");
                                     return;
                                 }
                                 venderVehiculoController.setFondos(venderVehiculoController.getFondos() - precio);
-                                App.mostrarMensaje("Vehículo registrado", "Nuevo vehículo", "Su vehículo ha sido comprado por nosotros");
-                                App.cambiarEscena("/co/edu/uniquindio/poo/InicioCliente.fxml", "Inicio administrador", event, getClass());  
+                                vehiculo = sedan;
+                                transaccion = crearTransaccion();
+                                cliente.agregarTransaccion(transaccion);
+                                venderVehiculoController.agregarTransaccion(transaccion);
+                                empleado.agregarTransaccion(transaccion);
+                                App.mostrarMensaje("Vehículo registrado", "Nuevo vehículo",
+                                        "Su vehículo ha sido comprado por nosotros");
+                                App.cambiarEscena("/co/edu/uniquindio/poo/InicioCliente.fxml", "Inicio administrador",
+                                        event, getClass());
 
                                 return;
                             } else {
@@ -547,13 +618,20 @@ public class VenderVehiculoViewController {
                                     precio, combustible, autonomia, tiempoCarga, enchufable, hibridoLigero);
 
                             if (venderVehiculoController.agregarVehiculo(van)) {
-                                if(venderVehiculoController.getFondos() <= precio){
+                                if (venderVehiculoController.getFondos() <= precio) {
                                     App.mostrarAlerta("Error", "No hay suficientes fondos para comprar este vehículo");
                                     return;
                                 }
                                 venderVehiculoController.setFondos(venderVehiculoController.getFondos() - precio);
-                                App.mostrarMensaje("Vehículo registrado", "Nuevo vehículo", "Su vehículo ha sido comprado por nosotros");
-                                App.cambiarEscena("/co/edu/uniquindio/poo/InicioCliente.fxml", "Inicio administrador", event, getClass());
+                                vehiculo = van;
+                                transaccion = crearTransaccion();
+                                cliente.agregarTransaccion(transaccion);
+                                venderVehiculoController.agregarTransaccion(transaccion);
+                                empleado.agregarTransaccion(transaccion);
+                                App.mostrarMensaje("Vehículo registrado", "Nuevo vehículo",
+                                        "Su vehículo ha sido comprado por nosotros");
+                                App.cambiarEscena("/co/edu/uniquindio/poo/InicioCliente.fxml", "Inicio administrador",
+                                        event, getClass());
 
                                 return;
                             } else {
@@ -1200,6 +1278,7 @@ public class VenderVehiculoViewController {
         txtNumeroCaballosFuerzaDeportivo.clear();
         txtTiempoAlcanzar100kmhDeportivo.clear();
         txtNumeroBolsasAireDeportivo.clear();
+        txtNumeroBolsasAireCamioneta.clear();
 
         // Limpiar las selecciones en ChoiceBox
         choiceTipoCamion.getSelectionModel().clearSelection();

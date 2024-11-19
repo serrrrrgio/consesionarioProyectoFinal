@@ -49,7 +49,7 @@ public class AlquilarVehiculoViewController {
     private Button btnRegresar;
 
     @FXML
-    private TableColumn<Vehiculo, String> tbcModelo;
+    private TableColumn<Vehiculo, Integer> tbcModelo;
 
     @FXML
     private DatePicker datePickerFechaDevolucion;
@@ -71,12 +71,12 @@ public class AlquilarVehiculoViewController {
     static Cliente cliente;
 
 
-    AlquilarVehiculoController alquiAlquilarVehiculoController;
+    AlquilarVehiculoController alquilarVehiculoController;
 
     @FXML
     public void initialize() {
-        alquiAlquilarVehiculoController = new AlquilarVehiculoController(App.getConcesionario());
-        empleado = alquiAlquilarVehiculoController.obtenerEmpleadoAzar();
+        alquilarVehiculoController = new AlquilarVehiculoController(App.getConcesionario());
+        empleado = alquilarVehiculoController.obtenerEmpleadoAzar();
         txtEmpleado.setText(empleado.getNombre());
         setVehiculos();
         inicializarData();
@@ -109,10 +109,10 @@ public class AlquilarVehiculoViewController {
             if (diasValidos()) {
                 Transaccion transaccion = crearTransaccion();
                 cliente.agregarTransaccion(transaccion);
-                alquiAlquilarVehiculoController.eliminarVehiculo(vehiculoSeleccionado);
+                alquilarVehiculoController.eliminarVehiculo(vehiculoSeleccionado);
+                alquilarVehiculoController.agregarTransaccion(transaccion);
+                empleado.agregarTransaccion(transaccion);
                 App.mostrarMensaje("Vehiuclo alquilado", "", "El vehiculo se ha alquilado correctamente");
-                App.cambiarEscena("/co/edu/uniquindio/poo/InicioCliente.fxml", "Agregar cliente", event,
-                        getClass());
             }
         }
 
@@ -130,11 +130,11 @@ public class AlquilarVehiculoViewController {
 
     // Método para establecer la lista de motos
     public void setVehiculos() {
-        tblListVehiculosAlquiler.setItems(alquiAlquilarVehiculoController.obtenerVehiculosAlquiler());
+        tblListVehiculosAlquiler.setItems(alquilarVehiculoController.obtenerVehiculosAlquiler());
     }
 
     public boolean diasValidos() {
-        if (!alquiAlquilarVehiculoController.validarFechaPosterior(datePickerFechaEntrega.getValue(),
+        if (!alquilarVehiculoController.validarFechaPosterior(datePickerFechaEntrega.getValue(),
                 LocalDate.now())) {
             App.mostrarAlerta("Error", "La fecha de entrega del vehiculo no puede ser anterior a hoy");
             return false;
@@ -146,7 +146,7 @@ public class AlquilarVehiculoViewController {
     public void calcularDias() {
         if (diasValidos()) {
             txtDias.setText(
-                    alquiAlquilarVehiculoController.calcularDias(datePickerFechaEntrega.getValue(),
+                alquilarVehiculoController.calcularDias(datePickerFechaEntrega.getValue(),
                             datePickerFechaDevolucion.getValue())
                             + "");
         }

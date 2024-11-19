@@ -119,6 +119,7 @@ public class IniciarSesionViewController {
                 App.mostrarMensaje("Inicio de sesión", "Se ha iniciado sesión correctamente", "Bienvenido " + txtUsuario.getText());
                 ActualizarDatosViewController.usuarioActivo = cliente;
                 AlquilarVehiculoViewController.cliente = cliente;
+                ComprarVehiculoViewController.cliente = cliente;
                 App.cambiarEscena("/co/edu/uniquindio/poo/InicioCliente.fxml", "Inicio cliente", event, getClass());
             } else {
                 App.mostrarAlerta("Error al iniciar sesión", "No existe un cliente con ese usuario y contraseña");

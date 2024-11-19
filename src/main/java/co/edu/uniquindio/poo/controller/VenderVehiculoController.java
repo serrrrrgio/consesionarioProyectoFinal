@@ -6,12 +6,14 @@ import co.edu.uniquindio.poo.model.Camioneta;
 import co.edu.uniquindio.poo.model.Combustible;
 import co.edu.uniquindio.poo.model.Concesionario;
 import co.edu.uniquindio.poo.model.Deportivo;
+import co.edu.uniquindio.poo.model.Empleado;
 import co.edu.uniquindio.poo.model.Estado;
 import co.edu.uniquindio.poo.model.Moto;
 import co.edu.uniquindio.poo.model.PickUp;
 import co.edu.uniquindio.poo.model.Sedan;
 import co.edu.uniquindio.poo.model.TipoCamion;
 import co.edu.uniquindio.poo.model.TipoRegistro;
+import co.edu.uniquindio.poo.model.Transaccion;
 import co.edu.uniquindio.poo.model.Transmision;
 import co.edu.uniquindio.poo.model.Van;
 import co.edu.uniquindio.poo.model.Vehiculo;
@@ -39,11 +41,11 @@ public class VenderVehiculoController {
                 tiempoAlcanzar100kmh, precio, combustible, autonomia, tiempoCarga, enchufable, hibridoLigero);
     }
 
-    public void setFondos(double fondos){
+    public void setFondos(double fondos) {
         concesionario.setFondos(fondos);
     }
 
-    public double getFondos(){
+    public double getFondos() {
         return concesionario.getFondos();
     }
 
@@ -141,6 +143,14 @@ public class VenderVehiculoController {
                 capacidadPasajeros, cantidadPuertas, abs, aireAcondicionado, camaraReversa, capacidadMaletero,
                 numeroBolsasAire, numeroEjes, numeroSalidasEmergencia, precio, combustible, autonomia, tiempoCarga,
                 enchufable, hibridoLigero);
+    }
+
+    public Empleado obtenerEmpleadoAzar() {
+        return concesionario.obtenerEmpleadoAleatorio();
+    }
+
+        public void agregarTransaccion(Transaccion transaccion){
+        concesionario.agregarTransaccion(transaccion);
     }
 
 }
