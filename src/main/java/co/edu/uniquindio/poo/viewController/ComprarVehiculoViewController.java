@@ -98,6 +98,8 @@ public class ComprarVehiculoViewController {
         setVehiculos();
         inicializarData();
         agregarListener();
+
+        App.setButtonHoverEffect(btnComprar);
     }
 
     public void agregarListener() {
